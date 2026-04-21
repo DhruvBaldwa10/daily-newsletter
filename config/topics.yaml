@@ -1,0 +1,65 @@
+newsletter:
+  title: "Daily AI Digest"
+  author: "Dhruv"
+
+topics:
+  - name: "AI & LLMs"
+    keywords: ["artificial intelligence", "large language model", "LLM", "GPT", "Claude", "Gemini", "foundation model"]
+  - name: "AI Tools & SDKs"
+    keywords: ["Claude Code", "Codex", "Cursor", "Copilot", "AI SDK", "Anthropic SDK", "OpenAI SDK", "Vercel AI"]
+  - name: "Context Engineering"
+    keywords: ["context window", "context engineering", "RAG", "retrieval augmented", "prompt engineering", "system prompt"]
+  - name: "Multiplayer AI"
+    keywords: ["multiplayer AI", "multi-agent", "agent swarm", "collaborative AI", "AI orchestration", "MCP", "model context protocol"]
+  - name: "AI Infrastructure"
+    keywords: ["inference", "fine-tuning", "RLHF", "training", "GPU", "TPU", "model serving", "vLLM", "ollama"]
+  - name: "AI Products & Startups"
+    keywords: ["AI startup", "AI product", "AI launch", "YC", "demo day"]
+
+sources:
+  hackernews:
+    enabled: true
+    max_stories: 30
+
+  reddit:
+    enabled: true
+    subreddits:
+      - "MachineLearning"
+      - "LocalLLaMA"
+      - "ClaudeAI"
+      - "artificial"
+      - "singularity"
+    max_posts_per_sub: 15
+
+  rss:
+    enabled: true
+    feeds:
+      - name: "Simon Willison"
+        url: "https://simonwillison.net/atom/everything/"
+      - name: "Anthropic Blog"
+        url: "https://www.anthropic.com/rss.xml"
+      - name: "OpenAI Blog"
+        url: "https://openai.com/blog/rss.xml"
+      - name: "The Batch (deeplearning.ai)"
+        url: "https://www.deeplearning.ai/the-batch/feed/"
+      - name: "Lil'Log"
+        url: "https://lilianweng.github.io/index.xml"
+      - name: "Google AI Blog"
+        url: "https://blog.google/technology/ai/rss/"
+
+  twitter:
+    enabled: false
+    bearer_token_env: "TWITTER_BEARER_TOKEN"
+    accounts:
+      - "AnthropicAI"
+      - "OpenAI"
+      - "kaborojevic"
+      - "siaborojevic"
+
+  podcasts:
+    enabled: true
+    feeds:
+      - name: "Latent Space"
+        url: "https://api.substack.com/feed/podcast/1084089.rss"
+      - name: "Lex Fridman"
+        url: "https://lexfridman.com/feed/podcast/"
