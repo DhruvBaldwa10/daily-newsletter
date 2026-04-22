@@ -77,8 +77,6 @@
   var stored = localStorage.getItem('theme');
   if (stored === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
-  } else if (stored === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', 'dark');
   }
 
   if (themeBtn) {

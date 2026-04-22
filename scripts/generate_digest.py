@@ -100,7 +100,22 @@ Now synthesize this into a daily digest following the instructions. Return only 
     if response_text.startswith("```"):
         response_text = response_text.split("\n", 1)[1].rsplit("```", 1)[0]
 
-    digest = json.loads(response_text)
+    try:
+        digest = json.loads(response_text)
+    except json.JSONDecodeError:
+        # Retry with the model asked to fix its own JSON
+        print("  JSON parse failed, asking model to fix...")
+        fix_msg = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=8192,
+            messages=[
+                {"role": "user", "content": f"The following JSON is malformed. Fix it and return ONLY valid JSON, nothing else:\n\n{response_text}"},
+            ],
+        )
+        fixed = fix_msg.content[0].text.strip()
+        if fixed.startswith("```"):
+            fixed = fixed.split("\n", 1)[1].rsplit("```", 1)[0]
+        digest = json.loads(fixed)
     digest["date"] = date_str
     digest["generated_at"] = datetime.now().isoformat()
 
