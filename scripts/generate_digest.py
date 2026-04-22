@@ -23,7 +23,7 @@ Rules:
 2. Write each section as a 200-400 word narrative — not a list of links. Tell the story of what happened and why it matters.
 3. Cite sources inline using markdown links. Every claim should link to its source.
 4. Include a final "What This All Means" section that synthesizes the day's themes into a bigger picture.
-5. Give the digest an evocative title that captures the day's overarching narrative (not just "AI News").
+5. Give the digest a short, punchy title — MAX 5-6 words. Think newspaper headline, not essay title. Examples: "Agents Break Open Source", "The Memory Wall Hits", "Claude Pushes Back".
 6. Write a 2-3 sentence subtitle/hook.
 7. Be opinionated but fair. Surface contrarian takes when they have merit.
 8. For each section, list the source URLs used (for source tags).

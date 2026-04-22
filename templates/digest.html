@@ -30,20 +30,11 @@
   <div class="container">
     <header>
       <div class="date">{{ date_formatted }}</div>
-      <h1>{{ newsletter_title }}</h1>
+      <h1>{{ title }}</h1>
       {% if subtitle %}
       <p class="subtitle">{{ subtitle }}</p>
       {% endif %}
     </header>
-
-    {% if title %}
-    <div class="intro">
-      <p><strong>{{ title }}</strong></p>
-      {% if subtitle %}
-      <p>{{ subtitle }}</p>
-      {% endif %}
-    </div>
-    {% endif %}
 
     {% for section in sections %}
     <h2>{{ section.heading }}</h2>
