@@ -54,14 +54,24 @@ def build_index(env, newsletter_title, manifest):
 
 
 def build_manifest(digests):
-    manifest = []
-    for d in sorted(digests, key=lambda x: x["date"], reverse=True):
-        manifest.append({
+    # Load existing manifest so we don't lose entries when data/ is incomplete (e.g. in CI)
+    manifest_path = DOCS_DIR / "manifest.json"
+    existing = {}
+    if manifest_path.exists():
+        with open(manifest_path) as f:
+            for entry in json.load(f):
+                existing[entry["date"]] = entry
+
+    # New digests overwrite existing entries for the same date
+    for d in digests:
+        existing[d["date"]] = {
             "date": d["date"],
             "title": d.get("title", ""),
-        })
+        }
 
-    with open(DOCS_DIR / "manifest.json", "w") as f:
+    manifest = sorted(existing.values(), key=lambda x: x["date"], reverse=True)
+
+    with open(manifest_path, "w") as f:
         json.dump(manifest, f, indent=2)
     return manifest
 
