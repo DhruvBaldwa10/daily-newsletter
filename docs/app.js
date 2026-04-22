@@ -1,4 +1,5 @@
 (function() {
+  // ── Drawer ──
   var btn = document.getElementById('hb-btn');
   var drawer = document.getElementById('hb-drawer');
   var overlay = document.getElementById('hb-overlay');
@@ -7,27 +8,27 @@
   var currentDate = window.location.pathname.match(/(\d{4}-\d{2}-\d{2})/);
   currentDate = currentDate ? currentDate[1] : null;
 
-  function toggle(open) {
+  function toggleDrawer(open) {
     btn.classList.toggle('open', open);
     drawer.classList.toggle('open', open);
     overlay.classList.toggle('open', open);
   }
 
   btn.addEventListener('click', function() {
-    toggle(!drawer.classList.contains('open'));
+    toggleDrawer(!drawer.classList.contains('open'));
   });
-  overlay.addEventListener('click', function() { toggle(false); });
+  overlay.addEventListener('click', function() { toggleDrawer(false); });
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') toggle(false);
+    if (e.key === 'Escape') toggleDrawer(false);
   });
 
-  // Try multiple manifest paths (works from /digests/ and from root)
+  // ── Manifest loading ──
   var paths = ['../manifest.json', 'manifest.json', '/daily-newsletter/manifest.json'];
   var tried = 0;
 
   function tryNext() {
     if (tried >= paths.length) {
-      list.innerHTML = '<div style="padding:16px;color:#a08c76;font-size:0.85rem;">No digests found yet.</div>';
+      list.innerHTML = '<div style="padding:16px;color:var(--color-text-secondary);font-size:0.85rem;">No digests found yet.</div>';
       return;
     }
     fetch(paths[tried] + '?v=' + Date.now())
@@ -37,14 +38,13 @@
       })
       .then(function(entries) {
         if (!entries.length) {
-          list.innerHTML = '<div style="padding:16px;color:#a08c76;font-size:0.85rem;">No digests found yet.</div>';
+          list.innerHTML = '<div style="padding:16px;color:var(--color-text-secondary);font-size:0.85rem;">No digests found yet.</div>';
           return;
         }
         list.innerHTML = entries.map(function(e) {
           var isCurrent = e.date === currentDate;
           var d = new Date(e.date + 'T00:00:00');
           var label = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-          // Figure out correct href depending on current path
           var inDigests = window.location.pathname.indexOf('/digests/') !== -1;
           var href = inDigests ? (e.date + '.html') : ('digests/' + e.date + '.html');
           return '<a href="' + href + '" class="' + (isCurrent ? 'current' : '') + '">'
@@ -60,4 +60,37 @@
   }
 
   tryNext();
+
+  // ── Progress bar ──
+  var progressBar = document.getElementById('progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = Math.min(progress, 100) + '%';
+    }, { passive: true });
+  }
+
+  // ── Dark mode toggle ──
+  var themeBtn = document.getElementById('theme-toggle');
+  var stored = localStorage.getItem('theme');
+  if (stored === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else if (stored === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function() {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  }
 })();
