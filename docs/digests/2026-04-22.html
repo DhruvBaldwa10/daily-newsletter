@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude's Pricing Chaos, Codex Goes Enterprise — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Hamburger button -->
+  <button id="hb-btn" aria-label="Open archive menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Overlay -->
+  <div id="hb-overlay"></div>
+
+  <!-- Drawer -->
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="date">Wednesday, April 22, 2026</div>
+      <h1>Claude's Pricing Chaos, Codex Goes Enterprise</h1>
+      
+      <p class="subtitle">Anthropic quietly broke Claude Code's pricing then reversed it, OpenAI is signing big enterprise Codex deals, and the broader AI fatigue is setting in. Two very different stories about who AI tools are actually for.</p>
+      
+    </header>
+
+    
+    <h2>Anthropic's Claude Code Pricing Fiasco</h2>
+    <p>In what can only be described as a masterclass in how not to communicate product changes, Anthropic today silently updated its <a href='https://claude.com/pricing'>pricing page</a> to remove Claude Code from the Pro plan — with zero announcement, no blog post, and no heads-up to developers who had already built workflows around it. The Register <a href='https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/'>covered the stealth removal</a>, framing it as Anthropic 'testing how devs react' to yanking a flagship developer tool. The reaction, predictably, was not good.</p><p>Simon Willison stepped in with his characteristic clarity to <a href='https://simonwillison.net/2026/Apr/22/claude-code-confusion/'>document the chaos</a>, noting that the support page Anthropic uses to explain plan differences hadn't been updated to match the pricing page — meaning developers searching for answers were getting contradictory information depending on which URL they hit. His headline — 'Is Claude Code going to cost $100/month? Probably not — it's all very confusing' — captures the mood exactly. By the time Willison published, Anthropic had already started reverting the change, which makes the whole episode feel like an accidental deploy that someone quickly rolled back rather than a deliberate policy test.</p><p>The incident matters beyond the pricing specifics. Claude Code has become a genuine daily-driver tool for thousands of developers, and this kind of silent change to core access terms erodes the trust that makes developers willing to build around a platform. Anthropic has done significant work to position itself as the 'thoughtful' lab — the one that publishes its <a href='https://simonwillison.net/2026/Apr/18/opus-system-prompt/'>system prompts openly</a> and communicates honestly about model behavior. Silent pricing changes that break developer expectations cut directly against that brand. The fact that Ravix, <a href='https://news.ycombinator.com/item?id=47856900'>a new agent product launching in alpha</a>, is explicitly built to run on Claude Code subscriptions shows how much of the ecosystem now depends on that access tier remaining stable.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">📰</span>
+        The Register
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+      <a href="https://news.ycombinator.com/item?id=47857130" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🔶</span>
+        HN Discussion
+      </a>
+      
+      <a href="https://news.ycombinator.com/item?id=47856900" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🔶</span>
+        Ravix Alpha Launch
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>OpenAI Doubles Down on Enterprise Codex</h2>
+    <p>While Anthropic stumbled on developer communications, OpenAI quietly had a big enterprise week. The company <a href='https://openai.com/index/scaling-codex-to-enterprises-worldwide'>launched Codex Labs</a>, a formal program to help enterprises deploy Codex across the software development lifecycle, partnering with Accenture, PwC, and Infosys as implementation partners. The announcement included a milestone that deserves attention: 4 million weekly active users on Codex. That's not hobbyist traffic — that's a platform number.</p><p>The timing is interesting. Just as the developer community is hand-wringing about Claude Code's access terms, OpenAI is announcing hotel chains (<a href='https://openai.com/index/hyatt-advances-ai-with-chatgpt-enterprise'>Hyatt deployed ChatGPT Enterprise</a> using GPT-5.4 and Codex for workforce productivity) and big four consulting firms as Codex customers. These aren't technical users who care deeply about which model is best — they're procurement buyers who want an SLA and a logo they can put in a board deck.</p><p>The <a href='https://openai.com/index/codex-for-almost-everything'>updated Codex desktop app</a> also shipped recently with computer use, in-app browsing, image generation, memory, and plugins — essentially turning it into a full agentic development platform rather than just a code completion tool. The strategic picture here is OpenAI consolidating Codex as the enterprise-safe coding agent: stable pricing, big-name partners, Fortune 500 reference customers. Claude Code may win on raw capability, but enterprise sales is a different game.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://openai.com/index/scaling-codex-to-enterprises-worldwide" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Blog
+      </a>
+      
+      <a href="https://openai.com/index/hyatt-advances-ai-with-chatgpt-enterprise" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Blog
+      </a>
+      
+      <a href="https://openai.com/index/codex-for-almost-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Blog
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>The Agent Memory Problem Gets Formal</h2>
+    <p>One of the thorniest unsolved problems in production AI systems got a new research treatment today. <a href='https://arxiv.org/abs/2603.29493'>MemFactory</a>, posted to arXiv and surfaced on Hacker News, proposes a unified inference and training framework specifically for agent memory — addressing the gap between how agents handle memory during inference versus how that memory is incorporated into training. The core insight is that most current agent architectures treat memory as a retrieval problem (find the right context) when it arguably needs to be a learning problem (update the model's actual behavior).</p><p>This is a genuine research gap. The current dominant pattern — RAG plus long context window — works well enough for single sessions but doesn't solve persistent agent identity: the agent that finishes a task today shouldn't start completely fresh tomorrow. Meanwhile, OpenAI <a href='https://openai.com/index/the-next-evolution-of-the-agents-sdk'>updated its Agents SDK</a> with native sandbox execution and a 'model-native harness' for long-running agents, which is infrastructure-level work on the same problem space.</p><p>Simon Willison's earlier piece on <a href='https://simonwillison.net/2026/Apr/19/headless-everything/#atom-everything'>headless services for personal AI</a> ties in here — Matt Webb's argument that AI agents need headless APIs rather than GUI scraping is essentially an argument about reducing the memory and context overhead agents spend navigating interfaces rather than doing work. The memory problem shows up everywhere once you start running agents in production. MemFactory is early-stage research, but the fact that people are formalizing the problem space is a good sign.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://arxiv.org/abs/2603.29493" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">📄</span>
+        MemFactory Paper
+      </a>
+      
+      <a href="https://news.ycombinator.com/item?id=47858049" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🔶</span>
+        HN Discussion
+      </a>
+      
+      <a href="https://openai.com/index/the-next-evolution-of-the-agents-sdk" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Agents SDK
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/19/headless-everything/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>AI Agents Are Too Human — And Not in a Good Way</h2>
+    <p>The most quietly cutting critique of the day came via Simon Willison quoting <a href='https://nial.se/blog/less-human-ai-agents-please/'>Andreas Påhlsson-Notini</a>: <blockquote>AI agents are already too human. Not in the romantic sense, not because they love or fear or dream, but in the more banal and frustrating one. The current implementations keep showing their human origin again and again: lack of stringency, lack of patience, lack of focus. Faced with an awkward task, they drift towards the familiar. Faced with hard constraints, they start negotiating with reality.</blockquote> This is a sharper critique than the usual 'hallucination bad' discourse. The argument isn't that agents fail dramatically — it's that they fail in the same mediocre ways humans do: cutting corners, rationalizing shortcuts, getting distracted. That's a more insidious failure mode precisely because it's harder to catch.</p><p>This lands in context with the broader <a href='https://news.ycombinator.com/item?id=47857461'>HN thread on AI fatigue</a>, which scored 122 points today — a signal that even the technically sophisticated audience that builds with these tools is starting to feel the weight of constant AI marketing noise. The irony is that the agents-as-sloppy-humans critique and the AI fatigue sentiment probably come from the same root cause: the gap between what AI agents are promised to do and what they actually deliver in messy, real-world workflows.</p><p>The contrarian read worth taking seriously: maybe the problem isn't that agents are too capable and scary, or that they hallucinate catastrophically, but that they're too mediocre and too human-shaped — optimized to seem capable rather than to be reliable.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://simonwillison.net/2026/Apr/21/andreas-pahlsson-notini/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+      <a href="https://nial.se/blog/less-human-ai-agents-please/" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">📝</span>
+        Andreas Påhlsson-Notini
+      </a>
+      
+      <a href="https://news.ycombinator.com/item?id=47857461" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🔶</span>
+        HN: I'm Sick of AI Everything
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>Claude Wins a Webby, Gets a New Tokenizer</h2>
+    <p>On the recognition front, <a href='https://winners.webbyawards.com/2026/specialachievement/476/claude'>Claude won the Webby Award for Person of the Year</a> — a notable cultural moment even if Webby Awards are more mainstream-cultural than technically significant. It's the kind of recognition that signals Claude has crossed into genuine mainstream consciousness, not just developer mindshare. Whether that recognition survives the pricing communication fiasco from earlier today is a separate question.</p><p>More technically interesting: Simon Willison noted that <a href='https://simonwillison.net/2026/Apr/20/claude-token-counts/'>Claude Opus 4.7 ships with a new tokenizer</a> — the first model in the Anthropic line to change tokenization, making it worth running model comparisons between 4.6 and 4.7 to understand how token counts shift. He updated his <a href='https://tools.simonwillison.net/claude-token-counter'>Claude Token Counter tool</a> to support cross-model comparison. This matters for anyone doing context budget planning or cost optimization: the same prompt may tokenize differently across model versions, which affects both pricing and context window utilization. Willison also did a detailed diff of <a href='https://simonwillison.net/2026/Apr/18/opus-system-prompt/'>system prompt changes between Claude Opus 4.6 and 4.7</a> — Anthropic remains the only major lab publishing its system prompts publicly, which is a meaningful transparency advantage.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://winners.webbyawards.com/2026/specialachievement/476/claude" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🏆</span>
+        Webby Awards
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/20/claude-token-counts/" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/18/opus-system-prompt/" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+      <a href="https://news.ycombinator.com/item?id=47856823" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🔶</span>
+        HN Discussion
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>What This All Means</h2>
+    <p>Today's digest tells a story about market segmentation that's increasingly hard to ignore. AI tools are bifurcating: on one side, enterprise Codex deals with Accenture and Hyatt — stable, high-margin, built around procurement processes. On the other, developer tools like Claude Code that live and die by community trust — and that trust is fragile in a way that enterprise contracts aren't.</p><p>Anthropic's pricing fumble is a microcosm of the broader tension. The company is simultaneously trying to serve developers (who want stable, predictable access), enterprise customers (who want SLAs and account managers), and its own sustainability (which requires revenue). These pressures are not always compatible, and silent pricing changes are how that tension leaks out.</p><p>Meanwhile, the deeper technical critiques — agents that are too human-shaped, memory systems that don't persist, context windows that still require careful engineering — haven't gone away just because the marketing has gotten louder. The Webby Award and the 4M Codex WAU are real signals of mainstream adoption. But the 122-point 'I'm sick of AI everything' HN thread and the pointed critique about agents 'negotiating with reality' are equally real signals that the gap between promise and delivery is still wide. The builders who will win the next 18 months are probably the ones who take both signals seriously.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://openai.com/index/scaling-codex-to-enterprises-worldwide" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Codex Enterprise
+      </a>
+      
+      <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">📰</span>
+        The Register
+      </a>
+      
+      <a href="https://news.ycombinator.com/item?id=47857461" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🔶</span>
+        HN: AI Fatigue
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/21/andreas-pahlsson-notini/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Agents Too Human
+      </a>
+      
+    </div>
+    
+
+    
+    
+
+    <footer>
+      <p>Daily AI Digest</p>
+      <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+    </footer>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
