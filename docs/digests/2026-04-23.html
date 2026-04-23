@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex Scales, Claude Leaks — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Top controls -->
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <!-- Overlay -->
+  <div id="hb-overlay"></div>
+
+  <!-- Drawer -->
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="date">Thursday, April 23, 2026</div>
+      <h1>Codex Scales, Claude Leaks</h1>
+      
+      <p class="subtitle">OpenAI goes all-in on enterprise Codex with 4M weekly users, while Anthropic's secretive Claude Mythos gets exposed by a Discord group. Meanwhile, pricing chaos and open-weight models keep builders on their toes.</p>
+      
+    </header>
+
+    
+    <h2>OpenAI's Codex Moment: From Dev Tool to Enterprise Platform</h2>
+    <p>OpenAI had a big week for Codex, and today's digest is catching up on what's becoming a genuine enterprise play. The company <a href='https://openai.com/index/scaling-codex-to-enterprises-worldwide'>launched Codex Labs</a> with partnerships spanning Accenture, PwC, and Infosys — the kind of SI muscle that signals a serious bid for Fortune 500 deployment. The stat that matters: 4 million weekly active Codex users, a number that puts it firmly in the 'real traction' category rather than hype territory.</p><p>The technical depth behind this push is real. <a href='https://openai.com/index/speeding-up-agentic-workflows-with-websockets'>A new engineering post</a> breaks down how the Codex agent loop uses WebSockets and connection-scoped caching to slash API overhead and reduce model latency — exactly the kind of infrastructure work that separates toys from production systems. Separately, <a href='https://openai.com/index/introducing-workspace-agents-in-chatgpt'>Workspace Agents in ChatGPT</a> landed as a Codex-powered offering for automating complex team workflows, running in the cloud and connecting to enterprise tooling securely. The <a href='https://openai.com/academy/workspace-agents'>accompanying Academy content</a> signals OpenAI is betting on self-serve education as a distribution channel.</p><p>The picture is of a company rapidly productizing its coding AI across every surface: the desktop <a href='https://openai.com/index/codex-for-almost-everything'>Codex app</a> now adds computer use, in-app browsing, image generation, memory, and plugins. Whether this breadth is strength or sprawl is a fair question — but the enterprise momentum is hard to argue with.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://openai.com/index/scaling-codex-to-enterprises-worldwide" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Blog
+      </a>
+      
+      <a href="https://openai.com/index/speeding-up-agentic-workflows-with-websockets" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">⚙️</span>
+        OpenAI Engineering
+      </a>
+      
+      <a href="https://openai.com/index/introducing-workspace-agents-in-chatgpt" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Blog
+      </a>
+      
+      <a href="https://openai.com/index/codex-for-almost-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Blog
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>Claude Mythos Leaks — and Fixes 271 Firefox Bugs</h2>
+    <p>Anthropic's Claude Mythos — a model the company has said essentially nothing about publicly — had an eventful day of unwanted attention. A Discord group <a href='https://mashable.com/article/discord-group-accesses-claude-mythos-claims'>claims to have accessed Claude Mythos Preview</a> simply by guessing the right URL or endpoint location, which is either an impressive bit of OSINT or an embarrassing access control failure depending on your reading. Anthropic has not officially commented.</p><p>The irony is that Mythos's actual capabilities are impressive enough on their own merits. As <a href='https://simonwillison.net/2026/Apr/22/bobby-holley/#atom-everything'>Simon Willison highlighted</a>, Mozilla applied an early version of Claude Mythos Preview to Firefox as part of the Anthropic collaboration — and the result was 271 security vulnerabilities identified and fixed in Firefox 150. Bobby Holley of Mozilla called the experience 'a hopeful one for teams who want to move fast on security.' That's a remarkable real-world signal: a model finding hundreds of CVE-class bugs in a major open-source browser in a single pass.</p><p>Separately, Anthropic had a messy pricing moment: the company <a href='https://simonwillison.net/2026/Apr/22/claude-code-confusion/#atom-everything'>quietly updated its pricing page</a> to suggest Claude Code would require a $100/month plan — without any announcement — then reversed course. Simon Willison documented the whole confusion in real time. The episode highlights how Anthropic's communication around Claude Code remains notably opaque compared to competitors like GitHub, which <a href='https://simonwillison.net/2026/Apr/22/changes-to-github-copilot/#atom-everything'>put out a formal Copilot pricing announcement</a> the same day.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://mashable.com/article/discord-group-accesses-claude-mythos-claims" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">📰</span>
+        Mashable
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/22/bobby-holley/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/22/changes-to-github-copilot/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>Open Weights Keep Punching Up: Qwen3.6-27B Enters the Chat</h2>
+    <p>The open-weight model race continues to compress the gap between boutique dense models and massive MoE giants. Qwen's latest, <a href='https://simonwillison.net/2026/Apr/22/qwen36-27b/#atom-everything'>Qwen3.6-27B</a>, makes a bold claim: flagship-level agentic coding performance that surpasses the previous-generation Qwen3.5-397B-A17B — a model with 397 billion total parameters and 17B active — across all major coding benchmarks. If accurate, that's a stunning efficiency ratio: a 27B dense model outperforming a nearly 400B MoE on coding tasks.</p><p>Simon Willison notes the model is available on Hugging Face and accessible via OpenRouter, where his <a href='https://simonwillison.net/2026/Apr/20/llm-openrouter/#atom-everything'>freshly updated llm-openrouter 0.6</a> tool makes it easy to test. The broader pattern here is significant: each new Qwen release chips away at the 'you need massive compute to get frontier performance' narrative. For developers building on open weights — whether for cost, privacy, or customization reasons — this is genuinely good news.</p><p>The counter-argument worth surfacing: 'flagship-level coding' benchmark claims have a history of not surviving contact with real-world messy codebases. But the trajectory of open-weight models over the past 18 months has consistently outrun skeptics' expectations, and Qwen specifically has been a reliable benchmark performer. Worth testing before dismissing.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://simonwillison.net/2026/Apr/22/qwen36-27b/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/20/llm-openrouter/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>The MCP Ecosystem Is Being Built Out in Real Time</h2>
+    <p>The Model Context Protocol is quietly accumulating an ecosystem. Today's Hacker News showed multiple independent MCP projects launched in the same overnight window: a <a href='https://github.com/Backspace-me/sportscore-mcp'>live sports data MCP for Claude</a>, a testing tool called <a href='https://m8ven.ai/preflight'>Preflight</a> for validating MCP servers before submitting to Claude or OpenAI directories, and a <a href='https://claude.com/blog/building-agents-that-reach-production-systems-with-mcp'>blog post from Anthropic</a> on building agents that reach production systems via MCP.</p><p>The Preflight tool is particularly interesting as a meta-layer: as more developers ship MCP servers into official directories, quality control becomes a real problem. A testing harness that runs conformance checks before submission is the kind of boring-but-necessary infrastructure that mature ecosystems need. Its existence signals the MCP directory is becoming crowded enough to warrant gatekeeping tooling.</p><p>Meanwhile, the <a href='https://github.com/ocherry341/better-skills'>better-skills</a> agent skill manager appearing on HN the same day — offering profiles and versioning for agent capabilities — points to another emerging layer: agent skill management as its own discipline. As agents accumulate more tools and capabilities, managing, versioning, and routing those skills becomes non-trivial. Expect this to become a category.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://m8ven.ai/preflight" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🛠️</span>
+        Preflight / HN
+      </a>
+      
+      <a href="https://github.com/Backspace-me/sportscore-mcp" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">💻</span>
+        GitHub
+      </a>
+      
+      <a href="https://claude.com/blog/building-agents-that-reach-production-systems-with-mcp" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        Anthropic Blog
+      </a>
+      
+      <a href="https://github.com/ocherry341/better-skills" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">💻</span>
+        GitHub
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>Google Bets on Specialized Silicon for the Agentic Era</h2>
+    <p>Google quietly dropped a significant infrastructure announcement: <a href='https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/'>two new 8th-generation TPUs</a>, specifically designed for what Google is calling 'the agentic era.' The two chips — the TPU 8t and TPU 8i — represent a deliberate architectural fork: one optimized for training, one for inference, reflecting the reality that agentic workloads have a fundamentally different compute profile than batch inference or model training.</p><p>This is the right instinct. Agentic workflows — where models are calling tools, waiting on results, and maintaining state across long contexts — have latency and memory access patterns that differ substantially from standard request-response inference. Purpose-built silicon for this workload class could meaningfully improve the economics of running multi-step agent loops at scale.</p><p>The timing is notable: Google is making this announcement as OpenAI scales Codex to enterprise and Anthropic pushes Claude into production systems via MCP. The infrastructure layer is becoming a competitive differentiator again, not just a commodity. For teams running large agentic deployments, Google Cloud's TPU roadmap is now worth watching more closely than it was six months ago.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🔬</span>
+        Google AI Blog
+      </a>
+      
+    </div>
+    
+
+    
+    <hr class="section-divider">
+    
+    
+    <h2>What This All Means</h2>
+    <p>Today's AI landscape is a story about layers maturing simultaneously. At the infrastructure layer, Google is shipping purpose-built silicon for agentic workloads — a signal that the agentic era is real enough to warrant hardware investment. At the platform layer, OpenAI is turning Codex into a full enterprise motion with SI partnerships and 4M WAUs, while Anthropic continues to operate with mystifying opacity around pricing and model releases. At the open-weight layer, Qwen3.6-27B is compressing the efficiency frontier again, making capable coding models accessible without frontier API costs.</p><p>The MCP ecosystem's rapid accumulation of tooling — from sports data servers to testing harnesses — suggests the protocol is winning the 'how do agents talk to systems' battle through developer momentum rather than top-down mandate. And the Claude Mythos Firefox story is a preview of what AI-assisted security auditing looks like at scale: 271 vulnerabilities from a single model pass is not a party trick, it's a workflow change for security teams.</p><p>The contrarian note worth sitting with: as these layers accumulate complexity — specialized chips, agent skill managers, MCP directories, multi-tier pricing — the cognitive overhead for builders is growing fast. The teams that win in this environment won't just be the ones with the best models; they'll be the ones who figure out how to manage that complexity without it eating their velocity.</p>
+
+    
+    <div class="source-list">
+      
+      <a href="https://openai.com/index/scaling-codex-to-enterprises-worldwide" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🤖</span>
+        OpenAI Blog
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/22/bobby-holley/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+      <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">🔬</span>
+        Google AI Blog
+      </a>
+      
+      <a href="https://simonwillison.net/2026/Apr/22/qwen36-27b/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+        <span class="source-icon">✍️</span>
+        Simon Willison
+      </a>
+      
+    </div>
+    
+
+    
+    
+
+    <footer>
+      <p>Daily AI Digest</p>
+      <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+    </footer>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
