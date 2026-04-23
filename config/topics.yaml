@@ -4,17 +4,23 @@ newsletter:
 
 topics:
   - name: "AI & LLMs"
-    keywords: ["artificial intelligence", "large language model", "LLM", "GPT", "Claude", "Gemini", "foundation model"]
+    keywords: ["artificial intelligence", "large language model", "LLM", "GPT", "Claude", "Gemini", "foundation model", "frontier model"]
   - name: "AI Tools & SDKs"
-    keywords: ["Claude Code", "Codex", "Cursor", "Copilot", "AI SDK", "Anthropic SDK", "OpenAI SDK", "Vercel AI"]
+    keywords: ["Claude Code", "Codex", "Cursor", "Copilot", "AI SDK", "Anthropic SDK", "OpenAI SDK", "Vercel AI", "Windsurf", "Replit Agent"]
   - name: "Context Engineering"
-    keywords: ["context window", "context engineering", "RAG", "retrieval augmented", "prompt engineering", "system prompt"]
-  - name: "Multiplayer AI"
-    keywords: ["multiplayer AI", "multi-agent", "agent swarm", "collaborative AI", "AI orchestration", "MCP", "model context protocol"]
+    keywords: ["context window", "context engineering", "RAG", "retrieval augmented", "prompt engineering", "system prompt", "MCP", "model context protocol"]
+  - name: "AI Agents & Multi-Agent"
+    keywords: ["AI agent", "multi-agent", "agent swarm", "collaborative AI", "AI orchestration", "tool use", "function calling", "computer use"]
   - name: "AI Infrastructure"
     keywords: ["inference", "fine-tuning", "RLHF", "training", "GPU", "TPU", "model serving", "vLLM", "ollama"]
-  - name: "AI Products & Startups"
-    keywords: ["AI startup", "AI product", "AI launch", "YC", "demo day"]
+  - name: "AI Product & Go-to-Market"
+    keywords: ["AI product", "AI pricing", "AI startup", "AI launch", "YC", "product-led growth", "AI wrapper", "AI moat", "AI UX"]
+  - name: "Evals & Benchmarks"
+    keywords: ["benchmark", "eval", "leaderboard", "MMLU", "HumanEval", "arena", "model comparison", "red teaming"]
+  - name: "AI Safety & Regulation"
+    keywords: ["AI safety", "alignment", "AI regulation", "AI policy", "EU AI Act", "responsible AI", "AI governance"]
+  - name: "AI UX & Design Patterns"
+    keywords: ["AI UX", "AI interface", "copilot pattern", "chat interface", "AI onboarding", "human-in-the-loop", "AI design"]
 
 sources:
   hackernews:
@@ -27,25 +33,50 @@ sources:
       - "MachineLearning"
       - "LocalLLaMA"
       - "ClaudeAI"
+      - "OpenAI"
+      - "ChatGPT"
+      - "Anthropic"
+      - "cursor"
       - "artificial"
       - "singularity"
-    max_posts_per_sub: 15
+    max_posts_per_sub: 10
 
   rss:
     enabled: true
     feeds:
+      # Builder / practitioner voices
       - name: "Simon Willison"
         url: "https://simonwillison.net/atom/everything/"
+      - name: "Chip Huyen"
+        url: "https://huyenchip.com/feed.xml"
+      - name: "Eugene Yan"
+        url: "https://eugeneyan.com/rss/"
+      - name: "Hamel Husain"
+        url: "https://hamel.dev/feed.xml"
+
+      # Research-to-product bridge
+      - name: "Ahead of AI (Sebastian Raschka)"
+        url: "https://magazine.sebastianraschka.com/feed"
+      - name: "Interconnects (Nathan Lambert)"
+        url: "https://www.interconnects.ai/feed"
+      - name: "The Gradient"
+        url: "https://thegradient.pub/rss/"
+
+      # Company blogs
       - name: "Anthropic Blog"
         url: "https://www.anthropic.com/rss.xml"
       - name: "OpenAI Blog"
         url: "https://openai.com/blog/rss.xml"
+      - name: "Google AI Blog"
+        url: "https://blog.google/technology/ai/rss/"
+
+      # PM-oriented newsletters
+      - name: "Latent Space (swyx)"
+        url: "https://www.latent.space/feed"
       - name: "The Batch (deeplearning.ai)"
         url: "https://www.deeplearning.ai/the-batch/feed/"
       - name: "Lil'Log"
         url: "https://lilianweng.github.io/index.xml"
-      - name: "Google AI Blog"
-        url: "https://blog.google/technology/ai/rss/"
 
   twitter:
     enabled: false
@@ -53,13 +84,20 @@ sources:
     accounts:
       - "AnthropicAI"
       - "OpenAI"
-      - "kaborojevic"
-      - "siaborojevic"
+      - "swaborojevic"
 
   podcasts:
     enabled: true
     feeds:
       - name: "Latent Space"
         url: "https://api.substack.com/feed/podcast/1084089.rss"
+      - name: "Lenny's Podcast"
+        url: "https://api.substack.com/feed/podcast/10434.rss"
+      - name: "Dwarkesh Patel"
+        url: "https://api.substack.com/feed/podcast/968538.rss"
+      - name: "No Priors"
+        url: "https://feeds.transistor.fm/no-priors-ai-machine-learning-technology-a16z"
+      - name: "Cognitive Revolution"
+        url: "https://feeds.buzzsprout.com/2015582.rss"
       - name: "Lex Fridman"
         url: "https://lexfridman.com/feed/podcast/"
