@@ -40,16 +40,18 @@
   </div>
 
   <div class="container">
-    <header>
-      <h1>{{ newsletter_title }}</h1>
-      <p class="subtitle">A daily synthesis of the most important developments in AI, LLMs, tools, and infrastructure — curated from Hacker News, Reddit, blogs, podcasts, and more.</p>
-    </header>
+    <div class="content-card">
+      <div class="digest-header">
+        <h1>{{ newsletter_title }}</h1>
+        <p class="subtitle">A daily synthesis of the most important developments in AI, LLMs, tools, and infrastructure — curated from Hacker News, Reddit, blogs, podcasts, and more.</p>
+      </div>
 
-    <div class="intro">
-      <p>Click the menu in the top-left to browse past digests, or check back tomorrow for the latest edition.</p>
-      {% if latest_date %}
-      <p><a href="digests/{{ latest_date }}.html">Read the latest digest &rarr;</a></p>
-      {% endif %}
+      <div class="intro">
+        <p>Click the menu in the top-left to browse past digests, or check back tomorrow for the latest edition.</p>
+        {% if latest_date %}
+        <p><a href="digests/{{ latest_date }}.html">Read the latest digest &rarr;</a></p>
+        {% endif %}
+      </div>
     </div>
   </div>
 

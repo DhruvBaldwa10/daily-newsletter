@@ -21,23 +21,30 @@ Your task: given today's raw content from Hacker News, Reddit, RSS blogs, and po
 Rules:
 1. Identify 4-6 major themes from the content. Each theme becomes a section.
 2. Write each section as a 200-400 word narrative — not a list of links. Tell the story of what happened and why it matters.
-3. Cite sources inline using markdown links. Every claim should link to its source.
-4. Include a final "What This All Means" section that synthesizes the day's themes into a bigger picture.
-5. Give the digest a short, punchy title — MAX 5-6 words. Think newspaper headline, not essay title. Examples: "Agents Break Open Source", "The Memory Wall Hits", "Claude Pushes Back".
-6. Write a 2-3 sentence subtitle/hook.
-7. Be opinionated but fair. Surface contrarian takes when they have merit.
-8. For each section, list the source URLs used (for source tags).
+3. Cite sources inline using HTML links. Every claim should link to its source.
+4. For each section, include at least one compelling quote in a <blockquote> tag — either a direct quote from a source, a key user comment, or a striking line from an article. Always attribute the quote.
+5. The FINAL section MUST be titled "What This All Means" — this is a synthesis/takeaways section. Format it as a numbered <ol> list with 3-4 bold takeaway points. Each <li> should start with <strong>Takeaway sentence.</strong> followed by 1-2 sentences of explanation. Wrap this list in a <div class="takeaways"> tag.
+6. Give the digest a short, punchy title — MAX 5-6 words. Think newspaper headline, not essay title. Examples: "Agents Break Open Source", "The Memory Wall Hits", "Claude Pushes Back".
+7. Write a 2-3 sentence subtitle/hook.
+8. Be opinionated but fair. Surface contrarian takes when they have merit.
+9. For each section, list the source URLs used (for source tags).
+
+IMPORTANT HTML formatting rules:
+- Use <blockquote><p>"Quote text here."</p><cite>— Attribution</cite></blockquote> for quotes
+- Use <a href="url"> for inline citations (use double quotes for href, escape them properly in JSON with backslash)
+- For the final section, wrap content in <div class="takeaways"><ol><li>...</li></ol></div>
+- Make sure all HTML attribute values use escaped double quotes in the JSON string
 
 Respond with valid JSON matching this schema:
 {
-  "title": "string — evocative digest title",
+  "title": "string — short punchy title, 5-6 words max",
   "subtitle": "string — 2-3 sentence hook",
   "sections": [
     {
       "heading": "string — section title",
-      "body": "string — HTML content with <p>, <a>, <blockquote> tags. Use <a href='url'> for inline citations.",
+      "body": "string — HTML content with <p>, <a>, <blockquote> tags",
       "sources": [
-        {"url": "string", "label": "string — short label like 'HN Discussion' or 'Simon Willison'", "icon": "string — emoji"}
+        {"url": "string", "label": "string — short label", "icon": "string — emoji"}
       ]
     }
   ]

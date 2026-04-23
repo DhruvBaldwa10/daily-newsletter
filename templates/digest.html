@@ -45,38 +45,45 @@
   </div>
 
   <div class="container">
-    <header>
-      <div class="date">{{ date_formatted }}</div>
-      <h1>{{ title }}</h1>
-      {% if subtitle %}
-      <p class="subtitle">{{ subtitle }}</p>
+    <div class="content-card">
+      <div class="digest-header">
+        <div class="date">{{ date_formatted }}</div>
+        <h1>{{ title }}</h1>
+        {% if subtitle %}
+        <p class="subtitle">{{ subtitle }}</p>
+        {% endif %}
+      </div>
+
+      {% for section in sections %}
+      <h2>{{ section.heading }}</h2>
+      {{ section.body }}
+
+      {% if section.sources %}
+      <div class="source-list">
+        {% for src in section.sources %}
+        <a href="{{ src.url }}" class="source-tag" target="_blank" rel="noopener">
+          <span class="source-icon">{{ src.icon }}</span>
+          {{ src.label }}
+        </a>
+        {% endfor %}
+      </div>
       {% endif %}
-    </header>
 
-    {% for section in sections %}
-    <h2>{{ section.heading }}</h2>
-    {{ section.body }}
-
-    {% if section.sources %}
-    <div class="source-list">
-      {% for src in section.sources %}
-      <a href="{{ src.url }}" class="source-tag" target="_blank" rel="noopener">
-        <span class="source-icon">{{ src.icon }}</span>
-        {{ src.label }}
-      </a>
+      {% if not loop.last %}
+      <hr class="section-divider">
+      {% endif %}
       {% endfor %}
+
+      <!-- Sources accordion -->
+      <div class="sources-accordion">
+        <h2>Sources</h2>
+        <div class="source-groups" id="sourceGroups"></div>
+      </div>
+
+      <footer>
+        <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+      </footer>
     </div>
-    {% endif %}
-
-    {% if not loop.last %}
-    <hr class="section-divider">
-    {% endif %}
-    {% endfor %}
-
-    <footer>
-      <p>{{ newsletter_title }}</p>
-      <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
-    </footer>
   </div>
 
   <script src="../app.js"></script>
