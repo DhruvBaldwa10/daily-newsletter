@@ -18,10 +18,8 @@
 </head>
 <body>
 
-  <!-- Progress bar -->
   <div id="progress-bar"></div>
 
-  <!-- Top controls -->
   <div class="top-controls">
     <button id="hb-btn" aria-label="Open archive menu">
       <span></span><span></span><span></span>
@@ -32,10 +30,7 @@
     </button>
   </div>
 
-  <!-- Overlay -->
   <div id="hb-overlay"></div>
-
-  <!-- Drawer -->
   <div id="hb-drawer">
     <div id="hb-header">
       <h2>Archive</h2>
@@ -44,8 +39,9 @@
     <div id="hb-list">Loading&hellip;</div>
   </div>
 
-  <div class="container">
-    <div class="content-card">
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
       <div class="digest-header">
         <div class="date">Wednesday, April 22, 2026</div>
         <h1>Anthropic Squeezes Pro Users Hard</h1>
@@ -53,234 +49,257 @@
         <p class="subtitle">Anthropic's quiet removal of Claude Code from its $20 Pro plan ignited a firestorm across every AI community, while GPT Image 2 stole the spotlight and the local LLM ecosystem quietly matured into a credible alternative stack. The AI industry's pricing wars are here, and developers are the ones getting squeezed.</p>
         
       </div>
+    </div>
+  </div>
 
-      
-      <h2>Claude Code Gets Axed from Pro — Backlash Is Instant</h2>
-      <p>What started as a quiet change to a pricing page became the dominant story of the day. <a href="https://www.reddit.com/r/ClaudeAI/comments/1srzhd7/psa_claude_pro_no_longer_lists_claude_code_as_an/">Redditor randomswifter noticed</a> that Claude Code had vanished from the Claude Pro plan's feature list, triggering nearly 600 comments on r/ClaudeAI alone and a <a href="https://news.ycombinator.com/item?id=47854477">411-point thread on Hacker News</a>. The story was covered by <a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/">Where's Your Ed At</a> and <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/">The Register</a>, who framed it as a deliberate test of developer tolerance.</p><p>Anthropic eventually responded, framing it as a small A/B test. <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/">The official line</a>: they're only testing this on roughly 2% of new "prosumer" signups, and existing Pro and Max subscribers are unaffected. The reasoning given was that Claude Code, Cowork, and long-running async agents have dramatically changed what a subscription actually costs to serve — Max was originally designed for "heavy chat usage, that's it."</p><p>That explanation did little to calm the community. On r/singularity, the top framing was blunt: <a href="https://www.reddit.com/r/singularity/comments/1ss4qsb/anthropic_has_appeared_to_begin_testing_removing/">"Anthropic continues to indirectly tell us they have 0 compute."</a> Meanwhile, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss23b8/claude_code_removed_from_claude_pro_plan_better/">r/LocalLLaMA immediately pivoted</a> to recommending Kimi K2.6 via OpenCode as a $20/month replacement — arguably getting more tokens for the price.</p>
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Claude Code Gets Axed from Pro — Backlash Is Instant</h2>
+          <p>What started as a quiet change to a pricing page became the dominant story of the day. <a href="https://www.reddit.com/r/ClaudeAI/comments/1srzhd7/psa_claude_pro_no_longer_lists_claude_code_as_an/">Redditor randomswifter noticed</a> that Claude Code had vanished from the Claude Pro plan's feature list, triggering nearly 600 comments on r/ClaudeAI alone and a <a href="https://news.ycombinator.com/item?id=47854477">411-point thread on Hacker News</a>. The story was covered by <a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/">Where's Your Ed At</a> and <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/">The Register</a>, who framed it as a deliberate test of developer tolerance.</p><p>Anthropic eventually responded, framing it as a small A/B test. <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/">The official line</a>: they're only testing this on roughly 2% of new "prosumer" signups, and existing Pro and Max subscribers are unaffected. The reasoning given was that Claude Code, Cowork, and long-running async agents have dramatically changed what a subscription actually costs to serve — Max was originally designed for "heavy chat usage, that's it."</p><p>That explanation did little to calm the community. On r/singularity, the top framing was blunt: <a href="https://www.reddit.com/r/singularity/comments/1ss4qsb/anthropic_has_appeared_to_begin_testing_removing/">"Anthropic continues to indirectly tell us they have 0 compute."</a> Meanwhile, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss23b8/claude_code_removed_from_claude_pro_plan_better/">r/LocalLLaMA immediately pivoted</a> to recommending Kimi K2.6 via OpenCode as a $20/month replacement — arguably getting more tokens for the price.</p>
 <blockquote><p>"For clarity, we're running a small test on ~2% of new prosumer signups. Existing Pro and Max subscribers aren't affected. When we launched Max a year ago, it didn't include Claude Code, Cowork didn't exist, and agents that run for hours weren't a thing."</p><cite>— Anthropic official response, via r/ClaudeAI</cite></blockquote>
 <p>The incident also surfaced a parallel grievance: <a href="https://news.ycombinator.com/item?id=47853021">Anthropic banning organizations without warning</a>, a separate HN thread that gained little traction numerically but pointed to a broader trust deficit the company is accumulating with its developer base.</p>
 
-      
-      <div class="source-list">
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1srzhd7/psa_claude_pro_no_longer_lists_claude_code_as_an/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          r/ClaudeAI PSA thread
-        </a>
-        
-        <a href="https://news.ycombinator.com/item?id=47854477" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🟠</span>
-          HN thread #1
-        </a>
-        
-        <a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">📰</span>
-          Where's Your Ed At
-        </a>
-        
-        <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">📰</span>
-          The Register
-        </a>
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Anthropic response thread
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss23b8/claude_code_removed_from_claude_pro_plan_better/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          LocalLLaMA alternatives
-        </a>
-        
-      </div>
-      
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1srzhd7/psa_claude_pro_no_longer_lists_claude_code_as_an/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              r/ClaudeAI PSA thread
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=47854477" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🟠</span>
+              HN thread #1
+            </a>
+            
+            <a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Where's Your Ed At
+            </a>
+            
+            <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              The Register
+            </a>
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Anthropic response thread
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss23b8/claude_code_removed_from_claude_pro_plan_better/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              LocalLLaMA alternatives
+            </a>
+            
+          </div>
+          
 
-      
-      <hr class="section-divider">
-      
-      
-      <h2>GPT Image 2 Drops and Immediately Dominates the Conversation</h2>
-      <p>While the Anthropic drama dominated text-AI discourse, OpenAI quietly launched GPT Image 2 and the results detonated across r/singularity. <a href="https://www.reddit.com/r/singularity/comments/1srvo8i/the_new_chatgpt_images_model_is_the_new_standard/">Multiple</a> <a href="https://www.reddit.com/r/singularity/comments/1sry7k9/gpt_image_2_has_the_biggest_jump_in_quality_ever/">high-scoring threads</a> declared it the new photorealism standard, with users sharing examples showing unprecedented character consistency, clean text rendering, and successful generation of copyrighted characters and public figures — at least for now.</p><p>The community consensus was unusually strong: this represents the largest quality jump in a single image model release anyone could remember. <a href="https://www.reddit.com/r/singularity/comments/1sry9cb/images_2_is_so_far_okay_with_copyrighted/">One thread</a> specifically highlighted its apparent willingness to render recognizable IP, a capability previous models had been heavily restricted on. Whether that policy holds is a different question.</p>
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GPT Image 2 Drops and Immediately Dominates the Conversation</h2>
+          <p>While the Anthropic drama dominated text-AI discourse, OpenAI quietly launched GPT Image 2 and the results detonated across r/singularity. <a href="https://www.reddit.com/r/singularity/comments/1srvo8i/the_new_chatgpt_images_model_is_the_new_standard/">Multiple</a> <a href="https://www.reddit.com/r/singularity/comments/1sry7k9/gpt_image_2_has_the_biggest_jump_in_quality_ever/">high-scoring threads</a> declared it the new photorealism standard, with users sharing examples showing unprecedented character consistency, clean text rendering, and successful generation of copyrighted characters and public figures — at least for now.</p><p>The community consensus was unusually strong: this represents the largest quality jump in a single image model release anyone could remember. <a href="https://www.reddit.com/r/singularity/comments/1sry9cb/images_2_is_so_far_okay_with_copyrighted/">One thread</a> specifically highlighted its apparent willingness to render recognizable IP, a capability previous models had been heavily restricted on. Whether that policy holds is a different question.</p>
 <blockquote><p>"GPT image 2 has the biggest jump in quality ever recorded. Open AI really cooked with this one. Nothing compares even remotely."</p><cite>— u/TheRanker13, r/singularity</cite></blockquote>
 <p>The timing was notable. With Anthropic stumbling on developer trust and pricing, OpenAI landed a product win in a different vertical entirely. The image generation capability gap has narrowed dramatically with competitors like Midjourney and Stable Diffusion in recent months, but Image 2 appears to have reopened it. <a href="https://twitter.com/arena/status/2046670703311884548">The Arena leaderboard</a> registered the launch as well. Google, meanwhile, launched <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/">Deep Research and Deep Research Max</a> on the same day — a sign that the big labs are now releasing on near-weekly cadences with no coordination or breathing room for the ecosystem to absorb changes.</p>
 
-      
-      <div class="source-list">
-        
-        <a href="https://www.reddit.com/r/singularity/comments/1sry7k9/gpt_image_2_has_the_biggest_jump_in_quality_ever/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          GPT Image 2 quality thread
-        </a>
-        
-        <a href="https://www.reddit.com/r/singularity/comments/1srvo8i/the_new_chatgpt_images_model_is_the_new_standard/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Photorealism standard thread
-        </a>
-        
-        <a href="https://www.reddit.com/r/singularity/comments/1sry9cb/images_2_is_so_far_okay_with_copyrighted/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Copyrighted characters thread
-        </a>
-        
-        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🌐</span>
-          Google Deep Research launch
-        </a>
-        
-      </div>
-      
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/singularity/comments/1sry7k9/gpt_image_2_has_the_biggest_jump_in_quality_ever/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              GPT Image 2 quality thread
+            </a>
+            
+            <a href="https://www.reddit.com/r/singularity/comments/1srvo8i/the_new_chatgpt_images_model_is_the_new_standard/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Photorealism standard thread
+            </a>
+            
+            <a href="https://www.reddit.com/r/singularity/comments/1sry9cb/images_2_is_so_far_okay_with_copyrighted/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Copyrighted characters thread
+            </a>
+            
+            <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🌐</span>
+              Google Deep Research launch
+            </a>
+            
+          </div>
+          
 
-      
-      <hr class="section-divider">
-      
-      
-      <h2>The Local LLM Ecosystem Reaches Credible Parity</h2>
-      <p>The Claude Code pricing debacle would have stung more six months ago. Today, it landed differently — because the local and open-weight model stack has quietly matured to the point where many developers have genuine alternatives. The <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/">April 2026 Best Local LLMs megathread</a> on r/LocalLLaMA (434 upvotes, 256 comments) catalogued a landscape that would have been unthinkable eighteen months ago: Qwen3.5, Gemma4, GLM-5.1 claiming SOTA-level performance, Minimax-M2.7 as an accessible Sonnet alternative, and even 1-bit models that "actually work" from PrismML.</p><p>Moonshot AI added to the momentum by <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss5j2x/moonshot_opensourced_flashkda_cutlass_kernels_for/">open-sourcing FlashKDA</a>, CUTLASS kernels for Kimi Delta Attention that achieve up to 2.22x throughput over a Triton baseline on H20 hardware. Meanwhile, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sru6zi/did_google_hide_the_best_version_of_gemma_4_e4b/">an intriguing thread</a> investigated whether Google's on-device Gemma 4 e4b model, extracted from the Android AI Edge Gallery, outperforms all publicly available quantized versions — suggesting Google may be shipping better weights to hardware than it's releasing to Hugging Face.</p>
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Local LLM Ecosystem Reaches Credible Parity</h2>
+          <p>The Claude Code pricing debacle would have stung more six months ago. Today, it landed differently — because the local and open-weight model stack has quietly matured to the point where many developers have genuine alternatives. The <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/">April 2026 Best Local LLMs megathread</a> on r/LocalLLaMA (434 upvotes, 256 comments) catalogued a landscape that would have been unthinkable eighteen months ago: Qwen3.5, Gemma4, GLM-5.1 claiming SOTA-level performance, Minimax-M2.7 as an accessible Sonnet alternative, and even 1-bit models that "actually work" from PrismML.</p><p>Moonshot AI added to the momentum by <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss5j2x/moonshot_opensourced_flashkda_cutlass_kernels_for/">open-sourcing FlashKDA</a>, CUTLASS kernels for Kimi Delta Attention that achieve up to 2.22x throughput over a Triton baseline on H20 hardware. Meanwhile, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sru6zi/did_google_hide_the_best_version_of_gemma_4_e4b/">an intriguing thread</a> investigated whether Google's on-device Gemma 4 e4b model, extracted from the Android AI Edge Gallery, outperforms all publicly available quantized versions — suggesting Google may be shipping better weights to hardware than it's releasing to Hugging Face.</p>
 <blockquote><p>"I always thought with 32GB of VRAM, the biggest models I could run were around 20GB. Man was I wrong. I just tested Qwen3.6 Q8 with 256k context on llama.cpp with --fit on... I'm still getting 57 t/s! This is literally magic."</p><cite>— u/a9udn9u, r/LocalLLaMA</cite></blockquote>
 <p>The hardware side is keeping pace. <a href="https://www.reddit.com/r/LocalLLaMA/comments/1srvqar/llamacpps_auto_fit_works_much_better_than_i/">llama.cpp's auto-fit feature</a> is apparently surprising users who assumed VRAM capacity was a hard ceiling. IBM also quietly shipped <a href="https://huggingface.co/ibm-granite/granite-4.1-8b">Granite 4.1 8B</a>, a long-context instruct model with improved tool calling, adding yet another capable option to the 8B tier.</p>
 
-      
-      <div class="source-list">
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Best Local LLMs Apr 2026
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss5j2x/moonshot_opensourced_flashkda_cutlass_kernels_for/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          FlashKDA open-source
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sru6zi/did_google_hide_the_best_version_of_gemma_4_e4b/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Google hidden Gemma weights
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1srvqar/llamacpps_auto_fit_works_much_better_than_i/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          llama.cpp auto-fit discovery
-        </a>
-        
-        <a href="https://huggingface.co/ibm-granite/granite-4.1-8b" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🤗</span>
-          Granite 4.1 8B release
-        </a>
-        
-      </div>
-      
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Best Local LLMs Apr 2026
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss5j2x/moonshot_opensourced_flashkda_cutlass_kernels_for/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              FlashKDA open-source
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sru6zi/did_google_hide_the_best_version_of_gemma_4_e4b/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Google hidden Gemma weights
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1srvqar/llamacpps_auto_fit_works_much_better_than_i/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              llama.cpp auto-fit discovery
+            </a>
+            
+            <a href="https://huggingface.co/ibm-granite/granite-4.1-8b" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              Granite 4.1 8B release
+            </a>
+            
+          </div>
+          
 
-      
-      <hr class="section-divider">
-      
-      
-      <h2>Context Engineering Over Model Size: The Data Is In</h2>
-      <p>Two separate controlled experiments published today point toward the same uncomfortable conclusion: how you structure context matters more than which model you choose — or even how many agents you throw at a problem.</p><p>A <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss7f38/we_ran_52_controlled_benchmarks_on_claude_code/">52-benchmark study on Claude Code</a> run across a real production Next.js/TypeScript/Supabase codebase found that adding a CONTRACT.md before coding sessions — a structured brief with exact interfaces, column names, import paths, SQL conventions, and explicit non-goals — cut costs 54% and raised output quality from 5/10 to 9/10. The same study found that Agent Teams cost 73–124% more than sequential approaches with zero measurable quality gain, directly challenging the multi-agent hype cycle.</p><p>Separately, <a href="https://www.reddit.com/r/ClaudeAI/comments/1srpv7c/tested_9_models_with_and_without_agent_skills/">880 evals from Tessl</a> showed that Haiku 4.5 equipped with a domain-specific skill (84.3% task success) outperformed baseline Opus 4.7 (80.5%) — the cheapest model in the lineup beating the most expensive one running blind. Cost per run: $0.12 versus $0.61.</p>
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Context Engineering Over Model Size: The Data Is In</h2>
+          <p>Two separate controlled experiments published today point toward the same uncomfortable conclusion: how you structure context matters more than which model you choose — or even how many agents you throw at a problem.</p><p>A <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss7f38/we_ran_52_controlled_benchmarks_on_claude_code/">52-benchmark study on Claude Code</a> run across a real production Next.js/TypeScript/Supabase codebase found that adding a CONTRACT.md before coding sessions — a structured brief with exact interfaces, column names, import paths, SQL conventions, and explicit non-goals — cut costs 54% and raised output quality from 5/10 to 9/10. The same study found that Agent Teams cost 73–124% more than sequential approaches with zero measurable quality gain, directly challenging the multi-agent hype cycle.</p><p>Separately, <a href="https://www.reddit.com/r/ClaudeAI/comments/1srpv7c/tested_9_models_with_and_without_agent_skills/">880 evals from Tessl</a> showed that Haiku 4.5 equipped with a domain-specific skill (84.3% task success) outperformed baseline Opus 4.7 (80.5%) — the cheapest model in the lineup beating the most expensive one running blind. Cost per run: $0.12 versus $0.61.</p>
 <blockquote><p>"A skill on the cheapest model in the lineup beat the most expensive one running blind. Cost-wise: $0.12 per Haiku-with-skill run versus $0.61 for baseline Opus."</p><cite>— u/jorkim_32, Tessl researcher, r/ClaudeAI</cite></blockquote>
 <p>Complementing this, a <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss28rj/i_built_a_graphify_skill_for_claude_code_that/">Show HN-style post on r/ClaudeAI</a> introduced Graphify, a Claude Code skill that builds a queryable AST knowledge graph of an entire codebase, claiming 71x token reduction and measurably less hallucination on large repos. It hit 32k GitHub stars. The pattern is clear: the frontier isn't bigger models or more agents — it's smarter context delivery.</p>
 
-      
-      <div class="source-list">
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss7f38/we_ran_52_controlled_benchmarks_on_claude_code/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          52 Claude Code benchmarks
-        </a>
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1srpv7c/tested_9_models_with_and_without_agent_skills/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          880 evals: skills vs model size
-        </a>
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss28rj/i_built_a_graphify_skill_for_claude_code_that/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Graphify codebase knowledge graph
-        </a>
-        
-      </div>
-      
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss7f38/we_ran_52_controlled_benchmarks_on_claude_code/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              52 Claude Code benchmarks
+            </a>
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1srpv7c/tested_9_models_with_and_without_agent_skills/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              880 evals: skills vs model size
+            </a>
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss28rj/i_built_a_graphify_skill_for_claude_code_that/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Graphify codebase knowledge graph
+            </a>
+            
+          </div>
+          
 
-      
-      <hr class="section-divider">
-      
-      
-      <h2>AI Tool Fragmentation Accelerates: Roo Code Shuts Down, Alternatives Multiply</h2>
-      <p>The AI coding tool ecosystem got more chaotic today. <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss1ls9/roo_code_hit_3_million_installs_were_shutting_it/">Roo Code announced it's shutting down</a> despite hitting 3 million VS Code installs, pivoting entirely to "Roomote" — whatever that is. The news landed with genuine community grief from users who preferred its control and transparency over Cline. At 3 million installs, this isn't a small tool dying; it's a sign of how brutal the coding assistant market has become even for products with real traction.</p><p>Meanwhile, the <a href="https://www.reddit.com/r/LocalLLaMA/comments/1srkah3/unpopular_opinion_openclaw_and_all_its_clones_are/">highest-voted thread on r/LocalLLaMA today</a> (541 upvotes) made the contrarian case that OpenClaw and its clones — the GUI wrappers layered over Claude Code and Codex-style tools — are "almost useless" for developers who already know what they're doing. The argument: they simplify the interface while introducing chaos and safety risks that experienced CLI users don't need. This is a real split in the market: power users who want raw control versus a much larger new audience for whom AI-driven code generation feels like magic.</p>
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Tool Fragmentation Accelerates: Roo Code Shuts Down, Alternatives Multiply</h2>
+          <p>The AI coding tool ecosystem got more chaotic today. <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss1ls9/roo_code_hit_3_million_installs_were_shutting_it/">Roo Code announced it's shutting down</a> despite hitting 3 million VS Code installs, pivoting entirely to "Roomote" — whatever that is. The news landed with genuine community grief from users who preferred its control and transparency over Cline. At 3 million installs, this isn't a small tool dying; it's a sign of how brutal the coding assistant market has become even for products with real traction.</p><p>Meanwhile, the <a href="https://www.reddit.com/r/LocalLLaMA/comments/1srkah3/unpopular_opinion_openclaw_and_all_its_clones_are/">highest-voted thread on r/LocalLLaMA today</a> (541 upvotes) made the contrarian case that OpenClaw and its clones — the GUI wrappers layered over Claude Code and Codex-style tools — are "almost useless" for developers who already know what they're doing. The argument: they simplify the interface while introducing chaos and safety risks that experienced CLI users don't need. This is a real split in the market: power users who want raw control versus a much larger new audience for whom AI-driven code generation feels like magic.</p>
 <blockquote><p>"It's kind of impressive for someone who has never used a CLI, Claude Code, Codex, etc. For those who already use it, it seems like something that simplified the old ones but made them much more chaotic and unsafe."</p><cite>— u/pacmanpill, r/LocalLLaMA</cite></blockquote>
 <p>On the infrastructure side, a <a href="https://news.ycombinator.com/item?id=47858049">Show HN for MemFactory</a> proposed a unified inference and training framework specifically for agent memory — a problem that becomes acute as long-running async agents become the norm. And <a href="https://www.openalmanac.org/">Almanac MCP</a> showed up on HN offering to turn Claude Code into a deep research agent via the Model Context Protocol. The tooling layer is fragmenting faster than any individual developer can track.</p>
 
-      
-      <div class="source-list">
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss1ls9/roo_code_hit_3_million_installs_were_shutting_it/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Roo Code shutdown announcement
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1srkah3/unpopular_opinion_openclaw_and_all_its_clones_are/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          OpenClaw contrarian take
-        </a>
-        
-        <a href="https://news.ycombinator.com/item?id=47858049" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🟠</span>
-          MemFactory HN
-        </a>
-        
-        <a href="https://www.openalmanac.org/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🌐</span>
-          Almanac MCP
-        </a>
-        
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss1ls9/roo_code_hit_3_million_installs_were_shutting_it/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Roo Code shutdown announcement
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1srkah3/unpopular_opinion_openclaw_and_all_its_clones_are/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              OpenClaw contrarian take
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=47858049" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🟠</span>
+              MemFactory HN
+            </a>
+            
+            <a href="https://www.openalmanac.org/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🌐</span>
+              Almanac MCP
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Anthropic's compute constraints are now a public trust problem.</strong> Framing a feature removal as an "A/B test" on 2% of new signups is technically defensible but strategically clumsy. When competitors are shipping GPT Image 2 and Kimi K2.6 simultaneously, any signal of resource scarcity gets amplified into a narrative about whether Anthropic can keep up — and the community is now writing that narrative for them.</li><li><strong>The local LLM stack is now a credible exit ramp.</strong> The combination of Qwen3.6, llama.cpp's auto-fit, Moonshot's open-source FlashKDA kernels, and Kimi K2.6 GGUFs means a developer who leaves a cloud subscription today has real alternatives with competitive performance. This is new. Six months ago it wasn't true. Pricing moves by cloud providers now carry genuine churn risk.</li><li><strong>Context engineering is the highest-ROI skill in AI development right now.</strong> Two independent data sets published today — one showing CONTRACT.md briefs cut costs 54% and raised quality 4 points, another showing cheap models with domain skills beating expensive ones running blind — confirm that structured context delivery beats model selection and agent count. If you're not building CLAUDE.md files, AGENTS.md specs, and domain skill libraries, you're leaving performance on the table.</li><li><strong>The AI tool market is consolidating around extremes, not the middle.</strong> Roo Code dying at 3 million installs while GUI wrappers proliferate for non-technical users signals a bifurcation: expert CLI-native tools on one end, no-code magic-button products on the other. Anything in the middle — sophisticated enough to confuse beginners, constrained enough to frustrate experts — is getting squeezed out.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Anthropic response
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Best Local LLMs
+            </a>
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss7f38/we_ran_52_controlled_benchmarks_on_claude_code/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Claude Code benchmarks
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss1ls9/roo_code_hit_3_million_installs_were_shutting_it/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Roo Code shutdown
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
       </div>
-      
 
-      
-      <hr class="section-divider">
-      
-      
-      <h2>What This All Means</h2>
-      <div class="takeaways"><ol><li><strong>Anthropic's compute constraints are now a public trust problem.</strong> Framing a feature removal as an "A/B test" on 2% of new signups is technically defensible but strategically clumsy. When competitors are shipping GPT Image 2 and Kimi K2.6 simultaneously, any signal of resource scarcity gets amplified into a narrative about whether Anthropic can keep up — and the community is now writing that narrative for them.</li><li><strong>The local LLM stack is now a credible exit ramp.</strong> The combination of Qwen3.6, llama.cpp's auto-fit, Moonshot's open-source FlashKDA kernels, and Kimi K2.6 GGUFs means a developer who leaves a cloud subscription today has real alternatives with competitive performance. This is new. Six months ago it wasn't true. Pricing moves by cloud providers now carry genuine churn risk.</li><li><strong>Context engineering is the highest-ROI skill in AI development right now.</strong> Two independent data sets published today — one showing CONTRACT.md briefs cut costs 54% and raised quality 4 points, another showing cheap models with domain skills beating expensive ones running blind — confirm that structured context delivery beats model selection and agent count. If you're not building CLAUDE.md files, AGENTS.md specs, and domain skill libraries, you're leaving performance on the table.</li><li><strong>The AI tool market is consolidating around extremes, not the middle.</strong> Roo Code dying at 3 million installs while GUI wrappers proliferate for non-technical users signals a bifurcation: expert CLI-native tools on one end, no-code magic-button products on the other. Anything in the middle — sophisticated enough to confuse beginners, constrained enough to frustrate experts — is getting squeezed out.</li></ol></div>
+      <!-- Sidebar panels -->
+      <aside class="col-side">
 
-      
-      <div class="source-list">
         
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Anthropic response
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Best Local LLMs
-        </a>
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1ss7f38/we_ran_52_controlled_benchmarks_on_claude_code/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Claude Code benchmarks
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ss1ls9/roo_code_hit_3_million_installs_were_shutting_it/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔴</span>
-          Roo Code shutdown
-        </a>
-        
-      </div>
-      
 
-      
-      
+        
 
-      <!-- Sources accordion -->
-      <div class="sources-accordion">
-        <h2>Sources</h2>
-        <div class="source-groups" id="sourceGroups"></div>
-      </div>
+        
 
-      <footer>
-        <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
-      </footer>
+        
+
+      </aside>
     </div>
   </div>
 

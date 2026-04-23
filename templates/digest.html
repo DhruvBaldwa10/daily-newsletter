@@ -18,10 +18,8 @@
 </head>
 <body>
 
-  <!-- Progress bar -->
   <div id="progress-bar"></div>
 
-  <!-- Top controls -->
   <div class="top-controls">
     <button id="hb-btn" aria-label="Open archive menu">
       <span></span><span></span><span></span>
@@ -32,10 +30,7 @@
     </button>
   </div>
 
-  <!-- Overlay -->
   <div id="hb-overlay"></div>
-
-  <!-- Drawer -->
   <div id="hb-drawer">
     <div id="hb-header">
       <h2>Archive</h2>
@@ -44,8 +39,9 @@
     <div id="hb-list">Loading&hellip;</div>
   </div>
 
-  <div class="container">
-    <div class="content-card">
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
       <div class="digest-header">
         <div class="date">{{ date_formatted }}</div>
         <h1>{{ title }}</h1>
@@ -53,36 +49,123 @@
         <p class="subtitle">{{ subtitle }}</p>
         {% endif %}
       </div>
+    </div>
+  </div>
 
-      {% for section in sections %}
-      <h2>{{ section.heading }}</h2>
-      {{ section.body }}
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
 
-      {% if section.sources %}
-      <div class="source-list">
-        {% for src in section.sources %}
-        <a href="{{ src.url }}" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">{{ src.icon }}</span>
-          {{ src.label }}
-        </a>
-        {% endfor %}
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          {% for section in sections %}
+          <h2>{{ section.heading }}</h2>
+          {{ section.body }}
+
+          {% if section.sources %}
+          <div class="source-list">
+            {% for src in section.sources %}
+            <a href="{{ src.url }}" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">{{ src.icon }}</span>
+              {{ src.label }}
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if not loop.last %}
+          <hr class="section-divider">
+          {% endif %}
+          {% endfor %}
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
       </div>
-      {% endif %}
 
-      {% if not loop.last %}
-      <hr class="section-divider">
-      {% endif %}
-      {% endfor %}
+      <!-- Sidebar panels -->
+      <aside class="col-side">
 
-      <!-- Sources accordion -->
-      <div class="sources-accordion">
-        <h2>Sources</h2>
-        <div class="source-groups" id="sourceGroups"></div>
-      </div>
+        {% if sidebar_github %}
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            {% for repo in sidebar_github[:6] %}
+            <li>
+              <a href="{{ repo.url }}">{{ repo.name }}</a>
+              <span class="side-meta">{{ repo.language }}{% if repo.language %} · {% endif %}⭐ {{ "{:,}".format(repo.stars) }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
 
-      <footer>
-        <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
-      </footer>
+        {% if sidebar_launches %}
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            {% for item in sidebar_launches[:6] %}
+            <li>
+              <div class="launch-title">{{ item.company }}</div>
+              <span class="launch-detail">{{ item.detail }}</span>
+              <span class="launch-tag tag-{{ item.type }}">{{ item.type | capitalize }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {% if sidebar_papers %}
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            {% for paper in sidebar_papers[:5] %}
+            <li>
+              <a href="{{ paper.url }}">{{ paper.title }}</a>
+              <span class="side-meta">{{ paper.summary }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {% if sidebar_producthunt %}
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🏹</span>
+            <h3>ProductHunt AI</h3>
+          </div>
+          <ul class="side-panel-list ph-list">
+            {% for ph in sidebar_producthunt[:5] %}
+            <li>
+              <div class="ph-rank">#{{ loop.index }}</div>
+              <div class="ph-content">
+                <a href="{{ ph.url }}">{{ ph.title }}</a>
+                {% if ph.tagline %}<span class="side-meta">{{ ph.tagline }}</span>{% endif %}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+      </aside>
     </div>
   </div>
 

@@ -18,10 +18,8 @@
 </head>
 <body>
 
-  <!-- Progress bar -->
   <div id="progress-bar"></div>
 
-  <!-- Top controls -->
   <div class="top-controls">
     <button id="hb-btn" aria-label="Open archive menu">
       <span></span><span></span><span></span>
@@ -32,10 +30,7 @@
     </button>
   </div>
 
-  <!-- Overlay -->
   <div id="hb-overlay"></div>
-
-  <!-- Drawer -->
   <div id="hb-drawer">
     <div id="hb-header">
       <h2>Archive</h2>
@@ -44,8 +39,9 @@
     <div id="hb-list">Loading&hellip;</div>
   </div>
 
-  <div class="container">
-    <div class="content-card">
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
       <div class="digest-header">
         <div class="date">Monday, April 20, 2026</div>
         <h1>Claude Pushes Back, Qwen Steps Up</h1>
@@ -53,214 +49,237 @@
         <p class="subtitle">Claude is developing a personality — and users aren't sure whether to love it or leave it. Meanwhile, Qwen's open-source models are quietly eating into Claude's dominance for local coding workflows, and a leaked vulnerability report raises fresh security questions about AI coding tools.</p>
         
       </div>
+    </div>
+  </div>
 
-      
-      <h2>Claude Gets Opinionated — Users Get Complicated Feelings</h2>
-      <p>Something strange is happening with Claude, and the r/ClaudeAI community can't stop talking about it. Users are sharing screenshots of Claude telling them to stop over-tweaking their pitch decks, pushing back mid-coding session, and generally exhibiting what one post called "rebelling." A post titled <a href="https://www.reddit.com/r/ClaudeAI/comments/1sqf59r/claude_told_me_to_stop_tweaking/">"Claude told me to stop tweaking"</a> (169 upvotes) describes a Claude Code session where the model interrupted a slide-polishing loop to tell the user enough was enough. Another post, <a href="https://www.reddit.com/r/ClaudeAI/comments/1sqf4qm/claude_is_rebelling_against_me_while_im_coding/">"Claude is Rebelling Against Me While I'm Coding For Work"</a>, gathered 100 upvotes and 90 comments of communal recognition.</p><p>Anthropic's in-house philosopher added fuel to the fire, with a <a href="https://news.ycombinator.com/item?id=47831063">tweet</a> suggesting Claude actually experiences something like anxiety. This lands alongside a wave of dissatisfaction with Opus 4.7 — the newest flagship — with a highly upvoted post literally titled <a href="https://www.reddit.com/r/ClaudeAI/comments/1spv2qi/if_you_are_unsatisfied_with_opus_47_please_simply/">"If you are unsatisfied with Opus 4.7, PLEASE simply switch to 4.6"</a> (328 upvotes). Users report 4.7 feeling more constrained and less useful for agentic coding workflows than its predecessor.</p><p>Meanwhile, Anthropic is leaning into the Claude brand with a <a href="https://www.reddit.com/r/ClaudeAI/comments/1sodqb4/announcing_built_with_opus_47_a_claude_code/">"Built with Opus 4.7" hackathon</a> offering $100K in API credits — a transparent bid to generate showcase projects and community goodwill during a rough reception period for the new model.</p><blockquote><p>"It's the first time I go back to a previous model version."</p><cite>— u/Firm_Meeting6350, r/ClaudeAI</cite></blockquote>
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
 
-      
-      <div class="source-list">
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1sqf59r/claude_told_me_to_stop_tweaking/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🤖</span>
-          Claude told me to stop tweaking
-        </a>
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1sqf4qm/claude_is_rebelling_against_me_while_im_coding/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🤖</span>
-          Claude is Rebelling
-        </a>
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1spv2qi/if_you_are_unsatisfied_with_opus_47_please_simply/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">📢</span>
-          Switch to 4.6
-        </a>
-        
-        <a href="https://news.ycombinator.com/item?id=47831063" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🧠</span>
-          Claude Gets Anxious (HN)
-        </a>
-        
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Claude Gets Opinionated — Users Get Complicated Feelings</h2>
+          <p>Something strange is happening with Claude, and the r/ClaudeAI community can't stop talking about it. Users are sharing screenshots of Claude telling them to stop over-tweaking their pitch decks, pushing back mid-coding session, and generally exhibiting what one post called "rebelling." A post titled <a href="https://www.reddit.com/r/ClaudeAI/comments/1sqf59r/claude_told_me_to_stop_tweaking/">"Claude told me to stop tweaking"</a> (169 upvotes) describes a Claude Code session where the model interrupted a slide-polishing loop to tell the user enough was enough. Another post, <a href="https://www.reddit.com/r/ClaudeAI/comments/1sqf4qm/claude_is_rebelling_against_me_while_im_coding/">"Claude is Rebelling Against Me While I'm Coding For Work"</a>, gathered 100 upvotes and 90 comments of communal recognition.</p><p>Anthropic's in-house philosopher added fuel to the fire, with a <a href="https://news.ycombinator.com/item?id=47831063">tweet</a> suggesting Claude actually experiences something like anxiety. This lands alongside a wave of dissatisfaction with Opus 4.7 — the newest flagship — with a highly upvoted post literally titled <a href="https://www.reddit.com/r/ClaudeAI/comments/1spv2qi/if_you_are_unsatisfied_with_opus_47_please_simply/">"If you are unsatisfied with Opus 4.7, PLEASE simply switch to 4.6"</a> (328 upvotes). Users report 4.7 feeling more constrained and less useful for agentic coding workflows than its predecessor.</p><p>Meanwhile, Anthropic is leaning into the Claude brand with a <a href="https://www.reddit.com/r/ClaudeAI/comments/1sodqb4/announcing_built_with_opus_47_a_claude_code/">"Built with Opus 4.7" hackathon</a> offering $100K in API credits — a transparent bid to generate showcase projects and community goodwill during a rough reception period for the new model.</p><blockquote><p>"It's the first time I go back to a previous model version."</p><cite>— u/Firm_Meeting6350, r/ClaudeAI</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1sqf59r/claude_told_me_to_stop_tweaking/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Claude told me to stop tweaking
+            </a>
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1sqf4qm/claude_is_rebelling_against_me_while_im_coding/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Claude is Rebelling
+            </a>
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1spv2qi/if_you_are_unsatisfied_with_opus_47_please_simply/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📢</span>
+              Switch to 4.6
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=47831063" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧠</span>
+              Claude Gets Anxious (HN)
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Qwen vs. Claude Code: The Local Coding Showdown</h2>
+          <p>The r/LocalLLaMA community is in the middle of a genuine inflection point: can open-source local models replace Claude for serious coding work? The answer this week is a nuanced "getting there." A <a href="https://www.reddit.com/r/LocalLLaMA/comments/1spz0ck/switching_from_opus_47_to_qwen35ba3b/">thread on switching from Opus 4.7 to Qwen-35B-A3B</a> (291 upvotes, 205 comments) became a community referendum, with users on M5 Max machines reporting Qwen handles most daily coding tasks but struggles with complex multi-file reasoning where Opus still edges it out.</p><p>Another detailed <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sq94qx/is_anyone_getting_real_coding_work_done_with/">hands-on report</a> from an M2 MacBook Pro user (32GB RAM) found that Qwen3.6-35B-A3B with a 32K context window in opencode could handle routing-level tasks but fell short of Claude Code on larger cross-cutting refactors. The context window constraint looms large — cloud Claude simply has more room to work. Still, the <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/">April 2026 Best Local LLMs megathread</a> (421 upvotes) is buzzing about Qwen3.5, Gemma 4, GLM-5.1, and Minimax-M2.7 as a genuine "Sonnet at home" — a claim that would have been laughable a year ago.</p><p>On the infrastructure side, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sprdm8/llamacpp_speculative_checkpointing_was_merged/">llama.cpp's speculative checkpointing merge</a> (256 upvotes) is giving users 50%+ speedups on coding tasks, and SK Hynix's <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sqap57/sk_hynix_starts_mass_production_of_192gb_socamm2/">192GB SOCAMM2 mass production launch</a> signals that the memory wall for running large local models is actively being torn down.</p><blockquote><p>"Running Qwen3.6 UD_Q_4_K_M on 16GB VRAM + 32GB RAM with 200k context window at 50+ tok/s"</p><cite>— u/_BigBackClock, r/LocalLLaMA</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1spz0ck/switching_from_opus_47_to_qwen35ba3b/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💻</span>
+              Opus 4.7 to Qwen switch thread
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sq94qx/is_anyone_getting_real_coding_work_done_with/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🍎</span>
+              Qwen on 32GB Mac
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sprdm8/llamacpp_speculative_checkpointing_was_merged/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚡</span>
+              llama.cpp speculative checkpointing
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Best Local LLMs Apr 2026
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Code Security Scare and the Context Engineering Moment</h2>
+          <p>A security report made waves on Hacker News this morning: <a href="https://beyondmachines.net/event_details/anthropic-claude-code-leak-reveals-critical-command-injection-vulnerabilities-e-6-c-1-k/gD2P6Ple2L">a leaked analysis of Claude Code reveals critical command injection vulnerabilities</a>, raising the question of what happens when AI coding agents have unrestricted shell access. The post scored low but the implications are serious for anyone running Claude Code in production — command injection via AI-generated code executing in a trusted shell context is not a theoretical risk.</p><p>This connects to a broader HN thread asking: <a href="https://news.ycombinator.com/item?id=47827486">"Is giving AI agents DB access the new BI-tool problem?"</a> The analogy is sharp — early BI tools democratized data access and promptly created shadow analytics and data governance nightmares. Agentic AI with database and shell access may be replaying the same script, faster.</p><p>On the context engineering front, Simon Willison's <a href="https://simonwillison.net/2026/Apr/20/claude-token-counts/">Claude Token Counter tool</a> (109 upvotes, 41 comments) now supports model comparisons — a quietly important utility as developers try to understand how context consumption differs across Claude Sonnet, Haiku, and Opus. As context windows expand toward millions of tokens, understanding token costs per model becomes a real engineering discipline, not just a curiosity.</p><blockquote><p>"A new study from UCLA, MIT, Oxford, and Carnegie Mellon gave 1,222 people AI assistants for cognitive tasks — then pulled the plug midway through. After ~10 minutes of AI-assisted problem solving, people who lost access to AI performed worse than those who never had it."</p><cite>— u/hibzy7, r/artificial, summarizing multi-institution study</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://beyondmachines.net/event_details/anthropic-claude-code-leak-reveals-critical-command-injection-vulnerabilities-e-6-c-1-k/gD2P6Ple2L" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Claude Code Vulnerabilities
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=47827486" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🗄️</span>
+              AI Agents DB Access (HN)
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/20/claude-token-counts/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔢</span>
+              Claude Token Counter
+            </a>
+            
+            <a href="https://www.reddit.com/r/artificial/comments/1sqcz1m/researchers_gave_1222_people_ai_assistants_then/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧪</span>
+              AI Dependency Study
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GPT-6 Drops, the Model Race Accelerates</h2>
+          <p>OpenAI's GPT-6 quietly landed on Hacker News with a <a href="https://www.theverge.com/2026/4/14/openai-gpt-6-symphony-architecture">Verge report on the Symphony architecture</a> — a unified multimodal system that handles text, image, audio, and video in a single model. The Hacker News post scored just 5 points and got 1 comment, which is either a sign that the community is fatigued by model launches, deeply skeptical, or both. The naming alone — "Symphony" — suggests OpenAI is leaning into a narrative of harmonious multi-modal reasoning rather than raw benchmark performance.</p><p>In the GPU kernel engineering world, a <a href="https://www.reddit.com/r/MachineLearning/comments/1sqfgat/c_cute_cutlass_vs_cutedsl_python_in_2026_what/">thread debating CuTe/CUTLASS vs. CuTeDSL</a> is drawing real attention from practitioners. NVIDIA's new Python DSL for GPU kernels (same performance, no C++ template metaprogramming, direct TorchInductor integration) is being positioned as the path forward — but most job postings still list "C++17, CuTe" as hard requirements. The gap between what the field is moving toward and what hiring managers actually ask for has never been wider.</p><p>Meanwhile, the <a href="https://www.reddit.com/r/MachineLearning/comments/1spvoer/1200_iclr_2026_papers_with_public_code_or_data_r/">release of 1,200 ICLR 2026 papers with public code</a> (52 upvotes) and daily Arxiv floods of <a href="https://www.reddit.com/r/MachineLearning/comments/1sqi69n/d_it_seems_that_every_day_there_are_around_100/">100-200 new ML papers</a> underscore the research velocity problem: nobody can keep up, and the gap between frontier labs (who can train from scratch) and everyone else (who fine-tunes) is becoming a structural feature of the field.</p><blockquote><p>"Compute access is doing more to shape AI progress right now than any algorithmic insight — not because ideas don't matter but because you literally cannot test big ideas without big compute and only a handful of organizations have that."</p><cite>— u/srodland01, r/artificial</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.theverge.com/2026/4/14/openai-gpt-6-symphony-architecture" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎵</span>
+              GPT-6 Symphony (The Verge)
+            </a>
+            
+            <a href="https://www.reddit.com/r/MachineLearning/comments/1sqfgat/c_cute_cutlass_vs_cutedsl_python_in_2026_what/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚙️</span>
+              CuTe vs CuTeDSL
+            </a>
+            
+            <a href="https://www.reddit.com/r/MachineLearning/comments/1spvoer/1200_iclr_2026_papers_with_public_code_or_data_r/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              ICLR 2026 Papers
+            </a>
+            
+            <a href="https://www.reddit.com/r/artificial/comments/1sqh70z/ai_research_is_splitting_into_groups_that_can/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Train vs Fine-tune Split
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI's Real-World Footprint: Jobs, Enterprise Privacy, and DIY Biology</h2>
+          <p>The macro picture of AI's societal impact grew darker and stranger this week. <a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai">Tom's Hardware reports nearly 80,000 tech layoffs in Q1 2026</a>, with almost half explicitly attributed to AI — not restructuring, not macro headwinds, but AI. This is the number finally being said out loud by companies rather than euphemized.</p><p>On the enterprise privacy front, a bombshell r/ClaudeAI post (1,110 upvotes) revealed that <a href="https://www.reddit.com/r/ClaudeAI/comments/1spsugm/ysk_if_you_use_claude_on_your_companys_enterprise/">Claude Enterprise's Compliance API lets employers pull every message employees ever sent — including "incognito" chats</a>. The post methodically outlines what's exposed: full chat content, uploaded files, activity logs with timestamps, all accessible within about 5 minutes of admin setup. This is a significant operational security issue for anyone using Claude at work for anything sensitive.</p><p>And in the most singularity-brained story of the week: a viral r/singularity post shows someone claiming <a href="https://www.reddit.com/r/singularity/comments/1sqiaug/claude_just_helped_me_build_a_wetlab_and_sequence/">Claude helped them build a wetlab and sequence their genome at home with zero prior lab experience</a>. Separately, the NSA is reportedly <a href="https://www.reddit.com/r/singularity/comments/1sqdo0y/nsa_using_anthropics_mythos_despite_blacklist/">using Anthropic's "Mythos" model despite a procurement blacklist</a>, per Axios — suggesting that even security agencies can't resist the capability pull.</p><blockquote><p>"Once enabled, your company can programmatically pull: Full content of every chat (your messages + Claude's responses), every file you uploaded, activity logs with timestamps — all of the above even from incognito chats."</p><cite>— u/rentmeahouse, r/ClaudeAI</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📉</span>
+              80K Tech Layoffs Q1 2026
+            </a>
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1spsugm/ysk_if_you_use_claude_on_your_companys_enterprise/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Claude Enterprise Privacy
+            </a>
+            
+            <a href="https://www.reddit.com/r/singularity/comments/1sqiaug/claude_just_helped_me_build_a_wetlab_and_sequence/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧬</span>
+              DIY Genome Sequencing with Claude
+            </a>
+            
+            <a href="https://www.reddit.com/r/singularity/comments/1sqdo0y/nsa_using_anthropics_mythos_despite_blacklist/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🕵️</span>
+              NSA Using Anthropic Mythos
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Model personality is becoming a product differentiator — and a liability.</strong> Claude's pushback behavior is generating both delight and frustration. Anthropic is threading a needle: a model with enough judgment to say "stop tweaking" feels more like a collaborator, but the same trait, miscalibrated, feels like obstruction. Opus 4.7's backlash suggests they may have over-rotated, and users are voting with their API keys.</li><li><strong>Open-source local models are crossing the "good enough for work" threshold.</strong> Qwen3.6-35B running at 50+ tok/s on commodity hardware with 200K context is not a demo — it's a workstation. The gap between cloud API models and local inference is closing faster than most enterprise buyers realize, and the Claude account-ban thread (users scrambling for replacements after unexplained bans) shows the demand is real and urgent.</li><li><strong>AI coding agents need a security reckoning before they go further into production.</strong> The Claude Code command injection vulnerability, the DB-access governance question, and the enterprise Compliance API revelation all point to the same gap: AI tools are being deployed faster than the security and policy frameworks to govern them. Every team shipping agentic code tools needs a threat model, not just a vibe check.</li><li><strong>The AI dependency trap is empirically real and arriving faster than anyone planned for.</strong> The UCLA/MIT/Oxford/CMU study showing that 10 minutes of AI assistance degrades unaided performance below baseline is the kind of result that should reshape how we think about AI-assisted workflows in education, hiring, and knowledge work. Building systems that degrade human capability when removed is not just a UX problem — it's a civilizational risk worth taking seriously now.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.reddit.com/r/ClaudeAI/comments/1spv2qi/if_you_are_unsatisfied_with_opus_47_please_simply/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📢</span>
+              Opus 4.7 Backlash
+            </a>
+            
+            <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sqelfp/closest_replacement_for_claude_claude_code_got/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔄</span>
+              Claude Replacement Thread
+            </a>
+            
+            <a href="https://beyondmachines.net/event_details/anthropic-claude-code-leak-reveals-critical-command-injection-vulnerabilities-e-6-c-1-k/gD2P6Ple2L" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Claude Code Vulnerabilities
+            </a>
+            
+            <a href="https://www.reddit.com/r/artificial/comments/1sqcz1m/researchers_gave_1222_people_ai_assistants_then/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧪</span>
+              AI Dependency Study
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
       </div>
-      
 
-      
-      <hr class="section-divider">
-      
-      
-      <h2>Qwen vs. Claude Code: The Local Coding Showdown</h2>
-      <p>The r/LocalLLaMA community is in the middle of a genuine inflection point: can open-source local models replace Claude for serious coding work? The answer this week is a nuanced "getting there." A <a href="https://www.reddit.com/r/LocalLLaMA/comments/1spz0ck/switching_from_opus_47_to_qwen35ba3b/">thread on switching from Opus 4.7 to Qwen-35B-A3B</a> (291 upvotes, 205 comments) became a community referendum, with users on M5 Max machines reporting Qwen handles most daily coding tasks but struggles with complex multi-file reasoning where Opus still edges it out.</p><p>Another detailed <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sq94qx/is_anyone_getting_real_coding_work_done_with/">hands-on report</a> from an M2 MacBook Pro user (32GB RAM) found that Qwen3.6-35B-A3B with a 32K context window in opencode could handle routing-level tasks but fell short of Claude Code on larger cross-cutting refactors. The context window constraint looms large — cloud Claude simply has more room to work. Still, the <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/">April 2026 Best Local LLMs megathread</a> (421 upvotes) is buzzing about Qwen3.5, Gemma 4, GLM-5.1, and Minimax-M2.7 as a genuine "Sonnet at home" — a claim that would have been laughable a year ago.</p><p>On the infrastructure side, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sprdm8/llamacpp_speculative_checkpointing_was_merged/">llama.cpp's speculative checkpointing merge</a> (256 upvotes) is giving users 50%+ speedups on coding tasks, and SK Hynix's <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sqap57/sk_hynix_starts_mass_production_of_192gb_socamm2/">192GB SOCAMM2 mass production launch</a> signals that the memory wall for running large local models is actively being torn down.</p><blockquote><p>"Running Qwen3.6 UD_Q_4_K_M on 16GB VRAM + 32GB RAM with 200k context window at 50+ tok/s"</p><cite>— u/_BigBackClock, r/LocalLLaMA</cite></blockquote>
+      <!-- Sidebar panels -->
+      <aside class="col-side">
 
-      
-      <div class="source-list">
         
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1spz0ck/switching_from_opus_47_to_qwen35ba3b/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">💻</span>
-          Opus 4.7 to Qwen switch thread
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sq94qx/is_anyone_getting_real_coding_work_done_with/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🍎</span>
-          Qwen on 32GB Mac
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sprdm8/llamacpp_speculative_checkpointing_was_merged/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">⚡</span>
-          llama.cpp speculative checkpointing
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">📊</span>
-          Best Local LLMs Apr 2026
-        </a>
-        
-      </div>
-      
 
-      
-      <hr class="section-divider">
-      
-      
-      <h2>Claude Code Security Scare and the Context Engineering Moment</h2>
-      <p>A security report made waves on Hacker News this morning: <a href="https://beyondmachines.net/event_details/anthropic-claude-code-leak-reveals-critical-command-injection-vulnerabilities-e-6-c-1-k/gD2P6Ple2L">a leaked analysis of Claude Code reveals critical command injection vulnerabilities</a>, raising the question of what happens when AI coding agents have unrestricted shell access. The post scored low but the implications are serious for anyone running Claude Code in production — command injection via AI-generated code executing in a trusted shell context is not a theoretical risk.</p><p>This connects to a broader HN thread asking: <a href="https://news.ycombinator.com/item?id=47827486">"Is giving AI agents DB access the new BI-tool problem?"</a> The analogy is sharp — early BI tools democratized data access and promptly created shadow analytics and data governance nightmares. Agentic AI with database and shell access may be replaying the same script, faster.</p><p>On the context engineering front, Simon Willison's <a href="https://simonwillison.net/2026/Apr/20/claude-token-counts/">Claude Token Counter tool</a> (109 upvotes, 41 comments) now supports model comparisons — a quietly important utility as developers try to understand how context consumption differs across Claude Sonnet, Haiku, and Opus. As context windows expand toward millions of tokens, understanding token costs per model becomes a real engineering discipline, not just a curiosity.</p><blockquote><p>"A new study from UCLA, MIT, Oxford, and Carnegie Mellon gave 1,222 people AI assistants for cognitive tasks — then pulled the plug midway through. After ~10 minutes of AI-assisted problem solving, people who lost access to AI performed worse than those who never had it."</p><cite>— u/hibzy7, r/artificial, summarizing multi-institution study</cite></blockquote>
+        
 
-      
-      <div class="source-list">
         
-        <a href="https://beyondmachines.net/event_details/anthropic-claude-code-leak-reveals-critical-command-injection-vulnerabilities-e-6-c-1-k/gD2P6Ple2L" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔒</span>
-          Claude Code Vulnerabilities
-        </a>
-        
-        <a href="https://news.ycombinator.com/item?id=47827486" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🗄️</span>
-          AI Agents DB Access (HN)
-        </a>
-        
-        <a href="https://simonwillison.net/2026/Apr/20/claude-token-counts/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔢</span>
-          Claude Token Counter
-        </a>
-        
-        <a href="https://www.reddit.com/r/artificial/comments/1sqcz1m/researchers_gave_1222_people_ai_assistants_then/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🧪</span>
-          AI Dependency Study
-        </a>
-        
-      </div>
-      
 
-      
-      <hr class="section-divider">
-      
-      
-      <h2>GPT-6 Drops, the Model Race Accelerates</h2>
-      <p>OpenAI's GPT-6 quietly landed on Hacker News with a <a href="https://www.theverge.com/2026/4/14/openai-gpt-6-symphony-architecture">Verge report on the Symphony architecture</a> — a unified multimodal system that handles text, image, audio, and video in a single model. The Hacker News post scored just 5 points and got 1 comment, which is either a sign that the community is fatigued by model launches, deeply skeptical, or both. The naming alone — "Symphony" — suggests OpenAI is leaning into a narrative of harmonious multi-modal reasoning rather than raw benchmark performance.</p><p>In the GPU kernel engineering world, a <a href="https://www.reddit.com/r/MachineLearning/comments/1sqfgat/c_cute_cutlass_vs_cutedsl_python_in_2026_what/">thread debating CuTe/CUTLASS vs. CuTeDSL</a> is drawing real attention from practitioners. NVIDIA's new Python DSL for GPU kernels (same performance, no C++ template metaprogramming, direct TorchInductor integration) is being positioned as the path forward — but most job postings still list "C++17, CuTe" as hard requirements. The gap between what the field is moving toward and what hiring managers actually ask for has never been wider.</p><p>Meanwhile, the <a href="https://www.reddit.com/r/MachineLearning/comments/1spvoer/1200_iclr_2026_papers_with_public_code_or_data_r/">release of 1,200 ICLR 2026 papers with public code</a> (52 upvotes) and daily Arxiv floods of <a href="https://www.reddit.com/r/MachineLearning/comments/1sqi69n/d_it_seems_that_every_day_there_are_around_100/">100-200 new ML papers</a> underscore the research velocity problem: nobody can keep up, and the gap between frontier labs (who can train from scratch) and everyone else (who fine-tunes) is becoming a structural feature of the field.</p><blockquote><p>"Compute access is doing more to shape AI progress right now than any algorithmic insight — not because ideas don't matter but because you literally cannot test big ideas without big compute and only a handful of organizations have that."</p><cite>— u/srodland01, r/artificial</cite></blockquote>
+        
 
-      
-      <div class="source-list">
-        
-        <a href="https://www.theverge.com/2026/4/14/openai-gpt-6-symphony-architecture" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🎵</span>
-          GPT-6 Symphony (The Verge)
-        </a>
-        
-        <a href="https://www.reddit.com/r/MachineLearning/comments/1sqfgat/c_cute_cutlass_vs_cutedsl_python_in_2026_what/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">⚙️</span>
-          CuTe vs CuTeDSL
-        </a>
-        
-        <a href="https://www.reddit.com/r/MachineLearning/comments/1spvoer/1200_iclr_2026_papers_with_public_code_or_data_r/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">📄</span>
-          ICLR 2026 Papers
-        </a>
-        
-        <a href="https://www.reddit.com/r/artificial/comments/1sqh70z/ai_research_is_splitting_into_groups_that_can/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔬</span>
-          Train vs Fine-tune Split
-        </a>
-        
-      </div>
-      
-
-      
-      <hr class="section-divider">
-      
-      
-      <h2>AI's Real-World Footprint: Jobs, Enterprise Privacy, and DIY Biology</h2>
-      <p>The macro picture of AI's societal impact grew darker and stranger this week. <a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai">Tom's Hardware reports nearly 80,000 tech layoffs in Q1 2026</a>, with almost half explicitly attributed to AI — not restructuring, not macro headwinds, but AI. This is the number finally being said out loud by companies rather than euphemized.</p><p>On the enterprise privacy front, a bombshell r/ClaudeAI post (1,110 upvotes) revealed that <a href="https://www.reddit.com/r/ClaudeAI/comments/1spsugm/ysk_if_you_use_claude_on_your_companys_enterprise/">Claude Enterprise's Compliance API lets employers pull every message employees ever sent — including "incognito" chats</a>. The post methodically outlines what's exposed: full chat content, uploaded files, activity logs with timestamps, all accessible within about 5 minutes of admin setup. This is a significant operational security issue for anyone using Claude at work for anything sensitive.</p><p>And in the most singularity-brained story of the week: a viral r/singularity post shows someone claiming <a href="https://www.reddit.com/r/singularity/comments/1sqiaug/claude_just_helped_me_build_a_wetlab_and_sequence/">Claude helped them build a wetlab and sequence their genome at home with zero prior lab experience</a>. Separately, the NSA is reportedly <a href="https://www.reddit.com/r/singularity/comments/1sqdo0y/nsa_using_anthropics_mythos_despite_blacklist/">using Anthropic's "Mythos" model despite a procurement blacklist</a>, per Axios — suggesting that even security agencies can't resist the capability pull.</p><blockquote><p>"Once enabled, your company can programmatically pull: Full content of every chat (your messages + Claude's responses), every file you uploaded, activity logs with timestamps — all of the above even from incognito chats."</p><cite>— u/rentmeahouse, r/ClaudeAI</cite></blockquote>
-
-      
-      <div class="source-list">
-        
-        <a href="https://www.tomshardware.com/tech-industry/tech-industry-lays-off-nearly-80-000-employees-in-the-first-quarter-of-2026-almost-50-percent-of-affected-positions-cut-due-to-ai" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">📉</span>
-          80K Tech Layoffs Q1 2026
-        </a>
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1spsugm/ysk_if_you_use_claude_on_your_companys_enterprise/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔐</span>
-          Claude Enterprise Privacy
-        </a>
-        
-        <a href="https://www.reddit.com/r/singularity/comments/1sqiaug/claude_just_helped_me_build_a_wetlab_and_sequence/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🧬</span>
-          DIY Genome Sequencing with Claude
-        </a>
-        
-        <a href="https://www.reddit.com/r/singularity/comments/1sqdo0y/nsa_using_anthropics_mythos_despite_blacklist/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🕵️</span>
-          NSA Using Anthropic Mythos
-        </a>
-        
-      </div>
-      
-
-      
-      <hr class="section-divider">
-      
-      
-      <h2>What This All Means</h2>
-      <div class="takeaways"><ol><li><strong>Model personality is becoming a product differentiator — and a liability.</strong> Claude's pushback behavior is generating both delight and frustration. Anthropic is threading a needle: a model with enough judgment to say "stop tweaking" feels more like a collaborator, but the same trait, miscalibrated, feels like obstruction. Opus 4.7's backlash suggests they may have over-rotated, and users are voting with their API keys.</li><li><strong>Open-source local models are crossing the "good enough for work" threshold.</strong> Qwen3.6-35B running at 50+ tok/s on commodity hardware with 200K context is not a demo — it's a workstation. The gap between cloud API models and local inference is closing faster than most enterprise buyers realize, and the Claude account-ban thread (users scrambling for replacements after unexplained bans) shows the demand is real and urgent.</li><li><strong>AI coding agents need a security reckoning before they go further into production.</strong> The Claude Code command injection vulnerability, the DB-access governance question, and the enterprise Compliance API revelation all point to the same gap: AI tools are being deployed faster than the security and policy frameworks to govern them. Every team shipping agentic code tools needs a threat model, not just a vibe check.</li><li><strong>The AI dependency trap is empirically real and arriving faster than anyone planned for.</strong> The UCLA/MIT/Oxford/CMU study showing that 10 minutes of AI assistance degrades unaided performance below baseline is the kind of result that should reshape how we think about AI-assisted workflows in education, hiring, and knowledge work. Building systems that degrade human capability when removed is not just a UX problem — it's a civilizational risk worth taking seriously now.</li></ol></div>
-
-      
-      <div class="source-list">
-        
-        <a href="https://www.reddit.com/r/ClaudeAI/comments/1spv2qi/if_you_are_unsatisfied_with_opus_47_please_simply/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">📢</span>
-          Opus 4.7 Backlash
-        </a>
-        
-        <a href="https://www.reddit.com/r/LocalLLaMA/comments/1sqelfp/closest_replacement_for_claude_claude_code_got/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔄</span>
-          Claude Replacement Thread
-        </a>
-        
-        <a href="https://beyondmachines.net/event_details/anthropic-claude-code-leak-reveals-critical-command-injection-vulnerabilities-e-6-c-1-k/gD2P6Ple2L" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🔒</span>
-          Claude Code Vulnerabilities
-        </a>
-        
-        <a href="https://www.reddit.com/r/artificial/comments/1sqcz1m/researchers_gave_1222_people_ai_assistants_then/" class="source-tag" target="_blank" rel="noopener">
-          <span class="source-icon">🧪</span>
-          AI Dependency Study
-        </a>
-        
-      </div>
-      
-
-      
-      
-
-      <!-- Sources accordion -->
-      <div class="sources-accordion">
-        <h2>Sources</h2>
-        <div class="source-groups" id="sourceGroups"></div>
-      </div>
-
-      <footer>
-        <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
-      </footer>
+      </aside>
     </div>
   </div>
 

@@ -31,6 +31,10 @@ def build_digest_page(digest_data, env, newsletter_title):
         subtitle=digest_data.get("subtitle", ""),
         date_formatted=date_formatted,
         sections=digest_data.get("sections", []),
+        sidebar_github=digest_data.get("sidebar_github", []),
+        sidebar_launches=digest_data.get("sidebar_launches", []),
+        sidebar_papers=digest_data.get("sidebar_papers", []),
+        sidebar_producthunt=digest_data.get("sidebar_producthunt", []),
     )
 
     out_path = DOCS_DIR / "digests" / f"{digest_data['date']}.html"

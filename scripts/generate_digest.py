@@ -134,6 +134,34 @@ Now synthesize this into a daily digest following the instructions. Return only 
     digest["date"] = date_str
     digest["generated_at"] = datetime.now().isoformat()
 
+    # Extract launches & pricing moves via Haiku (cheap, fast)
+    print("  Extracting launches & pricing...")
+    try:
+        launches_msg = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=2048,
+            messages=[{"role": "user", "content": f"""From today's AI news items, extract product launches, pricing changes, and deprecations. Return a JSON array of objects:
+[{{"company": "string", "detail": "string — one sentence", "type": "launch|pricing|deprecation"}}]
+
+Only include concrete, verifiable moves (not rumors). Max 6 items. Return ONLY the JSON array.
+
+Items:
+{items_text[:50000]}"""}],
+        )
+        launches_text = launches_msg.content[0].text.strip()
+        if launches_text.startswith("```"):
+            launches_text = launches_text.split("\n", 1)[1].rsplit("```", 1)[0]
+        digest["sidebar_launches"] = json.loads(launches_text)
+    except Exception as e:
+        print(f"  Launches extraction failed: {e}")
+        digest["sidebar_launches"] = []
+
+    # Pass through sidebar data from raw fetch
+    sidebar = raw_data.get("sidebar", {})
+    digest["sidebar_github"] = sidebar.get("github_trending", [])
+    digest["sidebar_papers"] = sidebar.get("papers", [])
+    digest["sidebar_producthunt"] = sidebar.get("producthunt", [])
+
     out_path = DATA_DIR / f"{date_str}_digest.json"
     with open(out_path, "w") as f:
         json.dump(digest, f, indent=2)
