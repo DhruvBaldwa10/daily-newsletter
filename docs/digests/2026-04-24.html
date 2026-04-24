@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT-5.5 Lands, Claude Stumbles — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Friday, April 24, 2026</div>
+        <h1>GPT-5.5 Lands, Claude Stumbles</h1>
+        
+        <p class="subtitle">OpenAI drops its most capable model yet — API-less — while Anthropic issues a rare engineering postmortem on Claude Code quality regressions. Meanwhile, the infrastructure arms race accelerates and agent security gaps widen.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>GPT-5.5 Is Here, But Builders Can't Touch the API Yet</h2>
+          <p>OpenAI <a href="https://openai.com/index/introducing-gpt-5-5">officially launched GPT-5.5</a> yesterday, billing it as their smartest model yet — faster and more capable across coding, research, and data analysis. It's rolling out to paid ChatGPT subscribers and is the backbone of the newly repositioned <a href="https://openai.com/academy/what-is-codex">Codex</a>, which OpenAI is framing less as a coding tool and more as a general work automation platform with plugins, skills, schedules, and triggers. The product push is significant: OpenAI dropped an entire <a href="https://openai.com/academy/working-with-codex">Academy curriculum</a> around Codex the same day, covering setup, settings, and 10 practical workplace use cases.</p><p>The catch for builders: no API access at launch. This is the second major OpenAI model release in a row to ship consumer-first, developer-second. <a href="https://simonwillison.net/2026/Apr/23/gpt-5-5/">Simon Willison noted</a> the omission pointedly — he got preview access and found the model genuinely impressive, but the API hole is a real blocker for anyone trying to integrate it. The unofficial "Codex backdoor API" workaround Willison documented is not a production path.</p><p>On safety, OpenAI launched a <a href="https://openai.com/index/gpt-5-5-bio-bug-bounty">GPT-5.5 Bio Bug Bounty</a> simultaneously — a red-teaming challenge specifically targeting biosafety jailbreaks with up to $25,000 in rewards. The parallel safety messaging alongside a consumer launch is now standard OpenAI playbook, but it's notable that the biosecurity risk surface is being called out explicitly at release.</p><blockquote><p>"I've had some preview access and found it to be a fast, effective and highly capable model. As is usually the case these days, it's hard to put into words what's good about it — I ask it to build things and it builds exactly what I ask for!"</p><cite>— Simon Willison, simonwillison.net</cite></blockquote><p>For product builders, the strategic read is clear: OpenAI is betting that Codex becomes the consumer-facing work automation layer, while keeping GPT-5.5's raw capabilities gated from competitors building on the API. Expect API access within weeks, but plan your roadmap around that lag.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/introducing-gpt-5-5" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI GPT-5.5 Announcement
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/23/gpt-5-5/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison on GPT-5.5
+            </a>
+            
+            <a href="https://openai.com/academy/what-is-codex" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📚</span>
+              OpenAI Codex Academy
+            </a>
+            
+            <a href="https://openai.com/index/gpt-5-5-bio-bug-bounty" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛡️</span>
+              GPT-5.5 Bio Bug Bounty
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Anthropic's Claude Code Postmortem: Three Bugs, Two Months of Pain</h2>
+          <p>Anthropic published a rare, detailed <a href="https://www.anthropic.com/engineering/april-23-postmortem">engineering postmortem</a> on why Claude Code quality degraded over the past two months — and the answer is sobering for anyone building on top of AI coding tools. The models themselves were not at fault. Instead, three separate bugs in the Claude Code <em>harness</em> — the scaffolding layer that wraps the model — combined to produce materially worse outputs for complex tasks. One particularly pointed issue: a bug that caused Claude to lose its reasoning context after roughly 60 minutes of operation, effectively resetting its working memory mid-task.</p><p><a href="https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/">Simon Willison's summary</a> of the postmortem highlights why this matters beyond the immediate fix: the volume of user complaints was real and grounded, but the diagnosis took months. That gap — between user signal and root cause identification — is a systemic problem for AI product teams shipping complex agentic systems where the failure modes aren't obvious.</p><p>There's also a secondary story here. Community accounts surfaced claims that <a href="https://twitter.com/levelsio/status/2047387029915271445">Claude Opus 4.6 was "nerfed" ahead of Opus 4.7's release</a> — a familiar pattern of community frustration that preceded the official acknowledgment. Whether intentional or coincidental, the timing erodes trust.</p><blockquote><p>"The models themselves were not to blame, but three separate issues in the Claude Code harness caused complex but material problems which directly affected users."</p><cite>— Anthropic Engineering Postmortem, via Simon Willison</cite></blockquote><p>The practical lesson for builders: if you're wrapping models in complex orchestration scaffolding — and you are, if you're building any serious agentic product — your harness is as likely to be the source of regressions as the model itself. Instrument your scaffolding as aggressively as you instrument the model calls.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison Claude Code Postmortem
+            </a>
+            
+            <a href="https://www.aiuniverse.news/claudes-memory-lapse-a-bug-erased-its-reasoning-after-an-hour/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🐛</span>
+              Claude Memory Bug Report
+            </a>
+            
+            <a href="https://twitter.com/levelsio/status/2047387029915271445" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🐦</span>
+              Levels.io on Opus 4.6 Nerf
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Open-Source Coding Race: DeepSeek V4 and Qwen3.6 Push Hard</h2>
+          <p>The open-source model landscape is moving fast on coding benchmarks. <a href="https://news.ycombinator.com/item?id=47885230">DeepSeek V4 dropped</a> this week with community claims of best-in-class open-source coding performance, following close on the heels of <a href="https://simonwillison.net/2026/Apr/22/qwen36-27b/">Qwen3.6-27B</a>, which Alibaba is positioning as a 27B dense model that outperforms the previous-generation 397B MoE flagship on coding benchmarks. If that holds up under independent evaluation, the parameter efficiency story is remarkable — a model you can actually run on reasonable hardware, competing with closed frontier models on the tasks that matter most to builders.</p><p><a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">Nathan Lambert's analysis of the open-closed performance gap</a> frames the dynamic well: the gap is narrowing, but it's not just about benchmark numbers. Ecosystem, fine-tunability, and deployment flexibility matter enormously for production use cases. His <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026">mid-2026 bets on open models</a> suggest the next few months will see significant consolidation pressure — smaller labs without differentiated post-training or specialized vertical focus will struggle.</p><p>Sebastian Raschka's <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent">deep dive on coding agent architecture</a> is also worth noting here — tools, memory, and repo context are the actual differentiators in deployed coding agents, not raw benchmark scores. A 27B model with excellent tool use and long repo context handling can outperform a larger model in practice.</p><blockquote><p>"Qwen3.6-27B delivers flagship-level agentic coding performance, surpassing the previous-generation open-source flagship Qwen3.5-397B-A17B across all major coding benchmarks."</p><cite>— Qwen Team, via Simon Willison</cite></blockquote><p>For builders making model selection decisions: the open-source coding tier is now competitive enough to run seriously in internal tooling, CI pipelines, and cost-sensitive inference paths. The closed-model premium is increasingly about frontier reasoning, not day-to-day code generation.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/22/qwen36-27b/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Qwen3.6-27B Announcement
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=47885230" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              DeepSeek V4 HN Thread
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Nathan Lambert: Open-Closed Gap
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Raschka: Coding Agent Components
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>MCP and Agent Identity: The Security Gap Nobody's Plugging</h2>
+          <p>As MCP (Model Context Protocol) becomes the de facto standard for connecting AI agents to external tools, a critical gap is emerging: <a href="https://www.diagrid.io/blog/why-mcp-gateways-are-not-enough">MCP gateways alone don't solve agent identity, authorization, or proof of action</a>. The Diagrid team argues that in multi-agent systems, you need more than a secure tunnel — you need cryptographic proof that a specific agent took a specific action, with a specific authorization chain. Without it, you can't audit, you can't attribute, and you can't safely escalate permissions.</p><p>This lands alongside the broader Shopify CTO interview on <a href="https://www.latent.space/p/shopify">Latent Space</a>, where Mikhail Parakhin describes Shopify's "AI phase transition" — including their deployment of unlimited Opus 4.6 token budgets for internal tooling and their SimGym environment for testing agent behaviors. Shopify's scale forces them to confront agent reliability and trust problems that most teams hit later. Their approach: treat agents as first-class organizational actors with explicit permissions scopes, not magic wrappers around API calls.</p><p>The <a href="https://eugeneyan.com//writing/news-agents/">Eugene Yan writeup on building news agents with MCP, Amazon Q CLI, and tmux</a> offers a useful ground-level view — even simple agentic workflows surface tool-calling reliability issues, session management complexity, and the need for explicit state handling that chat interfaces paper over.</p><blockquote><p>"AI Agents Need Identity, Authorization, and Proof — MCP Gateways Aren't Enough."</p><cite>— Diagrid Engineering Blog</cite></blockquote><p>For builders shipping anything with real-world side effects — code commits, payments, emails, API calls — the identity and authorization layer for your agents is not optional. It's the difference between a demo and a production system. Start designing this now, before your agent surface area makes retrofitting painful.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.diagrid.io/blog/why-mcp-gateways-are-not-enough" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Diagrid: MCP Gateways Not Enough
+            </a>
+            
+            <a href="https://www.latent.space/p/shopify" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Shopify CTO Interview
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/news-agents/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Eugene Yan: News Agents with MCP
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Coding Tools Pricing Wars: Claude Code vs. Copilot</h2>
+          <p>The AI coding tool pricing landscape had a chaotic few days. Anthropic silently updated their pricing page to suggest Claude Code would cost $100/month as an add-on — then <a href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/">reversed it without announcement</a> after community backlash. Simon Willison's coverage of the "will-they-won't-they" is a case study in how not to handle pricing communication: no official announcement, conflicting pages, and a reversion that was also silent. The uncertainty itself damages developer trust, especially for teams building cost models around Claude Code usage.</p><p>On the same day, GitHub announced <a href="https://simonwillison.net/2026/Apr/22/changes-to-github-copilot/">changes to Copilot Individual plans</a> — meaningfully different from the Anthropic approach in that GitHub actually posted a public announcement. The contrast in communication hygiene is stark. Copilot's model is shifting toward consumption-based pricing for premium features, which tracks with the broader industry move away from flat subscription models as token costs diverge by task complexity.</p><p>The Latent Space <a href="https://www.latent.space/p/ainews-anthropic-claude-opus-47-literally">AINews coverage of Opus 4.7</a> frames the competitive context: Claude Opus 4.7 is described as "literally one step better than 4.6 in every dimension," asserting SOTA status. But if the pricing signal was that Anthropic is moving Claude Code to a premium tier, the product team needs to nail the value story before that conversation happens in public again.</p><blockquote><p>"Unlike Anthropic, GitHub put up an official announcement about their pricing changes."</p><cite>— Simon Willison, simonwillison.net</cite></blockquote><p>The underlying tension: as these tools become infrastructure for dev teams, pricing predictability matters as much as capability. Surprise pricing changes — even reversed ones — force budget conversations that slow adoption. This is a GTM problem, not a model problem.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Claude Code Pricing Chaos
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/22/changes-to-github-copilot/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              GitHub Copilot Plan Changes
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-claude-opus-47-literally" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Opus 4.7 Launch
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> GPT-5.5 is real and impressive, but if you're building on OpenAI, don't block your roadmap on API access — plan a 2-4 week lag and use the time to design your integration layer so you can swap it in the moment access opens. Codex's repositioning as a work automation platform (not just coding) is a signal about where OpenAI sees the margin: horizontal task automation, not developer tooling specifically.</li><li><strong>Actionable insight.</strong> Anthropic's postmortem is required reading for anyone building complex agentic harnesses. Audit your scaffolding layer — context management, session handling, tool call sequencing — as rigorously as you audit your prompts. The bug that erased Claude's reasoning after 60 minutes of operation is exactly the class of failure that kills enterprise trust. Add session duration and context integrity checks to your eval suite now.</li><li><strong>Actionable insight.</strong> If you're running cost-sensitive inference at scale, the open-source coding tier (Qwen3.6-27B, DeepSeek V4) is now genuinely competitive for code generation tasks. Build a routing layer that sends frontier reasoning tasks to closed models and routine codegen to open models — the cost difference is 10-50x and the quality gap on standard tasks is closing fast.</li><li><strong>Actionable insight.</strong> Agent identity and authorization is the most underbuilt layer in production AI systems right now. Before you ship any agent with real-world side effects, define explicit permission scopes, add cryptographic action logging, and design an audit trail. The MCP gateway is not enough — treat your agents as organizational actors with identity, not stateless API consumers.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.diagrid.io/blog/why-mcp-gateways-are-not-enough" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Diagrid: MCP Security
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Claude Code Postmortem
+            </a>
+            
+            <a href="https://openai.com/index/introducing-gpt-5-5" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              GPT-5.5 Launch
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/22/qwen36-27b/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Qwen3.6-27B
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/kyegomez/OpenMythos">kyegomez/OpenMythos</a>
+              <span class="side-meta">Python · ⭐ 9,783</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/browser-use/browser-harness">browser-use/browser-harness</a>
+              <span class="side-meta">Python · ⭐ 5,982</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/alchaincyf/huashu-design">alchaincyf/huashu-design</a>
+              <span class="side-meta">HTML · ⭐ 5,574</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts">EvoLinkAI/awesome-gpt-image-2-prompts</a>
+              <span class="side-meta">Python · ⭐ 2,871</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/OpenCoworkAI/open-codesign">OpenCoworkAI/open-codesign</a>
+              <span class="side-meta">TypeScript · ⭐ 1,945</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/VoltAgent/awesome-claude-design">VoltAgent/awesome-claude-design</a>
+              <span class="side-meta">None⭐ 1,416</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched GPT-5.5, available in Codex and rolling out to paid ChatGPT subscribers with improved capabilities for coding and complex tasks.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">DeepSeek</div>
+              <span class="launch-detail">Released DeepSeek V4, claimed as the best open-source model for coding.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Launched two specialized TPU chips (TPU-8T and TPU-8I) designed for the agentic era.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">GitHub</div>
+              <span class="launch-detail">Announced changes to GitHub Copilot Individual subscription plans with updated pricing structure.</span>
+              <span class="launch-tag tag-pricing">Pricing</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Resolved quality issues in Claude Code affecting user results over the past two months through postmortem bug fixes.</span>
+              <span class="launch-tag tag-deprecation">Deprecation</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Released Gemini 3.1 Flash TTS, the next generation of expressive AI speech synthesis.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.21193">Trust but Verify: Introducing DAVinCI -- A Framework for Dual Attribution and Verification in Claim Inference for Language Models</a>
+              <span class="side-meta">Large Language Models (LLMs) have demonstrated remarkable fluency and versatility across a wide range of NLP tasks, yet they remain prone to factual inaccuracies and hallucinations. This limitation po</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.21300">Explainable Disentangled Representation Learning for Generalizable Authorship Attribution in the Era of Generative AI</a>
+              <span class="side-meta">Learning robust representations of authorial style is crucial for authorship attribution and AI-generated text detection. However, existing methods often struggle with content-style entanglement, wher</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.21889">TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale</a>
+              <span class="side-meta">Real-time detection and mitigation of technical anomalies are critical for large-scale cloud-native services, where even minutes of downtime can result in massive financial losses and diminished user </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.21904">UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection</a>
+              <span class="side-meta">In recent years, significant progress has been made in both image generation and generated image detection. Despite their rapid, yet largely independent, development, these two fields have evolved dis</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.21375">VLAA-GUI: Knowing When to Stop, Recover, and Search, A Modular Framework for GUI Automation</a>
+              <span class="side-meta">Autonomous GUI agents face two fundamental challenges: early stopping, where agents prematurely declare success without verifiable evidence, and repetitive loops, where agents cycle through the same f</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
