@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT-5.5 Ships, Codex Swallows Everything — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Sunday, April 26, 2026</div>
+        <h1>GPT-5.5 Ships, Codex Swallows Everything</h1>
+        
+        <p class="subtitle">OpenAI fuses its coding and reasoning lines into one model, DeepSeek V4 arrives as a price-competitive challenger, and a bombshell paper warns that delegating document work to LLMs silently corrupts your data. A lot moved this week — here's what builders need to act on.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>GPT-5.5 Unifies the Stack — Codex Is Now Just GPT</h2>
+          <p>The biggest architectural decision OpenAI has made in months isn't about model capability — it's about product consolidation. <a href="https://openai.com/index/introducing-gpt-5-5">GPT-5.5 launched on April 23rd</a> and with it came a quiet but significant announcement: there will be no GPT-5.5-Codex model. As Romain Huet from OpenAI confirmed, <a href="https://simonwillison.net/2026/Apr/25/romain-huet/">since GPT-5.4 the Codex coding specialist and the main model have been unified into a single system</a>. GPT-5.5 takes that further with "strong gains in agentic coding, computer use, and any task on a computer."</p><p>For builders, this matters in two ways. First, your model routing logic just got simpler — you don't need to decide between a "coding model" and a "general model" for mixed tasks. Second, the Codex brand is now a product layer on top of GPT-5.5, not a separate model. <a href="https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp">Latent Space describes Codex as evolving into a "superapp"</a> — with OpenAI Academy publishing a wave of Codex onboarding content covering plugins, skills, automations, and project workflows all in the same week. This is OpenAI turning Codex from a dev tool into an enterprise productivity platform.</p><p>Simon Willison also noted that OpenAI has released <a href="https://simonwillison.net/2026/Apr/25/gpt-5-5-prompting-guide/">a GPT-5.5-specific prompting guide</a> with practical tricks including a verbosity parameter — useful for long-running agentic tasks where you need streaming status updates without bloating the final output. His <a href="https://simonwillison.net/2026/Apr/24/llm/">llm 0.31 CLI tool</a> already ships with GPT-5.5 support and the verbosity flag.</p><blockquote><p>"Since GPT-5.4, we've unified Codex and the main model into a single system, so there's no separate coding line anymore. GPT-5.5 takes this further, with strong gains in agentic coding, computer use, and any task on a computer."</p><cite>— Romain Huet, OpenAI, via Simon Willison</cite></blockquote><p>The bio bug bounty OpenAI launched alongside GPT-5.5 — offering <a href="https://openai.com/index/gpt-5-5-bio-bug-bounty">up to $25,000 for universal jailbreaks on bio safety</a> — signals this model is being treated with meaningfully higher risk scrutiny than its predecessors. If you're building anything in regulated verticals, read the system card before deploying.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/introducing-gpt-5-5" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: GPT-5.5 Launch
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/25/romain-huet/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Romain Huet quote
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/25/gpt-5-5-prompting-guide/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Prompting Guide
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Codex Superapp
+            </a>
+            
+            <a href="https://openai.com/index/gpt-5-5-bio-bug-bounty" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              OpenAI Bio Bug Bounty
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>DeepSeek V4 Is Back — Cheaper, Open, and Dangerous to Ignore</h2>
+          <p>DeepSeek dropped two new preview models this week — <a href="https://simonwillison.net/2026/Apr/24/deepseek-v4/">DeepSeek-V4-Pro and DeepSeek-V4-Flash</a> — and the framing from Simon Willison says it all: "almost on the frontier, a fraction of the price." Both are 1-million-token-context Mixture of Experts models. V4-Pro is the heavyweight; V4-Flash is optimized for speed and cost. Critically, both are open-weight and confirmed to run on Huawei Ascend chips — a geopolitical signal as much as a technical one.</p><p><a href="https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and">Latent Space's AINews coverage</a> notes that V4-Pro is a 1.6T parameter MoE with 49B active, while Flash is 284B total with 13B active. The headline context here: DeepSeek is no longer the benchmarks leader (they note "the prodigal Tiger returns... but is no longer the benchmarks leader"), but that misses the point. For builders deploying at scale, "almost frontier" plus "open-weight" plus "1M token context" plus "fraction of the cost" is a powerful combination — particularly for document processing, long-context RAG pipelines, and any deployment where proprietary API costs compound quickly.</p><p>Nathan Lambert's recent work on <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">the open-closed performance gap</a> provides useful framing here. The gap is narrowing faster than most closed-model advocates admit, and the factors that determine whether an open model "succeeds" in the ecosystem are increasingly about tooling, deployment ergonomics, and post-training quality — not just raw benchmark scores. DeepSeek V4's arrival right as open-source inference is reportedly <a href="https://news.ycombinator.com/item?id=47906463">growing 10% week-over-week in 2026</a> is not coincidental timing.</p><blockquote><p>"The prodigal Tiger returns... but is no longer the benchmarks leader."</p><cite>— Latent Space AINews, on DeepSeek V4's return</cite></blockquote><p>Google is also responding to the infrastructure arms race: they <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/">launched two new specialized 8th-gen TPUs for the agentic era</a> at Cloud Next, one optimized for training (8T) and one for inference (8i). The "agentic era" framing is intentional — these chips are designed for the long-running, multi-step workloads that agent architectures demand.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/24/deepseek-v4/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: DeepSeek V4
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: DeepSeek V4 Coverage
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Nathan Lambert: Open-Closed Gap
+            </a>
+            
+            <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Google: New TPUs for Agents
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=47906463" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: OSS Inference Growth
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>LLMs Corrupt Documents When You Delegate — A Warning for Agent Builders</h2>
+          <p>A new arXiv paper with an alarming title — <a href="https://arxiv.org/abs/2604.15597">"LLMs Corrupt Your Documents When You Delegate"</a> — surfaced on Hacker News this week and deserves serious attention from anyone building agentic document workflows. The core finding: when you delegate document editing or transformation tasks to LLMs, they introduce subtle corruption — changes that aren't explicitly requested, that preserve surface-level coherence but alter meaning, emphasis, or factual framing.</p><p>This isn't a hallucination problem in the traditional sense. It's a delegation fidelity problem. When a model is asked to "improve" or "clean up" a document, it optimizes for what it thinks improvement means — which may diverge from what the author intended. The cumulative effect across many delegated edits can significantly transform a document's character without any single step looking wrong.</p><p>For AI product builders, this research should immediately trigger a design review of any agentic flow that involves LLM-mediated document transformation: summarization pipelines, AI-assisted editing, automated report generation, or multi-step document refinement agents. The failure mode is insidious precisely because outputs look good and pass casual review — it's the kind of quality degradation that only surfaces in longitudinal analysis or careful human review.</p><blockquote><p>"LLMs Corrupt Your Documents When You Delegate"</p><cite>— arXiv paper title, arXiv:2604.15597</cite></blockquote><p>This connects directly to a concurrent Anthropic story: Anthropic published a <a href="https://www.anthropic.com/engineering/april-23-postmortem">detailed postmortem on Claude Code quality regression</a> that had been accumulating for two months. The models themselves weren't to blame — three separate issues in the Claude Code harness caused "complex but material problems." As Simon Willison put it, <a href="https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/">the high volume of complaints were grounded in real problems</a>. The meta-lesson: silent quality degradation in AI systems is a product management crisis, not just an engineering one. You need evals that catch drift before users do.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2604.15597" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: LLMs Corrupt Documents
+            </a>
+            
+            <a href="https://www.anthropic.com/engineering/april-23-postmortem" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Anthropic: Claude Code Postmortem
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Claude Code Quality
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Shopify's AI Phase Transition and the Operator Playbook</h2>
+          <p>The Latent Space interview with Shopify CTO Mikhail Parakhin is one of the more data-rich public accounts of enterprise AI adoption you'll find right now. <a href="https://www.latent.space/p/shopify">The episode covers Shopify's "AI phase transition" in 2026</a>, including exclusive usage data, their unlimited Opus-4.6 token budget for internal teams, and two internal tools — Tangle and Tangent — plus SimGym, which appears to be a simulation environment for training AI on commerce scenarios.</p><p>The Opus-4.6 unlimited token budget detail is striking. Most enterprises are still negotiating per-token costs and building elaborate caching layers. Shopify's approach — just give developers unconstrained access to the best model — is a bet that the productivity unlock exceeds the cost, and that token-counting creates more friction than it prevents. This is a meaningful UX and product philosophy signal: context window anxiety is itself a failure mode that slows down builders.</p><p>What Shopify's doing with SimGym is particularly interesting for anyone building AI products in vertical markets. Rather than purely relying on fine-tuning on historical data or prompting frontier models, they appear to be building synthetic commerce environments to generate training signal. This is the kind of infrastructure investment that compounds — it's not just a one-time model improvement, it's a data flywheel specific to their domain.</p><blockquote><p>"A rare interview with Shopify's CTO on everything that Shopify is doing to maximize AI for their customers, with exclusive data on their own AI adoption."</p><cite>— Latent Space episode description</cite></blockquote><p>Meanwhile, Nilay Patel's essay — flagged by Simon Willison — makes a compelling counterpoint: <a href="https://simonwillison.net/2026/Apr/24/the-people-do-not-yearn-for-automation/">the general public does not yearn for automation</a>, even as ChatGPT usage continues to skyrocket. The argument is that people with "software brain" — those who think in systems and automations — are projecting their preferences onto users who actually want AI to feel like a smart collaborator, not a replacement. This tension between the operator/builder perspective (more automation = better) and the end-user perspective (preserve my agency) is the central UX challenge of the next cycle of AI product design.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/shopify" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Shopify CTO Interview
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/24/the-people-do-not-yearn-for-automation/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: People Don't Want Automation
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Usage Limits, Plan Tension, and the Pricing Pressure Cooker</h2>
+          <p>A tweet circulated on Hacker News this week revealing <a href="https://xcancel.com/nrehiew_/status/2048009931757097079">detailed Claude usage limits across different subscription plans</a> — and the reaction in developer communities has been pointed. As Anthropic's models get more powerful (Claude Opus 4.7 just launched, described by Latent Space as <a href="https://www.latent.space/p/ainews-anthropic-claude-opus-47-literally">"literally one step better than 4.6 in every dimension"</a>), the tension between capability and access is sharpening.</p><p>For builders using Claude via API, the limits question is mostly moot — you pay per token. But the consumer and Claude Code plan limits matter for developer experience: power users who hit walls mid-session lose trust in the tool, and that trust is hard to rebuild. This is especially true for Claude Code users who were already burned by the two-month quality regression Anthropic acknowledged in their postmortem.</p><p>The broader pricing dynamic worth watching: Shopify is running unlimited Opus-4.6 budgets internally. Meanwhile individual developers on consumer plans are hitting rate limits on models two generations behind. The gap between enterprise AI experience and individual developer AI experience is widening, and that affects who builds what. When the best models are only practically accessible at enterprise contract scale, you get a capability stratification that shapes the entire startup ecosystem.</p><blockquote><p>"The new SOTA model asserts its dominance."</p><cite>— Latent Space AINews, on Claude Opus 4.7</cite></blockquote><p>Nathan Lambert has been writing about the <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026">open-closed model gap</a> and his bets for mid-2026 — and the access/pricing pressure on closed frontier models is one reason open-weight alternatives keep gaining ground. DeepSeek V4 arriving open-weight the same week as Claude Opus 4.7 and GPT-5.5 is not coincidence; it's the market responding to pricing friction at the frontier. For product builders, the calculus is increasingly: use frontier closed models for differentiated quality moments, use open-weight for everything else.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://xcancel.com/nrehiew_/status/2048009931757097079" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🐦</span>
+              Claude Plan Limits Tweet
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-claude-opus-47-literally" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Claude Opus 4.7
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Nathan Lambert: Open Model Bets
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> GPT-5.5 unifying Codex and the main model means your model selection logic for coding tasks should be revisited — you no longer need to route to a separate coding specialist, and the new verbosity parameter in the prompting guide is practically useful for any agentic flow where users need progress signals. Update your integration and test whether the unified model actually outperforms your current setup on your specific workloads before assuming it does.</li><li><strong>Actionable insight.</strong> The "LLMs corrupt documents" paper is a direct call to audit your agentic document pipelines. If you have any flow where an LLM transforms, edits, or "improves" documents — especially multi-step — add a human review checkpoint or a diff-based eval that flags unexpected content changes beyond the explicit instruction scope. Silent drift is a product liability, not just a technical bug.</li><li><strong>Actionable insight.</strong> DeepSeek V4's open-weight 1M-context MoE models should be on your eval list now, particularly for cost-sensitive document processing, long-context RAG, or any deployment where API costs compound. "Almost frontier at a fraction of the price" is a real product decision for most teams — run your benchmarks on your actual data rather than relying on leaderboard numbers.</li><li><strong>Actionable insight.</strong> Shopify's unlimited model budget philosophy and the Nilay Patel "people don't yearn for automation" tension point to the same design fork: decide explicitly whether your product serves operators (who want maximum automation) or end users (who want collaborative AI that preserves their agency). These require fundamentally different UX patterns, and conflating them is the most common AI product failure mode right now.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/introducing-gpt-5-5" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: GPT-5.5
+            </a>
+            
+            <a href="https://arxiv.org/abs/2604.15597" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: Document Corruption
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/24/deepseek-v4/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              DeepSeek V4
+            </a>
+            
+            <a href="https://www.latent.space/p/shopify" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Shopify CTO Interview
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/alchaincyf/huashu-design">alchaincyf/huashu-design</a>
+              <span class="side-meta">HTML · ⭐ 6,573</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/op7418/guizang-ppt-skill">op7418/guizang-ppt-skill</a>
+              <span class="side-meta">HTML · ⭐ 2,748</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/ConardLi/garden-skills">ConardLi/garden-skills</a>
+              <span class="side-meta">JavaScript · ⭐ 1,257</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/masterking32/MasterHttpRelayVPN">masterking32/MasterHttpRelayVPN</a>
+              <span class="side-meta">Python · ⭐ 1,252</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/cosmicstack-labs/mercury-agent">cosmicstack-labs/mercury-agent</a>
+              <span class="side-meta">TypeScript · ⭐ 1,146</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/leigest519/OpenGame">leigest519/OpenGame</a>
+              <span class="side-meta">TypeScript · ⭐ 1,102</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched GPT-5.5, the newest and most capable model with improved performance for coding, research, and data analysis tasks.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched OpenAI Codex, a superapp for automating tasks and connecting tools through plugins, skills, and workflow automation.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Launched two new specialized TPUs (8T and 8I) designed specifically for the agentic era of AI workloads.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">DeepSeek</div>
+              <span class="launch-detail">Released DeepSeek-V4-Pro and DeepSeek-V4-Flash preview models with 1 million token context and Mixture of Experts architecture.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Released Claude Opus 4.7, claiming state-of-the-art performance with improvements across all dimensions over the previous 4.6 version.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Unified Codex and main model into a single system starting with GPT-5.4, discontinuing the separate Codex model line.</span>
+              <span class="launch-tag tag-deprecation">Deprecation</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.20156">Temporally Extended Mixture-of-Experts Models</a>
+              <span class="side-meta">Mixture-of-Experts models, now popular for scaling capacity at fixed inference speed, switch experts at nearly every token. Once a model outgrows available GPU memory, this churn can render optimizati</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.08645">3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding</a>
+              <span class="side-meta">Large multimodal models are increasingly used as the reasoning core of embodied agents operating in 3D environments, yet they remain prone to hallucinations that can produce unsafe and ungrounded deci</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.17492">Coevolving Representations in Joint Image-Feature Diffusion</a>
+              <span class="side-meta">Joint image-feature generative modeling has recently emerged as an effective strategy for improving diffusion training by coupling low-level VAE latents with high-level semantic features extracted fro</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.21915">Vista4D: Video Reshooting with 4D Point Clouds</a>
+              <span class="side-meta">We present Vista4D, a robust and flexible video reshooting framework that grounds the input video and target cameras in a 4D point cloud. Specifically, given an input video, our method re-synthesizes </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.17295">LLaTiSA: Towards Difficulty-Stratified Time Series Reasoning from Visual Perception to Semantics</a>
+              <span class="side-meta">Comprehensive understanding of time series remains a significant challenge for Large Language Models (LLMs). Current research is hindered by fragmented task definitions and benchmarks with inherent am</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
