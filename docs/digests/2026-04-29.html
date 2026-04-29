@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAI's AWS Bet Changes Everything — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Wednesday, April 29, 2026</div>
+        <h1>OpenAI's AWS Bet Changes Everything</h1>
+        
+        <p class="subtitle">GPT-5.5 lands on AWS with Codex and Managed Agents, OpenAI rewrites its Microsoft deal, and a quiet war over enterprise AI distribution heats up. Meanwhile, builders are rethinking whether frontier models actually cost more than mid-tier ones.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>OpenAI Goes All-In on AWS — and Rewrites the Microsoft Deal</h2>
+          <p>Two tectonic moves from OpenAI this week that every AI product builder needs to absorb together. First, <a href="https://openai.com/index/openai-on-aws">OpenAI models, Codex, and Managed Agents are now available natively on AWS</a> — meaning enterprises can deploy GPT-5.5 and run agent workflows without data leaving their AWS environments. This is a massive distribution unlock: it targets the enormous population of enterprise teams who have AWS-native data stacks, security policies, and procurement relationships, and who've been waiting for a reason to move beyond self-hosted or Azure-only options.</p><p>Second, and arguably more consequential: <a href="https://openai.com/index/next-phase-of-microsoft-partnership">OpenAI and Microsoft have amended their partnership agreement</a>, removing the long-standing clause that would have voided Microsoft's commercial IP rights upon AGI being achieved. Simon Willison <a href="https://simonwillison.net/2026/Apr/27/now-deceased-agi-clause/">tracked this clause's evolution</a> across years of public announcements — its quiet deletion signals that both parties are now operating in a post-AGI-clause world, where the relationship is more explicitly commercial and less existentially hedged.</p><p>For builders, the AWS move is the more immediately actionable story. If you're building enterprise-facing AI products, your customers just got a much cleaner procurement path to GPT-5.5 and OpenAI's agent stack. This also means OpenAI is now competing directly with Anthropic (already on Bedrock) and Google (Vertex) for enterprise AI mindshare — inside AWS's own marketplace.</p><blockquote><p>"Since GPT-5.4, we've unified Codex and the main model into a single system, so there's no separate coding line anymore. GPT-5.5 takes this further, with strong gains in agentic coding, computer use, and any task on a computer."</p><cite>— Romain Huet, OpenAI, <a href="https://simonwillison.net/2026/Apr/25/romain-huet/">via Simon Willison</a></cite></blockquote><p>The unification of Codex into the main GPT-5.5 model is also a significant architectural signal: OpenAI is betting that one frontier model with strong agentic capabilities beats a fragmented model lineup. That simplifies your model selection decisions — but it also means you're now paying frontier prices for what used to be a cheaper specialized model.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/openai-on-aws" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤝</span>
+              OpenAI on AWS
+            </a>
+            
+            <a href="https://openai.com/index/next-phase-of-microsoft-partnership" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              OpenAI-Microsoft deal
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/27/now-deceased-agi-clause/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔍</span>
+              Simon Willison on AGI clause
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/25/romain-huet/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              Romain Huet on GPT-5.5
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Frontier Cost Paradox: Opus Is Cheaper Than Your Cheap Model</h2>
+          <p>One of today's most practically useful reads comes from a Hacker News post that gained solid traction: <a href="https://www.mendral.com/blog/frontier-model-lower-costs">Mendral's engineering team found that switching to Claude Opus actually decreased their LLM costs</a>, not increased them. The counterintuitive logic: Opus's stronger instruction-following and reasoning meant fewer retries, shorter context chains, and dramatically reduced failure-handling overhead. When you account for the full cost of a workflow — not just per-token pricing — a more capable model can net out cheaper.</p><p>This is a theme that keeps surfacing in builder communities and deserves more systematic treatment. The naive framing is "cheap model for cheap tasks, expensive model for hard tasks." The more sophisticated framing is "what's the cost per successful outcome?" — which forces you to account for retry loops, error handling, human-in-the-loop corrections, and the downstream cost of wrong outputs reaching users.</p><p>Chip Huyen's evergreen post on <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html">common pitfalls when building generative AI applications</a> remains relevant here: one of the most common mistakes is over-optimizing for model cost in isolation while ignoring orchestration, context, and retry costs. And Sebastian Raschka's recent deep-dive on <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent">components of a coding agent</a> shows how tool use, memory retrieval, and repo context all multiply the effective cost of any single model call.</p><blockquote><p>"Five months in, I think I've decided that I don't want to vibecode — I want professionally managed software companies to use AI coding assistance to make more/better/cheaper software products that they sell to me for money."</p><cite>— Matthew Yglesias, <a href="https://simonwillison.net/2026/Apr/28/matthew-yglesias/">via Simon Willison</a></cite></blockquote><p>Yglesias's quote cuts to something builders should internalize: the market for "AI helps me code" is real but saturating among enthusiasts. The larger prize is AI-accelerated professional software development — where cost-per-outcome economics matter enormously, and where the frontier model premium may well pay for itself.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.mendral.com/blog/frontier-model-lower-costs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Mendral on Opus costs
+            </a>
+            
+            <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              Chip Huyen pitfalls
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Raschka on coding agents
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/28/matthew-yglesias/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              Yglesias on vibe coding
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Symphony, Codex, and the Emerging Orchestration Layer</h2>
+          <p>OpenAI quietly dropped something that deserves more attention than it's getting: <a href="https://openai.com/index/open-source-codex-orchestration-symphony">Symphony, an open-source spec for Codex orchestration</a> that turns issue trackers into always-on agent systems. The pitch is that Symphony lets engineering teams wire Codex directly into their GitHub issues and project management workflows, so agents are continuously picking up and executing tasks without requiring human kickoffs. It's OpenAI's answer to the orchestration layer question — and it's open-source, which is a deliberate land-grab for developer mindshare.</p><p>This matters because orchestration is rapidly becoming the key battleground for coding agent products. Latent Space's coverage of the <a href="https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp">GPT-5.5 and OpenAI Codex Superapp launch</a> framed Codex as a "superapp" that bundles model, tooling, and orchestration into a single interface — a direct challenge to Cursor and GitHub Copilot Workspace. Meanwhile, the <a href="https://www.twitch.tv/pokemon_race">HN community was literally watching a live battle between Claude Code (Opus 4-7) and Codex (GPT-5.5)</a> to build a Pokemon game, which is either a fun benchmark or a harbinger of how we'll evaluate agents going forward.</p><p>Simon Willison caught something revealing in <a href="https://simonwillison.net/2026/Apr/28/openai-codex/">OpenAI Codex's base system prompt</a>: it explicitly forbids the model from discussing goblins, gremlins, raccoons, trolls, and several other creatures. This is the kind of specific, quirky guardrail that emerges from real-world deployment pain — someone, somewhere, got weird goblin outputs in a coding context, and a human wrote a rule.</p><blockquote><p>"Never talk about goblins, gremlins, raccoons, trolls, ogres, pigeons, or other animals or creatures unless it is absolutely and unambiguously relevant to the user's query."</p><cite>— OpenAI Codex base_instructions, <a href="https://simonwillison.net/2026/Apr/28/openai-codex/">via Simon Willison</a></cite></blockquote><p>For builders designing agent systems, Symphony's open-source approach creates both an opportunity and a risk: it's a reference implementation you can fork and adapt, but it also means OpenAI is setting the standard for how orchestration should work. If your product is building on top of Codex, you need to understand how Symphony's task model might constrain or accelerate your architecture.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/open-source-codex-orchestration-symphony" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎼</span>
+              OpenAI Symphony
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚀</span>
+              Latent Space on Codex Superapp
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/28/openai-codex/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔍</span>
+              Willison on Codex prompt
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude's Geopolitical Exposure: Goldman in Hong Kong Goes Dark</h2>
+          <p>A Bloomberg report surfaced today that <a href="https://www.bloomberg.com/news/articles/2026-04-29/goldman-staff-in-hong-kong-lose-access-to-anthropic-s-claude">Goldman Sachs staff in Hong Kong have lost access to Anthropic's Claude</a>. The report doesn't fully detail whether this is a Goldman policy decision, a regulatory compliance move related to Hong Kong's data governance environment, or a supply-side restriction from Anthropic. But the implications for enterprise AI builders are significant regardless of the cause.</p><p>This follows closely on Reuters' earlier reporting that <a href="https://www.reuters.com/world/china/chinese-companies-used-claude-improve-own-models-anthropic-says-2026-02-23/">Chinese companies including Tencent used Claude to fine-tune their own models</a> — with Anthropic itself confirming the abuse. Tencent reportedly used Claude outputs to train its Hy3 model, violating Anthropic's terms of service. The combination of model misuse by Chinese companies and now restricted access in Hong Kong signals that Anthropic is actively managing its geopolitical exposure in ways that will affect enterprise deployments.</p><p>For product builders, this is a supply-chain risk that needs to be in your architecture planning. If you're building enterprise AI products for global financial services, healthcare, or any regulated industry with Asia-Pacific operations, you need to be designing for model provider redundancy. The assumption that you can rely on a single frontier model provider across all geographies is increasingly fragile.</p><blockquote><p>"The complex factors that determine the single evaluation number so many focus on... and how this changes in the future."</p><cite>— Nathan Lambert, <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">Interconnects: Reading today's open-closed performance gap</a></cite></blockquote><p>Lambert's ongoing analysis of the open-closed model gap is directly relevant here: as geopolitical restrictions tighten around proprietary frontier models, the case for deploying open-weight models in sensitive regions gets materially stronger. This isn't just a cost story anymore — it's a sovereignty and reliability story.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.bloomberg.com/news/articles/2026-04-29/goldman-staff-in-hong-kong-lose-access-to-anthropic-s-claude" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏦</span>
+              Bloomberg on Goldman/Claude
+            </a>
+            
+            <a href="https://www.reuters.com/world/china/chinese-companies-used-claude-improve-own-models-anthropic-says-2026-02-23/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🌏</span>
+              Reuters on Tencent/Claude
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Nathan Lambert open-closed gap
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>DeepSeek V4 and the Open Model Catch-Up Race</h2>
+          <p>Latent Space's weekend coverage of <a href="https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and">DeepSeek V4 Pro (1.6T-A49B) and Flash (284B-A13B)</a> dropped to somewhat muted reaction — notably because DeepSeek, despite its massive scale, is no longer the clear benchmarks leader it was when V3 shocked the world. The model is runnable on Huawei Ascend chips, which is significant for China's AI compute independence, but the benchmark gap with GPT-5.5 and Claude Opus 4.x appears to have widened enough that the "DeepSeek beats the West" narrative has cooled.</p><p>Nathan Lambert's mid-April analysis on <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026">bets on open models for mid-2026</a> is instructive context: Lambert argues the open-closed gap is real but multidimensional — it's not just about raw benchmark scores, but about fine-tuning accessibility, deployment flexibility, and the ecosystem around post-training. Latent Space also flagged <a href="https://www.latent.space/p/ainews-moonshot-kimi-k26-the-worlds">Moonshot's Kimi K2.6 as the leading open model</a>, catching up to Opus 4.6 ahead of DeepSeek V4's arrival.</p><p>The Shopify CTO interview on Latent Space is worth revisiting for builder context: <a href="https://www.latent.space/p/shopify">Mikhail Parakhin described Shopify's AI adoption explosion in 2026</a>, including an unlimited Opus-4.6 token budget for internal teams. That's a signal about where enterprise AI spend is concentrating — at the frontier, not on cost-optimized open models, at least for internal productivity use cases.</p><blockquote><p>"The prodigal Tiger returns... but is no longer the benchmarks leader."</p><cite>— Latent Space, <a href="https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and">on DeepSeek V4 Pro</a></cite></blockquote><p>For builders thinking about open model strategy: the calculus is shifting. Open models are increasingly viable for production workloads in specific domains, but the frontier closed models are pulling ahead on agentic tasks. The right question isn't "open vs. closed" but "which tier of capability does my use case actually need, and what are the regulatory and geographic constraints on my deployment?"</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔓</span>
+              Latent Space on DeepSeek V4
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎲</span>
+              Nathan Lambert open model bets
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-moonshot-kimi-k26-the-worlds" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🌙</span>
+              Latent Space on Kimi K2.6
+            </a>
+            
+            <a href="https://www.latent.space/p/shopify" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛍️</span>
+              Shopify CTO on AI adoption
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Re-run your LLM cost model using cost-per-successful-outcome, not cost-per-token. If you're using a cheaper model with a high retry or failure rate, <a href="https://www.mendral.com/blog/frontier-model-lower-costs">Mendral's experience with Opus</a> suggests you may be leaving money on the table — frontier models often win on total workflow economics, especially in agentic pipelines with tool use.</li><li><strong>Actionable insight.</strong> Design for model provider redundancy in your enterprise architecture, especially for any product with APAC or global financial services customers. <a href="https://www.bloomberg.com/news/articles/2026-04-29/goldman-staff-in-hong-kong-lose-access-to-anthropic-s-claude">The Goldman/Hong Kong Claude situation</a> is a preview of geographic supply-chain risk — build your abstraction layer now so you can swap providers without re-engineering your product.</li><li><strong>Actionable insight.</strong> Evaluate Symphony and OpenAI's Codex orchestration model seriously as a reference architecture if you're building coding agents or developer tooling. <a href="https://openai.com/index/open-source-codex-orchestration-symphony">OpenAI's open-source bet</a> means this spec could become the de facto standard for how issue-to-PR agent workflows are structured — getting ahead of it lets you build compatible or differentiated products before the ecosystem locks in.</li><li><strong>Actionable insight.</strong> The OpenAI-on-AWS launch is a procurement unlock for enterprise deals you may have been stalling on. If you have customers who cited AWS data residency or vendor consolidation as blockers to adopting GPT-5.5 or Codex, <a href="https://openai.com/index/openai-on-aws">that objection is now much weaker</a> — update your sales and customer success playbooks accordingly.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.mendral.com/blog/frontier-model-lower-costs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Mendral cost model
+            </a>
+            
+            <a href="https://www.bloomberg.com/news/articles/2026-04-29/goldman-staff-in-hong-kong-lose-access-to-anthropic-s-claude" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏦</span>
+              Goldman/Claude
+            </a>
+            
+            <a href="https://openai.com/index/open-source-codex-orchestration-symphony" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎼</span>
+              Symphony
+            </a>
+            
+            <a href="https://openai.com/index/openai-on-aws" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">☁️</span>
+              OpenAI on AWS
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/op7418/guizang-ppt-skill">op7418/guizang-ppt-skill</a>
+              <span class="side-meta">HTML · ⭐ 3,903</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a>
+              <span class="side-meta">TypeScript · ⭐ 1,778</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/freestylefly/awesome-gpt-image-2">freestylefly/awesome-gpt-image-2</a>
+              <span class="side-meta">None⭐ 1,775</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad</a>
+              <span class="side-meta">JavaScript · ⭐ 1,107</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/0x0funky/agent-sprite-forge">0x0funky/agent-sprite-forge</a>
+              <span class="side-meta">Python · ⭐ 1,061</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/wuyoscar/gpt_image_2_skill">wuyoscar/gpt_image_2_skill</a>
+              <span class="side-meta">Python · ⭐ 958</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Mendral</div>
+              <span class="launch-detail">Mendral decreased LLM costs with their Opus model.</span>
+              <span class="launch-tag tag-pricing">Pricing</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Introduced GPT-5.5, their smartest model yet with enhanced capabilities for coding, research, and data analysis.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Launched two specialized TPUs (8T and 8I) designed for the agentic era of AI workloads.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Made OpenAI models, Codex, and Managed Agents available on AWS for enterprise AI deployment.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Released AI Mode in Chrome, enabling a new way to explore the web with AI integration.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Achieved FedRAMP Moderate authorization for ChatGPT Enterprise and the OpenAI API for U.S. federal agencies.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.24005">TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents</a>
+              <span class="side-meta">On-policy distillation (OPD) has shown strong potential for transferring reasoning ability from frontier or domain-specific models to smaller students. While effective on static single-turn tasks, its</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.23941">GoClick: Lightweight Element Grounding Model for Autonomous GUI Interaction</a>
+              <span class="side-meta">Graphical User Interface (GUI) element grounding (precisely locating elements on screenshots based on natural language instructions) is fundamental for agents interacting with GUIs. Deploying this cap</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.24441">AutoGUI-v2: A Comprehensive Multi-Modal GUI Functionality Understanding Benchmark</a>
+              <span class="side-meta">Autonomous agents capable of navigating Graphical User Interfaces (GUIs) hold the potential to revolutionize digital productivity. However, achieving true digital autonomy extends beyond reactive elem</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.25203">BARRED: Synthetic Training of Custom Policy Guardrails via Asymmetric Debate</a>
+              <span class="side-meta">Deploying guardrails for custom policies remains challenging, as generic safety models fail to capture task-specific requirements, while prompting LLMs suffers from inconsistent boundary-case performa</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.24842">Co-Director: Agentic Generative Video Storytelling</a>
+              <span class="side-meta">While diffusion models generate high-fidelity video clips, transforming them into coherent storytelling engines remains challenging. Current agentic pipelines automate this via chained modules but suf</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
