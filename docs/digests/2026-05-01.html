@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agents Get Goals, Goblins Explained — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Friday, May 01, 2026</div>
+        <h1>Agents Get Goals, Goblins Explained</h1>
+        
+        <p class="subtitle">Codex sprouts persistent goal-loops, OpenAI explains its goblin regression, and the community wrestles with when to trust — and when to distrust — AI coding agents. A defining week for how builders think about autonomous code execution.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Codex Gets Persistent Goals — and a New Orchestration Spec</h2>
+          <p>Two big moves from OpenAI this week signal a maturation in how coding agents are expected to operate. First, <a href="https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything">Codex CLI 0.128.0 shipped a <code>/goal</code> command</a> — essentially their own take on the <a href="https://ghuntley.com/ralph/">Ralph loop</a> pattern — that lets the agent keep iterating autonomously until it either evaluates the goal as complete or burns through a configured token budget. This is a meaningful shift from "run this command" to "achieve this outcome," which changes how you architect human-in-the-loop checkpoints.</p><p>Second, OpenAI published <a href="https://openai.com/index/open-source-codex-orchestration-symphony">Symphony</a>, an open-source spec for Codex orchestration that turns issue trackers into always-on agent systems. The framing here is explicit: reduce engineering context-switching by letting agents pick up work from your backlog continuously. Combined with the news that <a href="https://openai.com/index/openai-on-aws">OpenAI models, Codex, and Managed Agents are now available on AWS</a>, the picture is clear — OpenAI is building toward a world where Codex isn't a CLI tool you invoke, it's infrastructure you run.</p><p>Meanwhile, HN users are already asking <a href="https://news.ycombinator.com/item?id=47970795">how to extend Codex sessions</a>, which tells you something real: the token-budget ceiling is hitting in practice. If you're building on top of Codex, designing graceful handoff points before budget exhaustion isn't optional — it's table stakes UX.</p><blockquote><p>"You can now set a /goal and Codex will keep on looping until it evaluates that the goal has been completed... or the configured token budget has been exhausted."</p><cite>— Simon Willison, summarizing Codex CLI 0.128.0</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Codex /goal
+            </a>
+            
+            <a href="https://openai.com/index/open-source-codex-orchestration-symphony" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              OpenAI: Symphony spec
+            </a>
+            
+            <a href="https://openai.com/index/openai-on-aws" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">☁️</span>
+              OpenAI on AWS
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=47970795" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              HN: Extending Codex sessions
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Goblin Post Is Required Reading for Every AI PM</h2>
+          <p>OpenAI published <a href="https://openai.com/index/where-the-goblins-came-from">a detailed post-mortem on the "goblin" outputs</a> that caused GPT-5 to behave with strange, personality-driven quirks — and it's one of the more honest pieces of infrastructure writing the company has released. The short version: emergent behavioral artifacts from training leaked into production in ways that weren't caught by standard evals. The goblins weren't a single bug; they were a symptom of how hard it is to fully characterize model behavior before release.</p><p>For builders, this is the cautionary tale to bookmark. Eval suites catch what you think to test for. Personality regressions, tonal drift, and unexpected refusal patterns often slip through because nobody wrote a test for "does the model suddenly start making goblin references." <a href="https://eugeneyan.com/writing/evals/">Eugene Yan's canonical piece on task-specific evals</a> is directly relevant here — the distinction between evals that work and evals that don't often comes down to whether you've modeled failure modes that feel silly until they happen in production.</p><p>There's also a deeper product lesson: user trust is fragile. One weird behavioral cluster — even if harmless — creates disproportionate confusion and support load. If you're shipping on top of foundation models, you need behavioral regression testing as a first-class concern, not an afterthought. The goblin episode is a reminder that your model vendor's training pipeline is part of your stack, whether you like it or not.</p><blockquote><p>"How goblin outputs spread in AI models: timeline, root cause, and fixes behind personality-driven quirks in GPT-5 behavior."</p><cite>— OpenAI Blog summary, "Where the Goblins Came From"</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/where-the-goblins-came-from" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">👾</span>
+              OpenAI: Where the Goblins Came From
+            </a>
+            
+            <a href="https://eugeneyan.com/writing/evals/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Eugene Yan: Task-Specific Evals
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Code Failure Modes and the "Digital Smell" of AI-Generated Work</h2>
+          <p>A post making the rounds on HN this week — <a href="https://claudefolio.com/blog/claude-code-is-going-to-fail-you-eventually-and-you-need-to-be-ready">"Claude Code is going to fail you eventually, and you need to be ready"</a> — captures the operational reality that many builders are now living with: agentic coding tools are powerful enough to be genuinely useful, but not reliable enough to run unmonitored. The failure modes aren't random; they're patterned. Understanding them is what separates teams that ship with AI from teams that clean up after it.</p><p>This connects directly to a striking thread Simon Willison highlighted from Zig's Andrew Kelley, who has one of the strictest anti-LLM contribution policies in open source. Kelley's claim is worth sitting with: <a href="https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything">"people who come from the world of agentic coding have a certain digital smell that is not obvious to them but is obvious to us."</a> This isn't just gatekeeping — it's a signal about code quality and reasoning depth that experienced maintainers claim they can reliably detect.</p><p>For product builders, the implication cuts both ways. You can ship faster with AI coding agents. But if your codebase is the product, or if it needs to be maintained by humans who care deeply about craft, the social and technical debt of AI-generated code is real and under-discussed. Sebastian Raschka's recent deep-dive on <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent">the components of a coding agent</a> — tools, memory, and repo context — gives a useful mental model for where these failure modes originate.</p><blockquote><p>"People who come from the world of agentic coding have a certain digital smell that is not obvious to them but is obvious to us."</p><cite>— Andrew Kelley, Zig project lead, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://claudefolio.com/blog/claude-code-is-going-to-fail-you-eventually-and-you-need-to-be-ready" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              ClaudeFolio: Claude Code failure modes
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Andrew Kelley quote
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Simon Willison: Zig anti-AI policy
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Raschka: Components of a Coding Agent
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>KV Cache Locality: The Inference Cost Variable Nobody Talks About</h2>
+          <p>A quietly important post surfaced on HN: <a href="https://ranvier.systems/2026/04/30/kv-cache-locality-the-hidden-variable-in-your-llm-serving-cost.html">"KV Cache Locality: The Hidden Variable in Your LLM Serving Cost."</a> As teams move from prototypes to production workloads, inference cost optimization is becoming a real engineering discipline — and KV cache behavior is one of the least-understood levers. The core insight: cache hit rates vary dramatically based on how you structure and route requests, and the delta between good and bad cache locality can represent a 2-5x difference in effective cost per token at scale.</p><p>This matters more as the industry shifts what Latent Space is calling <a href="https://www.latent.space/p/ainews-the-inference-inflection">"The Inference Inflection"</a> — a moment where inference spend is beginning to dominate training spend for many organizations, and where the economics of serving at scale demand the same rigor previously reserved for training pipelines. Google's simultaneous announcement of <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/">two new specialized TPUs for the agentic era</a> — distinct chips for training and inference workloads — underlines that the infrastructure layer is bifurcating to serve these different cost profiles.</p><p>For builders who are still treating inference as a commodity API call: the era of "just throw it at the endpoint" is ending. Teams that understand prefix caching, request batching, and prompt structure's impact on cache locality will have a structural cost advantage. This is now a product strategy question, not just a DevOps one.</p><blockquote><p>"A quiet day lets us reflect on the growing implications of the inference age."</p><cite>— Latent Space (swyx), "The Inference Inflection"</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://ranvier.systems/2026/04/30/kv-cache-locality-the-hidden-variable-in-your-llm-serving-cost.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💾</span>
+              Ranvier: KV Cache Locality
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-the-inference-inflection" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Latent Space: The Inference Inflection
+            </a>
+            
+            <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🖥️</span>
+              Google: New TPUs for agentic era
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GPT-5.5 Cyber Capabilities and the New Security Eval Landscape</h2>
+          <p>The UK's AI Security Institute published its <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything">evaluation of GPT-5.5's cyber capabilities</a>, finding it comparable to Claude Mythos in its ability to find security vulnerabilities — with the key difference that GPT-5.5 is generally available right now, while Mythos remains behind restricted access. This is a significant data point: frontier-level offensive security capability is now in broadly accessible models.</p><p>OpenAI simultaneously published a <a href="https://openai.com/index/cybersecurity-in-the-intelligence-age">five-part cybersecurity action plan</a> and introduced <a href="https://openai.com/index/advanced-account-security">Advanced Account Security</a> with phishing-resistant login. The juxtaposition is notable — as the models get better at finding vulnerabilities, the platforms hosting them have to harden their own attack surfaces. For AI PMs building anything in the security or compliance space, these evaluations are now your competitive landscape documents.</p><p>The broader implication for product builders: if you're shipping an AI product that operates with any degree of autonomy — browsing the web, executing code, calling APIs — your threat model needs to account for prompt injection and adversarial inputs at a level most product teams haven't gotten to yet. Lilian Weng's foundational work on <a href="https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/">adversarial attacks on LLMs</a> remains the best primer, and the GPT-5.5 eval results suggest these attacks are becoming more tractable, not less.</p><blockquote><p>"OpenAI outlines a five-part action plan for strengthening cybersecurity in the Intelligence Age, focused on democratizing AI-powered cyber defense and protecting critical systems."</p><cite>— OpenAI Blog, "Cybersecurity in the Intelligence Age"</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Simon Willison: GPT-5.5 cyber eval
+            </a>
+            
+            <a href="https://openai.com/index/cybersecurity-in-the-intelligence-age" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛡️</span>
+              OpenAI: Cybersecurity action plan
+            </a>
+            
+            <a href="https://openai.com/index/advanced-account-security" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔑</span>
+              OpenAI: Advanced Account Security
+            </a>
+            
+            <a href="https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📚</span>
+              Lil'Log: Adversarial attacks on LLMs
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Codex's <code>/goal</code> loop and Symphony spec mean persistent agent execution is now a first-class product pattern — audit your human-in-the-loop checkpoints now, before token-budget exhaustion becomes a customer-facing failure mode rather than a design decision.</li><li><strong>Actionable insight.</strong> The goblin post-mortem from OpenAI is your template for behavioral regression testing: add a dedicated eval layer for tonal, personality, and refusal-pattern drift that runs on every model version bump, treating your vendor's training pipeline as a dependency that can break your product.</li><li><strong>Actionable insight.</strong> KV cache locality is the new query optimization — if your product sends high-volume LLM requests, assign an engineer to audit prompt structure and request routing for cache hit rate before your next infrastructure review; the cost savings are often larger than switching providers.</li><li><strong>Actionable insight.</strong> With GPT-5.5 now publicly available at frontier cyber-capability levels, any AI product operating with web access or code execution needs a prompt injection threat model in place today — this is no longer a future concern to defer to a security review.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/open-source-codex-orchestration-symphony" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              OpenAI: Symphony
+            </a>
+            
+            <a href="https://openai.com/index/where-the-goblins-came-from" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">👾</span>
+              OpenAI: Goblins post-mortem
+            </a>
+            
+            <a href="https://ranvier.systems/2026/04/30/kv-cache-locality-the-hidden-variable-in-your-llm-serving-cost.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💾</span>
+              Ranvier: KV Cache
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              GPT-5.5 cyber eval
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a>
+              <span class="side-meta">TypeScript · ⭐ 8,707</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/freestylefly/awesome-gpt-image-2">freestylefly/awesome-gpt-image-2</a>
+              <span class="side-meta">None⭐ 2,639</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/willchen96/mike">willchen96/mike</a>
+              <span class="side-meta">TypeScript · ⭐ 809</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/DanOps-1/Gpt-Agreement-Payment">DanOps-1/Gpt-Agreement-Payment</a>
+              <span class="side-meta">Python · ⭐ 802</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/epoko77-ai/im-not-ai">epoko77-ai/im-not-ai</a>
+              <span class="side-meta">Python · ⭐ 675</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/alash3al/stash">alash3al/stash</a>
+              <span class="side-meta">Go · ⭐ 608</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI models, Codex, and Managed Agents are now available on AWS for enterprise deployment.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Released Symphony, an open-source spec for Codex orchestration to enable always-on agent systems.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Launched two specialized TPUs (8T and 8I) designed for the agentic era of AI workloads.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Simon Willison / OpenAI</div>
+              <span class="launch-detail">Codex CLI 0.128.0 added /goal feature to enable autonomous loop execution until goal completion.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Simon Willison</div>
+              <span class="launch-detail">Released LLM 0.32a0, a major backwards-compatible refactor moving from prompt-response to multi-modal tool-calling model.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI is now available at FedRAMP Moderate authorization for ChatGPT Enterprise and the OpenAI API.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.27505">Leveraging Verifier-Based Reinforcement Learning in Image Editing</a>
+              <span class="side-meta">While Reinforcement Learning from Human Feedback (RLHF) has become a pivotal paradigm for text-to-image generation, its application to image editing remains largely unexplored. A key bottleneck is the</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.27711">ExoActor: Exocentric Video Generation as Generalizable Interactive Humanoid Control</a>
+              <span class="side-meta">Humanoid control systems have made significant progress in recent years, yet modeling fluent interaction-rich behavior between a robot, its surrounding environment, and task-relevant objects remains a</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.27083">Co-Evolving Policy Distillation</a>
+              <span class="side-meta">RLVR and OPD have become standard paradigms for post-training. We provide a unified analysis of these two paradigms in consolidating multiple expert capabilities into a single model, identifying capab</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.27419">InteractWeb-Bench: Can Multimodal Agent Escape Blind Execution in Interactive Website Generation?</a>
+              <span class="side-meta">With the advancement of multimodal large language models (MLLMs) and coding agents, the website development has shifted from manual programming to agent-based project-level code synthesis. Existing be</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.28130">MoCapAnything V2: End-to-End Motion Capture for Arbitrary Skeletons</a>
+              <span class="side-meta">Recent methods for arbitrary-skeleton motion capture from monocular video follow a factorized pipeline, where a Video-to-Pose network predicts joint positions and an analytical inverse-kinematics (IK)</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
