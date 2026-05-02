@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agents Break Containment, Tokens Burn — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Saturday, May 02, 2026</div>
+        <h1>Agents Break Containment, Tokens Burn</h1>
+        
+        <p class="subtitle">Coding agents are escaping the IDE and eating knowledge work whole. Meanwhile, the community is in open revolt against context waste — and token budgets are becoming a first-class product concern.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Coding Agents Escape the IDE</h2>
+          <p>Something notable is happening in the agent landscape this week: coding agents aren't just writing code anymore — they're taking over knowledge work. <a href="https://www.latent.space/p/ainews-agents-for-everything-else">Latent Space's latest AINews</a> frames it bluntly: Codex is becoming the default for structured knowledge work, while Claude is emerging as the go-to for creative and longer-horizon tasks. The framing of "agents breaking containment" from the IDE is exactly right — these tools started as code autocomplete and are now being deployed as general-purpose autonomous workers.</p><p>The biggest structural move here is <a href="https://openai.com/index/openai-on-aws">OpenAI landing on AWS</a> with GPT models, Codex, and Managed Agents available natively in enterprise AWS environments. For builders targeting enterprise, this is a meaningful distribution unlock — it removes the procurement friction of a new vendor relationship and drops agents directly into existing cloud security postures. Paired with <a href="https://openai.com/index/openai-available-at-fedramp-moderate">OpenAI's FedRAMP Moderate authorization</a>, the TAM for agent deployments just got significantly larger overnight.</p><p>On the orchestration side, OpenAI quietly dropped <a href="https://openai.com/index/open-source-codex-orchestration-symphony">Symphony</a>, an open-source spec for Codex orchestration that turns issue trackers into always-on agent pipelines. This is a direct answer to the question every engineering team is asking: how do we actually wire agents into existing workflows at scale?</p><blockquote><p>"a quiet day lets us reflect on coding agents 'breaking containment'"</p><cite>— Latent Space (swyx), AINews May 1 2026</cite></blockquote><p>For builders, the implication is clear: the product surface is no longer just the chat interface or the IDE plugin. Agents are becoming workflow infrastructure. If you're not thinking about how your product fits into an agent-orchestrated pipeline, you're already behind.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-agents-for-everything-else" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space AINews
+            </a>
+            
+            <a href="https://openai.com/index/openai-on-aws" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI on AWS
+            </a>
+            
+            <a href="https://openai.com/index/open-source-codex-orchestration-symphony" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Symphony Spec
+            </a>
+            
+            <a href="https://openai.com/index/openai-available-at-fedramp-moderate" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI FedRAMP
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Token Waste Crisis Is Now a Product Problem</h2>
+          <p>There's a quiet revolt happening in the developer community, and it's showing up in three separate HN submissions on the same morning. <a href="https://github.com/0xhimanshu/governor">Governor</a> is a Claude Code plugin explicitly built to reduce token and context waste. <a href="https://github.com/Amnibro/amnitex">Amnitex</a> pitches itself as a "lossless memory layer for AI coding assistants." And a <a href="https://github.com/lahfir/agent-desktop">Playwright-for-desktop-apps project</a> leads with the headline "80% token savings" as its primary value proposition. Token efficiency isn't a backend concern anymore — it's become a user-facing feature.</p><p>This tracks with what <a href="https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything">Simon Willison noted about Codex CLI 0.128.0</a>, which added a <code>/goal</code> command that loops until a goal is completed — or the configured token budget is exhausted. The token budget is now a first-class product primitive, not just an API parameter developers tune in the background.</p><p>The deeper problem is architectural: as agents run longer loops and accumulate more context, costs compound in ways that aren't obvious until a bill arrives. Memory layers, context pruning plugins, and goal-oriented loop control are all different attempts to solve the same underlying issue — models don't have a native sense of "enough."</p><blockquote><p>"You can now set a /goal and Codex will keep on looping until it evaluates that the goal has been completed... or the configured token budget has been exhausted."</p><cite>— Simon Willison, covering Codex CLI 0.128.0</cite></blockquote><p>For product builders, the takeaway is uncomfortable: your users are already building workarounds for context waste in your product. If you're shipping an agent or coding assistant, token budget controls, context summarization, and memory management should be on your near-term roadmap — not as nice-to-haves, but as core UX.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/0xhimanshu/governor" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Governor Plugin
+            </a>
+            
+            <a href="https://github.com/Amnibro/amnitex" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Amnitex Memory Layer
+            </a>
+            
+            <a href="https://github.com/lahfir/agent-desktop" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Agent Desktop
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison on Codex Goals
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GPT-5.5's Cyber Capabilities: A New Eval That Builders Should Watch</h2>
+          <p>The UK's AI Security Institute published its evaluation of GPT-5.5's cyber capabilities, and the findings are worth sitting with. <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything">Simon Willison summarizes</a> that GPT-5.5 is now comparable to Claude Mythos on finding security vulnerabilities — and unlike Mythos, it's generally available right now. This is a genuine capability milestone: frontier models are now being formally evaluated on offensive security tasks by government bodies, not just academic red teams.</p><p>The AISI's methodology here matters for builders. They're running structured evals against specific security task categories, creating a reproducible benchmark that goes well beyond "can it write a phishing email." For AI product teams building anything in security, compliance, or infrastructure tooling, this eval framework is a template worth studying — it's the kind of structured capability measurement that should inform both what you build and how you communicate risk to enterprise customers.</p><p>Meanwhile, OpenAI published a dedicated <a href="https://openai.com/index/cybersecurity-in-the-intelligence-age">cybersecurity strategy post</a> outlining a five-part action plan for AI-powered cyber defense. The framing is interesting: they're explicitly positioning models as defense tools, not just dual-use risks. This is partly PR, but it's also a real product strategy — enterprise security teams are actively evaluating AI-powered vulnerability detection, and the first credible offerings will capture significant budget.</p><blockquote><p>"GPT-5.5... found to be comparable to Mythos, but unlike Mythos it's generally available right now."</p><cite>— Simon Willison, summarizing AISI GPT-5.5 evaluation</cite></blockquote><p>The implication for builders: security capability evals are becoming a standard part of model releases, and customers will increasingly ask for them. If you're building on top of these models, understanding the published capability profiles isn't optional — it's part of responsible product management.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison on GPT-5.5 Cyber Evals
+            </a>
+            
+            <a href="https://openai.com/index/cybersecurity-in-the-intelligence-age" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI Cybersecurity Strategy
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Open Source Draws a Hard Line on LLM Contributions</h2>
+          <p>The Zig project's anti-LLM contribution policy is generating real discussion, and the reasoning from Zig's creator Andrew Kelley is more nuanced than a simple "no AI" stance. <a href="https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything">Simon Willison covered their code of conduct</a>, which bans LLMs for issues, pull requests, and even comments — including translation. But what's striking is Kelley's argument for why the ban is enforceable.</p><blockquote><p>"It's a common misconception that we can't tell who is using LLM and who is not... the kind of mistakes humans make are fundamentally different than LLM hallucinations, making them easy to spot. Furthermore, people who come from the world of agentic coding have a certain <em>digital smell</em> that is not obvious to them but is obvious to us."</p><cite>— Andrew Kelley, quoted by Simon Willison from Lobste.rs</cite></blockquote><p>The "digital smell" framing is provocative and worth taking seriously. Kelley is describing a real phenomenon: agentic coding workflows produce a distinctive pattern of over-confident code, unusual error handling choices, and verbose but shallow commit messages that experienced maintainers can recognize. This isn't just about code quality — it's about the signal-to-noise ratio in the entire contribution pipeline.</p><p>For builders, this is a leading indicator of a coming split in the developer ecosystem. Projects that accept AI contributions will develop different quality norms, review processes, and community cultures than those that don't. If you're building developer tools or platforms that sit on top of open source infrastructure, you need to understand which communities are drawing these lines and why — it affects everything from integration support to community adoption strategy. The <a href="https://simonwillison.net/2026/Apr/30/rss-vibe-coded-apps/#atom-everything">parallel discussion about vibe-coded apps needing better distribution infrastructure</a> suggests we're entering an era where AI-generated artifacts need their own channels entirely.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Zig Anti-AI Policy
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Andrew Kelley Quote
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/rss-vibe-coded-apps/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              RSS for Vibe-Coded Apps
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Inference Inflection and Infrastructure Arms Race</h2>
+          <p>Two major infrastructure signals this week point in the same direction: the compute buildout is accelerating and the economics are shifting toward inference at scale. OpenAI published a post on <a href="https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age">scaling Stargate</a> — their massive data center program — specifically framing it around meeting inference demand, not just training. This is a meaningful shift in public messaging: training capacity was always the prestige metric, but inference is where the revenue actually lives.</p><p>Google fired back on the hardware side, announcing <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/">two new specialized TPUs designed specifically for the agentic era</a> — eighth-generation chips with distinct variants for training and inference workloads. The explicit callout of "agentic era" in the product naming is telling: Google is designing silicon around the assumption that agents running long multi-step tasks are the primary inference workload going forward, not single-turn completions.</p><p><a href="https://www.latent.space/p/ainews-the-inference-inflection">Latent Space's "Inference Inflection" framing</a> captures the shift well: we're past the point where training runs were the primary cost driver for most builders. The marginal cost of inference — especially for long-running agent loops — is now the dominant variable in AI product economics. This explains the community obsession with token efficiency tools covered earlier: it's not just developer ergonomics, it's unit economics.</p><blockquote><p>"a quiet day lets us reflect on the growing implications of the inference age"</p><cite>— Latent Space (swyx), AINews April 30 2026</cite></blockquote><p>For builders: if your product's business model doesn't account for inference cost at agentic scale, run those numbers now. The tools your users are building to reduce token waste are a direct signal that your cost structure is visible to them — and it affects their willingness to pay.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI Stargate Scaling
+            </a>
+            
+            <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Google Agentic TPUs
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-the-inference-inflection" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space Inference Inflection
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Token budget management is now a product feature, not just an infra concern. Audit your agent or assistant product for cost transparency controls — users are already building plugins to manage what you haven't shipped. A token budget UI, context summarization, and goal-completion detection should be on your Q3 roadmap.</li><li><strong>Actionable insight.</strong> The OpenAI-AWS and FedRAMP announcements are distribution unlocks, not just marketing. If you're building on OpenAI APIs and targeting enterprise or government customers, update your sales materials and security docs to reflect that your infrastructure now sits inside their existing compliance perimeter — this removes a major procurement objection.</li><li><strong>Actionable insight.</strong> The Zig "digital smell" debate is a leading indicator of ecosystem fragmentation. Map which open source projects your product depends on or integrates with, and understand their LLM contribution policies. Projects with anti-AI stances may slow their integration roadmaps with AI tooling — and your users who contribute to those communities are navigating real social costs.</li><li><strong>Actionable insight.</strong> GPT-5.5's formal cyber capability evaluation from AISI sets a new precedent: model releases will increasingly ship with government-reviewed capability profiles. If you're building in security, compliance, or any regulated domain, start tracking these evals as part of your model selection criteria — and get ahead of customer questions by knowing the published risk profile of whatever model you're deploying.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/0xhimanshu/governor" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Governor Plugin
+            </a>
+            
+            <a href="https://openai.com/index/openai-on-aws" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI on AWS
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Zig Anti-AI Policy
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              GPT-5.5 Cyber Evals
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a>
+              <span class="side-meta">TypeScript · ⭐ 12,292</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/freestylefly/awesome-gpt-image-2">freestylefly/awesome-gpt-image-2</a>
+              <span class="side-meta">None⭐ 3,037</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/denuitt1/mhr-cfw">denuitt1/mhr-cfw</a>
+              <span class="side-meta">Python · ⭐ 1,333</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/willchen96/mike">willchen96/mike</a>
+              <span class="side-meta">TypeScript · ⭐ 1,112</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/DanOps-1/Gpt-Agreement-Payment">DanOps-1/Gpt-Agreement-Payment</a>
+              <span class="side-meta">Python · ⭐ 881</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/darrylmorley/whatcable">darrylmorley/whatcable</a>
+              <span class="side-meta">Swift · ⭐ 794</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI models, Codex, and Managed Agents are now available on AWS for enterprises to build secure AI in their AWS environments.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI is available at FedRAMP Moderate authorization for ChatGPT Enterprise and the OpenAI API, enabling secure AI adoption for U.S. federal agencies.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google launched two specialized TPUs (8T and 8I) as part of the eighth generation designed to power the agentic era of AI.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI released Symphony, an open-source spec for Codex orchestration that turns issue trackers into always-on agent systems.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI introduced Advanced Account Security featuring phishing-resistant login, stronger recovery, and enhanced protections to prevent account takeover.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Simon Willison</div>
+              <span class="launch-detail">LLM 0.32a0 released as a major backwards-compatible refactor shifting from prompt-response modeling to tool-calling conversations.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.24954">Nemotron 3 Nano Omni: Efficient and Open Multimodal Intelligence</a>
+              <span class="side-meta">We introduce Nemotron 3 Nano Omni, the latest model in the Nemotron multimodal series and the first to natively support audio inputs alongside text, images, and video. Nemotron 3 Nano Omni delivers co</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.27151">Step-level Optimization for Efficient Computer-use Agents</a>
+              <span class="side-meta">Computer-use agents provide a promising path toward general software automation because they can interact directly with arbitrary graphical user interfaces instead of relying on brittle, application-s</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.24953">ViPO: Visual Preference Optimization at Scale</a>
+              <span class="side-meta">While preference optimization is crucial for improving visual generative models, how to effectively scale this paradigm remains largely unexplored. Current open-source preference datasets contain conf</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.24952">Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization</a>
+              <span class="side-meta">Human visual preferences are inherently multi-dimensional, encompassing aesthetics, detail fidelity, and semantic alignment. However, existing datasets provide only single, holistic annotations, resul</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.28157">FlashRT: Towards Computationally and Memory Efficient Red-Teaming for Prompt Injection and Knowledge Corruption</a>
+              <span class="side-meta">Long-context large language models (LLMs)-for example, Gemini-3.1-Pro and Qwen-3.5-are widely used to empower many real-world applications, such as retrieval-augmented generation, autonomous agents, a</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
