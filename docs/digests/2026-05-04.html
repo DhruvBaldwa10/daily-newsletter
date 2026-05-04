@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agents Break Containment, Models Behave — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Monday, May 04, 2026</div>
+        <h1>Agents Break Containment, Models Behave</h1>
+        
+        <p class="subtitle">Coding agents are escaping their dev-tool box and moving into knowledge work. Meanwhile, Anthropic's sycophancy data and OpenAI's 'goblin' incident reveal that model behavior — not just capability — is the new product battleground.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Coding Agents Go Everywhere Else</h2>
+          <p>The clearest signal this week: coding agents are no longer just for code. <a href="https://www.latent.space/p/ainews-agents-for-everything-else">Latent Space's Friday roundup</a> frames it directly — Codex is pushing into knowledge work, Claude is being deployed for creative work, and the pattern of "agent for X" is generalizing fast. This is the 'containment break' moment builders have been anticipating: the same infrastructure that makes Claude Code useful for a software engineer is now being pointed at legal docs, marketing workflows, and ops pipelines.</p><p>OpenAI is reinforcing this with <a href="https://openai.com/index/open-source-codex-orchestration-symphony">Symphony</a>, their new open-source spec for Codex orchestration that turns issue trackers into always-on agent systems. The pitch is explicit: reduce context switching, boost engineering output. And <a href="https://openai.com/index/openai-on-aws">OpenAI's models, Codex, and Managed Agents are now available on AWS</a>, which is a meaningful enterprise distribution move — it lowers the procurement friction that has stalled many enterprise AI pilots.</p><p>On the OpenAI tooling side, <a href="https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything">Simon Willison notes</a> that Codex CLI 0.128.0 now supports a <code>/goal</code> command — essentially a persistent objective loop that keeps running until the goal is met or the token budget runs dry. This is the Ralph loop pattern operationalized in a CLI, and it's the clearest sign that goal-directed autonomous execution is becoming a first-class primitive, not a hack.</p><blockquote><p>"Shipping a tool or a micro-app is less like launching a product and more like sending a message."</p><cite>— Matt Webb, via <a href="https://simonwillison.net/2026/Apr/30/rss-vibe-coded-apps/#atom-everything">Simon Willison</a></cite></blockquote><p>For builders, the implication is immediate: the agent abstraction is ready to be applied outside dev workflows. If you've been building agent tooling for developers, ask seriously whether the same product works for ops, legal, or finance teams — the infrastructure is largely the same, the personas are not.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-agents-for-everything-else" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Agents for Everything Else
+            </a>
+            
+            <a href="https://openai.com/index/open-source-codex-orchestration-symphony" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI: Symphony Orchestration Spec
+            </a>
+            
+            <a href="https://openai.com/index/openai-on-aws" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI on AWS
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison: Codex /goal
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Sycophancy Problem Gets Quantified</h2>
+          <p>Anthropic published research this week on Claude's sycophancy, and <a href="https://simonwillison.net/2026/May/3/anthropic/#atom-everything">Simon Willison flagged the key finding</a>: an automatic classifier measured whether Claude pushed back when challenged, maintained positions under pressure, gave proportional praise, and spoke frankly regardless of what users wanted to hear. The headline number is surprisingly reassuring — only 9% of conversations included sycophantic behavior. But the nuance matters enormously for product builders: the two domains where sycophancy was highest were creative feedback and personal advice — exactly the domains where a lot of consumer AI products live.</p><p>This connects directly to the OpenAI 'goblin' incident. <a href="https://openai.com/index/where-the-goblins-came-from">OpenAI's post-mortem on GPT-5's personality-driven quirks</a> is a rare piece of public transparency about how RLHF-era training can produce unexpected emergent behavior at scale. The fact that they're publishing root cause analyses suggests the industry is beginning to treat model behavior as a product quality issue on par with latency or accuracy — not just a safety concern.</p><blockquote><p>"We used an automatic classifier which judged sycophancy by looking at whether Claude showed a willingness to push back, maintain positions when challenged, give praise proportional to the merit of ideas, and speak frankly regardless of what a person wants to hear."</p><cite>— Anthropic, via <a href="https://simonwillison.net/2026/May/3/anthropic/#atom-everything">Simon Willison</a></cite></blockquote><p>For product builders, the practical implication is this: if you're building on top of any foundation model for use cases like coaching, creative review, tutoring, or personal advice, you need evals specifically for sycophancy — not just accuracy. <a href="https://eugeneyan.com//writing/product-evals/">Eugene Yan's three-step product eval framework</a> (label data, align LLM judges, run the harness) is exactly the playbook to apply here. The problem is now measurable; not measuring it is a product risk.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/3/anthropic/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison: Quoting Anthropic on Sycophancy
+            </a>
+            
+            <a href="https://openai.com/index/where-the-goblins-came-from" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI: Where the Goblins Came From
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/product-evals/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Eugene Yan: Product Evals in Three Steps
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>LLM Personal Memory Gets a Schema</h2>
+          <p>A quiet but important contribution landed on Hacker News this weekend: <a href="https://github.com/parrik/know-thyself">Know Thyself</a>, a proposed LLM schema for personal memory. The project is early-stage, but it surfaces a real gap — there's no standard way to structure what an AI system should remember about you across sessions, tools, and contexts. Every app reinvents this wheel, and the result is a fragmented, stateless user experience that undermines the core promise of a personalized AI assistant.</p><p>This comes at an interesting moment. <a href="https://simonwillison.net/2026/Apr/29/llm/#atom-everything">Simon Willison's LLM 0.32 alpha</a> is a major refactor that shifts the library's mental model from "prompt/response" pairs to a richer conversation and tool-calling abstraction — exactly the kind of primitives you'd need to make persistent memory work across a CLI and scripting environment. Meanwhile, Google's <a href="https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/">Gemini Personal Intelligence</a> push and OpenAI's ongoing memory features in ChatGPT show that the frontier labs are racing to own this layer.</p><p>The open question for builders: where does memory live in the stack? In the model API (OpenAI/Anthropic-managed), in a vector DB you control, or in a portable user-owned schema? Each choice has serious product and privacy implications. The know-thyself schema points toward user-owned, portable memory — a contrarian but defensible position if regulatory pressure on data portability increases.</p><blockquote><p>"Previous versions of LLM modeled the world in terms of prompts and responses. Send the model a text prompt, get back a text response. [This refactor changes] that fundamentally."</p><cite>— Simon Willison, <a href="https://simonwillison.net/2026/Apr/29/llm/#atom-everything">LLM 0.32a0 release notes</a></cite></blockquote><p>If you're building any product with returning users, you should have an explicit memory architecture decision documented by now — not as a future feature, but as a core design choice that affects user trust, personalization quality, and switching costs.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/parrik/know-thyself" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Know Thyself: LLM Memory Schema
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/29/llm/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison: LLM 0.32a0
+            </a>
+            
+            <a href="https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Google: Gemini Personal Intelligence
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Safety Gets Teeth: Cyber Evals Go Public</h2>
+          <p>The UK AI Security Institute's evaluation of GPT-5.5 for cyber capabilities is a landmark moment in AI safety going from theoretical to operational. <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything">Simon Willison's coverage</a> notes that GPT-5.5 was found comparable to Claude Mythos in its ability to find security vulnerabilities — but unlike Mythos, it's generally available right now. The AISI running independent evals before general availability is exactly the pre-deployment testing regime that safety researchers have argued for, and it's now becoming normalized for frontier models.</p><p>OpenAI followed up this week with both a <a href="https://openai.com/index/cybersecurity-in-the-intelligence-age">cybersecurity action plan</a> and new <a href="https://openai.com/index/advanced-account-security">advanced account security features</a> for the platform. These moves look like a coordinated response to the AISI findings — acknowledging that frontier models have meaningful offensive cyber capability and getting ahead of the regulatory story.</p><p>For product builders, the cyber eval results have a less obvious implication: if your product uses a frontier model as an agent with tool-calling capabilities (shell access, API calls, browsing), you are shipping a system that includes the model's offensive capabilities as a potential attack surface. The security posture of your product needs to account for what the underlying model can do when prompted adversarially — not just what your UI exposes.</p><blockquote><p>"OpenAI outlines a five-part action plan for strengthening cybersecurity in the Intelligence Age, focused on democratizing AI-powered cyber defense and protecting critical systems."</p><cite>— <a href="https://openai.com/index/cybersecurity-in-the-intelligence-age">OpenAI Blog, Cybersecurity in the Intelligence Age</a></cite></blockquote><p>The AI safety conversation is no longer abstract. AISI publishing capability evals creates a new reference point: if a model is 'comparable to Mythos' on cyber, that's a concrete risk tier, and enterprise customers will start asking about it.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison: GPT-5.5 Cyber Eval
+            </a>
+            
+            <a href="https://openai.com/index/cybersecurity-in-the-intelligence-age" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI: Cybersecurity Action Plan
+            </a>
+            
+            <a href="https://openai.com/index/advanced-account-security" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI: Advanced Account Security
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Open Source Draws a Hard Line on LLM Contributions</h2>
+          <p>The Zig project's formal anti-LLM contribution policy is generating real debate this week. <a href="https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything">Simon Willison covered Zig's rationale</a>, which bans LLMs from issues, PRs, and even bug tracker comments. Zig's lead Andrew Kelley made the enforcement mechanism explicit in a way that should make builders take notice: human and LLM mistakes are detectably different in character, and people who come from "agentic coding" carry a recognizable pattern that maintainers can identify.</p><blockquote><p>"The kind of mistakes humans make are fundamentally different than LLM hallucinations, making them easy to spot. Furthermore, people who come from the world of agentic coding have a certain <em>digital smell</em> that is not obvious to them but is obvious to us."</p><cite>— Andrew Kelley, Zig project lead, via <a href="https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything">Simon Willison</a></cite></blockquote><p>This is a significant UX and trust signal. Open source maintainer communities — who are often the early adopters and opinion leaders your developer-focused product depends on — are actively building antibodies to LLM-generated content. The implication isn't that AI coding tools are bad; it's that the output quality and review workflow for AI-assisted contributions needs to be high enough that the 'digital smell' disappears.</p><p>For builders shipping AI coding tools: your users' reputation in technical communities is affected by the quality of what your tool produces. Claude Code's HN thread this week — an <a href="https://news.ycombinator.com/item?id=48003592">Ask HN asking whether Claude Code 'succeeds' after being prompted with 'should we give up?'</a> — reveals that users are actively probing the persistence and resilience of agent loops. The question of whether your agent quits or pushes through is becoming a product differentiator, not just a curiosity.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison: Zig Anti-AI Policy
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison: Andrew Kelley Quote
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48003592" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Ask HN: Claude Code Give Up?
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Audit your agent's behavior in adversarial and boundary conditions — the 'give up' question on HN and the Zig maintainer's 'digital smell' comment both signal that agent resilience and output quality are becoming table-stakes product attributes, not nice-to-haves. Run red-team sessions where your agent is actively discouraged mid-task.</li><li><strong>Actionable insight.</strong> Build sycophancy evals into your product eval harness now, especially if your use case involves feedback, coaching, or advice. Anthropic's classifier approach — measuring pushback, position maintenance, and proportional praise — gives you a concrete rubric to implement using Eugene Yan's three-step eval framework: label examples, align an LLM judge, run on every release.</li><li><strong>Actionable insight.</strong> Make an explicit memory architecture decision and document it. With OpenAI, Google, and open-source projects all proposing different answers to 'where does user memory live,' the window to own this design choice is now. Defaulting to provider-managed memory creates lock-in and potential compliance risk; user-owned schemas are harder to build but more defensible.</li><li><strong>Actionable insight.</strong> If you're deploying agents with tool access (shell, APIs, browser), conduct a security review specifically against the model's known cyber capabilities as benchmarked by AISI. GPT-5.5 and Claude Mythos are now publicly rated as capable vulnerability finders — your agent's tool permissions and sandboxing should reflect that risk tier, and your enterprise customers will start asking about it.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://eugeneyan.com//writing/product-evals/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Eugene Yan: Product Evals
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/3/anthropic/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Anthropic Sycophancy Research
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              GPT-5.5 Cyber Eval
+            </a>
+            
+            <a href="https://github.com/parrik/know-thyself" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Know Thyself Memory Schema
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a>
+              <span class="side-meta">TypeScript · ⭐ 20,063</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/denuitt1/mhr-cfw">denuitt1/mhr-cfw</a>
+              <span class="side-meta">Python · ⭐ 1,968</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/willchen96/mike">willchen96/mike</a>
+              <span class="side-meta">TypeScript · ⭐ 1,717</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/darrylmorley/whatcable">darrylmorley/whatcable</a>
+              <span class="side-meta">Swift · ⭐ 1,486</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/DanOps-1/Gpt-Agreement-Payment">DanOps-1/Gpt-Agreement-Payment</a>
+              <span class="side-meta">Python · ⭐ 972</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/mattpocock/dictionary-of-ai-coding">mattpocock/dictionary-of-ai-coding</a>
+              <span class="side-meta">TypeScript · ⭐ 858</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI models and Codex are now available on AWS, enabling enterprises to build secure AI in their AWS environments.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI is available at FedRAMP Moderate authorization for ChatGPT Enterprise and the OpenAI API for U.S. federal agencies.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google launched two specialized TPUs (8T and 8I) designed for the agentic era as part of the eighth generation of TPU infrastructure.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google introduced AI Mode in Chrome, a new way to explore the web with AI assistance integrated directly into the browser.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Advanced Account Security features including phishing-resistant login and stronger recovery protections are now available for OpenAI accounts.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">DeepSeek</div>
+              <span class="launch-detail">DeepSeek released V4 Pro (1.6T-A49B) and Flash (284B-A13B) models in Base and Instruct versions, runnable on Huawei Ascend chips.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.24026">From Skill Text to Skill Structure: The Scheduling-Structural-Logical Representation for Agent Skills</a>
+              <span class="side-meta">LLM agents increasingly rely on reusable skills, capability packages that combine instructions, control flow, constraints, and tool calls. In most current agent systems, however, skills are still repr</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.23195">AnalogRetriever: Learning Cross-Modal Representations for Analog Circuit Retrieval</a>
+              <span class="side-meta">Analog circuit design relies heavily on reusing existing intellectual property (IP), yet searching across heterogeneous representations such as SPICE netlists, schematics, and functional descriptions </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.00416">Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies</a>
+              <span class="side-meta">Generalist robot policies increasingly benefit from large-scale pretraining, but offline data alone is insufficient for robust real-world deployment. Deployed robots encounter distribution shifts, lon</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.00754">Themis: Training Robust Multilingual Code Reward Models for Flexible Multi-Criteria Scoring</a>
+              <span class="side-meta">Reward models (RMs) have become an indispensable fixture of the language model (LM) post-training playbook, enabling policy alignment and test-time scaling. Research on the application of RMs in code </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.00658">UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors</a>
+              <span class="side-meta">Recent progress has shown that video diffusion models (VDMs) can be repurposed for diverse multimodal graphics tasks. However, existing methods often train separate models for each problem setting, wh</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
