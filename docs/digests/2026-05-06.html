@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT-5.5 Lands, Ads Follow — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Wednesday, May 06, 2026</div>
+        <h1>GPT-5.5 Lands, Ads Follow</h1>
+        
+        <p class="subtitle">OpenAI ships GPT-5.5 Instant and pivots ChatGPT into an ad platform on the same day — a signal that the monetization era of AI is fully underway. Meanwhile, RAG shows cracks, AI code attribution sparks legal heat, and builders debate what 'working with AI' actually means.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>GPT-5.5 Instant and the ChatGPT Ad Business</h2>
+          <p>OpenAI dropped two announcements on May 5th that, read together, tell a more complete story than either does alone. First, <a href="https://openai.com/index/gpt-5-5-instant">GPT-5.5 Instant</a> is now ChatGPT's default model — promising smarter answers, reduced hallucinations, and improved personalization controls. The <a href="https://openai.com/index/gpt-5-5-instant-system-card">system card</a> positions it as a meaningful step up from GPT-5, not a minor patch. For builders, this matters because "default model" is where the mass market lives — hundreds of millions of users will interact with this model without ever consciously choosing it.</p><p>But the second announcement is the one that changes OpenAI's strategic posture most dramatically: <a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads">a self-serve Ads Manager for ChatGPT</a>, with CPC bidding and measurement tools. OpenAI says it's "built to protect privacy and keep conversations separate from ads," but that's exactly what you'd say when you know the friction is real. The move signals that subscription revenue alone can't fund Stargate-scale compute. For AI product builders, this is a forcing function: if you're building on ChatGPT's surface area, the ad layer will eventually shape what content and recommendations look like. And if you're competing with ChatGPT as a destination, the ad-supported free tier just got more defensible for OpenAI.</p><p>Separately, OpenAI detailed <a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale">how they rebuilt their WebRTC stack</a> for real-time Voice AI — a deep technical post that's worth reading if you're building voice interfaces. The latency and turn-taking improvements are the kind of infrastructure work that makes or breaks the UX of conversational agents.</p>
+<blockquote><p>"GPT-5.5 Instant updates ChatGPT's default model with smarter, more accurate answers, reduced hallucinations, and improved personalization controls."</p><cite>— OpenAI Blog</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/gpt-5-5-instant" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              GPT-5.5 Instant announcement
+            </a>
+            
+            <a href="https://openai.com/index/gpt-5-5-instant-system-card" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📋</span>
+              GPT-5.5 System Card
+            </a>
+            
+            <a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📢</span>
+              ChatGPT Ads Manager
+            </a>
+            
+            <a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Voice AI infrastructure
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>RAG's Dirty Secret: Retrieving the Right Doc Isn't Enough</h2>
+          <p>One of the more technically important pieces circulating today is a post that should be required reading for any team shipping RAG-based products: <a href="https://reyes.id.au/posts/anchor-catching-the-failure-mode-where-rag-retrieves-the-refutation-and-still-gets-it-wrong/">"RAG retrieves the refutation and still gets it wrong."</a> The failure mode described — where the retrieval system correctly surfaces the document that refutes a false claim, but the LLM generation step still produces the wrong answer — is subtle and nasty. It breaks the implicit assumption most RAG systems are built on: that if you get the retrieval right, the answer will be right.</p><p>This connects to a broader pattern Chip Huyen has written about: <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html">common pitfalls in generative AI applications</a>, where teams conflate infrastructure correctness with output correctness. RAG is infrastructure. Generation is behavior. They fail independently.</p><p>For builders, the implication is concrete: your eval harness needs to test not just retrieval recall, but whether the model actually uses the retrieved content to override prior beliefs. Eugene Yan's framework on <a href="https://eugeneyan.com//writing/product-evals/">product evals in three steps</a> — label data, align LLM-evaluators, run the harness — is a good scaffold here, but you need to add adversarial cases where the retrieved doc contradicts the model's likely prior. If your evals don't include those cases, you're flying blind on a whole class of hallucinations that your retrieval metrics will never catch.</p>
+<blockquote><p>"An LLM-as-Judge Won't Save The Product — Fixing Your Process Will."</p><cite>— Eugene Yan, eugeneyan.com</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://reyes.id.au/posts/anchor-catching-the-failure-mode-where-rag-retrieves-the-refutation-and-still-gets-it-wrong/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              RAG retrieves refutation, still wrong
+            </a>
+            
+            <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Chip Huyen: AI pitfalls
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/product-evals/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧪</span>
+              Eugene Yan: Product Evals
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Code Attribution Is Now a Legal and Cultural Fight</h2>
+          <p>Two stories today illuminate the attribution crisis that's been building in the developer community. The first: Microsoft is <a href="https://github.com/microsoft/vscode/issues/314311">updating how it handles the "Co-authored-by: Copilot" tag</a> in commit messages — a policy tweak that's sparked real debate on HN about what attribution even means when an AI writes code. It sounds administrative, but it's actually a question about intellectual property provenance at scale. Every enterprise legal team is going to care about this eventually.</p><p>The second is more pointed: <a href="https://github.com/OxideAV/oxideav-magicyuv/issues/3">an FFmpeg developer publicly called out OxideAV for what he calls "AI license laundering"</a> — using AI tools to reproduce open-source code in ways that obscure the original license obligations. The accusation is that AI-generated output was used to launder GPL-licensed FFmpeg code into a project without proper attribution. Whether or not it's legally airtight, the cultural signal is loud: the open-source community is watching, and they're angry.</p><p>For AI product builders, this is a two-sided risk. If you're shipping a coding assistant, you need clear policies on how generated code is attributed and what license scanning looks like in your pipeline. If you're shipping products that use AI-generated code internally, your legal team needs to understand that "the AI wrote it" is not a sufficient defense against license obligations. The developer community will find these cases, and the reputational damage moves faster than the legal system.</p>
+<blockquote><p>"'AI license laundering' is a horrible term for what is happening right now."</p><cite>— Nathan Lambert, Interconnects (paraphrasing industry sentiment on distillation/laundering debates)</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/microsoft/vscode/issues/314311" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💻</span>
+              Copilot commit attribution update
+            </a>
+            
+            <a href="https://github.com/OxideAV/oxideav-magicyuv/issues/3" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚖️</span>
+              FFmpeg AI license laundering
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/the-distillation-panic" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Nathan Lambert: Distillation panic
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>How to Actually Work With AI: Eugene Yan's Framework</h2>
+          <p>Eugene Yan published what might be the most practically useful piece of the week: <a href="https://eugeneyan.com//writing/working-with-ai/">"How to Work and Compound with AI"</a> — a framework built around five principles: context as infrastructure, taste as configuration, verification for autonomy, scale via delegation, and closing the loop. It's worth sitting with because it maps directly onto how senior ICs and PMs are actually discovering they need to operate in an AI-augmented workflow.</p><p>The "context as infrastructure" framing is particularly sharp. Most people treat context as an afterthought — a few sentences before the prompt. Yan argues it should be engineered as seriously as any other system dependency: versioned, tested, and maintained. This aligns with the broader "context engineering" conversation that's been displacing "prompt engineering" as the more precise term for what serious builders actually do.</p><p>The "taste as configuration" idea is subtler but important for PMs specifically. In a world where AI can execute almost anything you describe, the bottleneck shifts to what you choose to ask for and how you evaluate the output. Taste — the ability to recognize quality and make good aesthetic and functional tradeoffs — becomes the scarce human input. This has real implications for how you staff AI-augmented teams: you need fewer executors and more discerning reviewers. The HN thread on <a href="https://news.ycombinator.com/item?id=48030736">"the death of software development as a job"</a> is worth reading alongside Yan's piece — the community is genuinely uncertain, but the emerging consensus is that the role transforms more than it disappears, at least for now.</p>
+<blockquote><p>"Context as infra, taste as config, verification for autonomy, scale via delegation, closing the loop."</p><cite>— Eugene Yan, "How to Work and Compound with AI"</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧠</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48030736" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              HN: Death of software dev?
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>MCP Security Cracks Widen; Agents Need Identity</h2>
+          <p>Two low-key but important security items surfaced today around the Model Context Protocol ecosystem. First, a security audit found that <a href="https://github.com/korrel-dev/mcp-audits/tree/main/audits/linear">Linear's MCP server accepts HTTP redirect URIs for confidential OAuth clients</a> — a meaningful vulnerability that breaks the security guarantees OAuth confidential clients are supposed to provide. As MCP becomes the de facto way agents interact with tools and services, every OAuth misconfiguration in an MCP server becomes an agent attack surface.</p><p>Second, there's a new open-source project called <a href="https://github.com/mustafabagdatli-git/mcp-identity">MCP-identity</a> that attempts to solve the problem at a lower level: per-request cryptographic attestation for MCP servers. The idea is that every request an agent makes carries a verifiable identity claim, so servers can implement fine-grained authorization rather than trusting the session wholesale.</p><p>This matters for builders shipping agentic products in 2026 because the attack model is fundamentally different from traditional APIs. Agents act autonomously, often across many tool calls in a single session, and the blast radius of a compromised session is much larger than a compromised API key. Nathan Lambert's recent coverage of <a href="https://www.interconnects.ai/p/ainews-agents-for-everything-else">coding agents "breaking containment"</a> hints at the same theme: as agents move from sandboxed coding tasks to broader knowledge work, the security perimeter problem gets harder. If you're building agent infrastructure, identity and attestation aren't nice-to-haves — they're the thing that makes enterprise sales possible.</p>
+<blockquote><p>"As agents move from sandboxed coding tasks to broader knowledge work, the security perimeter problem gets harder."</p><cite>— Latent Space (swyx), "Agents for Everything Else"</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/korrel-dev/mcp-audits/tree/main/audits/linear" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔓</span>
+              Linear MCP OAuth vulnerability
+            </a>
+            
+            <a href="https://github.com/mustafabagdatli-git/mcp-identity" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              MCP-identity: cryptographic attestation
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-agents-for-everything-else" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚀</span>
+              Latent Space: Agents for Everything Else
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> OpenAI shipping GPT-5.5 Instant as the default <em>and</em> launching an Ads Manager on the same day is a monetization pivot you need to model into your competitive assumptions. If you're building a ChatGPT-adjacent product, the free tier just got stickier and more ad-supported — plan your differentiation around the user contexts where ads are a dealbreaker (enterprise, privacy-sensitive, deep-focus work).</li><li><strong>Actionable insight.</strong> Add adversarial RAG test cases to your eval harness immediately — cases where the retrieved document contradicts the model's likely prior belief. Retrieval recall is not the same as answer correctness, and the failure mode of "retrieved the right doc, still got it wrong" is invisible without purpose-built evals.</li><li><strong>Actionable insight.</strong> Treat MCP server OAuth configuration as a first-class security audit item before your next enterprise deal. The Linear vulnerability is a preview of what security-conscious buyers will find. Evaluate MCP-identity or equivalent cryptographic attestation approaches if your agents are handling sensitive data or taking irreversible actions.</li><li><strong>Actionable insight.</strong> Adopt Eugene Yan's framing of "context as infrastructure" for your team's AI workflows. Audit what context your team is feeding to coding and reasoning agents — if it's ad-hoc, inconsistent, and unversioned, you're leaving significant quality on the table. Treat context engineering as a product spec, not a personal habit.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧠</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+            <a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📢</span>
+              ChatGPT Ads
+            </a>
+            
+            <a href="https://reyes.id.au/posts/anchor-catching-the-failure-mode-where-rag-retrieves-the-refutation-and-still-gets-it-wrong/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              RAG failure mode
+            </a>
+            
+            <a href="https://github.com/mustafabagdatli-git/mcp-identity" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              MCP-identity
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/theori-io/copy-fail-CVE-2026-31431">theori-io/copy-fail-CVE-2026-31431</a>
+              <span class="side-meta">Python · ⭐ 3,346</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/willchen96/mike">willchen96/mike</a>
+              <span class="side-meta">TypeScript · ⭐ 2,206</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/darrylmorley/whatcable">darrylmorley/whatcable</a>
+              <span class="side-meta">Swift · ⭐ 1,966</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/aattaran/deepclaude">aattaran/deepclaude</a>
+              <span class="side-meta">JavaScript · ⭐ 1,350</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/vercel-labs/deepsec">vercel-labs/deepsec</a>
+              <span class="side-meta">TypeScript · ⭐ 1,114</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/mattpocock/dictionary-of-ai-coding">mattpocock/dictionary-of-ai-coding</a>
+              <span class="side-meta">TypeScript · ⭐ 1,081</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">GPT-5.5 Instant launched as ChatGPT's default model with improved accuracy, reduced hallucinations, and personalization controls.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">ChatGPT ads platform expanded with beta self-serve Ads Manager, CPC bidding, and enhanced measurement tools.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Two specialized TPU chips (8T and 8I) launched for the agentic era as part of eighth-generation TPU lineup.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Gemini API now supports Webhooks to reduce friction and latency for long-running jobs.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Andon Labs</div>
+              <span class="launch-detail">AI-operated cafe launched in Stockholm, Sweden following successful AI-run retail store model in San Francisco.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">IBM</div>
+              <span class="launch-detail">Granite 4.1 family of open-source LLMs released in 3B, 8B, and 30B sizes under Apache 2.0 license.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.01717">TCDA: Thread-Constrained Discourse-Aware Modeling for Conversational Sentiment Quadruple Analysis</a>
+              <span class="side-meta">Conversational Aspect-based Sentiment Quadruple Analysis (DiaASQ) needs to capture the complex interrelationships in multiple rounds of dialogues. Existing methods usually employ simple Graph Convolut</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.01284">Chain of Evidence: Pixel-Level Visual Attribution for Iterative Retrieval-Augmented Generation</a>
+              <span class="side-meta">Iterative Retrieval-Augmented Generation (iRAG) has emerged as a powerful paradigm for answering complex multi-hop questions by progressively retrieving and reasoning over external documents. However,</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.03571">PatRe: A Full-Stage Office Action and Rebuttal Generation Benchmark for Patent Examination</a>
+              <span class="side-meta">Patent examination is a complex, multi-stage process requiring both technical expertise and legal reasoning, increasingly challenged by rising application volumes. Prior benchmarks predominantly view </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.02801">Reinforcement Learning for LLM-based Multi-Agent Systems through Orchestration Traces</a>
+              <span class="side-meta">As large language model (LLM) agents evolve from isolated tool users into coordinated teams, reinforcement learning (RL) must optimize not only individual actions but also how work is spawned, delegat</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.01466">SplAttN: Bridging 2D and 3D with Gaussian Soft Splatting and Attention for Point Cloud Completion</a>
+              <span class="side-meta">Although multi-modal learning has advanced point cloud completion, the theoretical mechanisms remain unclear. Recent works attribute success to the connection between modalities, yet we identify that </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
