@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Codes, Silicon Valley Services — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Thursday, May 07, 2026</div>
+        <h1>Claude Codes, Silicon Valley Services</h1>
+        
+        <p class="subtitle">Anthropic's Code w/ Claude event dropped as OpenAI pushed GPT-5.5 Instant and doubled down on enterprise services. Builders are navigating a world where agentic coding has 'broken containment' — and the line between vibe coding and serious engineering is getting uncomfortably thin.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Anthropic Goes All-In on Claude Code</h2>
+          <p>Yesterday's <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/#atom-everything">Code w/ Claude 2026 event</a> was Anthropic's clearest signal yet that it's positioning Claude as the professional developer's AI — not just a chat interface bolted onto a code editor, but an agentic coding environment with serious ambitions. Simon Willison live-blogged the keynote sessions, capturing what appears to be a meaningful step change in how Anthropic is framing Claude Code: not as a Copilot competitor, but as something closer to an autonomous engineering collaborator.</p><p>The timing is deliberate. Just as OpenAI has been pushing Codex as its agentic coding story, Anthropic is doubling down on Claude's strength in longer-horizon tasks, nuanced code review, and what they're framing as 'agentic engineering.' For product builders, the competitive dynamic is now clearly two-horse: do you build your AI coding workflows on Codex's speed and OpenAI's ecosystem, or on Claude's judgment and growing tool-use sophistication?</p><p>What makes this more than a feature announcement is the cultural framing. Willison also surfaced a deeply personal observation from his <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/#atom-everything">High Leverage podcast appearance</a>: vibe coding and agentic engineering are converging in his own work in ways that make him uncomfortable. That's a signal worth taking seriously — when a builder of Willison's rigor starts feeling like the guardrails are blurring, the rest of us should be paying attention to our own review processes.</p><blockquote><p>"Vibe coding and agentic engineering have started to converge in my own work — and I find that disturbing."</p><cite>— Simon Willison, via the High Leverage podcast / simonwillison.net</cite></blockquote><p>For PMs, the question this raises is immediate: what does your team's code review workflow look like when the agent is writing hundreds of lines between human checkpoints? Tools like <a href="https://github.com/modem-dev/hunk">Hunk</a>, a review-first terminal diff viewer built specifically for agentic coders, are emerging to fill exactly this gap. The tooling ecosystem is catching up to the workflow — but it's playing catch-up fast.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison – Code w/ Claude Live Blog
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison – Vibe Coding & Agentic Engineering
+            </a>
+            
+            <a href="https://github.com/modem-dev/hunk" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Hunk – Review-first diff viewer
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GPT-5.5 Instant and the Enterprise Services Landgrab</h2>
+          <p>OpenAI shipped <a href="https://openai.com/index/gpt-5-5-instant">GPT-5.5 Instant</a> this week as ChatGPT's new default model, promising smarter answers, reduced hallucinations, and improved personalization controls. But the more strategically interesting moves are happening in the enterprise layer. OpenAI's <a href="https://openai.com/index/introducing-b2b-signals">B2B Signals report</a> frames "frontier enterprises" as the new battleground, with Codex-powered agentic workflows as the wedge product for deepening adoption and building durable competitive moats.</p><p>The case studies tell the story concretely: <a href="https://openai.com/index/singular-bank">Singular Bank built an internal assistant</a> using ChatGPT and Codex that saves bankers 60–90 minutes daily on meeting prep and portfolio analysis. <a href="https://openai.com/index/uber">Uber is using OpenAI</a> for driver earnings optimization and rider booking velocity. And <a href="https://openai.com/index/openai-pwc-finance-collaboration">OpenAI's PwC partnership</a> targets the CFO office with finance workflow automation. The pattern is clear: OpenAI isn't just selling API access anymore — it's selling vertical transformation.</p><blockquote><p>"Frontier enterprises deepen AI adoption, scale Codex-powered agentic workflows, and build durable competitive advantage."</p><cite>— OpenAI B2B Signals Report, openai.com</cite></blockquote><p>For AI product builders, this is both a threat and a template. OpenAI is demonstrating that the next revenue layer isn't model pricing — it's services, integrations, and workflow redesign. <a href="https://www.latent.space/p/ainews-silicon-valley-gets-serious">Latent Space's AINews</a> captured the meta-theme neatly: "Silicon Valley gets serious about services." If you're building a vertical AI product, your real competition isn't just other AI startups — it's OpenAI's own enterprise sales team walking into your customer's CFO office. The moat question becomes urgent: are you building something so domain-specific, so deeply integrated, that the platform can't easily replicate it?</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/gpt-5-5-instant" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI – GPT-5.5 Instant
+            </a>
+            
+            <a href="https://openai.com/index/introducing-b2b-signals" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              OpenAI – B2B Signals Report
+            </a>
+            
+            <a href="https://openai.com/index/singular-bank" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏦</span>
+              OpenAI – Singular Bank Case Study
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-silicon-valley-gets-serious" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space – Silicon Valley & Services
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Distillation Panic and the Open-Closed Model Gap</h2>
+          <p>Nathan Lambert at Interconnects dropped a characteristically clear-eyed take this week on what he calls <a href="https://www.interconnects.ai/p/the-distillation-panic">"the distillation panic"</a> — the growing anxiety in AI labs about open-weight models being trained on outputs from proprietary frontier models. His core argument: calling this a "distillation attack" is a misleading framing that conflates legitimate research with adversarial behavior, and it's muddying an important policy conversation.</p><p>The distillation debate sits at the center of a broader tension Lambert has been tracking: <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">the open-closed performance gap</a>. Frontier closed models still lead on the benchmarks that matter most for production deployment, but the gap is narrowing in ways that are hard to read cleanly. Lambert's analysis suggests the benchmark number isn't the whole story — inference cost, deployment flexibility, fine-tuning access, and regulatory compliance all factor into a model's real-world utility. His <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026">mid-2026 bets on open models</a> suggest he expects continued compression of the gap, but not a clean reversal.</p><blockquote><p>"'Distillation attacks' is a horrible term for what is happening right now."</p><cite>— Nathan Lambert, Interconnects, interconnects.ai</cite></blockquote><p>For builders, the practical implication is real: if you're evaluating whether to build on a closed API versus an open-weight model, the calculus is more nuanced than benchmark scores suggest. IBM's <a href="https://simonwillison.net/2026/May/4/granite-41-3b-svg-pelican-gallery/#atom-everything">Granite 4.1 family</a> (3B, 8B, 30B, Apache 2.0) is a concrete example — Willison tested the 3B model on SVG generation tasks and found it surprisingly capable for its size. Small, licensable, fine-tunable models are becoming a serious architectural choice, not just a cost optimization.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/the-distillation-panic" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Nathan Lambert – The Distillation Panic
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Nathan Lambert – Open-Closed Gap
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Nathan Lambert – Open Model Bets
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/4/granite-41-3b-svg-pelican-gallery/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison – Granite 4.1 Gallery
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>How to Actually Work With AI: Context as Infrastructure</h2>
+          <p>Eugene Yan published what might be the most practically useful piece this week: <a href="https://eugeneyan.com//writing/working-with-ai/">"How to Work and Compound with AI"</a>. The framing is deceptively simple — context as infrastructure, taste as config, verification for autonomy, scale via delegation, closing the loop — but each principle packs real implementation weight. Yan is describing a systematic approach to compounding productivity with AI agents, not just using them ad hoc.</p><p>The "context as infrastructure" framing deserves special attention. Yan's argument is that the builders who will get the most out of AI agents are those who treat context management as a first-class engineering concern — maintaining rich, well-structured context about their codebase, their decisions, their preferences — rather than starting fresh with each prompt. This is the engineering analog to what the broader field calls "context engineering," and it's becoming the key differentiator between teams that get 2x productivity from AI tools and those that get 10x.</p><blockquote><p>"Context as infra, taste as config, verification for autonomy, scale via delegation, closing the loop."</p><cite>— Eugene Yan, eugeneyan.com</cite></blockquote><p>This connects directly to what <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html">Chip Huyen identified</a> as one of the most persistent pitfalls in AI product development: reaching for generative AI when you don't need it, and failing to design the surrounding system carefully when you do. The builders winning with AI agents right now aren't just prompt engineers — they're systems thinkers who understand that the model is only as good as the context, tooling, and verification loop you build around it. Yan's piece is worth reading slowly and mapping to your own team's workflow.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Eugene Yan – Working and Compounding with AI
+            </a>
+            
+            <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Chip Huyen – AI Engineering Pitfalls
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI Goes to Advertising — And Builds Its Own Networking Protocol</h2>
+          <p>Two OpenAI announcements this week that didn't get enough attention from the builder community. First: <a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads">OpenAI launched a self-serve Ads Manager for ChatGPT</a>, with CPC bidding and enhanced measurement tools. This is a significant strategic signal — OpenAI is now explicitly building out a revenue stream that monetizes user intent at the moment of query, positioning ChatGPT as an advertising surface that competes with Google Search. The privacy framing ("conversations kept separate from ads") is careful, but the direction is clear: OpenAI is building a media business alongside its API business.</p><p>For AI product builders, the ads move creates both risk and opportunity. If ChatGPT starts surfacing sponsored results for queries that currently drive traffic to your product, your organic AI-referral channel is going to get more competitive. But if you're building a product that benefits from intent-based placement, OpenAI's ad platform is worth watching closely.</p><p>Second, and more technically interesting: OpenAI published details on <a href="https://openai.com/index/mrc-supercomputer-networking">MRC (Multipath Reliable Connection)</a>, a new supercomputer networking protocol released through OCP (Open Compute Project) to improve resilience and performance in large-scale AI training clusters. This is infrastructure-layer work that most product teams will never touch directly, but it signals OpenAI's commitment to owning more of its training stack. Alongside <a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale">their rebuilt WebRTC stack for low-latency voice AI</a>, it's clear that OpenAI is becoming a full-stack infrastructure company, not just a model provider.</p><blockquote><p>"OpenAI introduces MRC, a new supercomputer networking protocol released via OCP to improve resilience and performance in large-scale AI training clusters."</p><cite>— OpenAI Blog, openai.com</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📣</span>
+              OpenAI – ChatGPT Ads Manager
+            </a>
+            
+            <a href="https://openai.com/index/mrc-supercomputer-networking" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              OpenAI – MRC Networking Protocol
+            </a>
+            
+            <a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              OpenAI – Low-Latency Voice AI
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Audit your agentic coding review process now, before it audits you. Willison's discomfort with vibe coding bleeding into agentic engineering is a canary — build explicit human checkpoints into your AI-assisted development workflow, and explore tooling like <a href="https://github.com/modem-dev/hunk">Hunk</a> that's designed for review-first agentic development.</li><li><strong>Actionable insight.</strong> Treat context management as a first-class engineering concern. Eugene Yan's framing of "context as infrastructure" is the most actionable mental model in this week's content — invest in structured context artifacts (CLAUDE.md files, decision logs, codebase maps) that compound agent performance over time rather than starting fresh with every session.</li><li><strong>Actionable insight.</strong> Reassess your model selection strategy beyond benchmark scores. With IBM Granite 4.1 (Apache 2.0), open-weight models increasingly viable for production, and the distillation debate shifting the licensing landscape, run a concrete cost-benefit analysis on open vs. closed for your specific use case — factoring in fine-tuning needs, data privacy, and deployment flexibility, not just capability rankings.</li><li><strong>Actionable insight.</strong> If OpenAI's enterprise services push overlaps with your vertical, sharpen your differentiation story immediately. OpenAI is now walking into CFO offices with PwC and into bank trading floors with Codex — your moat needs to be demonstrably deeper integration, domain expertise, or workflow specificity that a generalist platform can't replicate in a single sales call.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Eugene Yan – Working with AI
+            </a>
+            
+            <a href="https://github.com/modem-dev/hunk" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Hunk – Agentic Diff Viewer
+            </a>
+            
+            <a href="https://openai.com/index/introducing-b2b-signals" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              OpenAI – B2B Signals
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/the-distillation-panic" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Nathan Lambert – Distillation Panic
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/darrylmorley/whatcable">darrylmorley/whatcable</a>
+              <span class="side-meta">Swift · ⭐ 2,059</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/aattaran/deepclaude">aattaran/deepclaude</a>
+              <span class="side-meta">JavaScript · ⭐ 1,504</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/vercel-labs/deepsec">vercel-labs/deepsec</a>
+              <span class="side-meta">TypeScript · ⭐ 1,420</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/mattpocock/dictionary-of-ai-coding">mattpocock/dictionary-of-ai-coding</a>
+              <span class="side-meta">TypeScript · ⭐ 1,160</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/XBuilderLAB/cheat-on-content">XBuilderLAB/cheat-on-content</a>
+              <span class="side-meta">Python · ⭐ 809</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/jherrodthomas/automotive-skills-suite">jherrodthomas/automotive-skills-suite</a>
+              <span class="side-meta">None⭐ 747</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">GPT-5.5 Instant launched as ChatGPT's default model with improved accuracy, reduced hallucinations, and enhanced personalization controls.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">ChatGPT Ads Manager now available in beta with self-serve setup, CPC bidding, and enhanced measurement tools.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Two specialized TPUs (8T and 8I) launched as part of the eighth generation for agentic AI workloads.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Code w/ Claude 2026 event held with keynote sessions showcasing Claude's coding capabilities.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">IBM</div>
+              <span class="launch-detail">Granite 4.1 LLM family released in 3B, 8B, and 30B sizes under Apache 2.0 license.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Gemini API now supports webhooks for event-driven architecture to reduce friction and latency for long-running jobs.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.03269">RLDX-1 Technical Report</a>
+              <span class="side-meta">While Vision-Language-Action models (VLAs) have shown remarkable progress toward human-like generalist robotic policies through the versatile intelligence (i.e. broad scene understanding and language-</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.04018">Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems</a>
+              <span class="side-meta">Reasoning-intensive retrieval aims to surface evidence that supports downstream reasoning rather than merely matching topical similarity. This capability is increasingly important for agentic search s</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.05163">PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World</a>
+              <span class="side-meta">Synthesizing physics-grounded 3D assets is a critical bottleneck for interactive virtual worlds and embodied AI. Existing methods predominantly focus on static geometry, overlooking the functional pro</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.05204">D-OPSD: On-Policy Self-Distillation for Continuously Tuning Step-Distilled Diffusion Models</a>
+              <span class="side-meta">The landscape of high-performance image generation models is currently shifting from the inefficient multi-step ones to the efficient few-step counterparts (e.g, Z-Image-Turbo and FLUX.2-klein). Howev</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.28196">HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation</a>
+              <span class="side-meta">Driving world models serve as a pivotal technology for autonomous driving by simulating environmental dynamics. However, existing approaches predominantly focus on future scene generation, often overl</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
