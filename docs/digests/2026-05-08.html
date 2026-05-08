@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic's Big Bet, Claude's Holes — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Friday, May 08, 2026</div>
+        <h1>Anthropic's Big Bet, Claude's Holes</h1>
+        
+        <p class="subtitle">Anthropic locked in a $5B/yr compute deal with SpaceX's Colossus while simultaneously shipping security vulnerabilities in Claude Code. OpenAI flooded the zone with voice models, ads, and GPT-5.5. A lot happened — here's what it means for builders.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Anthropic x SpaceX: The $5B Compute Play Nobody Saw Coming</h2>
+          <p>The biggest story out of Anthropic's Code w/ Claude 2026 event wasn't a model launch — it was a deal. Anthropic announced it has secured <a href="https://www.anthropic.com/news/higher-limits-spacex">all of the capacity of SpaceX's Colossus data center</a>, a 300MW facility, in what amounts to a ~$5B/year compute commitment. <a href="https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr">Latent Space reports</a> the company's ARR growth is now running at 8,000% annualized — a number that would be unbelievable if the compute contracts weren't providing independent validation.</p><p>Simon Willison's <a href="https://simonwillison.net/2026/May/7/xai-anthropic/">notes on the deal</a> point out the obvious elephant in the room: Colossus is the Memphis facility with the <a href="https://www.politico.com/news/2025/05/06/elon-musk-xai-memphis-gas-turbines-air-pollution-permits-00317582">controversial environmental record</a> around gas turbines and air pollution. Anthropic's safety-first brand is now entangled with some genuinely thorny optics. But strategically, this is Anthropic signaling it can compete on compute scale — and that it's willing to partner with whoever can deliver the GPUs.</p><p>For builders, the immediate read-through is on usage limits. <a href="https://www.anthropic.com/news/higher-limits-spacex">Higher limits for Claude are being rolled out</a> as a direct result of this capacity expansion. If your product has been throttled by Claude rate limits — especially in agentic, long-running workflows — this is your cue to re-evaluate what's now possible at scale.</p>
+<blockquote><p>"That's the one with the particularly controversial environmental record around gas turbines and air pollution permits."</p><cite>— Simon Willison, <a href="https://simonwillison.net/2026/May/7/xai-anthropic/">Notes on the xAI/Anthropic data center deal</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.anthropic.com/news/higher-limits-spacex" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔵</span>
+              Anthropic Higher Limits
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/7/xai-anthropic/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚀</span>
+              Latent Space AINews
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Code Has a Security Problem — Two, Actually</h2>
+          <p>The same week Anthropic is celebrating capacity growth, Claude Code is shipping with serious vulnerabilities. Two separate disclosures landed this week. First, <a href="https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319">The Register reported a one-click RCE</a> via Claude Code's trust prompt mechanism — and Anthropic's official response was essentially "you shouldn't have clicked OK." The security community has been less than impressed with that framing. Second, a <a href="https://github.com/advisories/GHSA-vp62-r36r-9xqp">CVE filed as CVE-2026-39861</a> documents a sandbox escape via symlink traversal in Claude Code itself.</p><p>These aren't hypothetical academic vulnerabilities. If you're deploying Claude Code in team environments, CI pipelines, or giving it access to production credentials — both of these are live threat vectors right now. The symlink escape is particularly nasty because it undermines the core security promise of sandboxed code execution, which is the whole premise of agentic coding tools operating safely on real repos.</p><p>The timing is notable: <a href="https://news.ycombinator.com/item?id=48056990">Armorer</a> and <a href="https://github.com/chocks/agentctl">Agentctl</a> both launched on HN this week as "local control planes for AI agents" — the market is clearly sensing a gap in agent security primitives. Builders shipping agentic coding workflows need to treat agent sandboxing as a first-class infrastructure concern, not an afterthought. The convenience of one-click approval flows is also a one-click attack surface.</p>
+<blockquote><p>"Anthropic response to 1-click pwn: Shouldn't have clicked 'ok'"</p><cite>— <a href="https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319">The Register</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              The Register
+            </a>
+            
+            <a href="https://github.com/advisories/GHSA-vp62-r36r-9xqp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              CVE-2026-39861
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48056990" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🟠</span>
+              Armorer HN
+            </a>
+            
+            <a href="https://github.com/chocks/agentctl" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🟠</span>
+              Agentctl
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI Floods the Zone: Ads, Voice, GPT-5.5, and Cyber Models</h2>
+          <p>OpenAI had a stacked release day on May 7th. The headline that will matter most for consumer product builders: <a href="https://openai.com/index/testing-ads-in-chatgpt">ChatGPT is now testing ads</a>. OpenAI is promising clear labeling, answer independence, and user controls — but the incentive structures that ads create are fundamentally at odds with the neutral-assistant positioning ChatGPT has traded on. For builders using ChatGPT as a distribution channel, this is worth watching closely.</p><p>More immediately useful: <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api">new realtime voice models in the API</a> now support reasoning, translation, and transcription in a single call. If you've been duct-taping together STT → LLM → TTS pipelines, this is the consolidation you've been waiting for. <a href="https://openai.com/index/parloa">Parloa's customer service voice agents</a> are already in production on these models, suggesting latency is now enterprise-viable.</p><p>On the frontier model side, <a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber">GPT-5.5 and GPT-5.5-Cyber</a> launched with a focus on security research through a verified access program. <a href="https://openrouter.ai/announcements/gpt55-cost-analysis">OpenRouter's cost analysis</a> flags a meaningful price increase over GPT-5 — worth factoring into any migration math. OpenAI's <a href="https://openai.com/index/introducing-b2b-signals">B2B Signals research</a> also dropped, showing frontier enterprise customers are scaling Codex-powered agentic workflows as the primary vector for competitive differentiation. The implication: if your enterprise customers aren't yet on agentic workflows, they're about to be.</p>
+<blockquote><p>"Frontier enterprises deepen AI adoption, scale Codex-powered agentic workflows, and build durable competitive advantage."</p><cite>— <a href="https://openai.com/index/introducing-b2b-signals">OpenAI B2B Signals Research</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/testing-ads-in-chatgpt" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              OpenAI Ads
+            </a>
+            
+            <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              OpenAI Voice API
+            </a>
+            
+            <a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              GPT-5.5 Cyber
+            </a>
+            
+            <a href="https://openrouter.ai/announcements/gpt55-cost-analysis" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              OpenRouter Cost Analysis
+            </a>
+            
+            <a href="https://openai.com/index/introducing-b2b-signals" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📈</span>
+              B2B Signals
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Mythos Hardens Firefox — A Glimpse at Security-Specialized AI</h2>
+          <p>Buried in the week's noise is one of the most technically impressive AI-assisted security stories yet. <a href="https://simonwillison.net/2026/May/7/firefox-claude-mythos/">Simon Willison flagged Mozilla's detailed writeup</a> of how they used Claude Mythos Preview — Anthropic's unreleased research model — to find and fix hundreds of vulnerabilities in the Firefox codebase. The Mozilla team's framing is striking: they describe a phase transition where AI-generated bug reports went from "mostly noise" to "suddenly very good."</p><p>This is the clearest production signal yet that AI-assisted security research has crossed from parlor trick to genuine force multiplier. The key unlock appears to be Mythos's ability to reason about complex control flow across large codebases — the kind of multi-file, multi-hop reasoning that prior models consistently failed at. For builders maintaining security-sensitive codebases, this suggests a near-term future where AI-assisted fuzzing and vulnerability scanning becomes table stakes infrastructure, not a research experiment.</p><p>It also reframes the Claude Code security vulnerabilities discussed above: the irony of Anthropic's model hardening Firefox while Claude Code ships sandbox escapes is thick. The lesson for product builders is that AI security capability is deeply use-case specific — the same underlying model can be exceptional at finding vulnerabilities in one context and introducing them in another.</p>
+<blockquote><p>"Suddenly, the bugs are very good. Just a few months ago, AI-generated security bug reports to open source projects were mostly known as noise."</p><cite>— Mozilla Hacks, via <a href="https://simonwillison.net/2026/May/7/firefox-claude-mythos/">Simon Willison</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/7/firefox-claude-mythos/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🦊</span>
+              Simon Willison / Mozilla
+            </a>
+            
+            <a href="https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Mozilla Hacks
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Vibe Coding and Agentic Engineering Are Converging — Uncomfortably</h2>
+          <p>Simon Willison published a thoughtful reflection this week titled <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/">"Vibe coding and agentic engineering are getting closer than I'd like."</a> The core tension: vibe coding (iterate fast, don't fully understand the output) and agentic engineering (AI autonomously executes long multi-step tasks) are conceptually opposite safety postures — but in practice they're blending in his own workflow. When you're reviewing diffs from an agent that wrote code you didn't spec in detail, you're vibe-reviewing agentic output. That's a new and underexplored failure mode.</p><p><a href="https://eugeneyan.com//writing/working-with-ai/">Eugene Yan's recent post on working with AI</a> provides a useful counterframe: "context as infrastructure, taste as config, verification for autonomy, scale via delegation." The argument is that builders who invest in verifiable outputs — good evals, clear contracts between agent steps — can safely push autonomy higher. The builders who skip that infrastructure are the ones who get burned.</p><p>The <a href="https://avkcode.github.io/blog/ide-operating-system-ai.html">"IDE as Operating System for AI" essay</a> circulating on HN gestures at where this goes architecturally: the IDE needs to become an environment that manages agent processes, their permissions, their outputs, and their sandboxes — not just a text editor with autocomplete. The Claude Code CVEs this week are arguably the opening act of that reckoning.</p>
+<blockquote><p>"Context as infra, taste as config, verification for autonomy, scale via delegation, closing the loop."</p><cite>— <a href="https://eugeneyan.com//writing/working-with-ai/">Eugene Yan, "How to Work and Compound with AI"</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Eugene Yan
+            </a>
+            
+            <a href="https://avkcode.github.io/blog/ide-operating-system-ai.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💻</span>
+              IDE as OS
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Claude's rate limits are about to get meaningfully higher due to the Colossus deal — if you've been artificially constraining agentic Claude workflows due to throttling, now is the time to revisit your architecture and push the ceiling. Re-benchmark your token budgets and parallel agent counts against new limits before your competitors do.</li><li><strong>Actionable insight.</strong> Audit your Claude Code deployments immediately for the symlink sandbox escape (CVE-2026-39861) and the trust-prompt RCE vector. If Claude Code has access to credentials, production file systems, or CI pipelines, treat this as a P0 security review — not a "we'll get to it" item. Consider adopting a local control plane like <a href="https://github.com/chocks/agentctl">Agentctl</a> or <a href="https://news.ycombinator.com/item?id=48056990">Armorer</a> as an intermediate layer.</li><li><strong>Actionable insight.</strong> If you're running STT → LLM → TTS pipelines, evaluate OpenAI's new <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api">unified realtime voice models</a> this week — consolidating three hops into one is a latency and cost win that likely changes your architecture meaningfully. Factor in the GPT-5.5 price increase before committing to migration.</li><li><strong>Actionable insight.</strong> The Mozilla/Mythos Firefox hardening story is a preview of AI-assisted security as a genuine product feature. If you're building developer tools or infrastructure products, AI-powered security scanning is moving from nice-to-have to a table-stakes differentiator — start scoping how to integrate it before it becomes a checkbox requirement from enterprise buyers.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.anthropic.com/news/higher-limits-spacex" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔵</span>
+              Anthropic Limits
+            </a>
+            
+            <a href="https://github.com/advisories/GHSA-vp62-r36r-9xqp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              CVE-2026-39861
+            </a>
+            
+            <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              OpenAI Voice
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/7/firefox-claude-mythos/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🦊</span>
+              Mythos/Firefox
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/darrylmorley/whatcable">darrylmorley/whatcable</a>
+              <span class="side-meta">Swift · ⭐ 2,111</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/aattaran/deepclaude">aattaran/deepclaude</a>
+              <span class="side-meta">JavaScript · ⭐ 1,602</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/mattpocock/dictionary-of-ai-coding">mattpocock/dictionary-of-ai-coding</a>
+              <span class="side-meta">TypeScript · ⭐ 1,238</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/yaojingang/yao-open-prompts">yaojingang/yao-open-prompts</a>
+              <span class="side-meta">Python · ⭐ 1,198</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/strukto-ai/mirage">strukto-ai/mirage</a>
+              <span class="side-meta">TypeScript · ⭐ 1,060</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/XBuilderLAB/cheat-on-content">XBuilderLAB/cheat-on-content</a>
+              <span class="side-meta">Python · ⭐ 1,059</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Announced higher usage limits for Claude and a compute partnership with SpaceX to utilize their Colossus data center capacity.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched GPT-5.5 and GPT-5.5-Cyber models with Trusted Access for Cyber to help verified defenders accelerate vulnerability research.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Introduced new realtime voice models in the API with reasoning, translation, and transcription capabilities.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Made Gemini 3.1 Flash-Lite model generally available after its preview phase.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Began testing ads in ChatGPT with clear labeling and privacy protections to support free access.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">GPT-5.5 pricing increased according to analysis published on OpenRouter.</span>
+              <span class="launch-tag tag-pricing">Pricing</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06222">When to Trust Imagination: Adaptive Action Execution for World Action Models</a>
+              <span class="side-meta">World Action Models (WAMs) have recently emerged as a promising paradigm for robotic manipulation by jointly predicting future visual observations and future actions. However, current WAMs typically e</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2602.00095">EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions</a>
+              <span class="side-meta">Multimodal Large Language Models (MLLMs) hold significant promise for revolutionizing traditional education and reducing teachers' workload. However, accurately interpreting unconstrained STEM student</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06643">Are We Making Progress in Multimodal Domain Generalization? A Comprehensive Benchmark Study</a>
+              <span class="side-meta">Despite the growing popularity of Multimodal Domain Generalization (MMDG) for enhancing model robustness, it remains unclear whether reported performance gains reflect genuine algorithmic progress or </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06376">Continuous-Time Distribution Matching for Few-Step Diffusion Distillation</a>
+              <span class="side-meta">Step distillation has become a leading technique for accelerating diffusion models, among which Distribution Matching Distillation (DMD) and Consistency Distillation are two representative paradigms. </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06200">A^2TGPO: Agentic Turn-Group Policy Optimization with Adaptive Turn-level Clipping</a>
+              <span class="side-meta">Reinforcement learning for agentic large language models (LLMs) typically relies on a sparse, trajectory-level outcome reward, making it difficult to evaluate the contribution of individual tool-calls</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
