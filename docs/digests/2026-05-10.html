@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic's Infrastructure Bet Changes Everything — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Sunday, May 10, 2026</div>
+        <h1>Anthropic's Infrastructure Bet Changes Everything</h1>
+        
+        <p class="subtitle">Anthropic signs a $5B/year Colossus deal, Claude Code spawns a tooling ecosystem, and OpenAI monetizes ChatGPT with ads. The AI industry's tectonic plates are shifting — here's what builders need to act on now.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Anthropic's Colossus Deal: The Compute Arms Race Gets Personal</h2>
+          <p>The biggest story this week isn't a model release — it's a data center deal. <a href="https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr">Anthropic signed a $5B/year, 300MW agreement to use all of SpaceX/xAI's Colossus data center capacity</a>, a move that Simon Willison called "the biggest announcement by far" at the Code w/ Claude event. Meanwhile, <a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear">Latent Space reports Anthropic is growing at roughly 10x/year</a> while competitors are laying off more than 10% of their workforces — a stark bifurcation in the industry.</p><p>What does this mean for builders? First, it signals that Anthropic is betting on sustained, massive inference demand — not a temporary spike. If you're building on Claude APIs, that's a reliability and capacity signal worth noting. Second, the xAI partnership is ideologically unusual: Anthropic and Elon Musk have had public tensions, but compute scarcity apparently overrides politics. As <a href="https://simonwillison.net/2026/May/7/xai-anthropic/">Willison noted</a>, the Colossus facility has its own controversial environmental footprint — something enterprise buyers with ESG mandates may need to factor in.</p><p>The 8,000% annualized ARR growth figure is eye-popping and almost certainly reflects a small base with rapid enterprise uptake — but the directional signal is clear. Anthropic is winning enterprise deals at a pace that's justifying frontier infrastructure investments. If you're a PM deciding which model provider to build deeper integrations with, this growth trajectory matters for long-term API stability and feature investment.</p>
+<blockquote><p>"That's the one with the particularly controversial environmental record."</p><cite>— Simon Willison, noting the Colossus facility's gas turbine pollution permits amid Anthropic's infrastructure announcement</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Colossus Deal
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/7/xai-anthropic/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: xAI/Anthropic Notes
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Anthropic 10x Growth
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Code w/ Claude Live Blog
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Code's Tooling Explosion: A Platform Is Forming</h2>
+          <p>Claude Code is quietly becoming a platform, not just a product. Today's HN feed is littered with indie tools built on top of it — and the variety reveals a genuine ecosystem forming around agentic coding workflows. <a href="https://olliewagner.com/remind">Remind</a> lets you schedule Claude Code jobs on your Mac. <a href="https://github.com/narcotic-sh/modafinil">Modafinil</a> keeps agents running with your MacBook lid closed. <a href="https://github.com/idodekerobo/draft-cli-plugin">Draft CLI Plugin</a> addresses one of the most painful real-world problems: persistent product context across sessions, so Claude Code doesn't lose track of what you're building every time you restart. And <a href="https://codebrainery.com/articles/snyk-claude-code-real-time-security-scanning-for-ai-code">Snyk is integrating real-time security scanning</a> directly into Claude Code's output stream.</p><p>Meanwhile, <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/">Thariq Shihipar from the Claude Code team at Anthropic published a piece</a> arguing for HTML over Markdown as the preferred output format to request from Claude — with a gallery of examples showing how rich, interactive, self-contained HTML artifacts unlock entirely new UX patterns. This isn't a minor style preference; it's a product philosophy shift. HTML outputs are renderable, shareable, and don't require a downstream build step.</p><p>The session-persistence problem flagged by Draft CLI Plugin deserves special attention from PMs. Every agentic coding session today starts nearly cold — users re-explain project context, conventions, and goals. Whoever solves persistent, structured project memory in a way that's easy to maintain will unlock dramatically higher agent autonomy. This is the context engineering challenge of 2026.</p>
+<blockquote><p>"Vibe coding and agentic engineering have started to converge in my own work."</p><cite>— Simon Willison, reflecting on the blurring line between casual AI-assisted coding and production agentic engineering workflows</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: HTML vs Markdown
+            </a>
+            
+            <a href="https://github.com/idodekerobo/draft-cli-plugin" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: Draft CLI Plugin
+            </a>
+            
+            <a href="https://github.com/narcotic-sh/modafinil" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: Modafinil
+            </a>
+            
+            <a href="https://codebrainery.com/articles/snyk-claude-code-real-time-security-scanning-for-ai-code" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: Snyk + Claude Code
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Vibe Coding Convergence
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI's Monetization Pivot: Ads, Voice, and the GPT-5.5 Stack</h2>
+          <p>OpenAI had a dense week of releases that collectively paint a picture of a company spreading GPT-5's capabilities across every surface it can reach. The most provocative move: <a href="https://openai.com/index/testing-ads-in-chatgpt">OpenAI is testing ads in ChatGPT</a>. The company promises clear labeling, answer independence, and strong privacy protections — but the optics are significant. This is the first formal acknowledgment that the free tier needs a sustainable revenue model beyond subscription conversion. For builders, this creates a new competitive dynamic: if free ChatGPT becomes ad-supported, premium AI products that promise zero-ad environments gain a clearer differentiation story.</p><p>On the capability side, <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api">new realtime voice models hit the API</a> — reasoning, translation, and transcription in a single low-latency pipeline — and <a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber">GPT-5.5 and GPT-5.5-Cyber launched for verified security researchers</a>. The Cyber variant is particularly notable: it's a domain-specific capability unlock, not just a general model, which previews how OpenAI may productize frontier models going forward — vertical-specific access tiers rather than one-size-fits-all APIs. <a href="https://openai.com/index/running-codex-safely">Codex's safety architecture blog post</a> also dropped, detailing sandboxing, network policies, and agent-native telemetry — critical reading for any team deploying coding agents in enterprise environments.</p>
+<blockquote><p>"OpenAI continues deploying GPT-5 everywhere."</p><cite>— Latent Space (swyx), summarizing OpenAI's multi-surface expansion strategy this week</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/testing-ads-in-chatgpt" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: ChatGPT Ads
+            </a>
+            
+            <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: New Voice Models
+            </a>
+            
+            <a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: GPT-5.5-Cyber
+            </a>
+            
+            <a href="https://openai.com/index/running-codex-safely" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: Running Codex Safely
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-gpt-realtime-2-translate-and" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: GPT Realtime-2
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI for Security: Claude Mythos Finds Real Firefox Bugs</h2>
+          <p>One of the most substantive applied AI stories of the week flew under the radar: <a href="https://simonwillison.net/2026/May/7/firefox-claude-mythos/">Mozilla used Claude Mythos Preview to locate and fix hundreds of vulnerabilities in Firefox</a>. The Mozilla/Anthropic writeup is remarkably candid about the quality jump — previous AI-generated security bug reports were mostly noise, but Mythos crossed a threshold where the bugs became "very good." This is a genuine capability inflection worth tracking.</p><p>For builders, this has two immediate implications. First, if you're shipping code with Claude Code or Codex, the Snyk integration <a href="https://codebrainery.com/articles/snyk-claude-code-real-time-security-scanning-for-ai-code">announced this week</a> becomes more compelling — AI-generated code has AI-findable vulnerabilities, and the toolchain is starting to close that loop. Second, Mozilla's use case is a template for how large, mature codebases can use frontier models for systematic security review at scale. This isn't a toy demo; it's a repeatable workflow. The key unlock seems to be that Mythos has enough code reasoning depth to understand multi-step vulnerability chains, not just obvious surface-level issues. If your product operates in regulated industries where security review is a bottleneck, this approach is worth piloting now.</p><p>The broader pattern here connects to Nathan Lambert's framing on the <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">open-closed performance gap</a>: frontier closed models are still earning their premium in high-stakes domains where raw capability matters more than cost.</p>
+<blockquote><p>"Suddenly, the bugs are very good."</p><cite>— Mozilla, in their writeup on using Claude Mythos Preview to harden Firefox, describing the quality threshold crossed by the new model</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/7/firefox-claude-mythos/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Firefox + Claude Mythos
+            </a>
+            
+            <a href="https://codebrainery.com/articles/snyk-claude-code-real-time-security-scanning-for-ai-code" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              Snyk + Claude Code Security
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Interconnects: Open-Closed Gap
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>KV-Cache Compression and the Infrastructure Efficiency Race</h2>
+          <p>A quiet but technically significant item surfaced on HN: <a href="https://github.com/ggml-org/llama.cpp/discussions/22891">Grinder12, a new technique achieving 0.96-bit lossless streaming KV-cache compression with a claimed 16.55x VRAM savings</a>. This is the kind of infrastructure research that looks esoteric until it suddenly changes what's feasible on consumer hardware. KV-cache is the memory structure that stores intermediate attention states during inference — it's one of the primary bottlenecks for running long-context models efficiently, and it scales with both context length and batch size.</p><p>A 16x VRAM reduction — if the losslessness claim holds up under broader testing — would be transformative for local inference and for cloud providers trying to maximize GPU utilization. Sebastian Raschka's recent deep-dive on <a href="https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling">inference-time scaling categories</a> provides useful framing here: as models increasingly rely on extended reasoning chains, KV-cache efficiency becomes a first-order cost driver, not just an optimization. And Eugene Yan's piece on <a href="https://eugeneyan.com//writing/working-with-ai/">working and compounding with AI</a> frames context management as infrastructure — "context as infra" — which aligns perfectly with why KV-cache compression is a product-level concern, not just a research curiosity.</p><p>For teams building RAG systems or long-context applications: watch this space. If techniques like Grinder12 land in mainstream inference frameworks, it could meaningfully shift the economics of context-heavy workloads and make longer effective contexts viable at current pricing.</p>
+<blockquote><p>"Context as infra, taste as config, verification for autonomy, scale via delegation, closing the loop."</p><cite>— Eugene Yan, summarizing the mental model for working effectively with AI systems at scale</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/ggml-org/llama.cpp/discussions/22891" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: Grinder12 KV-Cache
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Sebastian Raschka: Inference Scaling
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> The Claude Code ecosystem is forming fast — audit your internal developer tooling stack now. Session persistence and persistent product context are the most painful gaps; consider building or adopting tools like Draft CLI Plugin before the space gets crowded with vendor solutions that lock you in.</li><li><strong>Actionable insight.</strong> If you're deploying coding agents in enterprise settings, read OpenAI's Codex safety architecture post and map it against your own compliance requirements. Sandboxing, network policy enforcement, and agent-native telemetry are table stakes for enterprise agent deployments — not optional add-ons to bolt on later.</li><li><strong>Actionable insight.</strong> Start requesting HTML output from Claude instead of Markdown for any user-facing artifact generation. The Claude Code team's own internal research shows dramatically richer, more directly usable outputs — this is a zero-cost prompt change with meaningful UX upside you can ship this week.</li><li><strong>Actionable insight.</strong> Take the Grinder12 KV-cache compression result seriously as a leading indicator. If 16x VRAM savings on KV-cache proves out in production llama.cpp builds, it will shift the economics of long-context inference within quarters — meaning your RAG architecture decisions made today may need to be revisited sooner than expected as cost curves change.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/idodekerobo/draft-cli-plugin" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              Draft CLI Plugin
+            </a>
+            
+            <a href="https://openai.com/index/running-codex-safely" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: Codex Safety
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              HTML over Markdown
+            </a>
+            
+            <a href="https://github.com/ggml-org/llama.cpp/discussions/22891" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              Grinder12 KV-Cache
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/antirez/ds4">antirez/ds4</a>
+              <span class="side-meta">C · ⭐ 4,790</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/aattaran/deepclaude">aattaran/deepclaude</a>
+              <span class="side-meta">JavaScript · ⭐ 1,680</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/strukto-ai/mirage">strukto-ai/mirage</a>
+              <span class="side-meta">TypeScript · ⭐ 1,655</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/yaojingang/yao-open-prompts">yaojingang/yao-open-prompts</a>
+              <span class="side-meta">Python · ⭐ 1,504</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/lightseekorg/tokenspeed">lightseekorg/tokenspeed</a>
+              <span class="side-meta">Python · ⭐ 865</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/raiyanyahya/how-to-train-your-gpt">raiyanyahya/how-to-train-your-gpt</a>
+              <span class="side-meta">Jupyter Notebook · ⭐ 803</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Released new realtime voice models in the API with reasoning, translation, and transcription capabilities.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched GPT-5.5 and GPT-5.5-Cyber models with Trusted Access for Cyber to help verified defenders with vulnerability research.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Beginning to test ads in ChatGPT to support free user access with clear labeling and user control.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Added Webhooks support to Gemini API to reduce friction and latency for long-running jobs.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Announced gemini-3.1-flash-lite is now generally available after graduating from preview status.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Snyk</div>
+              <span class="launch-detail">Launched real-time security scanning integration with Claude Code for AI-generated code.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06663">EMO: Pretraining Mixture of Experts for Emergent Modularity</a>
+              <span class="side-meta">Large language models are typically deployed as monolithic systems, requiring the full model even when applications need only a narrow subset of capabilities, e.g., code, math, or domain-specific know</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06627">PianoCoRe: Combined and Refined Piano MIDI Dataset</a>
+              <span class="side-meta">Symbolic music datasets with matched scores and performances are essential for many music information retrieval (MIR) tasks. Yet, existing resources often cover a narrow range of composers, lack perfo</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06642">StraTA: Incentivizing Agentic Reinforcement Learning with Strategic Trajectory Abstraction</a>
+              <span class="side-meta">Large language models (LLMs) are increasingly used as interactive agents, but optimizing them for long-horizon decision making remains difficult because current methods are largely purely reactive, wh</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06477">GeoStack: A Framework for Quasi-Abelian Knowledge Composition in VLMs</a>
+              <span class="side-meta">We address the challenge of knowledge composition in Vision-Language Models (VLMs), where accumulating expertise across multiple domains or tasks typically leads to catastrophic forgetting. We introdu</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.01640">Prescriptive Scaling Laws for Data Constrained Training</a>
+              <span class="side-meta">Training compute is increasingly outpacing the availability of high-quality data. This shifts the central challenge from optimal compute allocation to extracting maximum value from limited data. The w</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
