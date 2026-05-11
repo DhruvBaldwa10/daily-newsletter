@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic Bets Big, OpenAI Monetizes — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Monday, May 11, 2026</div>
+        <h1>Anthropic Bets Big, OpenAI Monetizes</h1>
+        
+        <p class="subtitle">Anthropic's 10x growth and a $5B compute deal with SpaceX signal a new infrastructure arms race, while OpenAI quietly introduces ads to ChatGPT. For AI product builders, the competitive landscape just shifted in ways that matter for every roadmap decision this quarter.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Anthropic's Infrastructure Bet: The Colossus Deal Changes the Compute Game</h2>
+          <p>The biggest signal from last week's Code w/ Claude event wasn't a new model feature — it was a deal. <a href="https://simonwillison.net/2026/May/7/xai-anthropic/">Anthropic struck an agreement with SpaceX/xAI to use "all of the capacity" of the Colossus data center</a>, a 300MW facility reportedly worth $5B/year. Simultaneously, <a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear">Latent Space reports Anthropic is growing at roughly 10x per year</a> while much of the tech industry is laying off 10%+ of their workforces. That's a striking dichotomy that tells you everything about where the real AI money is flowing.</p><p>For builders, this matters because Anthropic's ability to scale inference capacity directly determines whether Claude Code, Claude API, and multi-agent workloads can actually grow with demand. Constrained compute has been a silent killer for AI product teams — models you love can't serve your load. A 300MW data center deal is Anthropic saying: that bottleneck ends here. The flip side is the ethical dimension Simon Willison flagged — <a href="https://simonwillison.net/2026/May/7/xai-anthropic/">the Colossus facility has a controversial environmental track record</a>, specifically regarding gas turbines and air pollution permits in Memphis. If you're building products on Anthropic's stack and ESG matters to your customers, file that away.</p><p>The strategic read here is that Anthropic is positioning itself as the compute-credible alternative to OpenAI for enterprise. Growing 10x while locking in massive infrastructure suggests they're not playing for research kudos — they're playing for market share at scale.</p>
+<blockquote><p>"The biggest [announcement] by far was the deal they've struck with SpaceX/xAI to use 'all of the capacity of their Colossus data center.'"</p><cite>— Simon Willison, simonwillison.net</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/7/xai-anthropic/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Simon Willison: xAI/Anthropic Deal
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📈</span>
+              Latent Space: Anthropic 10x Growth
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Latent Space: $5B Colossus Deal
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Mythos + Mozilla: AI Security Enters a New Phase</h2>
+          <p>While most of the industry obsesses over coding benchmarks, Mozilla quietly demonstrated what frontier AI can actually do when pointed at a serious real-world problem. <a href="https://simonwillison.net/2026/May/7/firefox-claude-mythos/">Mozilla used their early access to Claude Mythos Preview to locate and fix hundreds of security vulnerabilities in Firefox</a> — and the results were striking enough that the Mozilla engineering team wrote a detailed post about the methodology. The headline from that post: "Suddenly, the bugs are very good."</p><p>This matters for builders in two ways. First, it suggests that Claude Mythos (Anthropic's frontier research model) has a qualitatively different capability profile for security analysis than what we've seen from previous Claude versions — the kind of jump that doesn't just make existing workflows faster, it enables entirely new product categories. Second, it validates a product pattern: AI as a deep code auditor, not just a code completer. If you're building developer tools or security products, this is the use case to study.</p><p>OpenAI is also moving in this direction. <a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber">OpenAI expanded its Trusted Access for Cyber program with GPT-5.5 and GPT-5.5-Cyber</a>, specifically targeting verified defenders and vulnerability researchers. The framing is deliberate: these are dual-use capabilities being gated behind verification. For AI product builders who want to work in the security space, both Anthropic and OpenAI are building access tiers you'll need to navigate — plan for that friction in your GTM.</p>
+<blockquote><p>"<strong>Suddenly, the bugs are very good.</strong> Just a few months ago, AI-generated security bug reports to open source projects were mostly known for being noise."</p><cite>— Mozilla Engineering Blog, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/7/firefox-claude-mythos/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Simon Willison: Mozilla + Claude Mythos
+            </a>
+            
+            <a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛡️</span>
+              OpenAI: GPT-5.5 Cyber Program
+            </a>
+            
+            <a href="https://openai.com/index/running-codex-safely" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚙️</span>
+              OpenAI: Running Codex Safely
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI's Monetization Machine: Ads, Voice, and the Free-Tier Pivot</h2>
+          <p>OpenAI had a quieter but strategically loaded week. <a href="https://openai.com/index/testing-ads-in-chatgpt">OpenAI announced it's testing ads in ChatGPT</a> — the first time the company has moved toward an ad-supported model. The framing is careful: "clear labeling, answer independence, strong privacy protections, and user control." But let's be blunt: this is OpenAI acknowledging that free-tier monetization through subscriptions alone isn't enough, and that the billions of ChatGPT users who don't pay are an asset to be monetized. For builders: if your AI product competes with or integrates into ChatGPT's free tier, this changes the competitive dynamics. Ads create a different incentive structure for what content gets surfaced and how.</p><p>Meanwhile, <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api">OpenAI dropped new realtime voice models in the API</a> — including GPT-Realtime-2 with reasoning, translation, and transcription capabilities — and <a href="https://www.latent.space/p/ainews-gpt-realtime-2-translate-and">Latent Space flags these as new SOTA for realtime voice</a>. This is a meaningful unlock for voice-first product builders. Real-time translation in the API means you can now build multilingual voice agents without stitching together three separate services. If you've been waiting for voice to be "good enough" for production — this week's releases are worth re-evaluating against your threshold.</p><p>There's also a notable safety feature: <a href="https://openai.com/index/introducing-trusted-contact-in-chatgpt">Trusted Contact in ChatGPT</a>, which notifies a designated person if serious self-harm concerns are detected. This is both a product and a regulatory move — expect EU AI Act compliance requirements to make features like this table stakes for consumer AI within 18 months.</p>
+<blockquote><p>"OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control."</p><cite>— OpenAI Blog</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/testing-ads-in-chatgpt" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📢</span>
+              OpenAI: Testing Ads in ChatGPT
+            </a>
+            
+            <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              OpenAI: New Voice Models
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-gpt-realtime-2-translate-and" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔊</span>
+              Latent Space: GPT Realtime-2
+            </a>
+            
+            <a href="https://openai.com/index/introducing-trusted-contact-in-chatgpt" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛡️</span>
+              OpenAI: Trusted Contact Feature
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>HTML Over Markdown: A Small Claude Code Insight With Big UX Implications</h2>
+          <p>Here's a deceptively important product insight from inside Anthropic. <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/">Thariq Shihipar, on the Claude Code team at Anthropic, published a piece advocating for HTML over Markdown as the preferred output format to request from Claude</a>. The argument: HTML gives you semantic richness, styling hooks, and interactivity that Markdown simply can't express — and Claude is surprisingly capable of generating clean, purposeful HTML when explicitly asked.</p><p>For product builders, this is worth internalizing. If you're building any kind of document generation, report output, or rich content display on top of Claude (or any LLM), defaulting to Markdown because it's "simpler" may actually be leaving capability on the table. HTML outputs can be rendered directly in webviews, styled to match your design system, and structured with semantic meaning that downstream code can parse. The community has been conditioned to treat Markdown as the safe default — this piece challenges that assumption with concrete examples.</p><p>This connects to a broader theme in context engineering: the format you request shapes not just the presentation but the reasoning structure of the model's output. A model that's asked to produce HTML with semantic section tags will often organize its thinking differently than one asked to produce flat Markdown. It's not just cosmetic — it's a prompt engineering lever that's underused.</p><p>On HN, a related project surfaced: <a href="https://github.com/adamjgmiller/adamsreview">adamsreview, a multi-agent PR review tool built on Claude Code</a>, showing builders are already composing Claude Code into specialized multi-agent workflows — another sign the ecosystem is rapidly maturing beyond single-agent use cases.</p>
+<blockquote><p>"The Unreasonable Effectiveness of HTML" — advocating for HTML over Markdown as an output format to request from Claude, with the article "crammed with interesting examples and prompt suggestions."</p><cite>— Simon Willison, summarizing Thariq Shihipar's piece</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧱</span>
+              Simon Willison: HTML vs Markdown
+            </a>
+            
+            <a href="https://github.com/adamjgmiller/adamsreview" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              HN: adamsreview Multi-Agent PR Tool
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Hallucination Hits the NYT — and the Warning Is Real</h2>
+          <p>A story that should send a chill through any product team shipping AI-assisted content workflows: <a href="https://simonwillison.net/2026/May/10/new-york-times-editors-note/">The New York Times issued an editors' note after publishing a quote attributed to Canadian Conservative leader Pierre Poilievre that turned out to be an AI-generated summary of his views — rendered as a direct quotation</a>. The reporter used an AI tool, didn't verify the output, and the fabricated quote made it into a published article about a federal election.</p><p>The Times' note is blunt: "The reporter should have checked the accuracy of what the A.I. tool returned." But as Simon Willison highlights, this is a systemic failure mode, not just a personal one. AI tools that summarize and synthesize are optimized to sound authoritative — they don't flag uncertainty in a way that triggers the same verification reflex as a human source. The output looks like a quote, so it gets treated like a quote.</p><p>For builders shipping AI writing tools, research assistants, or any product where AI-generated text might be presented as fact: this is your canary. The UX question is no longer "does the model generate good output?" It's "does the interface make it clear enough that verification is required before trust?" Provenance UI — citations, source links, confidence signals — isn't optional anymore. It's table stakes for any tool used in high-stakes contexts. Eugene Yan's work on <a href="https://eugeneyan.com//writing/product-evals/">product evals in three steps</a> and his argument that <a href="https://eugeneyan.com//writing/eval-process/">an LLM-as-judge won't save the product</a> both reinforce that the responsibility for output quality ultimately sits with the builder, not the model.</p>
+<blockquote><p>"This article was updated after The Times learned that a remark attributed to Pierre Poilievre... was in fact an A.I.-generated summary of his views about Canadian politics that A.I. rendered as a quotation. The reporter should have checked the accuracy of what the A.I. tool returned."</p><cite>— New York Times Editors' Note, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/10/new-york-times-editors-note/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison: NYT AI Quote Failure
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/product-evals/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧪</span>
+              Eugene Yan: Product Evals
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/eval-process/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📋</span>
+              Eugene Yan: Eval Process
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Anthropic's Colossus deal and 10x growth rate signal this is the moment to get serious about Claude as a production dependency — not just an experiment. If you've been hedging between OpenAI and Anthropic, the infrastructure investment suggests Claude's reliability and capacity at scale is about to improve materially. Revisit your model routing strategy this month.</li><li><strong>Actionable insight.</strong> The NYT hallucination incident is a product design problem, not just a journalism ethics story. Audit your AI-assisted content workflows today: does your UX make verification feel mandatory, or optional? Add provenance signals, citation requirements, and human-review checkpoints to any output that could be published, shared, or acted on without re-verification.</li><li><strong>Actionable insight.</strong> OpenAI's new realtime voice API with translation and transcription is a genuine capability unlock — evaluate it against your voice product requirements now. If you've deferred building voice features because the quality bar wasn't there, this is the re-evaluation moment. The multilingual use case especially is worth prototyping this sprint.</li><li><strong>Actionable insight.</strong> Swap your default Claude output format from Markdown to HTML in any context where you control the rendering layer. It's a low-cost prompt change that unlocks richer structure, better styling hooks, and can meaningfully improve how users interact with model outputs. Test it on your top three output templates this week.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/7/xai-anthropic/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Anthropic Compute Deal
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/10/new-york-times-editors-note/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              NYT Hallucination Incident
+            </a>
+            
+            <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              OpenAI Voice API
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧱</span>
+              HTML Output Format
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/antirez/ds4">antirez/ds4</a>
+              <span class="side-meta">C · ⭐ 6,495</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/strukto-ai/mirage">strukto-ai/mirage</a>
+              <span class="side-meta">TypeScript · ⭐ 1,809</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/yaojingang/yao-open-prompts">yaojingang/yao-open-prompts</a>
+              <span class="side-meta">Python · ⭐ 1,583</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/lightseekorg/tokenspeed">lightseekorg/tokenspeed</a>
+              <span class="side-meta">Python · ⭐ 922</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/huangserva/3DCellForge">huangserva/3DCellForge</a>
+              <span class="side-meta">JavaScript · ⭐ 888</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/zarazhangrui/beautiful-html-templates">zarazhangrui/beautiful-html-templates</a>
+              <span class="side-meta">HTML · ⭐ 766</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Gemini 3.1 Flash-Lite model is now generally available after transitioning from preview status.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched GPT-Realtime-2, GPT-Realtime-Translate, and new GPT-Realtime-Whisper voice models in the API.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Testing ads in ChatGPT to support free access with clear labeling and user privacy controls.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Introduced Trusted Contact feature in ChatGPT that notifies a trusted person if serious self-harm concerns are detected.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Announced a $5 billion per year data center capacity deal with xAI/SpaceX to use all capacity of their 300MW Colossus data center.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.07748">TextLDM: Language Modeling with Continuous Latent Diffusion</a>
+              <span class="side-meta">Diffusion Transformers (DiT) trained with flow matching in a VAE latent space have unified visual generation across images and videos. A natural next step toward a single architecture for both generat</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.05136">CPCANet: Deep Unfolding Common Principal Component Analysis for Domain Generalization</a>
+              <span class="side-meta">Domain Generalization (DG) aims to learn representations that remain robust under out-of-distribution (OOD) shifts and generalize effectively to unseen target domains. While recent invariant learning </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.05781">Steering Visual Generation in Unified Multimodal Models with Understanding Supervision</a>
+              <span class="side-meta">Unified multimodal models are envisioned to bridge the gap between understanding and generation. Yet, to achieve competitive performance, state-of-the-art models adopt largely decoupled understanding </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.07177">HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents</a>
+              <span class="side-meta">Existing multimodal search agents process target entities sequentially, issuing one tool call per entity and accumulating redundant interaction rounds whenever a query decomposes into independent sub-</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.07825">Anisotropic Modality Align</a>
+              <span class="side-meta">Training multimodal large language models has long been limited by the scarcity of high-quality paired multimodal data. Recent studies show that the shared representation space of pretrained multimoda</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
