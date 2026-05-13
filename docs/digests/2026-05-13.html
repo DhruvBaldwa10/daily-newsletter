@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finetuning Fades, Agents Spread — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Wednesday, May 13, 2026</div>
+        <h1>Finetuning Fades, Agents Spread</h1>
+        
+        <p class="subtitle">The finetuning era may be quietly ending as inference-time scaling and agent loops take over. Meanwhile, Anthropic plants a flag in legal, OpenAI goes enterprise-native, and the open model ecosystem keeps compounding.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>The End of Finetuning as Default Strategy</h2>
+          <p>Something significant is shifting in how teams think about model customization. <a href="https://www.latent.space/p/ainews-the-end-of-finetuning">Latent Space's latest AINews</a> flags the quiet thesis that finetuning is losing its primacy as the go-to adaptation technique — and the data is starting to back this up. As inference-time scaling matures and RLHF-style post-training gets absorbed into frontier models, the marginal value of custom finetuning is compressing fast for most product teams.</p><p>This connects directly to <a href="https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling">Sebastian Raschka's deep dive on inference-time scaling categories</a>, which laid out how test-time compute — budget forcing, majority voting, process reward models — is becoming the dominant lever for capability gains. The implication: instead of spending weeks on supervised finetuning pipelines, teams can often get equivalent or better results by investing in better prompting, chain-of-thought structure, and eval harnesses. Meanwhile, <a href="https://simonwillison.net/2026/May/12/llm/#atom-everything">Simon Willison's llm 0.32a2 release</a> notes that most reasoning-capable OpenAI models now route through the <code>/v1/responses</code> endpoint rather than <code>/v1/chat/completions</code>, enabling interleaved reasoning traces — a tangible signal that the API surface itself is being redesigned around inference-time compute, not weight updates.</p><p>For product builders, the practical shift is this: your customization budget is better spent on context engineering, eval-driven iteration, and prompt libraries than on maintaining finetuning infrastructure — at least until you've proven context-based approaches have hit a ceiling.</p><blockquote><p>"Most reasoning-capable OpenAI models now use the /v1/responses endpoint instead of /v1/chat/completions. This enables interleaved reasoning traces."</p><cite>— Simon Willison, llm 0.32a2 release notes</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-the-end-of-finetuning" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: End of Finetuning
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Raschka: Inference Scaling
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/12/llm/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Willison: llm 0.32a2
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Goes Vertical: Legal Is Just the Start</h2>
+          <p>Anthropic made a pointed vertical move this week with the launch of <a href="https://www.artificiallawyer.com/2026/05/12/claude-for-legal-launches-may-reshape-the-legal-tech-world/">Claude for Legal</a>, a dedicated product targeting law firms and in-house counsel. The Artificial Lawyer's coverage calls it potentially reshaping the legal tech world — strong language, but not entirely unwarranted. Legal is one of the highest-value, highest-trust verticals in enterprise software, and Anthropic's constitutional AI positioning maps well onto the compliance and accuracy demands of legal work.</p><p>But read this alongside the broader Anthropic momentum story. <a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear">Latent Space reports Anthropic is growing 10x year-over-year</a> while competitors are cutting 10%+ of their workforces. And the company just signed a <a href="https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr">$5B/year compute deal with SpaceX's xAI for 300MW through Colossus I</a> — infrastructure scale that signals serious confidence in continued demand growth. The vertical product strategy makes sense against this backdrop: rather than competing purely on API pricing, Anthropic is building product-layer moats in domains where trust and accuracy are table stakes.</p><p>For builders, Claude for Legal is a blueprint worth studying. It suggests that the next wave of AI product value won't come from generic assistants but from models (or wrappers) tuned to domain-specific workflows, terminology, and risk tolerances. The question isn't whether your market has a "for Legal" moment coming — it's whether you'll be the one who ships it first.</p><blockquote><p>"Claude for Legal launches — may reshape the legal tech world."</p><cite>— Artificial Lawyer headline, May 12, 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.artificiallawyer.com/2026/05/12/claude-for-legal-launches-may-reshape-the-legal-tech-world/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚖️</span>
+              Artificial Lawyer: Claude for Legal
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Anthropic 10x growth
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Anthropic/xAI deal
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI Goes Full Enterprise Stack</h2>
+          <p>OpenAI had a strikingly enterprise-focused week. The company launched <a href="https://openai.com/index/openai-launches-the-deployment-company">DeployCo</a>, a new entity explicitly designed to help organizations bring frontier AI into production — essentially a professional services and deployment arm. This is a significant strategic move: it signals OpenAI is no longer content to be a model API provider and wants to own the full enterprise adoption journey, from integration through measurable business impact.</p><p>Simultaneously, OpenAI published detailed case studies on <a href="https://openai.com/index/nvidia">how NVIDIA engineers use Codex with GPT-5.5</a> to ship production systems, <a href="https://openai.com/academy/how-finance-teams-use-codex">how finance teams use Codex for reporting and variance bridges</a>, and <a href="https://openai.com/index/autoscout24">how AutoScout24 is scaling engineering with AI workflows</a>. The pattern is deliberate: build the reference architecture library that makes enterprise procurement easier to justify. <a href="https://openai.com/index/running-codex-safely">A separate post on running Codex safely</a> addresses sandboxing, approvals, and agent-native telemetry — exactly the security and compliance questions that stall enterprise deals.</p><p>The <a href="https://openai.com/signals/research/2026q1-update">Q1 2026 adoption report</a> is also telling: fastest growth is among users over 35, with more balanced gender usage — meaning ChatGPT is crossing into genuinely mainstream, non-technical territory. For builders targeting enterprise buyers, the combination of DeployCo, safety documentation, and mainstream demographic data creates a procurement playbook that's hard to ignore.</p><blockquote><p>"Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments."</p><cite>— OpenAI Blog, NVIDIA case study, May 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/openai-launches-the-deployment-company" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI: DeployCo launch
+            </a>
+            
+            <a href="https://openai.com/index/nvidia" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI: NVIDIA + Codex
+            </a>
+            
+            <a href="https://openai.com/index/running-codex-safely" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI: Running Codex Safely
+            </a>
+            
+            <a href="https://openai.com/signals/research/2026q1-update" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI: Q1 2026 adoption
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Open Model Ecosystems Compound — China Edition</h2>
+          <p>Nathan Lambert's two-part series on China's AI ecosystem — <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs">notes from visiting the labs directly</a> and a follow-up on <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound">how open ecosystems compound</a> — is essential reading this week. The core insight: China's high-participation, open-first model release culture creates a compounding advantage that's structurally different from Western closed-model strategies. When every lab open-weights their models, the entire ecosystem levels up together, benchmarks saturate faster, and the gap between frontier and available narrows rapidly.</p><p>This matters for builders making model selection and infrastructure decisions today. Lambert's <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026">mid-2026 bets on open models</a> argue the open-closed performance gap is more dynamic than the static leaderboard snapshots suggest — and that the factors determining benchmark numbers are often orthogonal to what matters in production. Meanwhile, the <a href="https://www.interconnects.ai/p/the-distillation-panic">distillation panic piece</a> pushes back on alarmist framing around knowledge distillation from frontier models, calling "distillation attacks" a "horrible term" that obscures what is actually a normal part of the open ecosystem's improvement cycle.</p><p>The practical read for product builders: open models are no longer a cost-cutting fallback — they're increasingly a strategic first choice for latency-sensitive, privacy-critical, or heavily customized workloads. Lambert's ecosystem framing suggests this trajectory only accelerates.</p><blockquote><p>"It's not benchmark scores" that make an open model succeed — it's ecosystem fit, fine-tuning accessibility, and community velocity.</p><cite>— Nathan Lambert, "Gemma 4 and what makes an open model succeed," Interconnects</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Interconnects: China AI labs
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Interconnects: Open ecosystems compound
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Interconnects: Open model bets
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/the-distillation-panic" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Interconnects: Distillation panic
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Coding Agents: The Maintenance Cost Trap</h2>
+          <p>Two pieces this week surface a tension that every team shipping AI-generated code needs to reckon with. <a href="https://simonwillison.net/2026/May/11/james-shore/#atom-everything">Simon Willison quotes James Shore</a> making a sharp mathematical argument: if AI coding agents double your shipping speed, they had better also halve your maintenance costs — otherwise you're just trading a temporary velocity gain for permanent technical debt indenture. It's a brutally honest framing that most productivity-focused AI narratives sidestep entirely.</p><p>On the other end of the spectrum, <a href="https://simonwillison.net/2026/May/11/learning-on-the-shop-floor/#atom-everything">Shopify's Tobias Lütke describes their internal coding agent, River</a>, which operates entirely in public Slack channels — including Tobi's own <code>#tobi_river</code> channel. The transparency-by-default design is fascinating: no DMs, everything observable. It's an organizational pattern that directly addresses the maintenance and accountability problem, because when AI work is done in the open, reviewability is built in.</p><p>Meanwhile, <a href="https://eugeneyan.com//writing/working-with-ai/">Eugene Yan's framework for working with AI</a> — treating context as infrastructure, taste as config, and verification as the unlock for autonomy — offers a practical mental model for teams thinking about how to delegate to agents safely. The <a href="https://github.com/swenyai/sweny">SWEny YAML workflow system</a> showing up on HN is a concrete example of teams codifying agent orchestration into reviewable, version-controlled artifacts rather than ad-hoc prompts. This is the direction serious teams are moving.</p><blockquote><p>"Your AI coding agent, the one you use to write code, needs to reduce your maintenance costs. Not by a little bit, either. You write code twice as quick now? Better hope you've halved your maintenance costs."</p><cite>— James Shore, quoted by Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/11/james-shore/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Willison: James Shore quote
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/11/learning-on-the-shop-floor/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Willison: Shopify River agent
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+            <a href="https://github.com/swenyai/sweny" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              SWEny: YAML agent workflows
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Audit your finetuning roadmap before committing to it. With inference-time scaling and context engineering delivering comparable results at lower operational cost, redirect that budget toward eval harnesses and prompt libraries — finetuning should require a strong justification now, not be the default customization reflex.</li><li><strong>Actionable insight.</strong> Study the Claude for Legal playbook for your own vertical. Anthropic is showing that domain-specific AI products — with tailored trust signals, terminology, and workflow fit — can command premium positioning even against generic frontier models. Identify the "for [your vertical]" moment in your market and move before a larger player does.</li><li><strong>Actionable insight.</strong> If you're deploying coding agents at any scale, implement the Shopify River pattern: make agent work public and reviewable by default. Pair this with James Shore's maintenance-cost audit — measure whether your AI-generated code is reducing long-term maintenance burden, not just sprint velocity. If it isn't, your productivity gains are borrowed time.</li><li><strong>Actionable insight.</strong> Reassess open models as a primary option, not a fallback. Nathan Lambert's analysis of China's compounding open ecosystem and the narrowing open-closed performance gap means the calculus has shifted — especially for latency-sensitive or privacy-critical workloads where you need model control. Build your evaluation against open model candidates before defaulting to closed APIs.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-the-end-of-finetuning" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: End of Finetuning
+            </a>
+            
+            <a href="https://www.artificiallawyer.com/2026/05/12/claude-for-legal-launches-may-reshape-the-legal-tech-world/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚖️</span>
+              Claude for Legal
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/11/james-shore/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              James Shore on maintenance costs
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Open ecosystems compound
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/antirez/ds4">antirez/ds4</a>
+              <span class="side-meta">C · ⭐ 8,136</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/strukto-ai/mirage">strukto-ai/mirage</a>
+              <span class="side-meta">TypeScript · ⭐ 2,077</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/yaojingang/yao-open-prompts">yaojingang/yao-open-prompts</a>
+              <span class="side-meta">Python · ⭐ 1,863</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/huangserva/3DCellForge">huangserva/3DCellForge</a>
+              <span class="side-meta">JavaScript · ⭐ 1,728</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/lightseekorg/tokenspeed">lightseekorg/tokenspeed</a>
+              <span class="side-meta">Python · ⭐ 979</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/haydenbleasel/files-sdk">haydenbleasel/files-sdk</a>
+              <span class="side-meta">TypeScript · ⭐ 575</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude for Legal product launch targeting legal technology market.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched DeployCo, a new enterprise deployment company to help organizations bring frontier AI into production.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Released GPT-Realtime-2, GPT-Translate, and GPT-Whisper as new state-of-the-art realtime voice APIs.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Expanded AI-powered Google Finance experience to Europe.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Most reasoning-capable OpenAI models now use the /v1/responses endpoint instead of /v1/chat/completions, enabling interleaved reasoning.</span>
+              <span class="launch-tag tag-pricing">Pricing</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.10977">PASA: A Principled Embedding-Space Watermarking Approach for LLM-Generated Text under Semantic-Invariant Attacks</a>
+              <span class="side-meta">Watermarking for large language models (LLMs) is a promising approach for detecting LLM-generated text and enabling responsible deployment. However, existing watermarking methods are often vulnerable </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.09932">FocuSFT: Bilevel Optimization for Dilution-Aware Long-Context Fine-Tuning</a>
+              <span class="side-meta">Large language models can now process increasingly long inputs, yet their ability to effectively use information spread across long contexts remains limited. We trace this gap to how attention budget </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.12481">ToolCUA: Towards Optimal GUI-Tool Path Orchestration for Computer Use Agents</a>
+              <span class="side-meta">Computer Use Agents (CUAs) can act through both atomic GUI actions, such as click and type, and high-level tool calls, such as API-based file operations, but this hybrid action space often leaves them</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.12495">AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward</a>
+              <span class="side-meta">In this paper, we propose AlphaGRPO, a novel framework that applies Group Relative Policy Optimization (GRPO) to AR-Diffusion Unified Multimodal Models (UMMs) to enhance multimodal generation capabili</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.08734">AdaPreLoRA: Adafactor Preconditioned Low-Rank Adaptation</a>
+              <span class="side-meta">Low-Rank Adaptation (LoRA) reparameterizes a weight update as a product of two low-rank factors, but the Jacobian J_{G} of the generator mapping the factors to the weight matrix is rank-deficient, so </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
