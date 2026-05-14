@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Meters Agents, Codex Scales — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Thursday, May 14, 2026</div>
+        <h1>Claude Meters Agents, Codex Scales</h1>
+        
+        <p class="subtitle">Anthropic's pricing restructure for programmatic Claude usage is the story builders need to act on now. Meanwhile, OpenAI's Codex is quietly becoming the enterprise coding agent to beat — and the community is already hacking around both.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Anthropic Draws a Line: Interactive vs. Programmatic Claude</h2>
+          <p>The most consequential policy shift hitting builders today: <a href="https://venturebeat.com/technology/anthropic-reinstates-openclaw-and-third-party-agent-usage-on-claude-subscriptions-with-a-catch">Anthropic is carving all non-interactive usage out of monthly Max subscriptions</a>. Starting June 15, if you're running <code>claude -p</code> (headless/programmatic mode) — whether for agents, automated pipelines, or background tasks — that usage will draw from a separate API credit pool, not your flat-rate subscription. The HN thread surfaced this fast: <a href="https://news.ycombinator.com/item?id=48129753">multiple builders confirmed that Claude Code's headless mode cannot use Max limits</a> and will fall under API pricing.</p><p>The community response was immediate and revealing. Someone shipped <a href="https://github.com/sbhattap/claude-pee/tree/main">claude-pee</a> within hours — a workaround tool that routes <code>claude -p</code> usage to avoid the programmatic credit pool. That's both a signal of how much builders depend on Max-priced headless Claude, and a warning: Anthropic will likely patch usage arbitrage quickly. Simultaneously, Anthropic launched <a href="https://www.anthropic.com/news/claude-for-small-business">Claude for Small Business</a>, a new tier targeting SMBs — suggesting the pricing restructure isn't punitive so much as a deliberate segmentation strategy to extract value from power users and enterprise pipelines separately.</p><p>The product implication is sharp: if your architecture assumes flat-rate Claude access for any background agent work, you need to reprice your unit economics before June 15. This also makes the <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters">Codex vs. Claude Code comparison</a> suddenly more cost-relevant than capability-relevant.</p><blockquote><p>"Starting June 15, claude -p usage will change — headless mode cannot use Max limits, will fall under API plan."</p><cite>— HN user andersonmvd, <a href="https://news.ycombinator.com/item?id=48130374">Tell HN thread</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://venturebeat.com/technology/anthropic-reinstates-openclaw-and-third-party-agent-usage-on-claude-subscriptions-with-a-catch" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              VentureBeat
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48129753" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: claude -p pricing
+            </a>
+            
+            <a href="https://github.com/sbhattap/claude-pee/tree/main" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              claude-pee workaround
+            </a>
+            
+            <a href="https://www.anthropic.com/news/claude-for-small-business" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏢</span>
+              Anthropic SMB launch
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48130374" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: June 15 change
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Code Gets Autonomous Goals, Codex Gets Enterprise Traction</h2>
+          <p>Even as Anthropic adjusts its pricing, it's shipping hard on the product side. <a href="https://code.claude.com/docs/en/goal">Claude Code just added <code>/goal</code></a> — a new command that enables autonomous development loops where you declare an objective and the agent works toward it iteratively without constant hand-holding. This is a meaningful UX shift: moving Claude Code from a reactive pair-programmer toward a delegatable autonomous dev agent. It's the pattern builders have been waiting for, and it dovetails with the broader industry move toward "set it and monitor it" agent workflows.</p><p>Meanwhile, OpenAI's Codex is getting serious enterprise traction. <a href="https://openai.com/index/nvidia">NVIDIA engineers are using Codex with GPT-5.5</a> to ship production systems and turn research ideas into runnable experiments — not prototype demos, actual production. <a href="https://openai.com/index/autoscout24">AutoScout24 is using Codex to speed development cycles</a> and improve code quality across their org. OpenAI also published detailed guidance on <a href="https://openai.com/index/running-codex-safely">running Codex safely</a> with sandboxing, approvals, and agent-native telemetry — plus a full writeup on <a href="https://openai.com/index/building-codex-windows-sandbox">building a secure Codex sandbox for Windows</a>. The safety-first enterprise playbook is clearly deliberate.</p><p>The coding agent market is bifurcating: Claude Code is winning developer hearts with flexibility and terminal-native UX, while Codex is building the enterprise compliance and safety story that gets past procurement. Builders choosing between them should weigh their deployment context more than raw capability benchmarks right now.</p><blockquote><p>"Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments."</p><cite>— <a href="https://openai.com/index/nvidia">OpenAI, on NVIDIA's Codex usage</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://code.claude.com/docs/en/goal" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Claude Code /goal docs
+            </a>
+            
+            <a href="https://openai.com/index/nvidia" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏭</span>
+              OpenAI x NVIDIA
+            </a>
+            
+            <a href="https://openai.com/index/autoscout24" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏭</span>
+              OpenAI x AutoScout24
+            </a>
+            
+            <a href="https://openai.com/index/running-codex-safely" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Running Codex Safely
+            </a>
+            
+            <a href="https://openai.com/index/building-codex-windows-sandbox" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Codex Windows Sandbox
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Latent Space: Codex Rises
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Agent Hype Tax: Counting Agents Tells You Nothing</h2>
+          <p>Amid all the agent tooling news, a pair of sharp observations cut through the noise this week. Simon Willison surfaced a <a href="https://simonwillison.net/2026/May/13/boris-mann/">pointed quip from Boris Mann</a> that's worth pinning to every PM's wall: saying you have "11 AI agents" is as meaningful as saying you have "11 spreadsheets." It's a count, not a capability description. The AI industry has a persistent habit of using agent quantity as a proxy for sophistication — but the number of agents running tells you nothing about what they're actually accomplishing, how reliably, or at what cost.</p><p>This matters for builders in two ways. First, when you're evaluating infrastructure or pitching stakeholders, "we're running a multi-agent system" is table stakes now — what actually differentiates is the quality of orchestration, the reliability of tool use, and the cost-per-task. Second, the community tooling reflects this maturity shift: <a href="https://github.com/footprintai/Containarium">Containarium</a> just launched as a self-hosted, MCP-native sandbox for AI agents — the focus is on isolation, safety, and control, not just "spinning up more agents."</p><p>Eugene Yan's recent piece on <a href="https://eugeneyan.com//writing/working-with-ai/">how to work and compound with AI</a> frames this well: context as infrastructure, taste as config, verification for autonomy. The builders winning with agents right now aren't the ones running the most — they're the ones who've figured out delegation boundaries and verification loops. The "agents" framing is starting to feel like the "blockchain" framing of 2018: the word has become noise, and the signal is in the architecture underneath.</p><blockquote><p>"'11 AI agents' is meaningless as a phrase. If I said 'I have 11 spreadsheets' or 'I have 11 browser tabs' to do my work, it means about the same thing."</p><cite>— Boris Mann, via <a href="https://simonwillison.net/2026/May/13/boris-mann/">Simon Willison</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/13/boris-mann/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Boris Mann quote
+            </a>
+            
+            <a href="https://github.com/footprintai/Containarium" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Containarium on GitHub
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Maintenance Debt Reckoning for AI-Generated Code</h2>
+          <p>A quiet but increasingly urgent conversation is surfacing in builder communities: AI coding tools are making teams faster, but is that speed creating a hidden liability? James Shore's argument, <a href="https://simonwillison.net/2026/May/11/james-shore/">surfaced by Simon Willison</a>, is blunt and mathematical: if your AI coding agent doubles your shipping speed, you'd better have halved your maintenance costs too. Otherwise you're trading a temporary productivity boost for permanent technical debt indenture.</p><p>This connects to a broader pattern Chip Huyen identified in her piece on <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html">common pitfalls in generative AI applications</a> — teams reach for AI solutions when simpler deterministic approaches would serve better, generating complexity that compounds over time. The new wrinkle is that AI is now generating the code that creates that complexity, not just being applied as an application layer on top of it.</p><p>For product builders, this surfaces a concrete question: what's your code review standard for AI-generated PRs? The <a href="https://github.com/DrCatHicks/learning-opportunities">learning-opportunities repo</a> showing up on HN today takes an interesting angle — treating Claude Code and Codex as deliberate skill development tools rather than pure output machines, explicitly building human understanding of the code being generated. That's a UX and workflow design question as much as a technical one. Teams that build review literacy into their AI-assisted workflows now will have significantly lower maintenance costs in 12 months than teams that treat every agent output as trusted production code.</p><blockquote><p>"Your AI coding agent, the one you use to write code, needs to reduce your maintenance costs. Not by a little bit, either. You write code twice as quick now? Better hope you've halved your maintenance costs. Three times as productive? One third the maintenance costs. Otherwise, you're screwed."</p><cite>— James Shore, via <a href="https://simonwillison.net/2026/May/11/james-shore/">Simon Willison</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/11/james-shore/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: James Shore quote
+            </a>
+            
+            <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Chip Huyen: AI pitfalls
+            </a>
+            
+            <a href="https://github.com/DrCatHicks/learning-opportunities" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              learning-opportunities on GitHub
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>China's Open AI Ecosystem Is Compounding — Builders Should Care</h2>
+          <p>Nathan Lambert just published two pieces that deserve attention from anyone thinking about the open model landscape: <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs">notes from his trip inside China's leading AI labs</a>, followed by a broader analysis of <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound">how open model ecosystems compound</a>. The core thesis: China has built a high-participation, open-first AI ecosystem where labs share weights, techniques compound across organizations, and the velocity of improvement is structurally faster than closed-model labs where each advance is proprietary.</p><p>For product builders, the implications are practical and near-term. The open-closed performance gap — which Lambert has been tracking closely in his <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">detailed analysis of evaluation factors</a> — is narrowing faster than most Western builders expect. If you're building on closed frontier APIs for reasons of capability alone (rather than speed, reliability, or ecosystem), that moat is shrinking. Open models are increasingly viable for production workloads, especially with fine-tuning.</p><p>Meanwhile, Latent Space noted that <a href="https://www.latent.space/p/ainews-the-end-of-finetuning">finetuning itself may be approaching an inflection</a> — as base models get better at instruction following and tool use, the ROI on fine-tuning for specific tasks is shifting. Combined with the open ecosystem compounding story, this suggests a strategic window: builders who invest in eval infrastructure and model-agnostic architectures now will be positioned to swap in better open models as they emerge, rather than being locked into API pricing decisions made when closed models were the only viable option.</p><blockquote><p>"Further reflections on China's high-participation, open-first AI ecosystem — the compounding effects are significant and underappreciated."</p><cite>— Nathan Lambert, <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound">Interconnects</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Lambert: China's AI labs
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Lambert: Open ecosystems compound
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Lambert: Open-closed gap
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-the-end-of-finetuning" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Latent Space: End of Finetuning
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Audit your Claude usage before June 15. Any pipeline running <code>claude -p</code>, background agents, or automated workflows on Max subscriptions needs to be repriced under API token economics — build a spreadsheet now, before the cutover surprises you in production costs.</li><li><strong>Actionable insight.</strong> Treat coding agent output as draft code, not shipped code. Establish explicit review standards for AI-generated PRs today: what gets auto-merged, what requires human review, and what triggers a full architecture discussion. The maintenance debt from skipping this step will compound faster than the productivity gains.</li><li><strong>Actionable insight.</strong> Build model-agnostic evals before your next capability decision. With open models compounding and the performance gap narrowing, any architecture tightly coupled to a single closed provider is a pricing and lock-in risk. Invest in an eval harness now so you can benchmark alternatives when the next open-weight release drops.</li><li><strong>Actionable insight.</strong> Stop counting agents, start measuring outcomes. When pitching internally or evaluating vendors, demand task completion rates, error rates, and cost-per-outcome — not agent counts or "agentic" feature lists. The teams winning with agents are the ones who've defined clear delegation boundaries and verification loops, not the ones running the most.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://venturebeat.com/technology/anthropic-reinstates-openclaw-and-third-party-agent-usage-on-claude-subscriptions-with-a-catch" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              VentureBeat: Claude pricing
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/11/james-shore/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              James Shore on maintenance debt
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Lambert: Open ecosystems
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/13/boris-mann/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Boris Mann on agent counting
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/huangserva/3DCellForge">huangserva/3DCellForge</a>
+              <span class="side-meta">JavaScript · ⭐ 1,826</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/HermannBjorgvin/Clawdmeter">HermannBjorgvin/Clawdmeter</a>
+              <span class="side-meta">C · ⭐ 699</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/haydenbleasel/files-sdk">haydenbleasel/files-sdk</a>
+              <span class="side-meta">TypeScript · ⭐ 648</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/thakur-works/DarkGPT">thakur-works/DarkGPT</a>
+              <span class="side-meta">None⭐ 534</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/thakur-works/Velocity-Executor">thakur-works/Velocity-Executor</a>
+              <span class="side-meta">None⭐ 528</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/alchaincyf/huashu-md-html">alchaincyf/huashu-md-html</a>
+              <span class="side-meta">CSS · ⭐ 517</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude for Small Business product launched targeting small business customers.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude -p headless mode will fall under API plan instead of using Max subscription limits starting June 15.</span>
+              <span class="launch-tag tag-pricing">Pricing</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Non-interactive use cases carved out of monthly Claude subscriptions, restricting OpenClaw and third-party agent usage to API plans.</span>
+              <span class="launch-tag tag-pricing">Pricing</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude Code introduces `/goal` command for autonomous developer loops.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI launches DeployCo, a new enterprise deployment company to help organizations bring frontier AI into production.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">AI-powered Google Finance expands to Europe with new AI-driven features.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.12975">Retrieval is Cheap, Show Me the Code: Executable Multi-Hop Reasoning for Retrieval-Augmented Generation</a>
+              <span class="side-meta">Retrieval-Augmented Generation (RAG) has become a standard approach for knowledge-intensive question answering, but existing systems remain brittle on multi-hop questions, where solving the task requi</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.09942">HAGE: Harnessing Agentic Memory via RL-Driven Weighted Graph Evolution</a>
+              <span class="side-meta">Memory retrieval in agentic large language model (LLM) systems is often treated as a static lookup problem, relying on flat vector search or fixed binary relational graphs. However, fixed graph struct</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.12825">Orthrus: Memory-Efficient Parallel Token Generation via Dual-View Diffusion</a>
+              <span class="side-meta">We introduce Orthrus, a simple and efficient dual-architecture framework that unifies the exact generation fidelity of autoregressive Large Language Models (LLMs) with the high-speed parallel token ge</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.13779">MinT: Managed Infrastructure for Training and Serving Millions of LLMs</a>
+              <span class="side-meta">We present MindLab Toolkit (MinT), a managed infrastructure system for Low-Rank Adaptation (LoRA) post-training and online serving. MinT targets a setting where many trained policies are produced over</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.13511">Many-Shot CoT-ICL: Making In-Context Learning Truly Learn</a>
+              <span class="side-meta">In-context learning (ICL) adapts large language models (LLMs) to new tasks by conditioning on demonstrations in the prompt without parameter updates. With long-context models, many-shot ICL can use do</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
