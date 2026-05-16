@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex Goes Everywhere, Context Stays Hard — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Saturday, May 16, 2026</div>
+        <h1>Codex Goes Everywhere, Context Stays Hard</h1>
+        
+        <p class="subtitle">OpenAI is turning Codex into ubiquitous infrastructure while Claude meters programmatic usage — and the developer community is quietly wrestling with AI context drift, token bloat, and whether agents even mean anything anymore.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Codex Is Becoming the Engineering OS</h2>
+          <p>OpenAI had a relentless week pushing Codex from a power-user tool toward something that looks more like foundational engineering infrastructure. The announcements hit fast: <a href="https://openai.com/index/work-with-codex-from-anywhere">Codex is now accessible from the ChatGPT mobile app</a>, letting engineers monitor, steer, and approve coding tasks from anywhere — a direct shot at the "I need to be at my laptop" constraint that limits agentic coding today. Meanwhile, <a href="https://openai.com/index/building-codex-windows-sandbox">OpenAI published a detailed breakdown of how they built a secure sandbox for Codex on Windows</a>, including controlled file access and network restrictions — the kind of implementation detail that matters when you're deciding whether to trust an agent with production-adjacent code.</p><p>The enterprise flywheel is spinning hard. <a href="https://openai.com/index/nvidia">NVIDIA teams are using Codex with GPT-5.5 to ship production systems and run research experiments</a>, while <a href="https://openai.com/index/sea-david-chen">Sea Limited's CPO explained why they're deploying Codex across engineering teams in Asia</a> to accelerate AI-native development. <a href="https://openai.com/index/autoscout24">AutoScout24 is using Codex to speed development cycles and improve code quality</a>. And it's not just eng — <a href="https://openai.com/academy/how-finance-teams-use-codex">OpenAI published a guide on how finance teams use Codex</a> for MBRs, variance bridges, and planning scenarios. The pattern is clear: OpenAI wants Codex to be the default async coding agent for every knowledge worker, not just engineers.</p><p>Meanwhile, <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters">Latent Space reported that Claude is now metering programmatic usage</a> — a significant shift that changes the economics for teams running Claude in high-frequency agentic pipelines. This creates a real decision point: Codex-via-ChatGPT subscription vs. Claude API with usage metering.</p><blockquote><p>"Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments."</p><cite>— OpenAI Blog, on NVIDIA's Codex deployment</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/work-with-codex-from-anywhere" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📱</span>
+              Codex Mobile
+            </a>
+            
+            <a href="https://openai.com/index/building-codex-windows-sandbox" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Codex Windows Sandbox
+            </a>
+            
+            <a href="https://openai.com/index/nvidia" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🖥️</span>
+              NVIDIA + Codex
+            </a>
+            
+            <a href="https://openai.com/index/sea-david-chen" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🌏</span>
+              Sea Limited Codex
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚀</span>
+              Latent Space: Codex Rises
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Context Drift Is the UX Bug Nobody's Fixed</h2>
+          <p>A quiet but telling signal emerged from Hacker News this week: an <a href="https://news.ycombinator.com/item?id=48156498">Ask HN thread asking whether anyone has built tooling around the "AI context drift" problem</a> — the phenomenon where a model's behavior and coherence degrades as conversations grow long. It got minimal traction in terms of score, but the fact that it's being asked at all reflects a real and growing pain point for anyone building multi-turn or long-running agentic systems.</p><p>At the same time, a new open-source tool called <a href="https://github.com/chopratejas/headroom">Headroom claims 60-95% token reduction for LLM reads</a> by compressing context before it hits the model. That's an enormous range of variance, which should give builders pause — but the fact that someone built and shipped it signals genuine demand for context compression primitives.</p><p>This connects directly to a structural challenge <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html">Chip Huyen has written about extensively</a>: most AI engineering pitfalls aren't model failures, they're context and pipeline failures. Eugene Yan's recent essay <a href="https://eugeneyan.com//writing/working-with-ai/">"How to Work and Compound with AI"</a> frames it cleanly — "context as infrastructure" — suggesting that how you architect and maintain context over time is as important as which model you pick. Meanwhile, <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent">Sebastian Raschka's breakdown of coding agent components</a> shows how tools, memory, and repo context are doing the heavy lifting that model capability alone can't.</p><p>The practical implication for builders: context management isn't a feature, it's a systems design problem. Teams shipping agentic products need to treat context budgets like memory budgets in traditional systems — with explicit limits, eviction policies, and degradation handling.</p><blockquote><p>"Context as infra, taste as config, verification for autonomy, scale via delegation, closing the loop."</p><cite>— Eugene Yan, "How to Work and Compound with AI"</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://news.ycombinator.com/item?id=48156498" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              Ask HN: Context Drift
+            </a>
+            
+            <a href="https://github.com/chopratejas/headroom" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🗜️</span>
+              Headroom Token Compressor
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Raschka: Coding Agent Components
+            </a>
+            
+            <a href="https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              Chip Huyen: AI Pitfalls
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Pricing War Gets Structural: Usage-Based vs. Seats</h2>
+          <p>A Getlago piece surfacing on HN this week made a provocative argument: <a href="https://getlago.substack.com/p/1577a99d-e9d1-41d2-82e4-f11169e6654d">"Claude took the unfair bullet for ending finger-based pricing."</a> The argument is that Anthropic's move to meter programmatic API usage — flagged in <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters">Latent Space's coverage</a> — represents a broader industry reckoning with how AI is priced when agents are doing the consuming, not humans. "Finger-based pricing" (per-seat, per-user) breaks down when a single engineer's agent can make thousands of API calls per hour.</p><p>This is a legitimately important product strategy moment. The transition from seat-based to consumption-based pricing for AI tools mirrors what happened with cloud infrastructure in the early 2010s — but it's happening faster and with much more customer resistance, because enterprise procurement is not set up for variable AI spend. The <a href="https://simonwillison.net/2026/May/15/datasette-llm-limits/">datasette-llm-limits plugin Simon Willison shipped this week</a> — which lets you set per-user or global spending limits for LLM usage inside Datasette — is a microcosm of the problem: even indie developers are now building spend guardrails because token costs are unpredictable at scale.</p><p>For builders, the implication is real: if you're building on top of API-priced models and passing costs through to users or absorbing them, your unit economics look very different in an agentic world. A product that costs $0.10/user/day when users type prompts might cost $10/user/day when agents are running autonomously. This needs to be modeled now, not after launch.</p><blockquote><p>"Claude took the unfair bullet for ending finger-based pricing."</p><cite>— Getlago Substack</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://getlago.substack.com/p/1577a99d-e9d1-41d2-82e4-f11169e6654d" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Getlago: Claude Pricing
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Latent Space: Claude Meters
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/15/datasette-llm-limits/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔌</span>
+              Simon Willison: LLM Limits Plugin
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agent Hype Meets Agent Skepticism</h2>
+          <p>The ecosystem is producing a healthy counter-signal to the agent maximalism narrative. Boris Mann's quip, <a href="https://simonwillison.net/2026/May/13/boris-mann/">surfaced by Simon Willison</a>, cuts to the core of a real UX and product communication problem: counting agents as a feature metric is meaningless without understanding what they're actually doing.</p><p>On the research side, Nathan Lambert's ongoing work on open model ecosystems is worth tracking for builders. His <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound">piece on how open model ecosystems compound</a> argues that China's high-participation, open-first approach is creating compounding advantages — not just in benchmarks but in the diversity of applications and fine-tuning recipes being published. For teams deciding between closed API models and open-weight fine-tunes for agentic applications, this trajectory matters.</p><p>Meanwhile, the <a href="https://github.com/BerriAI/litellm-agent-platform">LiteLLM Agent Platform</a> launched this week with a specific value proposition: run Claude Code and Codex in on-premises sandboxes with secrets vaults. This is an infrastructure answer to the enterprise question of "how do we use frontier coding agents without sending our codebase to a third-party API?" — a question that's blocking adoption at regulated companies. And <a href="https://github.com/agrin96/VibegraphGenerator">Plan-Graph based code generation with LLMs</a> showed up as a Show HN, attempting to bring structured planning graphs to LLM code generation — a sign that developers are actively experimenting with non-chat, graph-structured agent orchestration patterns beyond simple ReAct loops.</p><blockquote><p>"'11 AI agents' is meaningless as a phrase. If I said 'I have 11 spreadsheets' or 'I have 11 browser tabs' to do my work, it means about the same thing."</p><cite>— Boris Mann, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/13/boris-mann/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              Simon Willison: Boris Mann Quote
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔄</span>
+              Nathan Lambert: Open Ecosystems
+            </a>
+            
+            <a href="https://github.com/BerriAI/litellm-agent-platform" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              LiteLLM Agent Platform
+            </a>
+            
+            <a href="https://github.com/agrin96/VibegraphGenerator" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🗺️</span>
+              Plan-Graph Code Gen
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Goes Vertical: Finance, Healthcare, and the Context-Rich App Era</h2>
+          <p>Two announcements this week signal that AI product strategy is decisively moving from horizontal assistants to deeply context-integrated vertical applications. OpenAI launched <a href="https://openai.com/index/personal-finance-chatgpt">a personal finance experience in ChatGPT for Pro users</a> that lets you securely connect financial accounts and get AI-powered insights grounded in your actual financial context — not generic advice. The same week, <a href="https://openai.com/index/databricks">Databricks announced it's bringing GPT-5.5 to enterprise agent workflows</a>, citing a new state-of-the-art result on the OfficeQA Pro benchmark as the trigger for adoption.</p><p>On the podcast front, <a href="https://www.latent.space/p/abridge">Latent Space's deep dive on Abridge</a> is essential listening for anyone building in healthcare AI. Abridge is processing 100 million doctor visits, saving 10-20 hours per clinician, and handling prior authorization in minutes — not by building a chatbot, but by making the patient-clinician conversation the operating system of clinical workflows. That's a fundamentally different product architecture than dropping an LLM into an existing EHR flow.</p><p>The pattern here is what Chip Huyen has called the difference between "AI features" and "AI products" — the winning vertical apps are those where AI has privileged access to rich, real-time context (financial transactions, clinical conversations, engineering repos) that competitors can't easily replicate. Google is running the same playbook with <a href="https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/">AI-powered Google Finance expanding to Europe</a>. The commodity layer is general-purpose chat; the moat is proprietary context.</p><blockquote><p>"How Abridge is quietly turning the patient and clinician conversation into the operating system of healthcare."</p><cite>— Latent Space, on Abridge's product architecture</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/personal-finance-chatgpt" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💳</span>
+              ChatGPT Personal Finance
+            </a>
+            
+            <a href="https://openai.com/index/databricks" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📦</span>
+              Databricks + GPT-5.5
+            </a>
+            
+            <a href="https://www.latent.space/p/abridge" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏥</span>
+              Latent Space: Abridge
+            </a>
+            
+            <a href="https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📈</span>
+              Google Finance EU
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Model your unit economics under agentic load <em>now</em>. Claude's usage metering and Codex's subscription model represent two diverging pricing philosophies — run the numbers on what your product costs when agents, not humans, are the primary consumers. If you're absorbing API costs, a 100x multiplier from autonomous agent calls will break your margin before you see it coming.</li><li><strong>Actionable insight.</strong> Treat context management as a first-class engineering discipline. The emerging consensus — from Eugene Yan's "context as infra" framing to the HN thread on context drift to the Headroom compression tool — is that context architecture is where AI products win or fail in production. Audit your current pipelines: do you have explicit context budgets, eviction policies, and degradation handling, or are you just hoping the context window is big enough?</li><li><strong>Actionable insight.</strong> If you're building a vertical AI product, your differentiation lives in proprietary context access, not model choice. Abridge, ChatGPT Finance, and enterprise Codex deployments all share a pattern: privileged, real-time access to domain-specific data that a general-purpose assistant can't replicate. Define what your "clinical conversation" equivalent is — the context source competitors can't easily copy — and build your product architecture around it.</li><li><strong>Actionable insight.</strong> Stop counting agents and start defining what they <em>do</em>. Boris Mann's provocative take is a useful forcing function: replace "we have N agents" in your product communications with concrete outcomes ("saves 10 hours per clinician," "handles prior auth in minutes"). This is both better marketing and a better internal design constraint — it forces you to specify the task boundary and success criteria before you build.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Latent Space: Claude Meters
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+            <a href="https://www.latent.space/p/abridge" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏥</span>
+              Latent Space: Abridge
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/13/boris-mann/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              Boris Mann Quote
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/huangserva/3DCellForge">huangserva/3DCellForge</a>
+              <span class="side-meta">JavaScript · ⭐ 2,065</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/nexu-io/html-anything">nexu-io/html-anything</a>
+              <span class="side-meta">HTML · ⭐ 2,064</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/yetone/native-feel-skill">yetone/native-feel-skill</a>
+              <span class="side-meta">None⭐ 1,092</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/HermannBjorgvin/Clawdmeter">HermannBjorgvin/Clawdmeter</a>
+              <span class="side-meta">C · ⭐ 1,016</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/simonlin1212/a-stock-data">simonlin1212/a-stock-data</a>
+              <span class="side-meta">None⭐ 896</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/alchaincyf/huashu-md-html">alchaincyf/huashu-md-html</a>
+              <span class="side-meta">CSS · ⭐ 547</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">ChatGPT now offers a new personal finance experience for Pro users in the U.S. with secure financial account connections and AI-powered insights.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Codex is now available on Windows with a secure sandbox enabling safe file access and network-restricted coding agents.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">AI-powered Google Finance is expanding to European markets.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Gemini API now supports webhooks to reduce friction and latency for long-running jobs.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Simon Willison</div>
+              <span class="launch-detail">inaturalist-clumper 0.1 released for publishing iNaturalist sightings on blogs.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Datasette</div>
+              <span class="launch-detail">datasette-llm-limits 0.1a0 released to configure per-user spending limits for LLM usage in Datasette.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.15193">Aligning Latent Geometry for Spherical Flow Matching in Image Generation</a>
+              <span class="side-meta">Latent flow matching for image generation usually transports Gaussian noise to variational autoencoder latents along linear paths. Both endpoints, however, concentrate in thin spherical shells, and a </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.01018">WildTableBench: Benchmarking Multimodal Foundation Models on Table Understanding In the Wild</a>
+              <span class="side-meta">Using multimodal foundation models to analyze table images is a high-value yet challenging application in consumer and enterprise scenarios. Despite its importance, current evaluations rely largely on</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.06554">Long Context Pre-Training with Lighthouse Attention</a>
+              <span class="side-meta">Training causal transformers at extreme sequence lengths is bottlenecked by the quadratic time and memory of scaled dot-product attention (SDPA). In this work, we propose Lighthouse Attention, a train</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.15012">Boosting Reinforcement Learning with Verifiable Rewards via Randomly Selected Few-Shot Guidance</a>
+              <span class="side-meta">Reinforcement Learning with Verifiable Rewards (RLVR) has achieved great success in developing Large Language Models (LLMs) with chain-of-thought rollouts for many tasks such as math and coding. Never</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.12243">PreScam: A Benchmark for Predicting Scam Progression from Early Conversations</a>
+              <span class="side-meta">Conversational scams, such as romance and investment scams, are emerging as a major form of online fraud. Unlike one-shot scam lures such as fake lottery or unpaid toll messages, they unfold through m</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
