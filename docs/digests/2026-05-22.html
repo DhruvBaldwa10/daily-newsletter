@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agents Get Computers, Google Goes Agentic — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Friday, May 22, 2026</div>
+        <h1>Agents Get Computers, Google Goes Agentic</h1>
+        
+        <p class="subtitle">Google I/O declared the "agentic Gemini era," OpenAI is quietly conquering enterprise with Codex and GPT-5.5, and the infrastructure layer for agent-native clouds is heating up fast. If you're building AI products, this week rewired the competitive map.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Google's Agentic Pivot: Flash Is the New Default</h2>
+          <p>Google I/O 2026 wasn't subtle about its thesis. In Sundar Pichai's keynote, <a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/">Google declared this the "agentic Gemini era"</a> — and they backed it up with a model release that actually ships. <a href="https://simonwillison.net/2026/May/19/gemini-35-flash/">Gemini 3.5 Flash</a> skipped the preview stage entirely, launching straight to general availability and immediately powering billions of users across Search AI Mode, Workspace, and the Gemini app. That's a meaningful signal: Google is treating this as infrastructure, not a research preview.</p><p>The catch? <a href="https://simonwillison.net/2026/May/19/gemini-35-flash/">Simon Willison notes</a> that 3.5 Flash is more expensive than its predecessor — a pricing step up that builders need to factor into their cost models now. Meanwhile, the community isn't giving Google a free pass on quality. A Hacker News thread titled <a href="https://news.ycombinator.com/item?id=48230368">"Gemini 3.5 Flash breaks in stupid ways"</a> surfaced real frustration with reliability regressions. The tension here is classic Google: grand deployment scale, rough edges in practice.</p><p>For builders, the strategic read is this — Google is using Gemini 3.5 Flash the same way Apple uses iOS: as a platform lock-in mechanism. If your product competes with Workspace or Google Search, the model powering your competitor just got a significant upgrade and is being iterated on at consumer scale. If you're building on top of Gemini APIs, the GA status means you can now stake production workflows on it — but audit your error handling first.</p><blockquote><p>"I have a policy of not writing about anything that I can't try out myself, and a lot of the big announcements are 'coming soon.'"</p><cite>— Simon Willison, on Google I/O 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔍</span>
+              Google I/O Keynote
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/19/gemini-35-flash/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison on Gemini 3.5 Flash
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48230368" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔥</span>
+              HN: Gemini 3.5 Flash breaks
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Google I/O recap
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI's Enterprise Endgame: Codex Everywhere</h2>
+          <p>While Google held its I/O event, OpenAI was quietly executing a different playbook: enterprise channel saturation. This week's moves reveal a systematic push to make Codex (and GPT-5.5) the default AI coding layer for large organizations. <a href="https://openai.com/index/ramp">Ramp's engineering team published how they use Codex with GPT-5.5 for code review</a>, cutting feedback time from hours to minutes. <a href="https://openai.com/index/databricks">Databricks integrated GPT-5.5 into enterprise agent workflows</a> after the model set a new state-of-the-art on the OfficeQA Pro benchmark. And perhaps most telling: <a href="https://openai.com/index/dell-codex-enterprise-partnership">OpenAI partnered with Dell to bring Codex to hybrid and on-premise environments</a> — a direct play for the regulated industries and security-conscious enterprises that won't touch cloud-only solutions.</p><p>The on-premise Codex partnership deserves special attention from product builders. This is OpenAI acknowledging that the next wave of enterprise AI adoption is gated on data residency and compliance, not capability. If you're building B2B AI tools and you don't have an on-prem or private cloud story, you're leaving a significant market segment to OpenAI and its channel partners.</p><p>Meanwhile, the <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters">Latent Space AINews noted a parallel trend</a>: Claude is beginning to meter programmatic usage more aggressively — a sign that Anthropic is tightening unit economics as Codex rises. For teams currently using Claude Code at scale, this is a cost model to revisit.</p><blockquote><p>"How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours."</p><cite>— OpenAI Blog, on Ramp's Codex deployment</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/ramp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💻</span>
+              OpenAI: Ramp + Codex
+            </a>
+            
+            <a href="https://openai.com/index/databricks" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: Databricks + GPT-5.5
+            </a>
+            
+            <a href="https://openai.com/index/dell-codex-enterprise-partnership" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏢</span>
+              OpenAI + Dell partnership
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-codex-rises-claude-meters" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Codex vs Claude
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Agent Infrastructure Layer Heats Up</h2>
+          <p>Two Latent Space episodes this week tell the same underlying story from different angles: the infrastructure for running agents at scale is becoming a real business, fast. <a href="https://www.latent.space/p/daytona">Daytona's CEO shared 74% month-over-month growth and 850K daily sandbox runs</a> — a staggering number that reveals just how hungry agents are for secure, isolated execution environments. Their pitch is bare-metal sandboxes optimized for RL eval loops and agentic workloads. Meanwhile, <a href="https://www.latent.space/p/railway">Railway's Jake Cooper reported 3M users, 100K signups per week, and over $200K in monthly coding-agent spend</a> flowing through their platform — describing Railway as an "agent-native cloud" and even declaring the death of pull requests as agents merge their own code.</p><p>For AI product builders, this convergence matters: the compute and runtime layer beneath your agents is no longer an afterthought. Sandboxing, execution isolation, and agent-specific billing are becoming product differentiators. Simon Willison's <a href="https://simonwillison.net/2026/May/21/datasette-agent/">Datasette Agent launch</a> offers a micro-example of this pattern — it ships with a <a href="https://simonwillison.net/2026/May/21/datasette-agent-sprites/">Fly Sprites sandbox plugin</a> as a first-class component, not an optional add-on. Sandboxing is becoming table stakes for any agent that touches real data.</p><p>The open question for builders: are you betting on a managed agent cloud (Railway, Daytona) or building your own execution layer? The managed options are maturing fast, but the lock-in risks are real.</p><blockquote><p>"850K Daily Runs, Bare Metal Sandboxes, RL Evals, and the New Agent Cloud."</p><cite>— Latent Space, on Daytona's growth metrics</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/daytona" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Daytona
+            </a>
+            
+            <a href="https://www.latent.space/p/railway" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Railway
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/21/datasette-agent/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Datasette Agent
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/21/datasette-agent-sprites/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔌</span>
+              Datasette Agent Sprites plugin
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Open Model Ecosystem: China's Compounding Advantage</h2>
+          <p>Nathan Lambert's work at Interconnects this month reads like a field report from a parallel AI universe. After visiting China's leading AI labs, <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs">his dispatch</a> paints a picture of an ecosystem that compounds differently than the West: high participation, open-first culture, and a willingness to release weights that creates a flywheel of community improvement. His follow-up piece, <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound">"How open model ecosystems compound,"</a> argues this isn't just ideological — it's a structural advantage that Western closed labs are underestimating.</p><p>The May open model bonanza <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model">catalogued by Interconnects</a> includes Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, and GLM-5.1 dropping in rapid succession. <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">Sebastian Raschka's technical breakdown</a> shows these models are shipping real architectural innovation — KV sharing, multi-head compression, and sparse attention mechanisms that directly reduce long-context inference costs. This isn't benchmark chasing; it's production-grade cost reduction.</p><p>For builders who've written off open weights as "good enough for prototypes," the calculus is changing. DeepSeek V4 and its peers are closing the gap on closed models while offering the control and cost predictability that enterprise deployments require. The practical question: does your current model selection process even include a structured eval of the latest open weights?</p><blockquote><p>"Hint: it's not benchmark scores." </p><cite>— Nathan Lambert, on what makes an open model succeed</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Lambert: Notes from China's AI labs
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Lambert: How open ecosystems compound
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Interconnects: Open model bonanza
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Raschka: LLM architecture developments
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI UX & Workflow Debt: What's Actually Broken</h2>
+          <p>Underneath this week's launches, a quieter set of signals reveals friction in how teams are actually building with AI. A Hacker News thread asked <a href="https://news.ycombinator.com/item?id=48230861">why LLMs consistently overestimate implementation time</a> — a small but telling UX breakdown that suggests models trained on planning heuristics are misaligned with the actual pace of AI-assisted development. When your AI coding assistant gives you a 3-day estimate for something that takes 45 minutes with Claude Code, that's a trust and calibration problem that compounds over time.</p><p>A thought-provoking essay from AdSurg argues that <a href="https://adsurg.substack.com/p/navigating-ai-with-paper-maps">the AI industry is optimizing the wrong variables in workflows</a> — chasing throughput and task completion while ignoring whether the outputs actually fit into the humans-in-the-loop processes that surround them. It's a contrarian take worth sitting with: are your product's evals measuring what users actually need, or just what's easy to measure?</p><p>A community submission highlighted <a href="https://news.ycombinator.com/item?id=48231575">a Spec-Driven Development workflow for Claude Code</a> — treating specs as the primary artifact that AI should consume and produce, rather than jumping straight to implementation. This pattern is gaining traction as teams discover that context engineering (what goes into the prompt, in what structure) matters more than model choice for most production tasks. Eugene Yan's framing from his recent piece captures it well: <a href="https://eugeneyan.com//writing/working-with-ai/">context as infrastructure, taste as config, verification for autonomy</a>.</p><blockquote><p>"Context as infra, taste as config, verification for autonomy, scale via delegation, closing the loop."</p><cite>— Eugene Yan, on how to work and compound with AI</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://news.ycombinator.com/item?id=48230861" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔥</span>
+              HN: LLMs overestimate time
+            </a>
+            
+            <a href="https://adsurg.substack.com/p/navigating-ai-with-paper-maps" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              AdSurg: Optimizing wrong variables
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48231575" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔥</span>
+              HN: Spec-Driven Dev for Claude Code
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Run a structured evaluation of the latest open-weight models (DeepSeek V4, Gemma 4, Kimi K2.6) against your current closed-model stack this sprint. The open ecosystem is compounding faster than most Western teams are tracking, and the cost and control advantages are real for production workloads.</li><li><strong>Actionable insight.</strong> If you're building B2B AI tooling without an on-premise or private cloud deployment option, OpenAI's Dell partnership just demonstrated the size of the market segment you're ceding. Add a compliance and data residency story to your Q3 roadmap or expect to lose deals to Codex in regulated industries.</li><li><strong>Actionable insight.</strong> Audit your agent's execution environment now — not as a security afterthought, but as a product feature. Daytona's growth numbers prove enterprises will pay for sandboxed, isolated agent runs. If your product runs agent code in shared or unprotected environments, that's a liability and a differentiator you're leaving on the table.</li><li><strong>Actionable insight.</strong> Adopt spec-driven development as your team's default Claude Code workflow and reframe your context engineering as infrastructure, not prompt tweaking. The biggest productivity gains from AI coding tools come not from better models but from better-structured inputs — treat your CLAUDE.md, specs, and repo context as first-class engineering artifacts that get reviewed and versioned like code.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Lambert: Open ecosystems
+            </a>
+            
+            <a href="https://openai.com/index/dell-codex-enterprise-partnership" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏢</span>
+              OpenAI + Dell
+            </a>
+            
+            <a href="https://www.latent.space/p/daytona" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Daytona
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/vercel-labs/zerolang">vercel-labs/zerolang</a>
+              <span class="side-meta">C · ⭐ 4,217</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Doorman11991/smallcode">Doorman11991/smallcode</a>
+              <span class="side-meta">JavaScript · ⭐ 1,100</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/DenisSergeevitch/agents-best-practices">DenisSergeevitch/agents-best-practices</a>
+              <span class="side-meta">None⭐ 946</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/datawhalechina/Agent-Learning-Hub">datawhalechina/Agent-Learning-Hub</a>
+              <span class="side-meta">None⭐ 794</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/bytedance/Lance">bytedance/Lance</a>
+              <span class="side-meta">Python · ⭐ 679</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/sapientinc/HRM-Text">sapientinc/HRM-Text</a>
+              <span class="side-meta">Python · ⭐ 633</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google released Gemini 3.5 Flash to general availability across Gemini app, AI Mode in Search, and integrated into Google Workspace products.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Datasette</div>
+              <span class="launch-detail">Datasette announced the first release of Datasette Agent, an extensible AI assistant for Datasette databases.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI and Dell partnered to bring Codex to hybrid and on-premise enterprise environments for secure AI coding deployment.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">SpaceX</div>
+              <span class="launch-detail">SpaceX entered Cloud Services Agreements with Anthropic in May 2026 to provide compute capacity for AI applications.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google announced Gemini 3.5 with new agentic capabilities and pricing available through updated Google AI subscriptions.</span>
+              <span class="launch-tag tag-pricing">Pricing</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.22536">SpaceDG: Benchmarking Spatial Intelligence under Visual Degradation</a>
+              <span class="side-meta">Multimodal Large Language Models (MLLMs) have made rapid progress in spatial intelligence, yet existing spatial reasoning benchmarks largely assume pristine visual inputs and overlook the degradations</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.22144">One Sentence, One Drama: Personalized Short-Form Drama Generation via Multi-Agent Systems</a>
+              <span class="side-meta">Existing approaches for digital short-drama production typically rely on one-shot LLM generated scripts and loosely coupled pipelines, which fail to satisfy three key requirements of short-drama gener</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.22538">Segment Anything with Motion, Geometry, and Semantic Adaptation for Complex Nonlinear Visual Object Tracking</a>
+              <span class="side-meta">Traditional visual object tracking (VOT) methods typically rely on task-specific supervised training, limiting their generalization to unseen objects and challenging scenarios with distractors, occlus</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.21572">PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects</a>
+              <span class="side-meta">Simulation-ready physical 3D assets have emerged as a promising direction owing to their broad applicability in downstream tasks. However, most existing 3D generation methods either neglect physical p</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.21467">DelTA: Discriminative Token Credit Assignment for Reinforcement Learning from Verifiable Rewards</a>
+              <span class="side-meta">Reinforcement learning from verifiable rewards (RLVR) has emerged as a central technique for improving the reasoning capabilities of large language models. Despite its effectiveness, how response-leve</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
