@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Model Labs Go Agent — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Monday, May 25, 2026</div>
+        <h1>All Model Labs Go Agent</h1>
+        
+        <p class="subtitle">Google crowns the agentic Gemini era at I/O, OpenAI doubles down on Codex enterprise plays, and geohot declares we're living in permanent AI slop — all while the open-source model ecosystem compounds faster than anyone predicted. Builders, here's what actually matters today.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>The Agentic Pivot Is Complete — Every Lab Is Now an Agent Lab</h2>
+          <p>If there was any doubt about the industry's direction, this week erased it. <a href="https://www.latent.space/p/ainews-all-model-labs-are-now-agent">Latent Space's swyx crystallized it best</a>: all model labs are now agent labs. Google's I/O 2026 keynote, framed explicitly as <a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/">"welcome to the agentic Gemini era,"</a> dropped Gemini 3.5 with a new "Spark" background agent capability and "Omni" video understanding alongside <a href="https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash">a raft of agentic tooling</a>. Meanwhile OpenAI is leaning into Codex so hard they landed a <a href="https://openai.com/index/gartner-2026-agentic-coding-leader">Gartner Magic Quadrant Leader position for Enterprise AI Coding Agents</a>.</p><p>The practical signal for builders: the abstraction layer is shifting. You're no longer selling "AI features" — you're selling autonomous workflows. <a href="https://www.latent.space/p/railway">Railway's Jake Cooper told Latent Space</a> that his platform is seeing $200K+ in monthly coding agent spend, with a prediction that PRs as we know them are dying. <a href="https://www.latent.space/p/daytona">Daytona reported 74% month-over-month growth</a> and 850K daily agent runs in sandbox environments. The infrastructure layer is scaling to meet real demand, not just hype.</p><p>What's changing for product teams: the mental model of "copilot" (AI assists human) is giving way to "agent" (AI does task, human reviews). That's a fundamentally different UX contract — users need trust-building mechanisms, audit trails, and graceful failure modes, not just autocomplete.</p><blockquote><p>"3M Users, 100K Signups/Week, Own-Metal Data Centers, $200K+ Coding Agent Spend, and the Death of PRs"</p><cite>— Latent Space headline on Railway's agent-native cloud growth</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-all-model-labs-are-now-agent" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: All Labs Are Agent Labs
+            </a>
+            
+            <a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔵</span>
+              Google I/O 2026 Keynote
+            </a>
+            
+            <a href="https://openai.com/index/gartner-2026-agentic-coding-leader" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI Gartner Leader
+            </a>
+            
+            <a href="https://www.latent.space/p/railway" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Railway Agent-Native Cloud
+            </a>
+            
+            <a href="https://www.latent.space/p/daytona" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Daytona 74% MoM Growth
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Codex Goes Enterprise — And OpenAI Is Playing a Long Game</h2>
+          <p>OpenAI's Codex push this week wasn't just marketing — it's a coherent enterprise distribution strategy that AI product builders need to map carefully. Three data points landed almost simultaneously: <a href="https://openai.com/index/virgin-atlantic">Virgin Atlantic used Codex to ship a revamped mobile app on a fixed holiday deadline</a>, reaching near-total unit test coverage and zero P1 defects. <a href="https://openai.com/index/ramp">Ramp engineers are using Codex with GPT-5.5 to get code review feedback in minutes instead of hours</a>. And <a href="https://openai.com/index/dell-codex-enterprise-partnership">OpenAI and Dell partnered to bring Codex to hybrid and on-premise environments</a> — a clear signal that regulated industries and data-sovereignty-sensitive enterprises are the next frontier.</p><p>The Dell partnership is the most strategically interesting move here. On-premise AI coding agents represent a massive unlocked market: financial services, healthcare, defense contractors — all organizations that want autonomous coding capability but can't push code context to a cloud API. If OpenAI can capture this with Codex before competitors establish on-prem footholds, it's a durable moat.</p><p>For builders currently integrating Codex or evaluating coding agent infrastructure: the Virgin Atlantic case study is worth reading closely. The key outcome wasn't raw speed — it was <em>deadline certainty</em>. That's the enterprise value prop that resonates in procurement conversations, not token throughput. Frame your agent stories around guaranteed outcomes, not productivity percentages.</p><blockquote><p>"How Virgin Atlantic used Codex to ship its revamped mobile app on a fixed holiday travel deadline, reaching near-total unit test coverage and zero P1 defects."</p><cite>— OpenAI Blog on the Virgin Atlantic Codex case study</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/virgin-atlantic" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Virgin Atlantic + Codex
+            </a>
+            
+            <a href="https://openai.com/index/ramp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Ramp + Codex GPT-5.5
+            </a>
+            
+            <a href="https://openai.com/index/dell-codex-enterprise-partnership" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI + Dell On-Prem
+            </a>
+            
+            <a href="https://openai.com/index/gartner-2026-agentic-coding-leader" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Gartner Magic Quadrant
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Open Model Explosion Is Compounding — and China Is Leading</h2>
+          <p>The open-weight model landscape has hit an inflection point that deserves serious builder attention. <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model">Nathan Lambert's latest open artifacts roundup</a> catalogs a remarkable month: Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, and GLM-5.1 all landed within weeks of each other. Lambert followed that with a deeper piece on <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound">how open model ecosystems compound</a>, and reported from a firsthand trip to <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs">China's AI labs</a>, describing a high-participation, open-first culture that is structurally different from Western lab dynamics.</p><p>Meanwhile, <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">Sebastian Raschka's deep dive into new LLM architectures</a> shows the technical progress underlying this wave: KV sharing, multi-head compression (mHC), and compressed attention mechanisms in models like Gemma 4 and DeepSeek V4 are materially reducing long-context inference costs. This isn't incremental — it changes the economics of deploying large-context applications.</p><p>For product builders: the open-closed performance gap is narrowing, but Nathan Lambert's contrarian take is worth internalizing — <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">it's not purely about benchmark scores</a>. Ecosystem, fine-tuning flexibility, deployment options, and community tooling matter more for most production use cases. If you're locked into a closed API for capability reasons, stress-test that assumption against the current open-weight field quarterly.</p><blockquote><p>"Hint: it's not benchmark scores."</p><cite>— Nathan Lambert, on what makes an open model succeed, Interconnects</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Lambert: Open Model Bonanza
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              How Open Ecosystems Compound
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Inside China's AI Labs
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Raschka: KV Sharing & mHC
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Reading the Open-Closed Gap
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Geohot Declares Eternal Sloptember — And He's Not Wrong</h2>
+          <p>The most provocative piece in today's feed is <a href="https://geohot.github.io//blog/jekyll/update/2026/05/24/the-eternal-sloptember.html">geohot's "The Eternal Sloptember"</a>, which hit Hacker News with 92 points and 38 comments. The piece (the title is the thesis) argues that we've entered a permanent state of AI-generated slop — mediocre, confidence-flavored output that floods every surface and is nearly indistinguishable from the real thing at first glance.</p><p>This lands alongside a pointed observation from Armin Ronacher, <a href="https://simonwillison.net/2026/May/24/armin-ronacher/">quoted by Simon Willison</a>, about a specific failure mode hitting open source maintainers: AI-laundered bug reports. Users paste a real problem into an LLM, get a confident but wrong root cause analysis, and submit that as the issue. The result is maintainers drowning in plausible-sounding noise that costs real debugging time to dismiss.</p><p>For AI product builders, this is a signal about where trust is eroding at the edges of your user base. Power users — the ones who were your earliest adopters — are increasingly frustrated by AI output that is fluent but hollow. The "slop" critique isn't anti-AI; it's a UX call to action. If your product surfaces AI-generated content without quality signals, provenance indicators, or friction that invites human verification, you're contributing to the problem. The builders who win in the next phase are the ones who solve for <em>quality assurance</em> in AI output, not just generation speed.</p><blockquote><p>"The most frustrating failure mode right now is that people submit issues that are not in their own voice. They contain an observed problem somewhere, but it has been thrown into a clanker and the clanker reworded it and made a huge mess of it."</p><cite>— Armin Ronacher, via Simon Willison's blog</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://geohot.github.io//blog/jekyll/update/2026/05/24/the-eternal-sloptember.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔥</span>
+              geohot: Eternal Sloptember
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48263238" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🟠</span>
+              HN Discussion
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/24/armin-ronacher/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Willison: Ronacher on AI Issues
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Infra Unicorns and the Memory Crunch Ahead</h2>
+          <p>Two infrastructure stories this week deserve builder attention for very different timescales. Near-term: <a href="https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa">Exa, Modal, and TurboPuffer all hit unicorn status</a> in a single news cycle, signaling that the picks-and-shovels layer of AI infrastructure is being valued aggressively. Modal (serverless GPU compute), TurboPuffer (vector database), and Exa (AI-native search) represent three distinct infrastructure bets — compute, retrieval, and web data access — that are becoming table stakes for production AI stacks.</p><p>Longer term, a piece Simon Willison flagged from David Oks paints a worrying picture: <a href="https://simonwillison.net/2026/May/22/memory-shortage/">the AI training boom is creating a memory shortage that will reprice consumer electronics</a>. With only three major memory manufacturers left and AI workloads consuming an outsized share of wafer capacity, the cost of RAM and DRAM in everything from smartphones to edge devices is heading up. For AI product builders who are thinking about on-device inference, edge deployment, or hardware-integrated products — this supply constraint will affect your roadmap planning in the 2027-2028 window.</p><p>OpenAI's <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture">announcement that a model disproved an 80-year-old conjecture in discrete geometry for under $1,000</a> is also worth noting — not for the math, but for what it signals about inference cost curves. Tasks that required institutional research budgets are hitting consumer price points. That changes what's buildable.</p><blockquote><p>"Memory manufacturers have a fixed capacity in terms of how many wafers they can process — and AI is consuming an ever-larger share, which means consumer electronics will get significantly more expensive over the next few years."</p><cite>— David Oks, summarized by Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              New AI Infra Unicorns
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/22/memory-shortage/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Memory Shortage & Repricing
+            </a>
+            
+            <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI Disproves Geometry Conjecture
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Redesign your agent UX for the "review" moment, not just the "generate" moment. As the industry shifts from copilot to autonomous agent patterns, the highest-leverage UX investment is now the interface where humans inspect, approve, or roll back what agents did — not the input prompt surface.</li><li><strong>Actionable insight.</strong> Build quality provenance into every AI output surface in your product before the slop backlash hits your retention metrics. Geohot and Ronacher are articulating something your power users are already feeling — fluent-but-wrong AI output is eroding trust. Add confidence signals, source attribution, and friction at high-stakes outputs now, or watch churn creep up in your most sophisticated user cohort.</li><li><strong>Actionable insight.</strong> Audit your closed-API dependencies against the current open-weight field every quarter. With Gemma 4, DeepSeek V4, and Kimi K2.6 all competitive in the same month, the open-closed gap is closing faster than annual roadmap reviews can track. If you're paying frontier API prices for capabilities now available in open weights, that's direct margin you're leaving on the table.</li><li><strong>Actionable insight.</strong> If you're building for enterprise, start your on-premise and hybrid deployment story now — the OpenAI/Dell partnership signals that regulated industries will demand it, and first-mover advantage in regulated verticals (finance, healthcare, defense) compounds heavily once procurement relationships are established.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-all-model-labs-are-now-agent" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              All Labs Are Agent Labs
+            </a>
+            
+            <a href="https://geohot.github.io//blog/jekyll/update/2026/05/24/the-eternal-sloptember.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔥</span>
+              Eternal Sloptember
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Open-Closed Performance Gap
+            </a>
+            
+            <a href="https://openai.com/index/dell-codex-enterprise-partnership" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI + Dell On-Prem
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/perplexityai/bumblebee">perplexityai/bumblebee</a>
+              <span class="side-meta">Go · ⭐ 2,235</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Doorman11991/smallcode">Doorman11991/smallcode</a>
+              <span class="side-meta">JavaScript · ⭐ 1,392</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/lynote-ai/humanize-text">lynote-ai/humanize-text</a>
+              <span class="side-meta">Python · ⭐ 724</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/sapientinc/HRM-Text">sapientinc/HRM-Text</a>
+              <span class="side-meta">Python · ⭐ 712</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/open-gsd/get-shit-done-redux">open-gsd/get-shit-done-redux</a>
+              <span class="side-meta">JavaScript · ⭐ 607</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/0xSero/codex-shim">0xSero/codex-shim</a>
+              <span class="side-meta">Python · ⭐ 490</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Datasette</div>
+              <span class="launch-detail">Datasette 1.0a30 released with new customizable Jump to menu feature.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Datasette</div>
+              <span class="launch-detail">datasette-agent 0.1a4 released, integrating with new JavaScript plugin hooks.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Gemini 3.5 announced at Google I/O 2026 with agentic capabilities.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI Codex recognized as Leader in 2026 Gartner Magic Quadrant for Enterprise AI Coding Agents.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.23771">PhotoFlow: Agentic 3D Virtual Photography Missions</a>
+              <span class="side-meta">Virtual photography asks an agent to enter a prepared 3D scene with no preselected camera pose or reference image, infer a suitable shot from scene information and a language intent, choose executable</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2604.20665">The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning Within the Monolithic Paradigm</a>
+              <span class="side-meta">The rapid proliferation of Vision-Language Models (VLMs) is often framed as enabling unified multimodal knowledge discovery but rests on an under-examined assumption: that current VLMs faithfully synt</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.18018">See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding</a>
+              <span class="side-meta">We present SWIM (See What I Mean), a novel training strategy that aligns vision and language representations to enable fine-grained object understanding solely from textual prompts. Unlike existing ap</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.23903">Geo-Align: Video Generation Alignment via Metric Geometry Reward</a>
+              <span class="side-meta">Camera-controlled video generation has achieved remarkable progress in recent years. However, existing video-to-video re-rendering methods primarily rely on Supervised Fine-Tuning using synthetic data</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.20708">Rethinking Cross-Layer Information Routing in Diffusion Transformers</a>
+              <span class="side-meta">Diffusion Transformers (DiTs) have become a de facto backbone of modern visual generation, and nearly every major axis of their design -- tokenization, attention, conditioning, objectives, and latent </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
