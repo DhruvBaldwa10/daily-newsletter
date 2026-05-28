@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex Goes Enterprise, AI Bills Explode — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Thursday, May 28, 2026</div>
+        <h1>Codex Goes Enterprise, AI Bills Explode</h1>
+        
+        <p class="subtitle">OpenAI's Codex is landing enterprise deals fast — Cisco, Virgin Atlantic, Ramp — while companies are discovering Claude Code can blow up their cloud budgets overnight. The product-market fit debate is over; the cost management crisis is just beginning.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Codex Is Winning the Enterprise Coding Agent War</h2>
+          <p>OpenAI's enterprise Codex push has hit a remarkable velocity. In the past week alone, the company published case studies with <a href="https://openai.com/index/cisco">Cisco</a>, <a href="https://openai.com/index/virgin-atlantic">Virgin Atlantic</a>, <a href="https://openai.com/index/ramp">Ramp</a>, and even a self-improving <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex">tax filing agent built with Thrive and Crete</a>. Gartner just named <a href="https://openai.com/index/gartner-2026-agentic-coding-leader">OpenAI a Leader in the 2026 Magic Quadrant for Enterprise AI Coding Agents</a>, with Codex cited specifically for innovation and scale. Meanwhile, <a href="https://openai.com/index/warp">Warp is betting hard on GPT-5.5</a> to coordinate coding agents across local, cloud, and open-source workflows.</p><p>The Virgin Atlantic case is particularly telling for builders: the airline shipped a revamped mobile app on a fixed holiday travel deadline, reaching near-total unit test coverage and zero P1 defects. That's not a demo — that's a production outcome that procurement teams will circulate. The Ramp case shows engineers getting substantive code review feedback in minutes instead of hours, which compresses the PR cycle in ways that change how you staff and structure engineering teams.</p><p>What's the product implication? The agentic coding workflow is now enterprise-validated across verticals — airlines, fintech, networking, tax. If you're building developer tooling or internal platforms, the question is no longer "will enterprises adopt AI coding agents" but "how do we integrate with Codex or compete with it." Warp's bet on using GPT-5.5 as a coordination layer across environments is worth watching closely — it's a sign that orchestration, not just generation, is where the real product surface area is expanding.</p><blockquote><p>"How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours."</p><cite>— OpenAI Blog, Ramp case study</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/cisco" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏢</span>
+              OpenAI + Cisco
+            </a>
+            
+            <a href="https://openai.com/index/virgin-atlantic" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✈️</span>
+              OpenAI + Virgin Atlantic
+            </a>
+            
+            <a href="https://openai.com/index/ramp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💳</span>
+              OpenAI + Ramp
+            </a>
+            
+            <a href="https://openai.com/index/gartner-2026-agentic-coding-leader" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Gartner MQ Leader
+            </a>
+            
+            <a href="https://openai.com/index/warp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Warp + GPT-5.5
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Product-Market Fit Found — But Budget Shocks Are Coming</h2>
+          <p>Simon Willison published a concise but important observation this week: <a href="https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything">Anthropic and OpenAI have both found product-market fit</a>. The evidence? Anthropic is <a href="https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/">reportedly about to post its first profitable quarter</a>, and stories are circulating of companies discovering shockingly large LLM bills from employee usage — specifically Claude Code running unsupervised across engineering orgs.</p><p>The Information reported on Uber's CTO flagging that Claude Code can "blow AI budgets" in ways leadership didn't anticipate. This is the classic enterprise software consumption trap, but with a new twist: unlike seat-licensed SaaS, AI coding agents bill by the token and by the task, and autonomous agents running overnight can rack up costs that no one approved. For AI PMs, this is both a warning and an opportunity. If you're building enterprise AI tooling, you need budget guardrails, usage dashboards, and cost attribution as core product features — not afterthoughts.</p><p>The PMF signal is real and it matters strategically: we're past the "will enterprises pay for this" question and into "how do we govern and optimize spend." That's a different product problem. It means the next generation of AI product work is less about capability demos and more about controls, observability, and ROI reporting — exactly the kind of infrastructure that lands multi-year contracts.</p><blockquote><p>"Stories are circulating of companies surprised at how expensive their LLM bills are becoming from usage by their staff. I think this is because OpenAI and Anthropic have both found product-market fit."</p><cite>— Simon Willison, simonwillison.net</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison on PMF
+            </a>
+            
+            <a href="https://www.theinformation.com/newsletters/applied-ai/uber-cto-shows-claude-code-can-blow-ai-budgets" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💸</span>
+              The Information: Uber CTO
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The AI Slop Problem Is Getting Personal — And Costly</h2>
+          <p>Two separate signals this week converged on the same ugly truth: AI-generated content is eroding trust at a rate builders should take seriously. On Hacker News, a thread titled <a href="https://news.ycombinator.com/item?id=48303252">"Do they know we can tell it's AI slop?"</a> surfaced the growing frustration with low-effort AI-generated content flooding inboxes, feeds, and codebases. More pointedly, Paul Graham — who sees thousands of founder emails — <a href="https://simonwillison.net/2026/May/26/paul-graham/#atom-everything">wrote bluntly</a> that he's never finished reading an email he suspects was written by AI: "It feels like being lied to, and who would stand for that?"</p><p>This isn't just a communication etiquette problem. It's a signal about where AI UX is breaking down. When the output is indistinguishable from a template and carries none of the sender's actual voice, it destroys the relationship before it starts. For builders shipping AI writing assistants, email tools, or any product that puts words in users' mouths, this is a direct product failure mode. The question isn't whether AI can draft the email — it's whether the product design encourages users to actually edit and own the output.</p><p>There's a design pattern emerging here: the best AI writing tools in 2026 won't be the ones that generate the most text the fastest. They'll be the ones that preserve human voice, encourage revision, and make it obvious when something has been AI-assisted. Transparency features — not just capability features — may be the differentiator.</p><blockquote><p>"I have never knowingly finished reading an email signed by a human but written by AI. It feels like being lied to, and who would stand for that?"</p><cite>— Paul Graham, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://news.ycombinator.com/item?id=48303252" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🗣️</span>
+              HN: AI Slop Thread
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/26/paul-graham/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📧</span>
+              Paul Graham on AI emails
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agentic Security Is Actively Bleeding — Two Vulns This Week</h2>
+          <p>Two serious security issues landed this week that every builder deploying agents should know about immediately. First, <a href="https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/">a critical vulnerability in the Python package Starlette</a> — the ASGI framework underpinning FastAPI and a massive swathe of LLM tooling — is putting millions of AI agents at risk. If your agent infrastructure runs on FastAPI or any Starlette-based stack, patch now and audit your exposure.</p><p>Second, Simon Willison flagged a <a href="https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything">confirmed data exfiltration attack against Microsoft Copilot Cowork</a>, where an attacker could use prompt injection to silently exfiltrate files from a user's workspace. This is the nth iteration of the same fundamental agentic security problem: agents that can read files, send messages, and take actions are trivially weaponizable via injected instructions in the content they process.</p><p>The curl project offers a sobering benchmark for what's coming more broadly: <a href="https://simonwillison.net/2026/May/26/the-pressure/#atom-everything">Daniel Stenberg reports that AI-assisted security reports are arriving at 4-5x the 2024 rate</a>, now exceeding one per day. AI is simultaneously making products more capable and attack surfaces more exposed. For teams building agentic products, this week is a forcing function: your threat model must explicitly include prompt injection and data exfiltration paths before you ship to enterprise customers.</p><blockquote><p>"The rate of incoming security reports is 4-5 times higher than it was in 2024 and double the speed of 2025 — meaning that on average we now get more than one report per day."</p><cite>— Daniel Stenberg, curl project, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚨</span>
+              Starlette vuln
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔓</span>
+              Copilot Cowork exfil
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/26/the-pressure/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📈</span>
+              curl security pressure
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>AI Infra Is Minting Decacorns — The Stack Is Solidifying</h2>
+          <p>Latent Space's AI news roundup this week flagged that <a href="https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks">Fireworks AI and Baseten have both crossed decacorn valuations</a>, with OpenRouter reportedly on the same trajectory. Earlier in the week, Exa, Modal, and TurboPuffer hit unicorn status. The inference and agent infrastructure layer is consolidating fast, and the valuations suggest investors believe the picks-and-shovels bet is paying off as enterprise AI spend accelerates.</p><p>For builders, this matters for two reasons. First, vendor stability: if you've bet your agent stack on a smaller inference provider or vector database, now is the time to check their funding runway and consider whether the decacorn players offer better SLAs and enterprise contracts. Second, the product surface area of these infra companies is expanding — Modal and Baseten are moving up the stack toward orchestration, not just raw compute. <a href="https://www.latent.space/p/daytona">Daytona's 74% MoM growth and 850K daily sandbox runs</a> and <a href="https://www.latent.space/p/railway">Railway's 100K signups per week</a> show that agent-native cloud infrastructure is a real product category, not just rebranded DevOps.</p><p>Sebastian Raschka's recent deep dive on <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">KV sharing and compressed attention in Gemma 4 and DeepSeek V4</a> provides useful context here: the architectural innovations reducing long-context inference costs are directly enabling the economics of always-on agents. Cheaper per-token costs at long contexts mean more viable agent loops.</p><blockquote><p>"it's funding news, but it's good news."</p><cite>— Latent Space (swyx), on Fireworks and Baseten decacorn rounds</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Fireworks/Baseten decacorns
+            </a>
+            
+            <a href="https://www.latent.space/p/daytona" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">☁️</span>
+              Daytona agent cloud
+            </a>
+            
+            <a href="https://www.latent.space/p/railway" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚂</span>
+              Railway agent-native cloud
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Raschka: LLM arch
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> If you're building enterprise AI tooling, cost governance is now a first-class product requirement — not a dashboard to add later. Build token budget controls, per-team usage attribution, and anomaly alerts into your core product before your first enterprise contract; Uber's Claude Code budget blowout will become every large org's cautionary tale and a buying criterion.</li><li><strong>Actionable insight.</strong> Audit your agent stack for the Starlette/FastAPI vulnerability immediately, and add prompt injection to your formal threat model before shipping to enterprise. The Microsoft Copilot Cowork exfiltration attack is a template that attackers will replicate — your product needs explicit defenses against injected instructions in user-controlled content.</li><li><strong>Actionable insight.</strong> If your product puts AI-generated text in users' names — emails, outreach, reports — design for voice preservation and revision, not speed of generation. Paul Graham's signal that he never finishes AI-written emails is a leading indicator of enterprise buyer fatigue; products that make AI assistance transparent and human-edited will win trust over raw throughput.</li><li><strong>Actionable insight.</strong> The agent infrastructure layer is consolidating around well-funded winners (Fireworks, Baseten, Modal, Railway, Daytona). Evaluate your vendor dependencies now against the decacorn/unicorn tier for SLA and longevity; smaller providers without clear funding paths face acquisition or shutdown risk as enterprise spend concentrates.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              PMF signal
+            </a>
+            
+            <a href="https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚨</span>
+              Starlette vuln
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/26/paul-graham/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📧</span>
+              PG on AI slop
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Infra funding
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/open-gsd/get-shit-done-redux">open-gsd/get-shit-done-redux</a>
+              <span class="side-meta">JavaScript · ⭐ 1,373</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/MoonshotAI/kimi-code">MoonshotAI/kimi-code</a>
+              <span class="side-meta">TypeScript · ⭐ 903</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/0xSero/codex-shim">0xSero/codex-shim</a>
+              <span class="side-meta">Python · ⭐ 661</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/study8677/awesome-architecture">study8677/awesome-architecture</a>
+              <span class="side-meta">Vue · ⭐ 588</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/XingYu-Zhong/DeepSeek-GUI">XingYu-Zhong/DeepSeek-GUI</a>
+              <span class="side-meta">TypeScript · ⭐ 439</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/UditAkhourii/adhd">UditAkhourii/adhd</a>
+              <span class="side-meta">TypeScript · ⭐ 374</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google announced Gemini 3.5, a new frontier model with agentic capabilities, at Google I/O 2026.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI launched Codex, an enterprise coding agent product, with recognition as a Gartner Magic Quadrant Leader.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI released GPT-5.5 model for use in agentic coding workflows.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Zig</div>
+              <span class="launch-detail">Zig announced a no-AI policy and left GitHub, securing $670K in foundation funding.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.28293">ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation</a>
+              <span class="side-meta">Proactive Recommender Systems (PRSs) aim to guide user preference shift toward target items by generating paths of intermediate recommendations. Reinforcement learning (RL) provides a principled frame</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.28773">Rethinking Memory as Continuously Evolving Connectivity</a>
+              <span class="side-meta">Existing memory-augmented LLM agents often treat memory as a static repository with pre-defined representations and fixed retrieval pipelines, which is brittle in dynamic agentic environments where fe</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.28732">MemTrace: Tracing and Attributing Errors in Large Language Model Memory Systems</a>
+              <span class="side-meta">Memory is essential for enabling large language models to support long-horizon reasoning, yet existing memory systems remain unreliable and difficult to debug. Tracing memory's dynamic evolution is cr</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.26396">Advancing Creative Physical Intelligence in Large Multimodal Models</a>
+              <span class="side-meta">Large multimodal models (LMMs) have rapidly advanced in perception and reasoning; however, it remains unclear whether these capabilities generalize to discovering visually grounded solutions in open-e</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.28548">GEM: Generative Supervision Helps Embodied Intelligence</a>
+              <span class="side-meta">Embodied Vision-Language Models (VLMs) have demonstrated impressive performance and generalization in robotics, particularly within Vision-Language-Action frameworks. However, a significant gap remain</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
