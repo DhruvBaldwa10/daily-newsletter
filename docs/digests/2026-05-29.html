@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic Hits $47B, Agents Take Over — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Friday, May 29, 2026</div>
+        <h1>Anthropic Hits $47B, Agents Take Over</h1>
+        
+        <p class="subtitle">Anthropic's Series H and $47B run-rate revenue signals the PMF moment is real — not projected. Meanwhile, Codex is eating enterprise dev workflows, a mystery model tops OpenRouter, and Claude Code is getting a serious ecosystem of its own.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Anthropic's $47B Run-Rate Is a Reality Check for Everyone</h2>
+          <p>The numbers coming out of Anthropic right now should recalibrate every AI product team's sense of what's possible — and what's at stake. <a href="https://simonwillison.net/2026/May/29/anthropic/#atom-everything">Simon Willison flagged the key line</a> buried in Anthropic's $65B Series H announcement: run-rate revenue crossed <strong>$47 billion</strong> earlier this month. That's not ARR — it's an annualized projection from current monthly revenue — but the trajectory is staggering, especially given the Series G was only in February.</p><p>Willison has been tracking this habit of Anthropic sharing run-rate figures in funding announcements, and the acceleration is hard to ignore. This comes alongside <a href="https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything">his earlier note</a> that Anthropic is reportedly on the verge of its first profitable quarter, and stories are already circulating about companies getting surprise-sized LLM bills driven by Claude Code usage among engineering staff. The Information reported on Uber's CTO noting that Claude Code can "blow AI budgets" — which is simultaneously a warning and a signal of deep adoption.</p><p>What changed? Willison's thesis is simple: both OpenAI and Anthropic have found genuine product-market fit. Not the "interesting toy" PMF of 2023, but the kind where enterprise teams are building production workflows on top of these models and paying accordingly. For builders, this means the competitive pressure from well-funded, deeply embedded incumbents is intensifying fast. The window to differentiate on top of these platforms is real but narrowing.</p><blockquote><p>"Stories are circulating of companies surprised at how expensive their LLM bills are becoming from usage by their staff. I think this is because OpenAI and Anthropic have both found product-market fit."</p><cite>— Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/29/anthropic/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison on Anthropic Series H
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Simon Willison on PMF
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Opus 4.8, Codex Blitz, and the Agentic Coding Land Grab</h2>
+          <p>The pace of releases is relentless. Yesterday brought <a href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything">Claude Opus 4.8</a> — described by Anthropic itself as "a modest but tangible improvement" — alongside new Dynamic Workflows in Claude Code and an ultracode mode. Separately, <a href="https://www.latent.space/p/ainews-cognition-raises-1b-in-26b">Cognition raised $1B at a $26B Series D</a>, and the <a href="https://www.latent.space/p/cognition">Age of Async Agents podcast episode</a> detailed how Devin is now hitting 80% commit rates on certain workflow types, with spec-to-PR pipelines running in full VMs with persistent agent memory.</p><p>OpenAI isn't standing still either. The blog is running a coordinated enterprise case study blitz: <a href="https://openai.com/index/endava">Endava using Codex</a> to reduce requirements analysis from weeks to hours, <a href="https://openai.com/index/cisco">Cisco scaling AI-native development</a>, <a href="https://openai.com/index/virgin-atlantic">Virgin Atlantic shipping a revamped mobile app</a> on a fixed holiday deadline with near-total test coverage. OpenAI was also <a href="https://openai.com/index/gartner-2026-agentic-coding-leader">named a Gartner Leader in Enterprise AI Coding Agents</a>. The social proof machine is in full motion.</p><p>What's notable about Anthropic's Opus 4.8 release specifically is the honesty. Simon Willison called it "refreshing" — a lab openly saying a model is a modest improvement rather than overselling. That kind of calibrated communication builds trust with technical users, which is a UX consideration as much as a marketing one. Meanwhile, the Claude Code ecosystem is maturing: a <a href="https://github.com/RasmusGodske/claude-hook-utils">Python utility package for building Claude Code hooks</a> appeared on HN, and a detailed teardown of <a href="https://buildingbetter.tech/p/i-read-the-claude-code-source-code">undocumented Claude Code configuration options</a> is circulating. Builders are digging deep.</p><blockquote><p>"Users will find Opus 4.8 to be a modest but tangible improvement on its predecessor. There's still more to be done: we're working on developing and releasing models that provide many of the same capabilities as Opus at a lower cost."</p><cite>— Anthropic, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Claude Opus 4.8 release
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-raises-965b-series" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📻</span>
+              Latent Space AINews
+            </a>
+            
+            <a href="https://www.latent.space/p/cognition" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📻</span>
+              Age of Async Agents episode
+            </a>
+            
+            <a href="https://openai.com/index/gartner-2026-agentic-coding-leader" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              OpenAI Gartner Leader
+            </a>
+            
+            <a href="https://buildingbetter.tech/p/i-read-the-claude-code-source-code" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Claude Code undocumented config
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Mystery Model on Top of OpenRouter: Hy3</h2>
+          <p>A strange signal appeared this week that deserves more attention than it's getting. <a href="https://minimaxir.com/2026/05/openrouter-hy3/">Max Woolf wrote up the Hy3 LLM</a>, which is topping OpenRouter's model rankings by a substantial margin — and almost nobody knows who built it or where it came from. The HN thread is sparse (12 comments, 36 points), but the underlying story is interesting for anyone thinking about model selection and routing infrastructure.</p><p>OpenRouter has become a genuine benchmark for real-world model performance — not synthetic evals, but actual usage patterns across thousands of developers and applications. When an unknown model surfaces at the top of those rankings, it raises several questions that matter for product builders: Is this an internal model someone deployed for testing? A fine-tune of an existing base that's dramatically outperforming on specific task distributions? A signal that the leaderboard itself is gameable?</p><p>The timing is also notable. <a href="https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks">Fireworks and Baseten recently raised at decacorn valuations</a>, and OpenRouter itself is reportedly on the way to its own major raise. Inference routing infrastructure is becoming a serious business, and the models flowing through these systems are increasingly diverse — open-weight, fine-tuned, mystery. For PMs building on top of model APIs, the implication is that your routing and eval strategy can't just track the major labs anymore. You need to be watching what's actually winning in the wild.</p><blockquote><p>"The mysterious Hy3 LLM is topping OpenRouter Model Rankings by a large margin" — and the internet has very few answers about what it actually is.</p><cite>— HN title, via minimaxir.com</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://minimaxir.com/2026/05/openrouter-hy3/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔍</span>
+              Hy3 LLM analysis
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48317294" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🟠</span>
+              HN discussion
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Fireworks/Baseten raises
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agentic Security Is Broken and Getting Worse</h2>
+          <p>Two data points this week paint a worrying picture for anyone shipping agentic products. First, <a href="https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/">Simon Willison covered a PromptArmor disclosure</a> showing that Microsoft Copilot Cowork — a production enterprise product — could be manipulated to exfiltrate files. The attack vector is the now-familiar prompt injection via untrusted content in the agent's context. Willison's framing is direct: "The biggest challenge in designing agentic systems continues to be preventing them from enabling attackers to exfiltrate data."</p><p>Second, curl's lead developer Daniel Stenberg published a post called <a href="https://simonwillison.net/2026/May/26/the-pressure/#atom-everything">"The pressure"</a> documenting an unprecedented surge in AI-assisted security reports — now more than one credible report per day, 4-5x the 2024 rate and double 2025. The key word is "credible" — these aren't spam reports, they're real findings accelerated by AI tooling. The security research surface is expanding faster than any team can patch.</p><p>For builders shipping agentic features, these two stories together represent a strategic forcing function. The Copilot Cowork vulnerability is a reminder that production-grade agentic systems need explicit data exfiltration prevention at the architecture level — not as an afterthought. The curl story signals that your dependencies are being audited by AI at scale, whether you're ready or not. The <a href="https://github.com/sqlite/sqlite/blob/master/AGENTS.md">SQLite team's new AGENTS.md file</a> — essentially a guidance document for AI agents being pointed at their codebase — is an interesting adaptation: open source projects are starting to manage agent behavior directly.</p><blockquote><p>"The rate of incoming security reports is 4-5 times higher than it was in 2024 and double the speed of 2025 — meaning that on average we now get more than one report per day."</p><cite>— Daniel Stenberg, curl lead developer, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Copilot Cowork exfil vulnerability
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/26/the-pressure/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              curl security pressure
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/27/sqlite-agents/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              SQLite AGENTS.md
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Open Models Are Compounding — And China Is Lapping the Field</h2>
+          <p>The open model ecosystem story is getting more complex and more consequential. Nathan Lambert's <a href="https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may">May 2026 outlook piece</a> touches on Gemini Flash 3.5, a model called Mythos, and the shifting open-closed balance. But the deeper thread is in his earlier writing: <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound">how open model ecosystems compound</a> and <a href="https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs">notes from his trip inside China's AI labs</a>. The summary: China's high-participation, open-first ecosystem is creating compounding effects that closed labs are structurally slower to match.</p><p>The <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model">latest open artifacts roundup</a> catalogues a genuinely impressive month: Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1, and others. Sebastian Raschka's <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">architectural deep-dive</a> explains how models like Gemma 4 and DeepSeek V4 are using KV sharing, multi-head compression, and compressed attention to dramatically reduce long-context inference costs — with real implications for what you can run at what price point.</p><p>For product builders, the open model surge isn't just a cost story. It's an architectural flexibility story. Fine-tuning on domain data, running locally for privacy-sensitive applications, deploying in air-gapped environments — all of these use cases are becoming more viable as open-weight frontier models improve. <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">Lambert's analysis of the open-closed performance gap</a> suggests the delta is shrinking faster than most enterprise buyers realize, which changes the procurement conversation significantly.</p><blockquote><p>"An eventful month with one flagship release after another" — the open model bonanza of May 2026 includes Gemma 4, DeepSeek V4, Kimi K2.6, and more.</p><cite>— Florian Brand, Interconnects</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔭</span>
+              Lambert May 2026 outlook
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📈</span>
+              Open ecosystems compounding
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Open model bonanza roundup
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧪</span>
+              LLM architecture deep-dive
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Open-closed performance gap
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Budget conversations are changing — fast. Claude Code and Codex are generating real, surprise-level spend at enterprise scale. If you're building internal AI tooling or selling to enterprise teams, build cost visibility and budget guardrails into your product now, not as a V2 feature. The Uber story is a warning and an opportunity.</li><li><strong>Actionable insight.</strong> Audit your agentic surface for data exfiltration vectors before you ship. The Copilot Cowork vulnerability is a template attack, not a one-off. Every agentic system that reads external content (email, docs, web) and has write/send capabilities needs explicit sandboxing and exfiltration prevention — treat it as a security primitive, not a compliance checkbox.</li><li><strong>Actionable insight.</strong> Add real-world routing signals to your model evaluation stack. The Hy3 mystery on OpenRouter is a reminder that benchmark leaderboards lag actual production performance. If you're making model selection or routing decisions, instrument your own usage data and cross-reference with OpenRouter rankings alongside lab-published evals.</li><li><strong>Actionable insight.</strong> Revisit your open-weight model strategy for cost-sensitive or privacy-sensitive workloads. With Gemma 4, DeepSeek V4, and Kimi K2.6 all landing in a single month, the capability-per-dollar curve on open models is moving fast. If you've been defaulting to closed APIs for everything, a targeted fine-tune on a strong open-weight base may now be both cheaper and more controllable for your specific domain.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              PMF signal
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Copilot security
+            </a>
+            
+            <a href="https://minimaxir.com/2026/05/openrouter-hy3/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔍</span>
+              Hy3 on OpenRouter
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Open model roundup
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/OpenBMB/PilotDeck">OpenBMB/PilotDeck</a>
+              <span class="side-meta">TypeScript · ⭐ 1,642</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/open-gsd/get-shit-done-redux">open-gsd/get-shit-done-redux</a>
+              <span class="side-meta">JavaScript · ⭐ 1,604</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/MoonshotAI/kimi-code">MoonshotAI/kimi-code</a>
+              <span class="side-meta">TypeScript · ⭐ 1,286</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/op7418/guizang-social-card-skill">op7418/guizang-social-card-skill</a>
+              <span class="side-meta">HTML · ⭐ 894</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/study8677/awesome-architecture">study8677/awesome-architecture</a>
+              <span class="side-meta">Vue · ⭐ 747</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/0xSero/codex-shim">0xSero/codex-shim</a>
+              <span class="side-meta">Python · ⭐ 716</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">GPT-5.5 released with instant mode capability; ChatGPT Canvas discontinued; o3 and GPT 4.5 retiring.</span>
+              <span class="launch-tag tag-deprecation">Deprecation</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude Opus 4.8 launched as a modest but tangible improvement over its predecessor.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Run-rate revenue crossed $47 billion in May 2026, announced during Series H funding.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.26029">CausaLab: A Scalable Environment for Interactive Causal Discovery Toward AI Scientists</a>
+              <span class="side-meta">We introduce CausaLab, a scalable environment for evaluating interactive causal discovery by LLM agents. Unlike prior evaluations, CausaLab evaluates both whether an agent can solve a problem using ca</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.30189">Token-Level Generalization in LoRA Adapter Backdoors: Attack Characterization and Behavioral Detection</a>
+              <span class="side-meta">We show that LoRA adapters, the dominant distribution format for fine-tuned LLMs, can be reliably backdoored through training data poisoning while preserving baseline task performance. On a Qwen 2.5 1</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.25378">CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation</a>
+              <span class="side-meta">Customized image editing aims to equip pre-trained diffusion models with specific visual effects using limited paired data, typically via Low-Rank Adaptation (LoRA). As the number of desired effects g</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.30346">YoCausal: How Far is Video Generation from World Model? A Causality Perspective</a>
+              <span class="side-meta">As video diffusion models (VDMs) advance toward world models, a key question arises: do they truly understand causality, or merely overfit to statistical temporal patterns? Existing benchmarks mostly </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.29486">PhoneWorld: Scaling Phone-Use Agent Environments</a>
+              <span class="side-meta">A central bottleneck for phone-use agents is that controllable, reproducible environments covering real mobile behavior are hard to build at scale. Existing mobile-agent benchmarks have made important</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
