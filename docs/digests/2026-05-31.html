@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic's Billions, Agents Break Prod — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Sunday, May 31, 2026</div>
+        <h1>Anthropic's Billions, Agents Break Prod</h1>
+        
+        <p class="subtitle">Anthropic closes a $965B Series H with $47B run-rate revenue while Codex reshapes enterprise eng orgs. Meanwhile, the open-source community is pushing back on AI-assisted contributions — and the 'vibe coding' backlash has officially reached rsync maintainers.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Anthropic's War Chest Is Now Absurd — Here's What It Means</h2>
+          <p>Anthropic just closed what <a href="https://www.latent.space/p/ainews-anthropic-raises-965b-series">Latent Space is calling a "$965B Series H"</a> — and buried inside the announcement is the number that actually matters: run-rate revenue crossed <strong>$47 billion</strong> earlier this month. <a href="https://simonwillison.net/2026/May/29/anthropic/#atom-everything">Simon Willison flags</a> that this figure deserves scrutiny: Anthropic calculates run-rate by multiplying the last 28 days of consumption revenue by 13, then adding annualized subscription revenue. <a href="https://simonwillison.net/2026/May/31/anthropic-run-rate/#atom-everything">Reuters Breakingviews called it an "AI revenue hallucination"</a> — a fair methodological challenge — but even discounted, the trajectory is staggering.</p><p>Alongside the raise, Anthropic shipped <a href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything">Claude Opus 4.8</a>, which they describe honestly as "a modest but tangible improvement." That candor is itself notable in a space defined by hyperbolic release notes. Also shipping: Dynamic Workflows and <a href="https://www.latent.space/p/ainews-anthropic-raises-965b-series">ultracode</a>, both aimed squarely at agentic coding pipelines. The <a href="https://simonwillison.net/2026/May/28/llm-anthropic/#atom-everything">llm-anthropic 0.25.1</a> update adds a new <code>-o fast 1</code> flag exposing Anthropic's fast mode for orgs with access.</p><p>For builders: this isn't just a funding story. A cash-rich Anthropic means continued aggressive API pricing competition with OpenAI, continued investment in Claude Code infrastructure, and a company that can afford to staff the safety and sandbox documentation that actually matters for enterprise deals. Speaking of which — Anthropic just published a detailed breakdown of <a href="https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything">how they sandbox Claude across Claude.ai, Claude Code, and the API</a>. Willison calls it "fantastic" — and for PMs building on top of Claude in regulated industries, this is the doc your security team has been waiting for.</p><blockquote><p>"Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month."</p><cite>— Anthropic, Series H announcement</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-anthropic-raises-965b-series" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Anthropic Series H
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/29/anthropic/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: $47B run-rate
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/31/anthropic-run-rate/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Reuters critique
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Opus 4.8
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison: Claude sandboxing
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Codex Is Reshaping Enterprise Eng Orgs — Fast</h2>
+          <p>OpenAI's blog has become a Codex case study factory this week, and reading them together paints a clear picture of where enterprise AI adoption is actually landing. <a href="https://openai.com/index/endava">Endava reports</a> that Codex is compressing requirements analysis from weeks to hours. <a href="https://openai.com/index/cisco">Cisco is using it</a> for AI Defense work and automated defect remediation at scale. <a href="https://openai.com/index/braintrust">Braintrust engineers are pairing Codex with GPT-5.5</a> to run experiments faster. And in the most interesting deployment pattern, <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex">OpenAI, Thrive, and Crete built a self-improving tax agent</a> with Codex — a system that files returns, learns from errors, and improves its own accuracy over time.</p><p>The Warp integration is worth calling out separately: <a href="https://openai.com/index/warp">Warp is using GPT-5.5 to coordinate coding agents across local, cloud, and open-source workflows</a> — essentially treating the model as an orchestration layer, not just a code completion tool. This is the pattern that will define the next generation of developer tooling: agents that span environment boundaries, not just editor plugins.</p><p>Meanwhile, <a href="https://www.latent.space/p/cognition">Latent Space's interview with Cognition's Walden Yan</a> — whose company just closed a $1B Series D at a $26B valuation — reveals the async agent thesis in detail. Devin is now committing 80% of its own code. The framing: agents as "PMs that ship" rather than autocomplete on steroids. If you're building tooling for software teams, this is the competitive context you're operating in.</p><blockquote><p>"Coding is an uncapped TAM market."</p><cite>— Latent Space, on Cognition's $26B Series D</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/endava" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: Endava + Codex
+            </a>
+            
+            <a href="https://openai.com/index/cisco" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: Cisco + Codex
+            </a>
+            
+            <a href="https://openai.com/index/braintrust" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: Braintrust + GPT-5.5
+            </a>
+            
+            <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: Self-improving tax agent
+            </a>
+            
+            <a href="https://openai.com/index/warp" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: Warp + GPT-5.5
+            </a>
+            
+            <a href="https://www.latent.space/p/cognition" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Cognition / Devin
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-cognition-raises-1b-in-26b" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Cognition Series D
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>"Please Don't Vibe F*** Up This Software" — The OSS Backlash Is Here</h2>
+          <p>The rsync project maintainers just did something remarkable: they added a <a href="https://github.com/RsyncProject/rsync/issues/929">formal policy warning against AI-generated pull requests</a>, titled — with maximal clarity — "Please Do Not Vibe Fuck Up This Software." The <a href="https://news.ycombinator.com/item?id=48342705">Hacker News thread</a> picked it up with 65 upvotes and active discussion. This is not an isolated incident. It's a symptom of a broader open-source maintainer burnout crisis that AI-assisted contributions are accelerating.</p><p>The core complaint: vibe-coded PRs that look plausible, pass surface-level review, and introduce subtle bugs or regressions in low-level systems where correctness is non-negotiable. For maintainers of infrastructure software — rsync, curl, OpenSSL, anything that moves data reliably — the cost of reviewing AI slop outweighs any potential contribution benefit.</p><p>This has direct product implications. If you're building AI coding tools, you need to think hard about what "good output" means in context. A tool that generates code that works 90% of the time is a productivity win for the author and a liability for everyone downstream. The <a href="https://github.com/OWASP/www-project-agent-memory-guard">OWASP Agent Memory Guard project</a> — which showed up on HN today — is addressing a related problem: AI agents that get their memory poisoned through adversarial inputs. Both issues point to the same gap: AI tools need better self-awareness about when their outputs should be flagged as "requires expert review."</p><blockquote><p>"Please Do Not Vibe Fuck Up This Software"</p><cite>— rsync project maintainers, GitHub issue #929</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/RsyncProject/rsync/issues/929" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              rsync: No vibe coding
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48342705" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: rsync discussion
+            </a>
+            
+            <a href="https://github.com/OWASP/www-project-agent-memory-guard" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              OWASP Agent Memory Guard
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Distribution Is the Hard Problem Now — Not Building</h2>
+          <p>A piece that surfaced on HN today cuts to the core anxiety of 2026 AI product development: <a href="https://claudefolio.com/blog/anyone-can-build-a-platform-now-almost-nobody-can-get-people-to-find-it">"Anyone can build a platform now. Almost nobody can get people to find it."</a> The post resonated (44 upvotes, 22 comments) because it names what every AI builder is quietly feeling: the cost of building has collapsed to near-zero, but the cost of distribution remains stubbornly high and is, if anything, increasing as AI-generated content floods every channel.</p><p>This pairs uncomfortably with the broader market moment. OpenAI is publishing case study after case study of enterprise Codex deployments. Anthropic just raised nearly a trillion dollars in run-rate-adjusted valuation terms. <a href="https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks">Fireworks and Baseten just became decacorns</a>. <a href="https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa">Exa, Modal, and TurboPuffer hit unicorn status</a>. Infrastructure is getting funded. But the mid-layer — AI-powered applications — is where the distribution problem bites hardest.</p><p>The contrarian read: this is actually a window for builders who understand context engineering and evals. If everyone is shipping product with the same foundation models, differentiation comes from the quality of your data pipeline, the precision of your evals, and your ability to find and keep users who get genuine value. <a href="https://eugeneyan.com//writing/working-with-ai/">Eugene Yan's recent framework</a> — "context as infrastructure, taste as config, verification for autonomy" — is worth internalizing here. The builders who treat context engineering as a core competency, not an afterthought, are the ones who will actually retain users.</p><blockquote><p>"Context as infra, taste as config, verification for autonomy, scale via delegation, closing the loop."</p><cite>— Eugene Yan, "How to Work and Compound with AI"</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://claudefolio.com/blog/anyone-can-build-a-platform-now-almost-nobody-can-get-people-to-find-it" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              ClaudeFolio: Distribution problem
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48342097" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔶</span>
+              HN: Distribution discussion
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Infra decacorns
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: Infra unicorns
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Eugene Yan: Working with AI
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Open Models Are Compounding — And Google Just Showed Up</h2>
+          <p>The open-weight model ecosystem is moving at a pace that's genuinely hard to track. <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model">Nathan Lambert's latest open artifacts roundup</a> covers Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, and GLM-5.1 — all dropping in a single month. <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound">Lambert's thesis</a> is that China's high-participation, open-first ecosystem is creating compounding returns: each model release becomes training data and a benchmark target for the next wave.</p><p>Google's I/O 2026 shadow looms over this. <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/">Gemini Omni and Gemini 3.5 demos</a> dropped alongside <a href="https://blog.google/innovation-and-ai/technology/ai/io-2026-all-our-announcements/">100 announced features</a>. The architectural advances matter here too: <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">Sebastian Raschka's breakdown</a> of KV sharing, multi-head compression, and compressed attention across Gemma 4 and DeepSeek V4 shows that the next round of cost reduction isn't coming from better chips — it's coming from smarter architecture choices that cut long-context inference costs significantly.</p><p>For builders currently locked into closed API providers: the open-model gap is closing faster than most pricing spreadsheets assume. Lambert's piece on <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance">the open-closed performance gap</a> is worth reading carefully before your next infrastructure planning cycle. The <a href="https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may">May 2026 outlook piece</a> flags Gemini Flash 3.5 and America's open-source surge as the two forces most likely to reshape the model selection conversation in Q3.</p><blockquote><p>"An eventful month with one flagship release after another."</p><cite>— Florian Brand, Interconnects: Latest Open Artifacts #21</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Interconnects: Open model roundup
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/how-open-model-ecosystems-compound" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Interconnects: Open ecosystems compound
+            </a>
+            
+            <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Google: Gemini Omni + 3.5 demos
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Sebastian Raschka: LLM arch updates
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/reading-todays-open-closed-performance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Interconnects: Open-closed gap
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Interconnects: May 2026 outlook
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li><strong>Actionable insight.</strong> Anthropic's $47B run-rate and detailed sandbox documentation make Claude Code a defensible enterprise bet right now — if you're pitching regulated industry customers, the <a href="https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything">new containment docs</a> are your security review shortcut. Pull them into your enterprise sales deck today.</li><li><strong>Actionable insight.</strong> If you're building AI coding tooling, the rsync backlash is a product signal: add explicit "review confidence" signals to your outputs and build workflows that distinguish "ready to merge" from "needs expert eyes." Vibe-coded contributions without quality gates are becoming a reputational and maintainer-relations liability.</li><li><strong>Actionable insight.</strong> Distribution is now the primary constraint, not model capability. Audit your user acquisition funnel against the assumption that "build it and they'll find it" is dead — then invest the engineering cycles you saved from AI-assisted dev into content, community, and context-quality differentiation instead.</li><li><strong>Actionable insight.</strong> Rerun your build-vs-buy model analysis for inference. Open-weight models (Gemma 4, DeepSeek V4, incoming Gemini Flash 3.5) with compressed attention architectures are cutting long-context costs structurally — not just through competition. If your product is context-heavy, the economics of self-hosting are shifting faster than your roadmap assumes.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Claude containment docs
+            </a>
+            
+            <a href="https://github.com/RsyncProject/rsync/issues/929" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚠️</span>
+              rsync vibe coding policy
+            </a>
+            
+            <a href="https://claudefolio.com/blog/anyone-can-build-a-platform-now-almost-nobody-can-get-people-to-find-it" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Distribution problem
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              LLM architecture cost savings
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/op7418/guizang-social-card-skill">op7418/guizang-social-card-skill</a>
+              <span class="side-meta">HTML · ⭐ 1,709</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/helloianneo/ian-xiaohei-illustrations">helloianneo/ian-xiaohei-illustrations</a>
+              <span class="side-meta">None⭐ 1,201</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/UditAkhourii/adhd">UditAkhourii/adhd</a>
+              <span class="side-meta">TypeScript · ⭐ 612</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/withkynam/vibecode-pro-max-kit">withkynam/vibecode-pro-max-kit</a>
+              <span class="side-meta">JavaScript · ⭐ 608</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Sophomoresty/gemini-web2api">Sophomoresty/gemini-web2api</a>
+              <span class="side-meta">Python · ⭐ 600</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/baoweise-bot/aimili-vpngate">baoweise-bot/aimili-vpngate</a>
+              <span class="side-meta">Python · ⭐ 526</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Series H funding round closes with $65B valuation, with run-rate revenue reaching $47 billion.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude Opus 4.8 released as a modest but tangible improvement over its predecessor.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Rosalind Biodefense launched with expanded trusted access to GPT-Rosalind for vetted developers and U.S. government partners.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Gemini Omni and Gemini 3.5 announced at Google I/O 2026 with multiple real-world application demos.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude Opus 4.8 introduced with fast mode option for organizations with that feature enabled.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.21781">Reflective Prompt Tuning through Language Model Function-Calling</a>
+              <span class="side-meta">Large language models (LLMs) have become increasingly capable of following instructions and complex reasoning, making prompting a flexible interface for adapting models without parameter updates. Yet </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.30161">Why Far Looks Up: Probing Spatial Representation in Vision-Language Models</a>
+              <span class="side-meta">Vision-language models (VLMs) achieve strong performance on spatial reasoning benchmarks, yet it remains unclear whether this reflects structured 3D understanding or reliance on statistical shortcuts </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.24786">CONF-KV: Confidence-Aware KV Cache Eviction with Mixed-Precision Storage for Long-Horizon LLM</a>
+              <span class="side-meta">Long-horizon LLM inference turns the key--value (KV) cache into the dominant GPU memory consumer and makes per-token attention increasingly expensive. Many common eviction policies use static recency </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.24785">PANDO: Efficient Multimodal AI Agents via Online Skill Distillation</a>
+              <span class="side-meta">Recent advances in multimodal web agents often rely on increased inference-time computation, including rollout search, verifier passes, offline skill discovery, and specialist model stacks. This raise</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.23235">Convex Low-resource Accent-Robust Language Detection in Speech Recognition</a>
+              <span class="side-meta">Globalization and multiculturalism continue to produce increasingly diverse speech varieties. Yet current spoken dialogue systems frequently fail on under-represented dialects and accents, often misid</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
