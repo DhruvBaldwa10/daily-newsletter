@@ -20,13 +20,13 @@ DATA_DIR = ROOT / "data"
 # Models. The digest is written once a day, so we use the most capable model for
 # the synthesis that the reader actually sees, and cheap/fast models for the
 # mechanical pre-processing (shortlisting) and side-extraction (launches).
-WRITER_MODEL = "claude-opus-4-8"            # main digest synthesis — best writing/judgment
+WRITER_MODEL = "claude-sonnet-4-6"          # main digest synthesis
 SHORTLIST_MODEL = "claude-haiku-4-5-20251001"  # stage-1 curation of raw items
 EXTRACT_MODEL = "claude-haiku-4-5-20251001"    # sidebar launches/pricing extraction
 
 # Two-stage funnel: we fetch wide (~300 items/day across HN, Reddit, RSS, podcasts)
 # but only the most newsworthy items should reach the writer. Stage 1 (Haiku) ranks
-# everything and keeps the top SHORTLIST_SIZE; stage 2 (Opus) writes from that.
+# everything and keeps the top SHORTLIST_SIZE; stage 2 (the writer) writes from that.
 SHORTLIST_SIZE = 50
 
 SYSTEM_PROMPT = """You are a senior AI product strategist writing a daily briefing for AI product managers who are also builders. Your reader is a PM at an AI company who ships product, writes code, reviews designs, and needs to stay ahead of the curve — not just informed, but opinionated and ready to act.
