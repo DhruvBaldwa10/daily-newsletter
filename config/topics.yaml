@@ -52,7 +52,7 @@ sources:
       - name: "Eugene Yan"
         url: "https://eugeneyan.com/rss/"
       - name: "Hamel Husain"
-        url: "https://hamel.dev/feed.xml"
+        url: "https://hamel.dev/index.xml"
 
       # Research-to-product bridge
       - name: "Ahead of AI (Sebastian Raschka)"
@@ -61,20 +61,33 @@ sources:
         url: "https://www.interconnects.ai/feed"
       - name: "The Gradient"
         url: "https://thegradient.pub/rss/"
+      - name: "One Useful Thing (Ethan Mollick)"
+        url: "https://www.oneusefulthing.org/feed"
+      - name: "Import AI (Jack Clark)"
+        url: "https://importai.substack.com/feed"
+      - name: "AI Snake Oil (Narayanan & Kapoor)"
+        url: "https://www.aisnakeoil.com/feed"
+      - name: "Semianalysis (Dylan Patel)"
+        url: "https://www.semianalysis.com/feed"
+      - name: "Pragmatic Engineer (Gergely Orosz)"
+        url: "https://blog.pragmaticengineer.com/rss/"
 
       # Company blogs
-      - name: "Anthropic Blog"
-        url: "https://www.anthropic.com/rss.xml"
+      # NOTE: Anthropic removed their public RSS feed (all known URLs 404 as of 2026-05).
+      #       Anthropic news still surfaces via HN/Reddit/other feeds. Re-add if a feed returns.
       - name: "OpenAI Blog"
         url: "https://openai.com/blog/rss.xml"
       - name: "Google AI Blog"
         url: "https://blog.google/technology/ai/rss/"
+      - name: "Google DeepMind Blog"
+        url: "https://deepmind.google/blog/rss.xml"
+      - name: "Hugging Face Blog"
+        url: "https://huggingface.co/blog/feed.xml"
 
       # PM-oriented newsletters
       - name: "Latent Space (swyx)"
         url: "https://www.latent.space/feed"
-      - name: "The Batch (deeplearning.ai)"
-        url: "https://www.deeplearning.ai/the-batch/feed/"
+      # The Batch (deeplearning.ai) removed — feed returns 404/500 across all known URLs (2026-05).
       - name: "Lil'Log"
         url: "https://lilianweng.github.io/index.xml"
 

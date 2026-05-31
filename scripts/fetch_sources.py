@@ -11,9 +11,27 @@ import feedparser
 import requests
 import yaml
 
+import history
+
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config" / "topics.yaml"
 DATA_DIR = ROOT / "data"
+
+# A browser-like User-Agent. Many sources (Reddit, Substack feeds, etc.) return
+# 403/empty for the default python-requests/feedparser UA, so we send this everywhere.
+USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+              "AppleWebKit/537.36 (KHTML, like Gecko) DailyDigestBot/1.0")
+
+
+def parse_feed(url):
+    """Fetch a feed with a browser-like UA, then hand the bytes to feedparser.
+
+    feedparser's own fetch sends a UA that many hosts block; fetching via
+    requests first avoids the silent empty-feed failures that result.
+    """
+    resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=20)
+    resp.raise_for_status()
+    return feedparser.parse(resp.content)
 
 
 def load_config():
@@ -67,7 +85,7 @@ def fetch_reddit(config, keywords, date_str):
     items = []
     subreddits = config.get("subreddits", [])
     max_posts = config.get("max_posts_per_sub", 15)
-    headers = {"User-Agent": "DailyDigestBot/1.0"}
+    headers = {"User-Agent": USER_AGENT}
 
     for sub in subreddits:
         url = f"https://www.reddit.com/r/{sub}/hot.json?limit={max_posts}"
@@ -100,7 +118,7 @@ def fetch_rss(config):
 
     for feed_cfg in feeds:
         try:
-            feed = feedparser.parse(feed_cfg["url"])
+            feed = parse_feed(feed_cfg["url"])
             for entry in feed.entries[:10]:
                 published = entry.get("published", entry.get("updated", ""))
                 items.append({
@@ -125,7 +143,7 @@ def fetch_podcasts(config):
 
     for feed_cfg in feeds:
         try:
-            feed = feedparser.parse(feed_cfg["url"])
+            feed = parse_feed(feed_cfg["url"])
             for entry in feed.entries[:3]:
                 items.append({
                     "source": "podcast",
@@ -192,29 +210,6 @@ def fetch_hf_papers():
     return items
 
 
-def fetch_producthunt():
-    """Fetch top products from ProductHunt via web scrape."""
-    items = []
-    try:
-        from bs4 import BeautifulSoup
-        resp = requests.get("https://www.producthunt.com/",
-                           headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
-        for link in soup.find_all("a", href=True):
-            href = link.get("href", "")
-            if "/posts/" in href and link.get_text(strip=True):
-                title = link.get_text(strip=True)
-                if len(title) > 3 and title not in [i["title"] for i in items]:
-                    url = href if href.startswith("http") else f"https://www.producthunt.com{href}"
-                    items.append({"title": title, "url": url, "tagline": ""})
-                    if len(items) >= 8:
-                        break
-    except Exception as e:
-        print(f"  ProductHunt error: {e}")
-    return items
-
-
 def main():
     parser = argparse.ArgumentParser(description="Fetch sources for daily digest")
     parser.add_argument("--date", default=datetime.now().strftime("%Y-%m-%d"),
@@ -257,8 +252,20 @@ def main():
     print("  Fetching HuggingFace papers...")
     result["sidebar"]["papers"] = fetch_hf_papers()
 
-    print("  Fetching ProductHunt AI...")
-    result["sidebar"]["producthunt"] = fetch_producthunt()
+    # Drop items whose URL was already covered in a recent digest, so the model
+    # never re-reports yesterday's news. (History lives in docs/, which the CI
+    # commits — unlike data/, which is gitignored and lost between runs.)
+    as_of = datetime.strptime(date_str, "%Y-%m-%d")
+    seen = history.seen_urls(history.load_history(), as_of)
+    if seen:
+        before = len(result["items"])
+        result["items"] = [
+            it for it in result["items"]
+            if history.normalize_url(it.get("url", "")) not in seen
+        ]
+        dropped = before - len(result["items"])
+        print(f"  Dedup: dropped {dropped} item(s) already covered in the last "
+              f"{history.URL_DEDUP_DAYS} days ({len(result['items'])} remain)")
 
     DATA_DIR.mkdir(exist_ok=True)
     out_path = DATA_DIR / f"{date_str}_raw.json"
