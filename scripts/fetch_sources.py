@@ -4,6 +4,7 @@
 import argparse
 import json
 import os
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -160,6 +161,55 @@ def fetch_podcasts(config):
     return items
 
 
+def fetch_arxiv(config, keywords):
+    """Fetch recent arXiv papers matching topic keywords.
+
+    Primary research is the freshest, least-duplicated source tier. We query the
+    arXiv API (Atom feed) sorted by submission date so each day surfaces genuinely
+    new papers, then let the shortlist funnel rank them against everything else.
+    """
+    items = []
+    # `config` is the arxiv sub-config (passed as sources["arxiv"]), matching how
+    # the other fetchers receive their own block.
+    max_results = config.get("max_results", 15)
+    categories = config.get("categories", ["cs.CL", "cs.AI", "cs.LG"])
+    queries = config.get("queries") or keywords[:6]
+
+    cat_filter = " OR ".join(f"cat:{c}" for c in categories)
+    for i, q in enumerate(queries):
+        # arXiv rate-limits rapid requests (returns 200 + empty feed). Their API
+        # guidance is ~3s between calls, so pace ourselves between queries.
+        if i > 0:
+            time.sleep(3)
+        # Restrict to AI categories AND the keyword, newest first.
+        search = f"({cat_filter}) AND all:\"{q}\""
+        url = ("http://export.arxiv.org/api/query?"
+               f"search_query={requests.utils.quote(search)}"
+               f"&sortBy=submittedDate&sortOrder=descending&max_results={max_results}")
+        try:
+            feed = parse_feed(url)
+            for entry in feed.entries:
+                items.append({
+                    "source": "arxiv",
+                    "query": q,
+                    "title": (entry.get("title", "") or "").replace("\n", " ").strip(),
+                    "url": entry.get("link", ""),
+                    "summary": (entry.get("summary", "") or "").replace("\n", " ").strip()[:500],
+                    "published": entry.get("published", ""),
+                    "author": ", ".join(a.get("name", "") for a in entry.get("authors", [])[:4]),
+                })
+        except Exception as e:
+            print(f"  arXiv fetch error for '{q}': {e}")
+
+    # Dedup by URL (the same paper matches multiple keyword queries).
+    seen, deduped = set(), []
+    for it in items:
+        if it["url"] and it["url"] not in seen:
+            seen.add(it["url"])
+            deduped.append(it)
+    return deduped[:max_results * 2]
+
+
 def fetch_github_trending():
     """Fetch today's trending repos from GitHub."""
     items = []
@@ -242,6 +292,10 @@ def main():
     if sources.get("podcasts", {}).get("enabled"):
         print("  Fetching podcasts...")
         result["items"].extend(fetch_podcasts(sources["podcasts"]))
+
+    if sources.get("arxiv", {}).get("enabled"):
+        print("  Fetching arXiv...")
+        result["items"].extend(fetch_arxiv(sources["arxiv"], all_keywords))
 
     # Sidebar data
     result["sidebar"] = {}

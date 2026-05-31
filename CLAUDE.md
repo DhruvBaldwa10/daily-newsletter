@@ -53,6 +53,10 @@ All sources, topics, and keywords live here — no source URLs are hardcoded in 
 
 **Fetching gotcha:** the default `python-requests`/`feedparser` User-Agent gets `403`d or returns empty from Reddit, Substack, and other hosts. All fetching goes through a browser-like `USER_AGENT` — RSS/podcasts via the `parse_feed()` helper (fetch with `requests`, then hand bytes to `feedparser`). If adding a source, route it through this, and **validate the feed actually returns entries with the UA before committing** — dead feeds fail silently (Anthropic's and The Batch's RSS were removed upstream; that's why they're absent). The fictional 2026 dates mean live HN/date-windowed fetches return nothing when testing against "today"; test generation logic against the real `data/*_raw.json` fixtures instead.
 
+**arXiv** (`fetch_arxiv`) queries the arXiv API per keyword for primary research. arXiv rate-limits rapid requests by returning `200` + an *empty* feed (not an HTTP error), so there's a deliberate `time.sleep(3)` between queries — don't remove it or results silently vanish. Note each `fetch_*(sources["x"], ...)` receives its own sub-config block directly (not the whole config); read keys off it directly.
+
+**Prompt caching:** the writer call marks `SYSTEM_PROMPT` with `cache_control`. The cache TTL is ~5 min, so the once-a-day cron never warms it — it only helps within a burst (the JSON-fix retry, backfills, manual reruns). The system prompt sits just above Sonnet's 1024-token cache minimum; trimming it below that silently disables caching (`cache_creation_input_tokens` drops to 0, no error).
+
 ## Deployment
 
 Committing to `docs/` on `main` is itself the deploy — the daily Action pushes there. The bot commits `Daily digest for <date>` autonomously, so `main` frequently moves ahead of local; `git pull --rebase` (or rebase onto `origin/main`) before pushing. Bot commits touch only `docs/` so they won't conflict with script/config changes.

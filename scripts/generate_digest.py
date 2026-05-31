@@ -218,9 +218,21 @@ Now synthesize this into a daily digest following the instructions. Make today d
     message = client.messages.create(
         model=WRITER_MODEL,
         max_tokens=8192,
-        system=SYSTEM_PROMPT,
+        # Cache the (large, unchanging) system prompt. Note: the cache TTL is
+        # ~5 min, so the once-a-day cron never hits a warm cache — this only pays
+        # off when several dates are generated in quick succession (backfills,
+        # manual reruns). Harmless otherwise.
+        system=[{
+            "type": "text",
+            "text": SYSTEM_PROMPT,
+            "cache_control": {"type": "ephemeral"},
+        }],
         messages=[{"role": "user", "content": user_prompt}],
     )
+    usage = message.usage
+    print(f"  Tokens — in:{usage.input_tokens} out:{usage.output_tokens} "
+          f"cache_write:{getattr(usage, 'cache_creation_input_tokens', 0)} "
+          f"cache_read:{getattr(usage, 'cache_read_input_tokens', 0)}")
 
     response_text = message.content[0].text.strip()
     if response_text.startswith("```"):

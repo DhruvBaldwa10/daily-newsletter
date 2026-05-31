@@ -27,6 +27,20 @@ sources:
     enabled: true
     max_stories: 30
 
+  arxiv:
+    enabled: true
+    categories: ["cs.CL", "cs.AI", "cs.LG"]
+    max_results: 12
+    # Keyword queries (defaults to topic keywords if omitted). Kept tight so the
+    # results stay relevant to what a builder-PM cares about.
+    queries:
+      - "large language model"
+      - "AI agent"
+      - "retrieval augmented generation"
+      - "reasoning"
+      - "evaluation benchmark"
+      - "fine-tuning"
+
   reddit:
     enabled: true
     subreddits:
