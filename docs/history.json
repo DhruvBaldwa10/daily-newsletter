@@ -1,6 +1,34 @@
 {
   "entries": [
     {
+      "date": "2026-06-01",
+      "title": "Sandboxes, Slop, and Reliable Agents",
+      "headings": [
+        "Anthropic Opens the Sandbox Lid",
+        "Frontier Models Can't Do Enterprise IT \u2014 A New Benchmark Says So",
+        "NVIDIA's Cosmos 3 Is a Physical-AI Bet on Open Models",
+        "Agent Memory Gets a Provenance Architecture",
+        "Evals Are a Skill Gap, Not a Tooling Gap",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2605.30590v1",
+        "https://arxiv.org/abs/2605.30771v1",
+        "https://arxiv.org/abs/2605.31509v1",
+        "https://github.com/bernardohcrocha/claude-code-os/",
+        "https://github.com/pssah4/vault-operator",
+        "https://hamel.dev/blog/posts/eval-tools/",
+        "https://hamel.dev/blog/posts/evals-faq/",
+        "https://hamel.dev/blog/posts/evals-skills/",
+        "https://hamel.dev/blog/posts/field-guide/",
+        "https://huggingface.co/blog/ibm-research/itbench-aa",
+        "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai",
+        "https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything",
+        "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai"
+      ]
+    },
+    {
       "date": "2026-05-30",
       "title": "Anthropic's $47B Moment Arrives",
       "headings": [
@@ -1279,48 +1307,6 @@
         "https://simonwillison.net/2026/Apr/30/rss-vibe-coded-apps/#atom-everything",
         "https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything",
         "https://www.latent.space/p/ainews-agents-for-everything-else",
-        "https://www.latent.space/p/ainews-the-inference-inflection"
-      ]
-    },
-    {
-      "date": "2026-05-01",
-      "title": "Agents Get Goals, Goblins Explained",
-      "headings": [
-        "Codex Gets Persistent Goals \u2014 and a New Orchestration Spec",
-        "The Goblin Post Is Required Reading for Every AI PM",
-        "Claude Code Failure Modes and the \"Digital Smell\" of AI-Generated Work",
-        "KV Cache Locality: The Inference Cost Variable Nobody Talks About",
-        "GPT-5.5 Cyber Capabilities and the New Security Eval Landscape"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/",
-        "https://claudefolio.com/blog/claude-code-is-going-to-fail-you-eventually-and-you-need-to-be-ready",
-        "https://eugeneyan.com/writing/evals/",
-        "https://ghuntley.com/ralph/",
-        "https://github.com/DanOps-1/Gpt-Agreement-Payment",
-        "https://github.com/alash3al/stash",
-        "https://github.com/epoko77-ai/im-not-ai",
-        "https://github.com/freestylefly/awesome-gpt-image-2",
-        "https://github.com/nexu-io/open-design",
-        "https://github.com/willchen96/mike",
-        "https://huggingface.co/papers/2604.27083",
-        "https://huggingface.co/papers/2604.27419",
-        "https://huggingface.co/papers/2604.27505",
-        "https://huggingface.co/papers/2604.27711",
-        "https://huggingface.co/papers/2604.28130",
-        "https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/",
-        "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
-        "https://news.ycombinator.com/item?id=47970795",
-        "https://openai.com/index/advanced-account-security",
-        "https://openai.com/index/cybersecurity-in-the-intelligence-age",
-        "https://openai.com/index/open-source-codex-orchestration-symphony",
-        "https://openai.com/index/openai-on-aws",
-        "https://openai.com/index/where-the-goblins-came-from",
-        "https://ranvier.systems/2026/04/30/kv-cache-locality-the-hidden-variable-in-your-llm-serving-cost.html",
-        "https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything",
         "https://www.latent.space/p/ainews-the-inference-inflection"
       ]
     }

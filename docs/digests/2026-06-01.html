@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandboxes, Slop, and Reliable Agents — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Monday, June 01, 2026</div>
+        <h1>Sandboxes, Slop, and Reliable Agents</h1>
+        
+        <p class="subtitle">Anthropic publishes a rare deep-dive on how Claude is actually contained across products. A new IBM/Artificial Analysis benchmark catches frontier models below 50% on enterprise IT tasks. And NVIDIA drops an open physical-AI model that could reshape robotics pipelines.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Anthropic Opens the Sandbox Lid</h2>
+          <p>Anthropic published a detailed engineering post — <a href="https://www.anthropic.com/engineering/how-we-contain-claude">"How we contain Claude across products"</a> — and it's the kind of documentation that almost never gets written. The post breaks down sandbox techniques across Claude.ai, Claude Code, and the API tier, covering process isolation, capability restrictions, and how those controls differ depending on the deployment surface. <a href="https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything">Simon Willison flagged it immediately</a>, calling it "fantastic" and pointing out a chronic frustration: sandboxing products rarely document how they actually work.</p><blockquote><p>"A complaint I often have about sandboxing products is that they are rarely thoroughly <em>documented</em>, and in the absence of detailed documentation it's hard to know how much I can trust them."</p><cite>— Simon Willison</cite></blockquote><p>That gap matters enormously for anyone deploying Claude in a production environment where the blast radius of an escaped agent or a leaked credential is real. The Anthropic post apparently names specific mechanisms — not just "we use containers" — which makes it genuinely useful for security reviews and compliance conversations.</p><p>The timing isn't coincidental. Claude Code is shipping in enterprises now, running long agentic loops with file system and shell access. As the two community HN projects from today illustrate — <a href="https://github.com/bernardohcrocha/claude-code-os/">claude-code-os</a>, an open-source self-updating memory layer for Claude Code, and a <a href="https://github.com/pssah4/vault-operator">Karpathy LLM Wiki-style Obsidian agent workflow</a> — builders are already layering persistent state and operational memory on top of Claude Code. That changes the trust surface considerably. Clear sandbox documentation is table stakes for enterprise adoption; Anthropic publishing it publicly also forces competitors to raise their own documentation bar.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.anthropic.com/engineering/how-we-contain-claude" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Anthropic Engineering
+            </a>
+            
+            <a href="https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison
+            </a>
+            
+            <a href="https://github.com/bernardohcrocha/claude-code-os/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💻</span>
+              claude-code-os (GitHub)
+            </a>
+            
+            <a href="https://github.com/pssah4/vault-operator" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💻</span>
+              vault-operator (GitHub)
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Frontier Models Can't Do Enterprise IT — A New Benchmark Says So</h2>
+          <p>IBM Research and Artificial Analysis released <a href="https://huggingface.co/blog/ibm-research/itbench-aa">ITBench-AA</a>, the first benchmark focused specifically on agentic enterprise IT tasks — think incident response, configuration management, and operations workflows that real SRE and DevOps teams run. The result is ugly: frontier models score below 50% across the board. Not below human expert level. Below 50% in absolute terms.</p><p>This lands differently than typical benchmark news. ITBench-AA isn't measuring trivia or coding puzzles; it's measuring whether an agent can actually close out a ticket in a simulated enterprise environment — the exact use case that a dozen well-funded startups are selling today. The below-50% number across frontier models (which would include GPT-4-class and Claude-class systems) is a hard data point against the "agents are handling Tier-1 IT" pitch.</p><blockquote><p>"Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks."</p><cite>— ITBench-AA paper title, Hugging Face Blog / IBM Research</cite></blockquote><p>The benchmark connects directly to a companion ArXiv paper from earlier this week, <a href="https://arxiv.org/abs/2605.30590v1">"Counterfactual Evaluation Reveals Hidden Capability Profiles in Clinical LLMs and Agents"</a>, which introduces the Causal Sensitivity Score — a metric that probes whether AI systems actually respond to changing inputs or just pattern-match to a fixed output. Together these two papers are making the same argument from different angles: coverage scores flatter agents, and task-grounded evals expose the gap. The AI Snake Oil team made a related point in February with their <a href="https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai">capability-reliability gap paper</a>. The evidence is now thick enough that "sub-50% on enterprise IT" should be in every enterprise sales deck — on the honest slide.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://huggingface.co/blog/ibm-research/itbench-aa" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              ITBench-AA, Hugging Face/IBM
+            </a>
+            
+            <a href="https://arxiv.org/abs/2605.30590v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Counterfactual Eval (ArXiv)
+            </a>
+            
+            <a href="https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              AI Snake Oil / Kapoor
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>NVIDIA's Cosmos 3 Is a Physical-AI Bet on Open Models</h2>
+          <p>NVIDIA released <a href="https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai">Cosmos 3</a> on Hugging Face today — billed as the first open omni-model designed specifically for physical AI reasoning and action. The model is aimed at robotics and embodied AI pipelines: it reasons about the physical world, not just text or images, and it ships as an open weight model.</p><p>The significance here is architectural and strategic simultaneously. On the architecture side, Cosmos 3 is positioned as a world model — one that can reason about states, actions, and consequences in physical environments rather than just generating plausible-sounding text. That puts it in the same conceptual territory as Google DeepMind's robotics work and the embodied AI push at Tesla, but on an open release timeline that anyone can build on today.</p><p>On the strategy side, NVIDIA releasing this openly on Hugging Face is a deliberate move. NVIDIA's hardware business benefits directly from every lab and robotics team that builds on Cosmos 3 — more training runs, more inference at the edge, more Jetson deployments. Open-sourcing the model is effectively a demand-generation play for GPUs and the CUDA stack. The timing follows their Blackwell ramp; if physical-AI workloads become the next growth wave, NVIDIA wants the reference architecture to run on their silicon.</p><blockquote><p>"Welcome NVIDIA Cosmos 3: The First Open Omni-model for Physical AI Reasoning and Action."</p><cite>— Hugging Face Blog, June 1, 2026</cite></blockquote><p>For product teams outside robotics, the near-term relevance is in simulation and synthetic data pipelines. World models that understand physical causality produce higher-quality training environments for downstream tasks. Watch for Cosmos 3 to start appearing in fine-tuning and data-augmentation workflows well before anyone ships a physical robot that runs it end-to-end.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Hugging Face / NVIDIA Cosmos 3
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agent Memory Gets a Provenance Architecture</h2>
+          <p>A new ArXiv paper, <a href="https://arxiv.org/abs/2605.30771v1">Eywa: Provenance-Grounded Long-Term Memory for AI Agents</a>, proposes something that anyone who's debugged a RAG pipeline will recognize immediately: the failure modes in agent memory are hard to diagnose because everything — source documents, extracted facts, retrieved context, and the answer model — collapses into a single opaque prompt path. You get a wrong answer, and you can't tell if the evidence was never there, the extraction failed, the retrieval missed it, or the model just ignored it.</p><p>Eywa's approach is to enforce a provenance chain — evidence before belief — so that each layer of the memory system can be audited and updated independently. Wrong answer? You can trace it to exactly which step broke down. Stale fact? You can erase it without corrupting the rest of the memory graph.</p><blockquote><p>"A wrong answer may come from missing evidence, unsupported extraction, stale state, retrieval loss, or answer-model behavior."</p><cite>— Eywa paper abstract, ArXiv 2605.30771</cite></blockquote><p>This is directly relevant to anyone building agents that persist across sessions — which is almost everyone building serious agentic products right now. The community projects that surfaced on HN today (claude-code-os's self-updating operational memory, the Obsidian vault-operator workflow) are both attempting ad-hoc versions of exactly this problem. Eywa gives it a formal frame: treat memory as a knowledge graph with explicit provenance, not a blob of text that gets stuffed into context. The practical question is how quickly this translates into something like a LangGraph memory module or an MCP-compatible memory server — the architecture is clean enough that it should.</p><p>On the reinforcement learning side, <a href="https://arxiv.org/abs/2605.31509v1">ReuseRL</a> published this week proposes grounding agentic RL in Minimum Description Length — agents generalize better when their successful trajectories compress into reusable skill primitives rather than task-specific shortcuts. It's early research, but the MDL framing for agent generalization is worth watching as a way to think about why current agents are so brittle outside their training distribution.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2605.30771v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Eywa Memory Architecture (ArXiv)
+            </a>
+            
+            <a href="https://arxiv.org/abs/2605.31509v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              ReuseRL (ArXiv)
+            </a>
+            
+            <a href="https://github.com/bernardohcrocha/claude-code-os/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💻</span>
+              claude-code-os
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Evals Are a Skill Gap, Not a Tooling Gap</h2>
+          <p>Hamel Husain dropped <a href="https://hamel.dev/blog/posts/evals-skills/">evals-skills</a>, an open-source set of skills for AI product evals drawn from working with 50+ companies and teaching 4,000+ students. The framing is pointed: most teams have the wrong problem model. They think they need a better eval tool; what they actually need is to stop making predictable process mistakes before any tool helps.</p><blockquote><p>"Most AI teams focus on the wrong things."</p><cite>— Hamel Husain, "A Field Guide to Rapidly Improving AI Products"</cite></blockquote><p>The companion post from January, <a href="https://hamel.dev/blog/posts/evals-faq/">"LLM Evals: Everything You Need to Know"</a> (co-authored with Shreya Shankar), distills the most common questions from 700+ engineers and PMs who went through their evals course. The FAQ is explicit that these are "sharp opinions, not universal truths" — which is the right epistemology for a field this young. Two consistent patterns emerge from both pieces: teams reach for LLM-as-judge too fast (before establishing ground truth), and they build eval datasets that don't represent the actual failure distribution in production.</p><p>The ITBench-AA result this week is a good example of what rigorous evals look like when they're done with the right questions — task-grounded, with realistic enterprise scenarios, measuring actual completion not plausibility. The contrast with most internal eval suites is stark. <a href="https://hamel.dev/blog/posts/eval-tools/">Husain's eval-tools post</a> from October makes the same point from the tooling direction: the question isn't "which framework" but "do you know what failure you're trying to catch." Given that evals are now the primary mechanism by which teams decide whether to ship, keep, or roll back agentic features, this is organizational infrastructure, not a side project.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://hamel.dev/blog/posts/evals-skills/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧪</span>
+              evals-skills (Hamel Husain)
+            </a>
+            
+            <a href="https://hamel.dev/blog/posts/evals-faq/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              LLM Evals FAQ (Hamel/Shreya)
+            </a>
+            
+            <a href="https://hamel.dev/blog/posts/eval-tools/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Selecting Eval Tools (Hamel)
+            </a>
+            
+            <a href="https://hamel.dev/blog/posts/field-guide/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📘</span>
+              Field Guide to AI Products
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>Anthropic's sandbox documentation post is the right artifact to put in front of your security team right now — not as a claim that everything is safe, but as a basis for a real threat-model conversation. If you're deploying Claude Code with file or shell access, build your own containment review against what they've documented.</li><li>The ITBench-AA sub-50% result should recalibrate any enterprise AI pitch that promises autonomous IT operations. Benchmark your specific workflows before committing to production — the gap between demo and live incident is where the 50% lives.</li><li>Eywa's provenance-grounded memory architecture is the right mental model for any persistent agent you're building today. Whether you adopt the paper's specific design or not, separating evidence, extraction, retrieval, and answer layers makes failure modes diagnosable — and diagnosable failures are fixable ones.</li><li>NVIDIA open-sourcing Cosmos 3 as a physical-AI world model is a leading indicator of where inference demand shifts next. If your product touches simulation, synthetic data, or robotics, start evaluating it now; open physical-world models at this capability tier didn't exist six months ago.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.anthropic.com/engineering/how-we-contain-claude" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Anthropic Sandbox Docs
+            </a>
+            
+            <a href="https://huggingface.co/blog/ibm-research/itbench-aa" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              ITBench-AA
+            </a>
+            
+            <a href="https://arxiv.org/abs/2605.30771v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Eywa Paper
+            </a>
+            
+            <a href="https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              NVIDIA Cosmos 3
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/pewdiepie-archdaemon/odysseus">pewdiepie-archdaemon/odysseus</a>
+              <span class="side-meta">JavaScript · ⭐ 9,688</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/op7418/guizang-social-card-skill">op7418/guizang-social-card-skill</a>
+              <span class="side-meta">HTML · ⭐ 2,157</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/helloianneo/ian-xiaohei-illustrations">helloianneo/ian-xiaohei-illustrations</a>
+              <span class="side-meta">None⭐ 1,488</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/GordenSun/GordenPPTSkill">GordenSun/GordenPPTSkill</a>
+              <span class="side-meta">Python · ⭐ 1,095</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Sophomoresty/gemini-web2api">Sophomoresty/gemini-web2api</a>
+              <span class="side-meta">Python · ⭐ 944</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/withkynam/vibecode-pro-max-kit">withkynam/vibecode-pro-max-kit</a>
+              <span class="side-meta">JavaScript · ⭐ 677</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.30557">Seeing Isn't Knowing: Do VLMs Know When Not to Answer Spatial Questions (and Why)?</a>
+              <span class="side-meta">Spatial reasoning is a fundamental capability for vision-language models (VLMs) deployed in real-world environments. However, visual observations are inherently limited representations of a 3D world: </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.31433">SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks</a>
+              <span class="side-meta">Self-play can train language models without external supervision. However, existing methods require rule-checkable answers, leaving open-ended tasks dependent on curated prompts or frontier-model judg</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.30888">The Flip Side of RLHF: On-Policy Feedback for Reward Model Self-Supervised Improvement</a>
+              <span class="side-meta">Building strong reward models (RMs) for language model alignment is bottlenecked by the cost and difficulty of acquiring diverse and reliable preference data from human annotation or judge models. It </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.30846">Count Anything</a>
+              <span class="side-meta">Object counting remains fragmented across domain-specific datasets and task formulations, despite rapid progress in generalist vision models. Existing counting models are often tailored to scenarios s</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.29488">AnyMo: Scaling Any-Modality Conditional Motion Generation with Masked Modeling</a>
+              <span class="side-meta">Conditional human motion generation remains a fundamental challenge in computer vision and robotics. Despite significant progress, current methods are often constrained by fixed modality configuration</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
