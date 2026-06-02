@@ -1,6 +1,34 @@
 {
   "entries": [
     {
+      "date": "2026-06-02",
+      "title": "Pricing Shocks, Hijacked Accounts, Models Diverge",
+      "headings": [
+        "Copilot's Metered Billing Is a Revolt Waiting to Happen",
+        "Meta's AI Support Bot Gave Away Instagram Accounts on Request",
+        "Open and Closed Models Are Racing on Different Exponentials",
+        "Agent Logic Is the Enterprise Bottleneck \u2014 IBM and Google Are Naming It",
+        "AI Field Experiments: Agents Learning Between Runs",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arstechnica.com/ai/2026/06/ai-costs-how-much-github-copilot-users-react-to-new-usage-based-pricing-system/",
+        "https://arxiv.org/abs/2606.02458v1",
+        "https://arxiv.org/abs/2606.02530v1",
+        "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+        "https://github.com/michaelcummings12/meta-ai-support-prompt/blob/main/system-prompt.md",
+        "https://github.com/vercel/ai/issues/11280",
+        "https://huggingface.co/blog/JetBrains/mellum2-launch",
+        "https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption",
+        "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
+        "https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/#atom-everything",
+        "https://www.govinfosecurity.com/anthropic-expands-public-access-to-claude-mythos-ai-model-a-31778",
+        "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
+        "https://www.latent.space/p/ainews-nvidia-cosmos-3-nemotron-3",
+        "https://www.theregister.com/ai-and-ml/2026/06/02/github-copilot-users-threaten-exit-as-metered-billing-kicks-in/5249826"
+      ]
+    },
+    {
       "date": "2026-06-01",
       "title": "Sandboxes, Slop, and Reliable Agents",
       "headings": [
@@ -1268,46 +1296,6 @@
         "https://www.latent.space/p/ainews-agents-for-everything-else",
         "https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and",
         "https://www.theguardian.com/technology/2026/apr/29/claude-ai-deletes-firm-database"
-      ]
-    },
-    {
-      "date": "2026-05-02",
-      "title": "Agents Break Containment, Tokens Burn",
-      "headings": [
-        "Coding Agents Escape the IDE",
-        "The Token Waste Crisis Is Now a Product Problem",
-        "GPT-5.5's Cyber Capabilities: A New Eval That Builders Should Watch",
-        "Open Source Draws a Hard Line on LLM Contributions",
-        "The Inference Inflection and Infrastructure Arms Race"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/",
-        "https://github.com/0xhimanshu/governor",
-        "https://github.com/Amnibro/amnitex",
-        "https://github.com/DanOps-1/Gpt-Agreement-Payment",
-        "https://github.com/darrylmorley/whatcable",
-        "https://github.com/denuitt1/mhr-cfw",
-        "https://github.com/freestylefly/awesome-gpt-image-2",
-        "https://github.com/lahfir/agent-desktop",
-        "https://github.com/nexu-io/open-design",
-        "https://github.com/willchen96/mike",
-        "https://huggingface.co/papers/2604.24952",
-        "https://huggingface.co/papers/2604.24953",
-        "https://huggingface.co/papers/2604.24954",
-        "https://huggingface.co/papers/2604.27151",
-        "https://huggingface.co/papers/2604.28157",
-        "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age",
-        "https://openai.com/index/cybersecurity-in-the-intelligence-age",
-        "https://openai.com/index/open-source-codex-orchestration-symphony",
-        "https://openai.com/index/openai-available-at-fedramp-moderate",
-        "https://openai.com/index/openai-on-aws",
-        "https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/rss-vibe-coded-apps/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything",
-        "https://www.latent.space/p/ainews-agents-for-everything-else",
-        "https://www.latent.space/p/ainews-the-inference-inflection"
       ]
     }
   ]
