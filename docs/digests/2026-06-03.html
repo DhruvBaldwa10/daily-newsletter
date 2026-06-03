@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep, Skill Pyramids, GitHub's Bet — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Wednesday, June 03, 2026</div>
+        <h1>Sleep, Skill Pyramids, GitHub's Bet</h1>
+        
+        <p class="subtitle">GitLab is cutting 14% of staff and exiting 22 countries to reorganize around AI. GitHub's Kyle Daigle just laid out the platform's full agentic roadmap. And a wave of fresh research — from LLMs that 'sleep' to consolidate memory, to deterministic memory frameworks replacing LLM summarization — is quietly reshaping how builders think about agent persistence.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>GitLab Restructures Itself Around AI — 14% Gone, 22 Countries Out</h2>
+          <p><a href="https://www.msn.com/en-us/money/companies/gitlab-announces-14-reduction-in-global-workforce-expects-to-exit-22-countries/ar-AA24FoMd">GitLab is cutting 14% of its global workforce and pulling out of 22 countries</a>, framing the move explicitly as a restructuring around AI. It's one of the more significant org-level AI pivots from a mature developer-tools company yet — not a startup rationalizing headcount, but a public company with a $3B+ revenue run-rate making a bet that the shape of engineering work is changing fast enough to restructure now rather than drift.</p><p>The move lands in a week when Anthropic <a href="https://claude.com/blog/running-an-ai-native-engineering-org">published a detailed look at running an AI-native engineering org</a>, covering how they actually structure teams, tooling, and processes when Claude is doing a meaningful share of the code. Together, these two signals aren't coincidental. The calculus being made at the executive level is that AI coding tools aren't a productivity multiplier layered on top of existing headcount — they're a reason to rethink the ratio of people to output entirely.</p><p>GitLab's exit from 22 countries also signals something about where they see growth: not in broad geographic distribution of human teams, but in concentrated engineering capacity where AI can compound. The specific countries haven't been listed yet, but the framing from leadership is consistent — you either redesign around AI now or face a harder restructure later when competitors already have.</p><blockquote><p>"Leadership needs us to do generative AI. What do we do?"</p><cite>— Chip Huyen, framing the question every executive team is now answering under pressure, from her <a href="https://huyenchip.com//2023/06/07/generative-ai-strategy.html">Generative AI Strategy talk</a></cite></blockquote><p>For teams shipping AI products, this is a useful forcing function: your enterprise buyers are actively restructuring around AI. Sales cycles, integration complexity, and the definition of "value" are all shifting as a result. Products that assume a large human team doing coordination work are building on a shrinking foundation.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.msn.com/en-us/money/companies/gitlab-announces-14-reduction-in-global-workforce-expects-to-exit-22-countries/ar-AA24FoMd" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              GitLab Restructuring
+            </a>
+            
+            <a href="https://claude.com/blog/running-an-ai-native-engineering-org" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Anthropic AI-Native Org
+            </a>
+            
+            <a href="https://huyenchip.com//2023/06/07/generative-ai-strategy.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Chip Huyen — GenAI Strategy
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GitHub Lays Out Its Full Agentic Platform Plan</h2>
+          <p>GitHub COO Kyle Daigle sat down with Latent Space to <a href="https://www.latent.space/p/github">map out exactly how GitHub is thinking about agents</a> — and the picture is more coherent than the fragmented Copilot feature drops of the last 18 months suggested. The core thesis: GitHub isn't just a code host anymore, it's becoming the runtime environment for agentic coding loops. PRs, issues, CI/CD pipelines, and repositories aren't just artifacts — they're the natural checkpoints and memory surfaces for agents doing long-horizon engineering work.</p><p>Daigle acknowledges that the explosion in AI-driven commits and automated PR creation has put real strain on GitHub's infrastructure. What's new is the framing of that strain as a product signal, not just an ops problem. Every place a human currently provides a checkpoint — code review, issue triage, merge decisions — is now a candidate for an agent handoff point or a human-in-the-loop gate. The design question is which ones stay human and which ones become configurable.</p><p>The broader competitive context matters here. Cursor, Claude Code, and Codex are all fighting for the local IDE layer, but GitHub controls the remote layer: the repo, the history, the CI pipeline, and crucially, the identity and permissions model. Daigle's plan appears to bet that owning the orchestration layer above the individual coding agent is a more durable position than owning any single agent itself.</p><blockquote><p>"GitHub pioneered the modern AI coding era with Copilot, and the resulting explosion in agentic coding has led to notable strains on the most popular developer platform in the world."</p><cite>— Latent Space introduction to <a href="https://www.latent.space/p/github">the Kyle Daigle episode</a></cite></blockquote><p>For any team building on GitHub Actions or the GitHub API, Daigle's roadmap is worth treating as infrastructure planning material. The permission model and event hooks are about to get significantly more capable — and more complex.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/github" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space — GitHub Plan
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>LLMs That Sleep: Memory Consolidation Jumps from Neuroscience to Research Agenda</h2>
+          <p>A new arxiv paper, <a href="https://arxiv.org/abs/2606.03979v1">"Language Models Need Sleep,"</a> takes direct inspiration from human sleep-based memory consolidation to propose a mechanism for LLMs to transfer in-context learning into long-term parameter updates — not through continual fine-tuning, but through a distinct "consolidation" phase analogous to what happens in the brain during sleep. The authors frame current LLMs as fundamentally limited: strong at instant prediction and in-context learning, but incapable of making temporal knowledge stick without explicit retraining.</p><p>This lands alongside a companion paper on <a href="https://arxiv.org/abs/2606.03692v1">SkillPyramid</a>, which proposes a hierarchical framework for agents to consolidate skills across tasks — avoiding the current pattern where agents redundantly rebuild similar capabilities from scratch on every new task and can't transfer experience into reusable, generalizable skills. Both papers are pointing at the same gap: agents learn within a session but forget structurally, and the field still lacks a principled architecture for making gains persist.</p><p>Meanwhile, a more immediately deployable take comes from <a href="https://arxiv.org/abs/2606.03463v1">DMF (Deterministic Memory Framework)</a>, which replaces LLM-based memory summarization with a fully deterministic, CPU-first pipeline. The motivation is direct: generative summarization at write time introduces non-determinism, escalating token costs, and opacity in what gets pruned. DMF trades expressiveness for reliability and auditability — a real engineering tradeoff that anyone building a long-running conversational agent will recognize immediately.</p><blockquote><p>"Existing approaches rely predominantly on large language model (LLM)-based summarisation at write time, which introduces non-determinism, escalating token costs, and opacity in pruning decisions."</p><cite>— Stabile & Zimuel, <a href="https://arxiv.org/abs/2606.03463v1">Deterministic Memory Framework</a></cite></blockquote><p>The practical gap between the "sleep" paper's ambitions and DMF's engineering pragmatism is real — but both are responding to the same production reality: memory is the unsolved layer in agentic systems, and LLM-native solutions to memory have their own failure modes.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.03979v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              LLMs Need Sleep
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.03692v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              SkillPyramid
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.03463v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              DMF Memory Framework
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Holo3.1 Brings Computer Use Agents Local and Fast</h2>
+          <p>Hugging Face published a <a href="https://huggingface.co/blog/Hcompany/holo31">detailed post on Holo3.1</a>, a local computer use agent model from H Company. The headline is speed and locality: Holo3.1 is designed to run on-device, targeting the class of computer-use tasks — clicking, form-filling, navigating GUIs — that cloud-based computer use agents like Claude's implementation handle, but with latency and privacy constraints that make cloud routing untenable for many enterprise contexts.</p><p>Computer use has been one of the more hyped and more disappointing agentic capabilities of the last 12 months. Anthropic's Claude computer use, Operator-style interfaces, and various GUI-scraping approaches have all demonstrated the capability but stumbled on reliability and speed. The critique isn't that the models are wrong — it's that the feedback loop between action and observation is too slow to be practical for real workflows. Running the model locally shortens that loop substantially.</p><p>H Company isn't a household name yet, but the Holo3.1 release positions them alongside Hugging Face's own SmolVLM work and the broader push to make vision-language models small enough for edge deployment. The financial AI agent space is watching this closely: <a href="https://arxiv.org/abs/2606.01886v1">a separate arxiv paper on financial LLM agents</a> this week explicitly called out that repeated restatement of context — goals, risk preferences, portfolio state — across sessions is a core failure mode, and local, fast agents with persistent memory are one path out.</p><blockquote><p>"A user must repeatedly restate goals, risk preferences, portfolio context, past judgments, and shifting market assumptions, while the agent answers, retrieves, acts, and forgets."</p><cite>— Borjigin et al., <a href="https://arxiv.org/abs/2606.01886v1">Absorbing Complexity: Knowledge Harness for Financial LLM Agents</a></cite></blockquote><p>For teams building desktop or enterprise-internal agents, Holo3.1 is worth evaluating against your current cloud-based computer use stack — not as a replacement, but as a benchmark for what local now means in mid-2026.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://huggingface.co/blog/Hcompany/holo31" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              Holo3.1 HF Blog
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.01886v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Financial Agent Context Paper
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Reasoning Structure Gets Its Own Benchmark — Token Count Isn't Enough</h2>
+          <p>A new benchmark paper, <a href="https://arxiv.org/abs/2606.03883v1">"Reasoning Structure of Large Language Models,"</a> makes a pointed argument: final-answer accuracy and token count are the wrong metrics for evaluating reasoning models, because identical scores can hide fundamentally different underlying reasoning structures. The team built a pipeline that converts unstructured chain-of-thought traces into verifiable reasoning graphs — claims and their dependencies — making reasoning topology measurable rather than inferred.</p><p>This matters for anyone running evals on coding or reasoning tasks. Two models that both pass 80% of a benchmark might be doing so through completely different logical paths — one through deep dependency chains, one through shallow pattern matching. Those models will fail differently, generalize differently, and compose differently in multi-step agent pipelines. Knowing which you're deploying changes the architecture of the system around it.</p><p>A companion paper, <a href="https://arxiv.org/abs/2606.03965v1">ACTS (Agentic Chain-of-Thought Steering)</a>, takes a more applied angle: it frames reasoning control as a Markov decision process, letting a controller agent dynamically steer the depth and direction of chain-of-thought at inference time rather than burning tokens on fixed-length reasoning. The efficiency claim is real — extended CoT often wastes tokens on reasoning paths the model would reject with minimal reflection — and the controllability story is relevant for anyone building systems where inference cost is a hard constraint.</p><blockquote><p>"Identical scores on these metrics can hide fundamentally different reasoning structures."</p><cite>— Berdoz et al., <a href="https://arxiv.org/abs/2606.03883v1">Reasoning Structure of Large Language Models</a></cite></blockquote><p>Eugene Yan's earlier argument that <a href="https://eugeneyan.com//writing/eval-process/">an LLM-as-Judge won't save your product — fixing your process will</a> — looks more relevant in this light. Benchmark scores are becoming less legible, not more, without interpretable reasoning structure underneath them.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.03883v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Reasoning Structure Benchmark
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.03965v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              ACTS Paper
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/eval-process/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Eugene Yan — Eval Process
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>GitLab's 14% cut and 22-country exit is the clearest signal yet that mature software companies are using AI as justification for structural headcount reduction — not just efficiency gains. If you're selling to engineering orgs, your buyer is now operating under explicit pressure to show AI ROI in headcount terms, not just velocity terms.</li><li>GitHub's agentic roadmap frames the repo, CI pipeline, and permissions layer as the durable orchestration surface — above any individual coding agent. Teams building on GitHub Actions or the Octokit API should treat Daigle's plan as a forward-looking infrastructure spec and start mapping which agent handoff points they want to own vs. delegate to GitHub's native primitives.</li><li>The DMF paper's case for deterministic memory over LLM-native summarization is immediately actionable: if your agent system uses a model to compress or prune memory at write time, you're paying token costs for non-determinism you probably don't want. A structured, rule-based memory pipeline is worth benchmarking against your current approach before the next reliability incident.</li><li>Reasoning benchmarks based on accuracy or token count are now misleading enough that shipping without a structural eval of how your model reasons — not just whether it gets answers right — is a genuine product risk. The new reasoning graph approaches from today's arxiv are early, but the direction is clear: topology matters.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.msn.com/en-us/money/companies/gitlab-announces-14-reduction-in-global-workforce-expects-to-exit-22-countries/ar-AA24FoMd" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              GitLab Cut
+            </a>
+            
+            <a href="https://www.latent.space/p/github" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              GitHub Agentic Plan
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.03463v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              DMF Memory
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.03883v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Reasoning Structure
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/pewdiepie-archdaemon/odysseus">pewdiepie-archdaemon/odysseus</a>
+              <span class="side-meta">JavaScript · ⭐ 34,872</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/op7418/guizang-social-card-skill">op7418/guizang-social-card-skill</a>
+              <span class="side-meta">HTML · ⭐ 2,628</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/helloianneo/ian-xiaohei-illustrations">helloianneo/ian-xiaohei-illustrations</a>
+              <span class="side-meta">None⭐ 1,765</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/GordenSun/GordenPPTSkill">GordenSun/GordenPPTSkill</a>
+              <span class="side-meta">Python · ⭐ 1,577</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Sophomoresty/gemini-web2api">Sophomoresty/gemini-web2api</a>
+              <span class="side-meta">Python · ⭐ 1,281</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/asz798838958/aBaiAutoplus">asz798838958/aBaiAutoplus</a>
+              <span class="side-meta">Python · ⭐ 1,136</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Removed Claude Code access from some paid accounts due to capacity constraints.</span>
+              <span class="launch-tag tag-deprecation">Deprecation</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">GitLab</div>
+              <span class="launch-detail">Announced 14% workforce reduction and exit from 22 countries to restructure around AI.</span>
+              <span class="launch-tag tag-deprecation">Deprecation</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.29288">Diagnosing Harmful Continuation in Answer-Correct Long-CoT Training Traces</a>
+              <span class="side-meta">Long chain-of-thought (CoT) traces are widely used as supervision for reasoning-oriented LLM SFT, yet answer-correct traces can still lead to markedly different fine-tuning outcomes. We study post-con</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.02398">A Local Perturbation Theory for Cross-Domain Interference and Recovery in Multi-Domain RL</a>
+              <span class="side-meta">Reinforcement learning (RL) post-training improves large language models (LLMs) on individual domains such as mathematical reasoning, code generation, question answering, and creative writing (CW), bu</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.03603">World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning</a>
+              <span class="side-meta">World models and multimodal large language models (MLLMs) provide complementary capabilities for predicting future outcomes from static visual observations. World models can generate concrete visual r</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.27958">Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations</a>
+              <span class="side-meta">Linear probes trained on LLM activations are increasingly proposed as deception-detection metrics, yet report AUROC exceeding 0.96 on clean benchmarks while collapsing under distributional shift. This</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.27346">MERIT: Learning Disentangled Music Representations for Audio Similarity</a>
+              <span class="side-meta">Current music similarity models typically compute a single, monolithic score, entangling distinct musical dimensions like melody, rhythm, and timbre. This limits user control and interpretability, mak</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>

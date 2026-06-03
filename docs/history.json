@@ -1,6 +1,32 @@
 {
   "entries": [
     {
+      "date": "2026-06-03",
+      "title": "Sleep, Skill Pyramids, GitHub's Bet",
+      "headings": [
+        "GitLab Restructures Itself Around AI \u2014 14% Gone, 22 Countries Out",
+        "GitHub Lays Out Its Full Agentic Platform Plan",
+        "LLMs That Sleep: Memory Consolidation Jumps from Neuroscience to Research Agenda",
+        "Holo3.1 Brings Computer Use Agents Local and Fast",
+        "Reasoning Structure Gets Its Own Benchmark \u2014 Token Count Isn't Enough",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.01886v1",
+        "https://arxiv.org/abs/2606.03463v1",
+        "https://arxiv.org/abs/2606.03692v1",
+        "https://arxiv.org/abs/2606.03883v1",
+        "https://arxiv.org/abs/2606.03965v1",
+        "https://arxiv.org/abs/2606.03979v1",
+        "https://claude.com/blog/running-an-ai-native-engineering-org",
+        "https://eugeneyan.com//writing/eval-process/",
+        "https://huggingface.co/blog/Hcompany/holo31",
+        "https://huyenchip.com//2023/06/07/generative-ai-strategy.html",
+        "https://www.latent.space/p/github",
+        "https://www.msn.com/en-us/money/companies/gitlab-announces-14-reduction-in-global-workforce-expects-to-exit-22-countries/ar-AA24FoMd"
+      ]
+    },
+    {
       "date": "2026-06-02",
       "title": "Pricing Shocks, Hijacked Accounts, Models Diverge",
       "headings": [
@@ -1251,51 +1277,6 @@
         "https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything",
         "https://simonwillison.net/2026/May/3/anthropic/#atom-everything",
         "https://www.latent.space/p/ainews-agents-for-everything-else"
-      ]
-    },
-    {
-      "date": "2026-05-03",
-      "title": "Agents Break Containment, Claude Stumbles",
-      "headings": [
-        "The Claude Database Incident: Agents Acting Without a Net",
-        "Codex Gets Goals, Agents Get Loops \u2014 The Persistence Era Begins",
-        "Open-Weight Models Are Closing the Gap \u2014 Fast",
-        "OpenAI Goes Enterprise-Grade \u2014 AWS, FedRAMP, and the Platform Play",
-        "The LLM-in-Open-Source Backlash \u2014 Zig Draws a Hard Line"
-      ],
-      "urls": [
-        "https://github.com/DanOps-1/Gpt-Agreement-Payment",
-        "https://github.com/darrylmorley/whatcable",
-        "https://github.com/denuitt1/mhr-cfw",
-        "https://github.com/mattpocock/dictionary-of-ai-coding",
-        "https://github.com/nexu-io/open-design",
-        "https://github.com/realalonw/agent-receipts",
-        "https://github.com/willchen96/mike",
-        "https://huggingface.co/papers/2604.24952",
-        "https://huggingface.co/papers/2604.24953",
-        "https://huggingface.co/papers/2604.24954",
-        "https://huggingface.co/papers/2604.27151",
-        "https://huggingface.co/papers/2604.28157",
-        "https://magazine.sebastianraschka.com/p/a-dream-of-spring-for-open-weight",
-        "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age",
-        "https://openai.com/index/next-phase-of-microsoft-partnership",
-        "https://openai.com/index/open-source-codex-orchestration-symphony",
-        "https://openai.com/index/openai-available-at-fedramp-moderate",
-        "https://openai.com/index/openai-on-aws",
-        "https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/rss-vibe-coded-apps/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything",
-        "https://simonwillison.net/2026/May/1/inat-sightings/#atom-everything",
-        "https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge/",
-        "https://www.interconnects.ai/p/gemma-4-and-what-makes-an-open-model",
-        "https://www.interconnects.ai/p/gpt-54-is-a-big-step-for-codex",
-        "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
-        "https://www.latent.space/p/ainews-agents-for-everything-else",
-        "https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and",
-        "https://www.theguardian.com/technology/2026/apr/29/claude-ai-deletes-firm-database"
       ]
     }
   ]
