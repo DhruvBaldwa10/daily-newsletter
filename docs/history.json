@@ -1,6 +1,33 @@
 {
   "entries": [
     {
+      "date": "2026-06-04",
+      "title": "Microsoft Models, Memory Attacks, LLMs as Hackers",
+      "headings": [
+        "Microsoft's MAI Models Are a Quiet Power Move",
+        "Uber's Claude Code Cap Is a Budget Architecture Problem",
+        "Can LLMs Actually Hack Your App? A $1,500 Answer",
+        "Agent Memory Is the New Attack Surface",
+        "OpenAI Goes Deep on Life Sciences with GPT-Rosalind",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.04329v1",
+        "https://arxiv.org/abs/2606.04460v1",
+        "https://arxiv.org/abs/2606.04990v1",
+        "https://arxiv.org/abs/2606.05037v1",
+        "https://kasra.blog/blog/i-spent-1500-seeing-if-llms-could-hack-my-app/",
+        "https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/",
+        "https://news.ycombinator.com/item?id=48392343",
+        "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind",
+        "https://openai.com/index/travelers",
+        "https://simonwillison.net/2026/Jun/2/microsofts-new-models/#atom-everything",
+        "https://simonwillison.net/2026/Jun/3/uber-caps-usage/#atom-everything",
+        "https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs",
+        "https://www.latent.space/p/ainews-microsoft-build-mai-thinking"
+      ]
+    },
+    {
       "date": "2026-06-03",
       "title": "Sleep, Skill Pyramids, GitHub's Bet",
       "headings": [
@@ -1236,47 +1263,6 @@
         "https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp",
         "https://www.latent.space/p/ainews-the-inference-inflection",
         "https://www.latent.space/p/ainews-the-other-vs-the-utility"
-      ]
-    },
-    {
-      "date": "2026-05-04",
-      "title": "Agents Break Containment, Models Behave",
-      "headings": [
-        "Coding Agents Go Everywhere Else",
-        "The Sycophancy Problem Gets Quantified",
-        "LLM Personal Memory Gets a Schema",
-        "AI Safety Gets Teeth: Cyber Evals Go Public",
-        "Open Source Draws a Hard Line on LLM Contributions"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://github.com/DanOps-1/Gpt-Agreement-Payment",
-        "https://github.com/darrylmorley/whatcable",
-        "https://github.com/denuitt1/mhr-cfw",
-        "https://github.com/mattpocock/dictionary-of-ai-coding",
-        "https://github.com/nexu-io/open-design",
-        "https://github.com/parrik/know-thyself",
-        "https://github.com/willchen96/mike",
-        "https://huggingface.co/papers/2604.23195",
-        "https://huggingface.co/papers/2604.24026",
-        "https://huggingface.co/papers/2605.00416",
-        "https://huggingface.co/papers/2605.00658",
-        "https://huggingface.co/papers/2605.00754",
-        "https://news.ycombinator.com/item?id=48003592",
-        "https://openai.com/index/advanced-account-security",
-        "https://openai.com/index/cybersecurity-in-the-intelligence-age",
-        "https://openai.com/index/open-source-codex-orchestration-symphony",
-        "https://openai.com/index/openai-on-aws",
-        "https://openai.com/index/where-the-goblins-came-from",
-        "https://simonwillison.net/2026/Apr/29/llm/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/andrew-kelley/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/codex-goals/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/rss-vibe-coded-apps/#atom-everything",
-        "https://simonwillison.net/2026/Apr/30/zig-anti-ai/#atom-everything",
-        "https://simonwillison.net/2026/May/3/anthropic/#atom-everything",
-        "https://www.latent.space/p/ainews-agents-for-everything-else"
       ]
     }
   ]

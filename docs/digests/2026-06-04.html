@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Models, Memory Attacks, LLMs as Hackers — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Thursday, June 04, 2026</div>
+        <h1>Microsoft Models, Memory Attacks, LLMs as Hackers</h1>
+        
+        <p class="subtitle">Microsoft quietly launched two production-ready MAI models at Microsoft Build while Uber capped Claude Code spending after blowing its 2026 AI budget in four months. Meanwhile, a pair of research threads — LLMs probing vulnerabilities and agents getting their memories poisoned — are converging into a real security story.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Microsoft's MAI Models Are a Quiet Power Move</h2>
+          <p>At Microsoft Build, <a href="https://simonwillison.net/2026/Jun/2/microsofts-new-models/#atom-everything">Microsoft announced two new models</a> that largely flew under the radar of the usual AI news cycle: <strong>MAI-Thinking-1</strong>, a 1-trillion-parameter reasoning model with 35B active parameters (mixture-of-experts architecture), available to "select early partners"; and <strong>MAI-Code-1-Flash</strong>, a 137B-parameter, 5B-active model "purpose-built for GitHub Copilot." Neither is publicly available yet, but both signal that Microsoft is no longer content to resell OpenAI and Anthropic — it's training its own stack.</p><p>The <a href="https://www.latent.space/p/ainews-microsoft-build-mai-thinking">Latent Space breakdown</a> of the Build announcements highlights what makes MAI-Thinking-1 interesting: the MoE architecture lets it punch at a 1T-parameter weight class while spending compute like a 35B model at inference time. For GitHub Copilot's use case, MAI-Code-1-Flash at 5B active parameters could run faster and cheaper than anything they're currently routing through third-party APIs — and that's a margin story as much as a model story.</p><p>The strategic picture: Microsoft has Azure credits, GitHub's distribution, and a direct financial incentive to route away from OpenAI wherever quality is "good enough." MAI-Code-1-Flash is built explicitly for Copilot's coding autocomplete workloads — the high-volume, low-latency tier where every millisecond and fraction of a cent compounds. MAI-Thinking-1's staged rollout to "select partners" has the texture of an enterprise preview before broader availability, likely targeting Azure AI Foundry customers first.</p><blockquote><p>"Microsoft announced two new text LLMs... MAI-Thinking-1 (reasoning, 1T parameters, 35B active, available to 'select early partners') and MAI-Code-1-Flash (137B Parameters, 5B active, 'purpose-built for GitHub Copilot')."</p><cite>— Simon Willison, simonwillison.net</cite></blockquote><p>Teams building on Azure who've been routing to GPT-4o or Claude for coding tasks should watch how MAI-Code-1-Flash performs on their specific workloads — Microsoft has every reason to make it the default in Copilot-adjacent contexts, and they may start nudging partners in that direction before any public announcement.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jun/2/microsofts-new-models/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison on MAI
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-microsoft-build-mai-thinking" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space Build Recap
+            </a>
+            
+            <a href="https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏢</span>
+              Microsoft MAI Announcement
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Uber's Claude Code Cap Is a Budget Architecture Problem</h2>
+          <p>Uber has <a href="https://simonwillison.net/2026/Jun/3/uber-caps-usage/#atom-everything">capped employee usage of AI coding tools including Claude Code</a> after burning through its 2026 AI budget in roughly four months. Bloomberg reported the story; Simon Willison's gloss is the more useful read for operators: he points out this isn't a failure story so much as a forecasting failure. Uber's 2026 AI budget was set in 2025, when nobody had observed what a fleet of engineers with Claude Code subscriptions actually consumes at scale.</p><p>Per-seat flat pricing on tools that invoke frontier models with multi-turn, long-context sessions is a trap. A developer using Claude Code for a full workday of non-trivial tasks can consume orders of magnitude more tokens than a developer who opens ChatGPT to rephrase an email. Uber discovered this the hard way, and they won't be the last. The metered-billing angst that covered Copilot last week is really the same issue wearing a different hat: usage curves for agentic tools don't look like SaaS usage curves, and finance teams aren't equipped to model them.</p><blockquote><p>"They would have set that budget in 2025, before they had good data on how much their engineers would actually use these tools."</p><cite>— Simon Willison, simonwillison.net</cite></blockquote><p>The real question Uber's situation raises for product builders isn't "should we cap usage" — it's "what does responsible AI spend architecture look like?" Rate limits by team, by project, or by task type rather than a blanket org-wide cap would let high-value use cases continue while trimming low-signal usage. Companies that build those controls into their internal tooling now, rather than reacting to a budget crisis, will maintain velocity when the cap announcements start arriving.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jun/3/uber-caps-usage/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison on Uber Caps
+            </a>
+            
+            <a href="https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Bloomberg Report
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Can LLMs Actually Hack Your App? A $1,500 Answer</h2>
+          <p>A developer <a href="https://kasra.blog/blog/i-spent-1500-seeing-if-llms-could-hack-my-app/">built a deliberately vulnerable web application and spent $1,500 running LLMs against it</a> to see what they'd find — one of the more honest empirical tests of AI offensive security to hit Hacker News in a while. The post collected <a href="https://news.ycombinator.com/item?id=48392343">117 upvotes and 45 comments</a> as of this morning, suggesting it landed with practitioners, not just the AI-hype crowd.</p><p>The findings sit in interesting territory: LLMs can find real vulnerabilities, but they're inconsistent, often miss subtle multi-step exploits, and tend to stop at the first foothold rather than chain vulnerabilities the way a skilled attacker would. The $1,500 burn rate for the experiment itself is notable — iterating on attack prompts, interpreting results, and re-running against patched versions adds up fast. That price tag also suggests that a determined adversary with a real API budget is plausible, not theoretical.</p><p>This connects directly to a new benchmark that dropped on arXiv this week: <a href="https://arxiv.org/abs/2606.04460v1">CyberGym-E2E</a>, which proposes a "large-scale and realistic end-to-end cybersecurity benchmark" evaluating AI agents on the full lifecycle of vulnerability discovery and remediation — detection through patch. The existing cybersecurity evals, the paper argues, are too narrow and too lab-bound to reflect what real-world agent exploitation looks like.</p><blockquote><p>"AI has the potential to transform cybersecurity by enabling systems that can autonomously detect, analyze, and remediate software vulnerabilities. However, existing cybersecurity evaluations of AI systems are limited in scale or scope."</p><cite>— CyberGym-E2E paper, arXiv:2606.04460</cite></blockquote><p>For teams shipping agents with tool-use and web access, the offensive security picture is evolving faster than the defensive one. The Hacker News experiment is worth reading not for the final scores but for the qualitative breakdown of where models stall — that failure map is more actionable than any benchmark number.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://kasra.blog/blog/i-spent-1500-seeing-if-llms-could-hack-my-app/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              LLM Hacking Experiment
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48392343" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🟠</span>
+              HN Discussion
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.04460v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              CyberGym-E2E Paper
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agent Memory Is the New Attack Surface</h2>
+          <p>Two papers published this week from different angles arrive at the same uncomfortable place: agent memory isn't just a feature, it's a liability. <a href="https://arxiv.org/abs/2606.04329v1">"From Untrusted Input to Trusted Memory"</a> maps out memory poisoning attacks against LLM agents systematically — four write channels, nine structural vulnerabilities — and makes the case that a single adversarial memory write can exert long-term influence over everything an agent does afterward. The threat model is nastier than prompt injection because it's persistent: you don't need to be in the conversation, just in the memory store.</p><p>The companion paper, <a href="https://arxiv.org/abs/2606.04990v1">"From Agent Traces to Trust,"</a> approaches the same problem from the audit side: how do you actually verify what an agent did, which evidence it used, and whether tool calls were justified? The authors argue that final-answer accuracy is almost useless as a trust signal — you need execution provenance, a full trace of what the agent read and why it acted.</p><blockquote><p>"Persistent memory introduces the risk of memory poisoning, where a single adversarial memory write can exert long-term influence over agent behavior."</p><cite>— "From Untrusted Input to Trusted Memory," arXiv:2606.04329</cite></blockquote><p>A third paper, <a href="https://arxiv.org/abs/2606.05037v1">"Self-Reflective APIs,"</a> offers a partial mitigation angle: APIs that return structured, machine-readable recovery suggestions on validation failure — rather than plain English error messages — lift agent task-completion rates by 36–40 percentage points on adversarial tasks. That's not a security paper, but structured API responses make it harder for injected data to masquerade as legitimate instructions.</p><p>The emerging picture is that production agent deployments need memory isolation and provenance tracking from day one, not as a later retrofit. Teams building on LangGraph, CrewAI, or any home-grown agent orchestration should be asking right now: can an untrusted document written to memory change what the agent does three sessions later?</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.04329v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Memory Poisoning Paper
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.04990v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Agent Traces Paper
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.05037v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Self-Reflective APIs Paper
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI Goes Deep on Life Sciences with GPT-Rosalind</h2>
+          <p>OpenAI announced <a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind">new capabilities in GPT-Rosalind</a> this week, a model positioned explicitly for life sciences research: biological reasoning, medicinal chemistry, genomics analysis, and experimental workflow automation. The name — a nod to Rosalind Franklin — signals intentionality about domain framing. This isn't a general-purpose model with a science wrapper; the announcement describes specialized expertise in areas like protein-ligand interaction and CRISPR guide design.</p><p>The timing sits alongside the <a href="https://openai.com/index/travelers">Travelers case study</a>, where OpenAI published details of an insurance claims assistant deployed nationally. Two very different verticals — biotech and insurance — getting named case studies in the same week reflects OpenAI's current GTM posture: vertical depth over horizontal positioning. The Travelers deployment specifically highlights 24/7 availability and surge capacity during peak claims periods (think hurricane season), which is the reliability language that enterprise buyers respond to.</p><blockquote><p>"GPT-Rosalind advances life sciences research with enhanced biological reasoning, medicinal chemistry expertise, genomics analysis, and experimental workflow capabilities."</p><cite>— OpenAI Blog</cite></blockquote><p>What's notable about GPT-Rosalind isn't the capabilities announcement alone — several companies have been offering science-focused LLM products for a year or more. It's that OpenAI is now willing to name a model after a specific domain and commit to specialized depth publicly. That signals the product org believes domain-specific models can coexist with the general-purpose o-series and GPT-5 line without cannibalizing them. For founders building in biotech or any regulated vertical, this raises the bar: a "we use GPT-4 plus a system prompt" story is increasingly hard to defend when the frontier lab is announcing purpose-built alternatives.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧬</span>
+              GPT-Rosalind Announcement
+            </a>
+            
+            <a href="https://openai.com/index/travelers" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏢</span>
+              Travelers Case Study
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>Microsoft's MAI-Code-1-Flash is a direct shot at the API spend that currently flows to Anthropic and OpenAI for coding autocomplete workloads — if you're building on Azure or targeting GitHub Copilot integrations, get access to the early partner program and benchmark it against your current routing before Microsoft makes the default decision for you.</li><li>Uber's budget blowout is a systems design problem, not a spend problem: flat per-seat pricing for agentic tools creates invisible token consumption that finance teams can't model. Build internal rate-limiting by use-case value tier now, before a CFO builds a blunt org-wide cap that kills your highest-ROI workflows.</li><li>Agent memory is an active attack surface today, not a future concern — the memory poisoning research published this week maps four concrete write channels that adversaries can exploit, and the mitigation (memory isolation, write provenance, structured API responses) requires architectural decisions you can't easily retrofit into a running production system.</li><li>OpenAI naming a model after a specific scientific domain is a competitive signal worth tracking: vertical-specific model positioning from a frontier lab raises the differentiation bar for startups building in those domains and signals that the "general model plus prompt" architecture has a shrinking shelf life in regulated industries.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jun/2/microsofts-new-models/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              MAI Models
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Jun/3/uber-caps-usage/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Uber Caps
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.04329v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Memory Poisoning
+            </a>
+            
+            <a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧬</span>
+              GPT-Rosalind
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/pewdiepie-archdaemon/odysseus">pewdiepie-archdaemon/odysseus</a>
+              <span class="side-meta">JavaScript · ⭐ 45,131</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/asz798838958/aBaiAutoplus">asz798838958/aBaiAutoplus</a>
+              <span class="side-meta">Python · ⭐ 1,418</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Sophomoresty/gemini-web2api">Sophomoresty/gemini-web2api</a>
+              <span class="side-meta">Python · ⭐ 1,359</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/cpaczek/skylight">cpaczek/skylight</a>
+              <span class="side-meta">TypeScript · ⭐ 890</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/ClaudioDrews/memory-os">ClaudioDrews/memory-os</a>
+              <span class="side-meta">Python · ⭐ 772</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/2aronS/Duel-Agents">2aronS/Duel-Agents</a>
+              <span class="side-meta">TypeScript · ⭐ 703</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Microsoft</div>
+              <span class="launch-detail">Launched MAI-Thinking-1 (1T parameters, 35B active) and MAI-Code-1-Flash (137B parameters, 5B active) models, with the thinking model available to select early partners.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Introduced new capabilities to GPT-Rosalind for life sciences research including enhanced biological reasoning, medicinal chemistry expertise, and genomics analysis.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Launched Gemini Omni, a new multimodal AI model.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.02684">Filter, Then Reweight: Rethinking Optimization Granularity in On-Policy Distillation</a>
+              <span class="side-meta">On-Policy distillation (OPD) in large language models is shifting from full-trace KL supervision toward more selective training paradigms. Recent OPD methods increasingly focus on selecting which traj</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.04048">Unlocking Feature Learning in Gated Delta Networks at Scale</a>
+              <span class="side-meta">Training and scaling Large Language Models demand enormous computational resources, motivating both efficient sub-quadratic architectures and principled hyperparameter tuning methods. While the Maxima</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.30792">OpenSTBench: Beyond Semantic Evaluation for Speech Translation</a>
+              <span class="side-meta">Speech translation systems increasingly span speech-to-text translation (S2TT), speech-to-speech translation (S2ST), offline translation, and streaming generation, producing outputs that differ in mod</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.03220">WebRISE: Requirement-Induced State Evaluation for MLLM-Generated Web Artifacts</a>
+              <span class="side-meta">Existing benchmarks for MLLM-generated web artifacts assess interaction through local evidence and miss the requirement-induced states and transitions that determine whether a page works. We introduce</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.05165">STRIDE: Training Data Attribution via Sparse Recovery from Subset Perturbations</a>
+              <span class="side-meta">Training Data Attribution (TDA) seeks to trace a model's predictions back to its training data. The gold standard for TDA relies on causal interventions, observing how a model changes when data is add</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
