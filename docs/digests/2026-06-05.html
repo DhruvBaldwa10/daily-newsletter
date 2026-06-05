@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory, Evals, and Real-World AI — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Friday, June 05, 2026</div>
+        <h1>Memory, Evals, and Real-World AI</h1>
+        
+        <p class="subtitle">ChatGPT gets a 'Dreaming' memory system borrowed from neuroscience, Anthropic publishes its internal Claude Code skills playbook, and a new benchmark measures deep-research agents in the wild — all on the same day.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>ChatGPT Dreams Its Way to Better Memory</h2>
+          <p>OpenAI shipped a quietly significant architectural change to ChatGPT yesterday: a new memory system called <a href="https://openai.com/index/chatgpt-memory-dreaming">"Dreaming."</a> Rather than simply accumulating facts from conversations into a flat list, Dreaming performs asynchronous memory consolidation — replaying and reorganizing stored context between sessions, the same way human sleep is thought to reinforce episodic memory into long-term storage.</p><p>The practical effect is that ChatGPT should now maintain fresher, more relevant context without the user manually managing memory entries. Previous memory setups were brittle: they'd drift stale, accumulate contradictions, or surface the wrong detail at the wrong moment. Dreaming is OpenAI's bet that active curation, not passive accumulation, solves this. The consolidation happens outside the live conversation, which means lower latency during sessions and a model that feels more like it knows you over weeks rather than resetting its mental model every few turns.</p><p>What's notable for anyone building on top of ChatGPT is what this implies for the memory architecture of long-horizon assistant products. If the platform is handling consolidation on OpenAI's side, third-party apps using the API will need to decide: rely on OpenAI's memory primitives and inherit their opinionated design, or roll bespoke memory layers and forgo the benefits. The tradeoff calculus just got more concrete.</p><blockquote><p>"ChatGPT introduces a new memory system to better remember preferences, keeping context fresh and relevant across conversations."</p><cite>— OpenAI Blog, June 4 2026</cite></blockquote><p>This is also notably distinct from the memory-as-attack-surface work that's been circulating in security circles — OpenAI's framing here is entirely UX-oriented, though the consolidation step is exactly where prompt injection could do lasting damage if not sandboxed carefully.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/chatgpt-memory-dreaming" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧠</span>
+              OpenAI: Dreaming Memory
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Anthropic's Claude Code Playbook Goes Public</h2>
+          <p>Anthropic published <a href="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills">"Lessons from Building Claude Code: How We Use Skills"</a> — an internal retrospective on how the Claude Code team structures capabilities. It didn't make big waves on Hacker News (three points at the time of writing), but for anyone shipping developer tooling on top of Claude, it's a rare look inside Anthropic's own product thinking.</p><p>The core framing is that Claude Code decomposes its abilities into discrete "skills" — modular, composable, and independently evaluable. Rather than training a monolithic coding assistant, the team maintains a hierarchy where individual skills (file manipulation, test running, diff reading) can be iterated on, swapped out, or audited without touching the full system. It's the same philosophy behind tool-use in multi-agent systems, applied to a single product's internal architecture.</p><p>This matters beyond the specific product. The skills framing is essentially a design pattern for building AI products that need to grow capability surface area without accumulating prompt debt. Each skill has a defined interface; the orchestration layer stays thin. If you're wrestling with how to add a new capability to an agentic product without making your system prompt a 4,000-token monster, this is the reference architecture Anthropic is using themselves.</p><blockquote><p>"The skills framing lets us iterate on individual capabilities without destabilizing the full system — each skill has a clear interface and can be evaluated independently."</p><cite>— Anthropic Engineering Blog, June 2026</cite></blockquote><p>Alibaba also dropped an open-source counterpart this week: <a href="https://github.com/alibaba/open-code-review">Open Code Review</a>, a CLI tool for AI-powered code review that scored 96 points on HN. It's a much thinner tool — no skills hierarchy, just LLM-over-diff — but it signals that AI-native code review is fast becoming commodity infrastructure rather than a competitive moat.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📖</span>
+              Anthropic: Claude Code Skills
+            </a>
+            
+            <a href="https://github.com/alibaba/open-code-review" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔍</span>
+              Alibaba: Open Code Review
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GitHub Copilot Gets a Bigger Brain and a Reasoning Dial</h2>
+          <p>GitHub quietly shipped a meaningful Copilot upgrade: <a href="https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/">larger context windows and configurable reasoning levels</a>, rolled out June 4th. The context expansion is expected — every coding assistant is racing toward the million-token ceiling — but the configurable reasoning levels are the more interesting move.</p><p>What this means in practice: developers can now dial reasoning intensity, trading latency for depth depending on the task. A quick autocomplete needs zero chain-of-thought overhead; architecting a cross-service refactor benefits from extended reasoning. This is the same inference-time compute lever that o1 and o3 exposed at the model level, now surfaced as a product control at the IDE layer.</p><p>The competitive context here is sharp. Cursor has been winning on context window size and model flexibility. By giving enterprise Copilot users explicit reasoning controls, GitHub is moving from "which underlying model" to "how hard should the model think" as the primary differentiation axis — which is a smarter place to compete if you're locked into Microsoft's model stack and can't always promise the latest frontier weights.</p><blockquote><p>"Larger context windows and configurable reasoning levels for GitHub Copilot"</p><cite>— GitHub Changelog, June 4 2026</cite></blockquote><p>For teams evaluating coding assistants right now, the practical question is whether reasoning level controls actually translate to measurably better outputs on their specific task distribution, or whether it's interface theater. That's exactly the kind of thing an internal eval harness — not vendor benchmarks — would answer.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🐙</span>
+              GitHub Copilot Changelog
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>VendingBench and the Push for Evals That Survive in the Real World</h2>
+          <p>The Latent Space podcast ran a deep conversation with Lukas Petersson and Axel Backlund of Andon Labs, the team behind VendingBench — <a href="https://www.latent.space/p/andon">"Reality: The Final Eval."</a> The framing is deliberately provocative: most LLM benchmarks are synthetic environments designed for repeatability, not for measuring whether a model can navigate the messy, ambiguous, long-horizon tasks that actually matter in production.</p><p>VendingBench tests models on tasks modeled after real vending machine operator workflows — not because vending machines are important, but because they're an example of a domain with genuine procedural complexity, variable states, and ambiguous success criteria. Andon evaluated Claude models from Haiku all the way up to Mythos, and their core finding is that benchmark-to-production correlation breaks down badly at longer task horizons. Models that score well on short structured tasks fail non-linearly as tasks grow in length and ambiguity.</p><p>This connects to a parallel effort: <a href="https://github.com/texttron/BrowseComp-Plus">BrowseComp-Plus</a>, a new open benchmark that extends OpenAI's BrowseComp to be more transparent and fair for evaluating deep-research agents. The authors argue that the original BrowseComp had methodological gaps that overstated agent capabilities on real web research tasks. Both projects share the same thesis — that frontier evals are currently doing more to flatter models than to stress-test them.</p><blockquote><p>"We talk with the VendingBench authors on evaling Claudes from Haiku to Mythos, and how they build leading, and lasting, frontier evals from scratch."</p><cite>— Latent Space, June 4 2026</cite></blockquote><p>For teams shipping agentic products, the practical gap is that you probably can't wait for the research community to converge on the right benchmark. Building even a rough internal eval against your own task distribution — with real success criteria, not proxy metrics — is pulling ahead of most competitors right now.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/andon" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space: VendingBench
+            </a>
+            
+            <a href="https://github.com/texttron/BrowseComp-Plus" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              BrowseComp-Plus
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Endava's Blueprint for Rebuilding a Software Company Around Agents</h2>
+          <p>OpenAI published a detailed case study on <a href="https://openai.com/index/endava-frontiers">how Endava is redesigning software delivery around AI agents</a>. Endava is a $1.5B+ revenue IT services company — not a startup, not a lab — and their transformation is therefore worth taking seriously as a signal of what enterprise AI adoption actually looks like at scale rather than in press releases.</p><p>The specifics: Endava is using Codex and ChatGPT Enterprise to automate portions of the software delivery pipeline, from requirements analysis through testing. Their pitch isn't that agents replace engineers; it's that the delivery ratio changes — fewer senior engineers can supervise more output. They describe building an "AI-native culture" as a deliberate organizational change program, not a tooling swap.</p><p>The forward-deployed engineering angle is relevant here. <a href="https://blog.pragmaticengineer.com/the-pulse-forward-deployed-engineering-heats-up-again/">Gergely Orosz reported last week</a> that demand for forward-deployed engineers at Google, OpenAI, and Anthropic is surging — and that the modern FDE role is starting to look like a consultant-slash-solutions-architect who ships code. Endava's model is essentially productizing that role internally: engineers who understand the client domain deeply enough to configure agents correctly, supervise their output, and intervene when agents fail.</p><blockquote><p>"Learn how Endava is using AI agents, ChatGPT Enterprise, and Codex to accelerate software delivery, automate workflows, and build an AI-native culture across the enterprise."</p><cite>— OpenAI Blog, June 4 2026</cite></blockquote><p>The risk in taking this case study at face value is that it's published by OpenAI, who has every incentive to present the best version of the story. But the structural point — that enterprise services firms are the first large employers to restructure headcount ratios around AI output — is probably true regardless of which vendor's logo is on the report.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/endava-frontiers" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🏢</span>
+              OpenAI: Endava Case Study
+            </a>
+            
+            <a href="https://blog.pragmaticengineer.com/the-pulse-forward-deployed-engineering-heats-up-again/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Pragmatic Engineer: FDE
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>OpenAI's Dreaming memory system is the first major platform-level answer to conversational memory decay — if you're building long-horizon assistant products on top of ChatGPT, decide now whether you'll rely on their consolidation layer or build your own, because the two architectures will diverge fast and migrating later will be painful.</li><li>Anthropic's skills-hierarchy approach to Claude Code is a transferable design pattern: decompose your AI product's capabilities into discrete, independently evaluable modules with clean interfaces rather than growing a single monolithic prompt — it's how you scale capability surface without losing control.</li><li>GitHub Copilot's reasoning-level controls signal that the next competitive axis in coding tools isn't which model you use but how much compute you spend per task — worth prototyping a tiered inference strategy in your own products before this becomes table stakes.</li><li>Both VendingBench and BrowseComp-Plus are making the same argument: vendor benchmarks are flattering models on tasks that don't predict production performance; teams that build even minimal domain-specific evals right now are operating with materially better information than those relying on leaderboard scores.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/chatgpt-memory-dreaming" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🧠</span>
+              OpenAI Dreaming
+            </a>
+            
+            <a href="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📖</span>
+              Anthropic Skills Blog
+            </a>
+            
+            <a href="https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🐙</span>
+              GitHub Copilot
+            </a>
+            
+            <a href="https://www.latent.space/p/andon" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              VendingBench
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/pewdiepie-archdaemon/odysseus">pewdiepie-archdaemon/odysseus</a>
+              <span class="side-meta">Python · ⭐ 51,946</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/asz798838958/aBaiAutoplus">asz798838958/aBaiAutoplus</a>
+              <span class="side-meta">Python · ⭐ 1,489</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/cpaczek/skylight">cpaczek/skylight</a>
+              <span class="side-meta">TypeScript · ⭐ 1,254</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/ClaudioDrews/memory-os">ClaudioDrews/memory-os</a>
+              <span class="side-meta">Python · ⭐ 834</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/jdevalk/specification.website">jdevalk/specification.website</a>
+              <span class="side-meta">TypeScript · ⭐ 525</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/liyue-aigc/female-portrait-director">liyue-aigc/female-portrait-director</a>
+              <span class="side-meta">None⭐ 511</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">GitHub</div>
+              <span class="launch-detail">GitHub Copilot now offers larger context windows and configurable reasoning levels.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">ChatGPT introduces a new memory system called 'Dreaming' to better retain user preferences across conversations.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.05846">Towards Truly Multilingual ASR: Generalizing Code-Switching ASR to Unseen Language Pairs</a>
+              <span class="side-meta">Automatic Speech Recognition (ASR) has become a key technology for human--AI interaction. However, code-switching ASR (CS-ASR) remains particularly challenging due to the severe scarcity of multilingu</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.06477">Complexity-Balanced Diffusion Splitting</a>
+              <span class="side-meta">Standard continuous-time generative models rely on monolithic architectures that must navigate vastly different signal regimes, from isotropic noise to intricate data distributions. While scaling mode</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.03312">RobotValues: Evaluating Household Robots When Human Values Conflict</a>
+              <span class="side-meta">While household robots are often evaluated based on task completion, everyday domestic environments involve value-conflicting situations in which robots are expected to choose actions that prioritize </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.01753">Quality-Guided Semi-Supervised Learning for Medical Image Segmentation</a>
+              <span class="side-meta">Training accurate medical image segmentation models requires large amounts of densely annotated data, which is costly and time-consuming to obtain. Semi-supervised learning (SSL) alleviates this by le</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.05553">ArcANE: Do Role-Playing Language Agents Stay in Character at the Right Time?</a>
+              <span class="side-meta">Role-playing language agents (RPLAs) should play characters whose values and behavior evolve as the story progresses, not maintain a fixed persona. Existing benchmarks measure factual recall at a give</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
