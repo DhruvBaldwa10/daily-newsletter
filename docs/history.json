@@ -1,6 +1,33 @@
 {
   "entries": [
     {
+      "date": "2026-06-06",
+      "title": "RL Environments, Tiny Models, Big Clusters",
+      "headings": [
+        "Your RL Environment Is Probably Lying to Your Model",
+        "Multi-Agent Economy on a 3B Model",
+        "xAI's Colossus 2: A Gigawatt Datacenter and What It Signals",
+        "Sparse Attention Hits Serving Infrastructure",
+        "Evals Get an Enterprise Stress Test: EVA-Bench 2.0",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2602.07900",
+        "https://arxiv.org/abs/2606.06302",
+        "https://arxiv.org/abs/2606.06453v1",
+        "https://huggingface.co/blog/ServiceNow-AI/eva-bench-data",
+        "https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim",
+        "https://huggingface.co/blog/hf-cli-for-agents",
+        "https://semianalysis.com/2025/09/03/amazons-ai-resurgence-aws-anthropics-multi-gigawatt-trainium-expansion/",
+        "https://semianalysis.com/2025/09/10/another-giant-leap-the-rubin-cpx-specialized-accelerator-rack/",
+        "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
+        "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
+        "https://www.latent.space/p/bad-envs",
+        "https://www.normaltech.ai/p/did-googles-ai-agents-really-build",
+        "https://www.normaltech.ai/p/open-world-evaluations-for-measuring"
+      ]
+    },
+    {
       "date": "2026-06-05",
       "title": "Memory, Evals, and Real-World AI",
       "headings": [
@@ -1195,46 +1222,6 @@
         "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
         "https://www.interconnects.ai/p/the-distillation-panic",
         "https://www.latent.space/p/ainews-silicon-valley-gets-serious"
-      ]
-    },
-    {
-      "date": "2026-05-06",
-      "title": "GPT-5.5 Lands, Ads Follow",
-      "headings": [
-        "GPT-5.5 Instant and the ChatGPT Ad Business",
-        "RAG's Dirty Secret: Retrieving the Right Doc Isn't Enough",
-        "AI Code Attribution Is Now a Legal and Cultural Fight",
-        "How to Actually Work With AI: Eugene Yan's Framework",
-        "MCP Security Cracks Widen; Agents Need Identity"
-      ],
-      "urls": [
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/OxideAV/oxideav-magicyuv/issues/3",
-        "https://github.com/aattaran/deepclaude",
-        "https://github.com/darrylmorley/whatcable",
-        "https://github.com/korrel-dev/mcp-audits/tree/main/audits/linear",
-        "https://github.com/mattpocock/dictionary-of-ai-coding",
-        "https://github.com/microsoft/vscode/issues/314311",
-        "https://github.com/mustafabagdatli-git/mcp-identity",
-        "https://github.com/theori-io/copy-fail-CVE-2026-31431",
-        "https://github.com/vercel-labs/deepsec",
-        "https://github.com/willchen96/mike",
-        "https://huggingface.co/papers/2605.01284",
-        "https://huggingface.co/papers/2605.01466",
-        "https://huggingface.co/papers/2605.01717",
-        "https://huggingface.co/papers/2605.02801",
-        "https://huggingface.co/papers/2605.03571",
-        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
-        "https://news.ycombinator.com/item?id=48030736",
-        "https://openai.com/index/delivering-low-latency-voice-ai-at-scale",
-        "https://openai.com/index/gpt-5-5-instant",
-        "https://openai.com/index/gpt-5-5-instant-system-card",
-        "https://openai.com/index/new-ways-to-buy-chatgpt-ads",
-        "https://reyes.id.au/posts/anchor-catching-the-failure-mode-where-rag-retrieves-the-refutation-and-still-gets-it-wrong/",
-        "https://www.interconnects.ai/p/ainews-agents-for-everything-else",
-        "https://www.interconnects.ai/p/the-distillation-panic",
-        "https://www.latent.space/p/ainews-agents-for-everything-else"
       ]
     }
   ]
