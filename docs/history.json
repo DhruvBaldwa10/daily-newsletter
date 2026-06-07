@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "date": "2026-06-07",
+      "title": "Trust Gaps, Memory Risks, Data Safety",
+      "headings": [
+        "Semantic Similarity Isn't a Trust System",
+        "Can You Tell When Your Coding Agent Goes Rogue?",
+        "Multi-Agent Coordination Fails Not from Ignorance, But Miscommunication",
+        "Self-Supervised Agent Improvement Without Ground Truth Labels",
+        "OpenAI's Governance Blueprint and the Biodefense Pivot",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2602.11964",
+        "https://arxiv.org/abs/2606.05647v1",
+        "https://arxiv.org/abs/2606.05679v1",
+        "https://arxiv.org/abs/2606.05761v1",
+        "https://arxiv.org/abs/2606.05922v1",
+        "https://arxiv.org/abs/2606.06054v1",
+        "https://arxiv.org/abs/2606.06399v1",
+        "https://github.com/HtooTayZa/sawtooth-memory",
+        "https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety",
+        "https://openai.com/index/biodefense-in-the-intelligence-age",
+        "https://openai.com/index/frontier-safety-blueprint"
+      ]
+    },
+    {
       "date": "2026-06-06",
       "title": "RL Environments, Tiny Models, Big Clusters",
       "headings": [
@@ -1180,48 +1205,6 @@
         "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
         "https://www.politico.com/news/2025/05/06/elon-musk-xai-memphis-gas-turbines-air-pollution-permits-00317582",
         "https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319"
-      ]
-    },
-    {
-      "date": "2026-05-07",
-      "title": "Claude Codes, Silicon Valley Services",
-      "headings": [
-        "Anthropic Goes All-In on Claude Code",
-        "GPT-5.5 Instant and the Enterprise Services Landgrab",
-        "The Distillation Panic and the Open-Closed Model Gap",
-        "How to Actually Work With AI: Context as Infrastructure",
-        "OpenAI Goes to Advertising \u2014 And Builds Its Own Networking Protocol"
-      ],
-      "urls": [
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/XBuilderLAB/cheat-on-content",
-        "https://github.com/aattaran/deepclaude",
-        "https://github.com/darrylmorley/whatcable",
-        "https://github.com/jherrodthomas/automotive-skills-suite",
-        "https://github.com/mattpocock/dictionary-of-ai-coding",
-        "https://github.com/modem-dev/hunk",
-        "https://github.com/vercel-labs/deepsec",
-        "https://huggingface.co/papers/2604.28196",
-        "https://huggingface.co/papers/2605.03269",
-        "https://huggingface.co/papers/2605.04018",
-        "https://huggingface.co/papers/2605.05163",
-        "https://huggingface.co/papers/2605.05204",
-        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
-        "https://openai.com/index/delivering-low-latency-voice-ai-at-scale",
-        "https://openai.com/index/gpt-5-5-instant",
-        "https://openai.com/index/introducing-b2b-signals",
-        "https://openai.com/index/mrc-supercomputer-networking",
-        "https://openai.com/index/new-ways-to-buy-chatgpt-ads",
-        "https://openai.com/index/openai-pwc-finance-collaboration",
-        "https://openai.com/index/singular-bank",
-        "https://openai.com/index/uber",
-        "https://simonwillison.net/2026/May/4/granite-41-3b-svg-pelican-gallery/#atom-everything",
-        "https://simonwillison.net/2026/May/6/code-w-claude-2026/#atom-everything",
-        "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/#atom-everything",
-        "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
-        "https://www.interconnects.ai/p/the-distillation-panic",
-        "https://www.latent.space/p/ainews-silicon-valley-gets-serious"
       ]
     }
   ]
