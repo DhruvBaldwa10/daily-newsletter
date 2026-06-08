@@ -1,6 +1,32 @@
 {
   "entries": [
     {
+      "date": "2026-06-08",
+      "title": "DeepSeek Leads, Agents Reshape Work",
+      "headings": [
+        "DeepSeek V4 Pro Beats GPT-5.5 Pro \u2014 and the Benchmark Gap Is Real",
+        "Perplexity's Production Data Quantifies What Agents Actually Do to Knowledge Work",
+        "Do Reasoning Models Actually Reason? 10,247 Annotated Steps Say 'Sort Of'",
+        "Memory Discrimination Is the Next Hard Problem for Persistent Agents",
+        "Sebastian Raschka's 2026 Research Roundup Is the Reading List You Need",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.05761v2",
+        "https://arxiv.org/abs/2606.06923v1",
+        "https://arxiv.org/abs/2606.07410v1",
+        "https://arxiv.org/abs/2606.07489v1",
+        "https://hamel.dev/",
+        "https://huggingface.co/blog/Dharma-AI/direct-preference-optimization-beyond-chatbots",
+        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
+        "https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling",
+        "https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
+        "https://magazine.sebastianraschka.com/p/technical-deepseek",
+        "https://news.ycombinator.com/item?id=48440448",
+        "https://runtimewire.com/article/deepseek-v4-pro-beats-gpt-5-5-pro-on-precision"
+      ]
+    },
+    {
       "date": "2026-06-07",
       "title": "Trust Gaps, Memory Risks, Data Safety",
       "headings": [
@@ -1162,49 +1188,6 @@
         "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
         "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
         "https://www.latent.space/p/ainews-gpt-realtime-2-translate-and"
-      ]
-    },
-    {
-      "date": "2026-05-08",
-      "title": "Anthropic's Big Bet, Claude's Holes",
-      "headings": [
-        "Anthropic x SpaceX: The $5B Compute Play Nobody Saw Coming",
-        "Claude Code Has a Security Problem \u2014 Two, Actually",
-        "OpenAI Floods the Zone: Ads, Voice, GPT-5.5, and Cyber Models",
-        "Claude Mythos Hardens Firefox \u2014 A Glimpse at Security-Specialized AI",
-        "Vibe Coding and Agentic Engineering Are Converging \u2014 Uncomfortably"
-      ],
-      "urls": [
-        "https://avkcode.github.io/blog/ide-operating-system-ai.html",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/XBuilderLAB/cheat-on-content",
-        "https://github.com/aattaran/deepclaude",
-        "https://github.com/advisories/GHSA-vp62-r36r-9xqp",
-        "https://github.com/chocks/agentctl",
-        "https://github.com/darrylmorley/whatcable",
-        "https://github.com/mattpocock/dictionary-of-ai-coding",
-        "https://github.com/strukto-ai/mirage",
-        "https://github.com/yaojingang/yao-open-prompts",
-        "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
-        "https://huggingface.co/papers/2602.00095",
-        "https://huggingface.co/papers/2605.06200",
-        "https://huggingface.co/papers/2605.06222",
-        "https://huggingface.co/papers/2605.06376",
-        "https://huggingface.co/papers/2605.06643",
-        "https://news.ycombinator.com/item?id=48056990",
-        "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api",
-        "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber",
-        "https://openai.com/index/introducing-b2b-signals",
-        "https://openai.com/index/parloa",
-        "https://openai.com/index/testing-ads-in-chatgpt",
-        "https://openrouter.ai/announcements/gpt55-cost-analysis",
-        "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/",
-        "https://simonwillison.net/2026/May/7/firefox-claude-mythos/",
-        "https://simonwillison.net/2026/May/7/xai-anthropic/",
-        "https://www.anthropic.com/news/higher-limits-spacex",
-        "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
-        "https://www.politico.com/news/2025/05/06/elon-musk-xai-memphis-gas-turbines-air-pollution-permits-00317582",
-        "https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319"
       ]
     }
   ]
