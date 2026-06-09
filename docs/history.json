@@ -1,6 +1,32 @@
 {
   "entries": [
     {
+      "date": "2026-06-09",
+      "title": "Apple's Siri Bet, OpenAI Goes Public",
+      "headings": [
+        "Apple's WWDC Siri AI: Credibility Is the Product Now",
+        "OpenAI Files a Confidential S-1 \u2014 The IPO Clock Starts",
+        "The Long-Horizon Agent Problem Gets a Real Benchmark",
+        "Agent Trust Layers Are Becoming Infrastructure",
+        "Customer Support Agents at 100M-User Scale: What the Framework Actually Looks Like",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.07682v1",
+        "https://arxiv.org/abs/2606.08049v1",
+        "https://arxiv.org/abs/2606.08539v1",
+        "https://arxiv.org/abs/2606.08867v1",
+        "https://arxiv.org/abs/2606.08998v1",
+        "https://arxiv.org/abs/2606.09122v1",
+        "https://arxiv.org/abs/2606.09730v1",
+        "https://github.com/wiztek-llc/context-ledger/tree/main",
+        "https://openai.com/index/built-to-benefit-everyone-our-plan",
+        "https://openai.com/index/openai-submits-confidential-s-1",
+        "https://simonwillison.net/2026/Jun/8/wwdc/#atom-everything",
+        "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/"
+      ]
+    },
+    {
       "date": "2026-06-08",
       "title": "DeepSeek Leads, Agents Reshape Work",
       "headings": [
@@ -1144,47 +1170,6 @@
         "https://simonwillison.net/2026/May/7/xai-anthropic/",
         "https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/",
         "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
-        "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
-        "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
-        "https://www.latent.space/p/ainews-gpt-realtime-2-translate-and"
-      ]
-    },
-    {
-      "date": "2026-05-09",
-      "title": "Anthropic Bets Big, OpenAI Monetizes",
-      "headings": [
-        "The Anthropic-xAI Colossus Deal Changes the Compute Game",
-        "OpenAI Monetizes Voice, Ads, and Safety \u2014 All at Once",
-        "Claude Code's HTML Insight and the Vibe Coding Convergence",
-        "Claude Mythos Fixes Firefox Bugs \u2014 Security AI Goes Mainstream",
-        "China's Labs, Distillation Panic, and the Open-Closed Gap"
-      ],
-      "urls": [
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/aattaran/deepclaude",
-        "https://github.com/antirez/ds4",
-        "https://github.com/lightseekorg/tokenspeed",
-        "https://github.com/raiyanyahya/how-to-train-your-gpt",
-        "https://github.com/strukto-ai/mirage",
-        "https://github.com/yaojingang/yao-open-prompts",
-        "https://huggingface.co/papers/2605.01640",
-        "https://huggingface.co/papers/2605.06477",
-        "https://huggingface.co/papers/2605.06627",
-        "https://huggingface.co/papers/2605.06642",
-        "https://huggingface.co/papers/2605.06663",
-        "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api",
-        "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber",
-        "https://openai.com/index/introducing-trusted-contact-in-chatgpt",
-        "https://openai.com/index/running-codex-safely",
-        "https://openai.com/index/testing-ads-in-chatgpt",
-        "https://simonwillison.net/2026/May/6/code-w-claude-2026/",
-        "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/",
-        "https://simonwillison.net/2026/May/7/firefox-claude-mythos/",
-        "https://simonwillison.net/2026/May/7/xai-anthropic/",
-        "https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
-        "https://www.interconnects.ai/p/the-distillation-panic",
         "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
         "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
         "https://www.latent.space/p/ainews-gpt-realtime-2-translate-and"
