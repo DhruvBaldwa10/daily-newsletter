@@ -1,6 +1,35 @@
 {
   "entries": [
     {
+      "date": "2026-06-10",
+      "title": "Claude Fable 5 Changes Everything",
+      "headings": [
+        "Claude Fable 5: The Beast Behind the Benchmark",
+        "The Clause No One Noticed: Fable 5 Can Silently Withdraw Help from Competitors",
+        "Apple Opens the Foundation Models Stack to Third-Party LLMs",
+        "Suleyman Fires Back: Is Anthropic Anthropomorphizing Claude?",
+        "macOS Gets Native Container Machines \u2014 Quietly Useful for Local AI Dev",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://developer.apple.com/videos/play/wwdc2026/241/",
+        "https://github.com/Aidan945/SafeAgentDB",
+        "https://github.com/apple/container/blob/main/docs/container-machine.md",
+        "https://jonready.com/blog/posts/claude-fable5-is-allowed-to-sabotage-your-app-if-youre-a-competitor.html",
+        "https://news.ycombinator.com/item?id=48469658",
+        "https://news.ycombinator.com/item?id=48470772",
+        "https://old.reddit.com/r/ClaudeAI/comments/1u1fsdi/claude_fable_5_feels_less_like_a_model_launch_and/",
+        "https://simonwillison.net/2026/Jun/10/if-claude-fable-stops-helping-you/#atom-everything",
+        "https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/#atom-everything",
+        "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+        "https://simonwillison.net/2026/Jun/9/llm/#atom-everything",
+        "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+        "https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety",
+        "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
+        "https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious"
+      ]
+    },
+    {
       "date": "2026-06-09",
       "title": "Apple's Siri Bet, OpenAI Goes Public",
       "headings": [
@@ -1126,50 +1155,6 @@
         "https://simonwillison.net/2026/May/7/firefox-claude-mythos/",
         "https://simonwillison.net/2026/May/7/xai-anthropic/",
         "https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/",
-        "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
-        "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
-        "https://www.latent.space/p/ainews-gpt-realtime-2-translate-and"
-      ]
-    },
-    {
-      "date": "2026-05-10",
-      "title": "Anthropic's Infrastructure Bet Changes Everything",
-      "headings": [
-        "Anthropic's Colossus Deal: The Compute Arms Race Gets Personal",
-        "Claude Code's Tooling Explosion: A Platform Is Forming",
-        "OpenAI's Monetization Pivot: Ads, Voice, and the GPT-5.5 Stack",
-        "AI for Security: Claude Mythos Finds Real Firefox Bugs",
-        "KV-Cache Compression and the Infrastructure Efficiency Race"
-      ],
-      "urls": [
-        "https://codebrainery.com/articles/snyk-claude-code-real-time-security-scanning-for-ai-code",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/aattaran/deepclaude",
-        "https://github.com/antirez/ds4",
-        "https://github.com/ggml-org/llama.cpp/discussions/22891",
-        "https://github.com/idodekerobo/draft-cli-plugin",
-        "https://github.com/lightseekorg/tokenspeed",
-        "https://github.com/narcotic-sh/modafinil",
-        "https://github.com/raiyanyahya/how-to-train-your-gpt",
-        "https://github.com/strukto-ai/mirage",
-        "https://github.com/yaojingang/yao-open-prompts",
-        "https://huggingface.co/papers/2605.01640",
-        "https://huggingface.co/papers/2605.06477",
-        "https://huggingface.co/papers/2605.06627",
-        "https://huggingface.co/papers/2605.06642",
-        "https://huggingface.co/papers/2605.06663",
-        "https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling",
-        "https://olliewagner.com/remind",
-        "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api",
-        "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber",
-        "https://openai.com/index/running-codex-safely",
-        "https://openai.com/index/testing-ads-in-chatgpt",
-        "https://simonwillison.net/2026/May/6/code-w-claude-2026/",
-        "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/",
-        "https://simonwillison.net/2026/May/7/firefox-claude-mythos/",
-        "https://simonwillison.net/2026/May/7/xai-anthropic/",
-        "https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
         "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
         "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
         "https://www.latent.space/p/ainews-gpt-realtime-2-translate-and"
