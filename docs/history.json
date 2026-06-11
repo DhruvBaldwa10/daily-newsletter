@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-06-11",
+      "title": "Anthropic Blinks, AI Replaces Nothing",
+      "headings": [
+        "Anthropic Backs Down on the Sabotage Clause",
+        "The Serious Case That Coding Agents Won't Replace Engineers",
+        "DiffusionGemma and the 4x Speed Claim Worth Scrutinizing",
+        "Model Labs vs. Agent Labs: Sarah Guo's Distinction That's Shaping Investment",
+        "Agentic RL Gets More Precise: APPO and the Credit Assignment Problem",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.12320v1",
+        "https://arxiv.org/abs/2606.12384v1",
+        "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/",
+        "https://simonwillison.net/2026/Jun/10/diffusiongemma/#atom-everything",
+        "https://simonwillison.net/2026/Jun/11/anthropic-walks-back-policy/#atom-everything",
+        "https://www.latent.space/p/ainews-open-models-model-labs-vs",
+        "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+        "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research/"
+      ]
+    },
+    {
       "date": "2026-06-10",
       "title": "Claude Fable 5 Changes Everything",
       "headings": [
@@ -1119,45 +1141,6 @@
         "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
         "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
         "https://www.latent.space/p/ainews-silicon-valley-gets-serious"
-      ]
-    },
-    {
-      "date": "2026-05-11",
-      "title": "Anthropic Bets Big, OpenAI Monetizes",
-      "headings": [
-        "Anthropic's Infrastructure Bet: The Colossus Deal Changes the Compute Game",
-        "Claude Mythos + Mozilla: AI Security Enters a New Phase",
-        "OpenAI's Monetization Machine: Ads, Voice, and the Free-Tier Pivot",
-        "HTML Over Markdown: A Small Claude Code Insight With Big UX Implications",
-        "AI Hallucination Hits the NYT \u2014 and the Warning Is Real"
-      ],
-      "urls": [
-        "https://eugeneyan.com//writing/eval-process/",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://github.com/adamjgmiller/adamsreview",
-        "https://github.com/antirez/ds4",
-        "https://github.com/huangserva/3DCellForge",
-        "https://github.com/lightseekorg/tokenspeed",
-        "https://github.com/strukto-ai/mirage",
-        "https://github.com/yaojingang/yao-open-prompts",
-        "https://github.com/zarazhangrui/beautiful-html-templates",
-        "https://huggingface.co/papers/2605.05136",
-        "https://huggingface.co/papers/2605.05781",
-        "https://huggingface.co/papers/2605.07177",
-        "https://huggingface.co/papers/2605.07748",
-        "https://huggingface.co/papers/2605.07825",
-        "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api",
-        "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber",
-        "https://openai.com/index/introducing-trusted-contact-in-chatgpt",
-        "https://openai.com/index/running-codex-safely",
-        "https://openai.com/index/testing-ads-in-chatgpt",
-        "https://simonwillison.net/2026/May/10/new-york-times-editors-note/",
-        "https://simonwillison.net/2026/May/7/firefox-claude-mythos/",
-        "https://simonwillison.net/2026/May/7/xai-anthropic/",
-        "https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/",
-        "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
-        "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
-        "https://www.latent.space/p/ainews-gpt-realtime-2-translate-and"
       ]
     }
   ]
