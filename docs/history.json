@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "date": "2026-06-12",
+      "title": "AI Budgets Break, PRs Fail",
+      "headings": [
+        "The AI Spend Reckoning Engineering Teams Didn't Expect",
+        "46% of AI Pull Requests Get Rejected \u2014 Here's Why",
+        "Google DeepMind Puts $10M on Multi-Agent Safety",
+        "EvoArena Asks: What Happens When the Environment Changes Under an Agent?",
+        "How China's Open AI Ecosystem Compounds \u2014 and Why It Matters",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.13468v1",
+        "https://arxiv.org/abs/2606.13598v1",
+        "https://arxiv.org/abs/2606.13681v1",
+        "https://blog.pragmaticengineer.com/the-pulse-a-trend-of-trying-to-cut-back-on-ai-spend-within-eng-departments/",
+        "https://blog.pragmaticengineer.com/the-pulse-token-spend-breaks-budgets-what-next/",
+        "https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/",
+        "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+        "https://eugeneyan.com//writing/working-with-ai/",
+        "https://hamel.dev/blog/posts/evals-skills/",
+        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
+        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs"
+      ]
+    },
+    {
       "date": "2026-06-11",
       "title": "Anthropic Blinks, AI Replaces Nothing",
       "headings": [
@@ -1098,49 +1123,6 @@
         "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
         "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
         "https://www.latent.space/p/ainews-the-end-of-finetuning"
-      ]
-    },
-    {
-      "date": "2026-05-12",
-      "title": "Agents Ship, Orgs Restructure",
-      "headings": [
-        "Claude on AWS & Anthropic's Infrastructure Power Move",
-        "OpenAI Goes Full-Stack: DeployCo and the Services Land Grab",
-        "GitLab's Agentic Bet and the Org Structure Reckoning",
-        "The Maintenance Debt Time Bomb in AI-Generated Code",
-        "Claude Mythos Breaks Eval Horizons; Benchmarks Can't Keep Up"
-      ],
-      "urls": [
-        "https://about.gitlab.com/blog/gitlab-act-2/",
-        "https://claude.com/blog/claude-platform-on-aws",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://fireflysentinel.github.io/posts/fake-building-claude-3000-lines/",
-        "https://github.com/antirez/ds4",
-        "https://github.com/colon-md/retrievalci",
-        "https://github.com/huangserva/3DCellForge",
-        "https://github.com/lightseekorg/tokenspeed",
-        "https://github.com/strukto-ai/mirage",
-        "https://github.com/yaojingang/yao-open-prompts",
-        "https://github.com/zarazhangrui/beautiful-html-templates",
-        "https://huggingface.co/papers/2604.23789",
-        "https://huggingface.co/papers/2605.10434",
-        "https://huggingface.co/papers/2605.10730",
-        "https://huggingface.co/papers/2605.10813",
-        "https://huggingface.co/papers/2605.10923",
-        "https://hugonomy.com/news.html",
-        "https://news.ycombinator.com/item?id=48103214",
-        "https://news.ycombinator.com/item?id=48103459",
-        "https://openai.com/index/openai-launches-the-deployment-company",
-        "https://openai.com/index/running-codex-safely",
-        "https://openai.com/index/testing-ads-in-chatgpt",
-        "https://simonwillison.net/2026/May/11/gitlab-act-2/",
-        "https://simonwillison.net/2026/May/11/james-shore/",
-        "https://simonwillison.net/2026/May/11/learning-on-the-shop-floor/",
-        "https://www.interconnects.ai/p/claude-mythos-and-misguided-open",
-        "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
-        "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
-        "https://www.latent.space/p/ainews-silicon-valley-gets-serious"
       ]
     }
   ]
