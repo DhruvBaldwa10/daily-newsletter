@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "date": "2026-06-13",
+      "title": "US Kills Anthropic's Top Models",
+      "headings": [
+        "The Export Control Bomb: Fable 5 and Mythos 5 Go Dark Globally",
+        "OpenAI Buys Ona: Codex Gets a Persistent Cloud Brain",
+        "Can You Trust What a Frontier Model Actually Believes?",
+        "SciAgentArena and the Benchmark Gap for Real Research",
+        "Multi-Party Voice Agents Take a Step Toward Real Conversations",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.11998v1",
+        "https://arxiv.org/abs/2606.12268v1",
+        "https://arxiv.org/abs/2606.12736v1",
+        "https://arxiv.org/abs/2606.13544v1",
+        "https://huggingface.co/blog/openenv-agentic-rl",
+        "https://news.ycombinator.com/item?id=48511121",
+        "https://openai.com/index/openai-to-acquire-ona",
+        "https://simonwillison.net/2026/Jun/12/openai-webrtc/#atom-everything",
+        "https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspend-access/#atom-everything",
+        "https://status.claude.com/incidents/s9w82lp9dcn9",
+        "https://www.anthropic.com/news/fable-mythos-access"
+      ]
+    },
+    {
       "date": "2026-06-12",
       "title": "AI Budgets Break, PRs Fail",
       "headings": [
@@ -1078,50 +1103,6 @@
         "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
         "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
         "https://www.latent.space/p/ainews-codex-rises-claude-meters",
-        "https://www.latent.space/p/ainews-the-end-of-finetuning"
-      ]
-    },
-    {
-      "date": "2026-05-13",
-      "title": "Finetuning Fades, Agents Spread",
-      "headings": [
-        "The End of Finetuning as Default Strategy",
-        "Claude Goes Vertical: Legal Is Just the Start",
-        "OpenAI Goes Full Enterprise Stack",
-        "Open Model Ecosystems Compound \u2014 China Edition",
-        "AI Coding Agents: The Maintenance Cost Trap"
-      ],
-      "urls": [
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/antirez/ds4",
-        "https://github.com/haydenbleasel/files-sdk",
-        "https://github.com/huangserva/3DCellForge",
-        "https://github.com/lightseekorg/tokenspeed",
-        "https://github.com/strukto-ai/mirage",
-        "https://github.com/swenyai/sweny",
-        "https://github.com/yaojingang/yao-open-prompts",
-        "https://huggingface.co/papers/2605.08734",
-        "https://huggingface.co/papers/2605.09932",
-        "https://huggingface.co/papers/2605.10977",
-        "https://huggingface.co/papers/2605.12481",
-        "https://huggingface.co/papers/2605.12495",
-        "https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling",
-        "https://openai.com/academy/how-finance-teams-use-codex",
-        "https://openai.com/index/autoscout24",
-        "https://openai.com/index/nvidia",
-        "https://openai.com/index/openai-launches-the-deployment-company",
-        "https://openai.com/index/running-codex-safely",
-        "https://openai.com/signals/research/2026q1-update",
-        "https://simonwillison.net/2026/May/11/james-shore/#atom-everything",
-        "https://simonwillison.net/2026/May/11/learning-on-the-shop-floor/#atom-everything",
-        "https://simonwillison.net/2026/May/12/llm/#atom-everything",
-        "https://www.artificiallawyer.com/2026/05/12/claude-for-legal-launches-may-reshape-the-legal-tech-world/",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.interconnects.ai/p/the-distillation-panic",
-        "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
-        "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
         "https://www.latent.space/p/ainews-the-end-of-finetuning"
       ]
     }
