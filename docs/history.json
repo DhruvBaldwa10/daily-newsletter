@@ -1,6 +1,36 @@
 {
   "entries": [
     {
+      "date": "2026-06-14",
+      "title": "Chemistry, Reliability, and the Agent Stack",
+      "headings": [
+        "Anthropic's Chemist Experiment: What Domain Specialization Actually Requires",
+        "EpiBench Puts a Number on the Capability-Reliability Gap",
+        "Instruction Files Are Infrastructure, Not Docs",
+        "The Agent Infrastructure Layer Is Consolidating Into Products",
+        "LLM Reasoning and Pattern Matching: Closer Than We Thought",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.12821v1",
+        "https://arxiv.org/abs/2606.12835v1",
+        "https://arxiv.org/abs/2606.13449v1",
+        "https://arxiv.org/abs/2606.13566v1",
+        "https://arxiv.org/abs/2606.13602v1",
+        "https://arxiv.org/abs/2606.13607v1",
+        "https://bastion.computer/",
+        "https://github.com/sjh9714/Agent-Gate",
+        "https://hamel.dev/blog/posts/field-guide/",
+        "https://huyenchip.com//2025/01/07/agents.html",
+        "https://lime.pics",
+        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
+        "https://news.ycombinator.com/item?id=48523752",
+        "https://www.anthropic.com/research/making-claude-a-chemist",
+        "https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai",
+        "https://www.qodflow.com"
+      ]
+    },
+    {
       "date": "2026-06-13",
       "title": "US Kills Anthropic's Top Models",
       "headings": [
@@ -1057,51 +1087,6 @@
         "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
         "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
         "https://www.interconnects.ai/p/the-distillation-panic",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters",
-        "https://www.latent.space/p/ainews-the-end-of-finetuning"
-      ]
-    },
-    {
-      "date": "2026-05-14",
-      "title": "Claude Meters Agents, Codex Scales",
-      "headings": [
-        "Anthropic Draws a Line: Interactive vs. Programmatic Claude",
-        "Claude Code Gets Autonomous Goals, Codex Gets Enterprise Traction",
-        "The Agent Hype Tax: Counting Agents Tells You Nothing",
-        "The Maintenance Debt Reckoning for AI-Generated Code",
-        "China's Open AI Ecosystem Is Compounding \u2014 Builders Should Care"
-      ],
-      "urls": [
-        "https://code.claude.com/docs/en/goal",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/DrCatHicks/learning-opportunities",
-        "https://github.com/HermannBjorgvin/Clawdmeter",
-        "https://github.com/alchaincyf/huashu-md-html",
-        "https://github.com/footprintai/Containarium",
-        "https://github.com/haydenbleasel/files-sdk",
-        "https://github.com/huangserva/3DCellForge",
-        "https://github.com/sbhattap/claude-pee/tree/main",
-        "https://github.com/thakur-works/DarkGPT",
-        "https://github.com/thakur-works/Velocity-Executor",
-        "https://huggingface.co/papers/2605.09942",
-        "https://huggingface.co/papers/2605.12825",
-        "https://huggingface.co/papers/2605.12975",
-        "https://huggingface.co/papers/2605.13511",
-        "https://huggingface.co/papers/2605.13779",
-        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
-        "https://news.ycombinator.com/item?id=48129753",
-        "https://news.ycombinator.com/item?id=48130374",
-        "https://openai.com/index/autoscout24",
-        "https://openai.com/index/building-codex-windows-sandbox",
-        "https://openai.com/index/nvidia",
-        "https://openai.com/index/running-codex-safely",
-        "https://simonwillison.net/2026/May/11/james-shore/",
-        "https://simonwillison.net/2026/May/13/boris-mann/",
-        "https://venturebeat.com/technology/anthropic-reinstates-openclaw-and-third-party-agent-usage-on-claude-subscriptions-with-a-catch",
-        "https://www.anthropic.com/news/claude-for-small-business",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
         "https://www.latent.space/p/ainews-codex-rises-claude-meters",
         "https://www.latent.space/p/ainews-the-end-of-finetuning"
       ]
