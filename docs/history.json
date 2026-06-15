@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-06-15",
+      "title": "KV Caches, Partner Networks, Latent Failures",
+      "headings": [
+        "The KV Cache Economy: Pay Once, Reuse Forever",
+        "Latent Failures: The Agent Bug That Doesn't Crash",
+        "OpenAI's $150M Partner Network Bet",
+        "Open vs. Closed: Different Curves, Different Bets",
+        "Version-Controlling Agent Reasoning: GitOfThoughts",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.13361v1",
+        "https://arxiv.org/abs/2606.14470v1",
+        "https://arxiv.org/abs/2606.14476v1",
+        "https://arxiv.org/abs/2606.14574v1",
+        "https://arxiv.org/abs/2606.14672v1",
+        "https://openai.com/index/academy-courses-applying-ai-at-work",
+        "https://openai.com/index/introducing-openai-partner-network",
+        "https://www.interconnects.ai/p/open-and-closed-models-are-on-different"
+      ]
+    },
+    {
       "date": "2026-06-14",
       "title": "Chemistry, Reliability, and the Agent Stack",
       "headings": [
@@ -1043,52 +1065,6 @@
         "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
         "https://www.latent.space/p/abridge",
         "https://www.latent.space/p/ainews-codex-rises-claude-meters"
-      ]
-    },
-    {
-      "date": "2026-05-15",
-      "title": "Codex Rises, Claude Stumbles",
-      "headings": [
-        "OpenAI's Codex Blitz: Enterprise Capture in Motion",
-        "Claude's Free Tier Problem \u2014 and the Reliability Tax",
-        "Programming Languages Are No Longer Lock-In \u2014 and Neither Are AI Tools",
-        "The Open Model Ecosystem Is Compounding \u2014 Fast",
-        "Context Engineering as the New Infrastructure Layer"
-      ],
-      "urls": [
-        "https://blog.kilo.ai/p/we-tested-deepseek-v4-pro-and-flash",
-        "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/HermannBjorgvin/Clawdmeter",
-        "https://github.com/haydenbleasel/files-sdk",
-        "https://github.com/huangserva/3DCellForge",
-        "https://github.com/nexu-io/html-anything",
-        "https://github.com/rkceve/Sanma",
-        "https://github.com/simonlin1212/a-stock-data",
-        "https://github.com/yetone/native-feel-skill",
-        "https://huggingface.co/papers/2605.06527",
-        "https://huggingface.co/papers/2605.10912",
-        "https://huggingface.co/papers/2605.14323",
-        "https://huggingface.co/papers/2605.14712",
-        "https://huggingface.co/papers/2605.15141",
-        "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
-        "https://musings-mr.net/post/where-state-of-the-art-fails",
-        "https://news.ycombinator.com/item?id=48144540",
-        "https://openai.com/academy/how-finance-teams-use-codex",
-        "https://openai.com/index/autoscout24",
-        "https://openai.com/index/building-codex-windows-sandbox",
-        "https://openai.com/index/nvidia",
-        "https://openai.com/index/sea-david-chen",
-        "https://openai.com/index/work-with-codex-from-anywhere",
-        "https://simonwillison.net/2026/May/14/datasette-ip-rate-limit/#atom-everything",
-        "https://simonwillison.net/2026/May/14/mitchell-hashimoto/",
-        "https://simonwillison.net/2026/May/14/not-so-locked-in/#atom-everything",
-        "https://status.claude.com/incidents/8z7l5zcy0v3b",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.interconnects.ai/p/the-distillation-panic",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters",
-        "https://www.latent.space/p/ainews-the-end-of-finetuning"
       ]
     }
   ]

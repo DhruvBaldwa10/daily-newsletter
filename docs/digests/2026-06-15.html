@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KV Caches, Partner Networks, Latent Failures — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Monday, June 15, 2026</div>
+        <h1>KV Caches, Partner Networks, Latent Failures</h1>
+        
+        <p class="subtitle">OpenAI drops $150M on a global partner network the same week a paper proposes selling KV cache computations like commodities. Meanwhile, new research reveals a class of agent failures so quiet they don't even trigger error handling — and that's the scary part.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>The KV Cache Economy: Pay Once, Reuse Forever</h2>
+          <p>A paper out of arxiv this week proposes something that sounds almost too obvious once you read it: <a href="https://arxiv.org/abs/2606.13361v1">let publishers precompute a document's KV cache and sell access to it</a>. The insight is blunt — right now, every agent that reads the same SEC filing, legal brief, or API documentation recomputes the prefill step from scratch. Multiply that by millions of agent calls per day and you have a staggering amount of redundant GPU work.</p><p>The proposal, titled "Can I Buy Your KV Cache?", frames a market where document owners precompute once and licensees skip the most compute-intensive part of inference entirely. For long-context documents — think a 200-page contract or a full codebase — prefill can dominate latency and cost. Sharing cached representations could fundamentally reprice what it costs to run a RAG pipeline at scale.</p><p>The practical friction is real: KV caches are model-specific, version-locked, and architecturally tied to a particular attention configuration. But the economic logic is hard to dismiss. Cloud providers already offer prompt caching (Anthropic's context caching, for instance, discounts repeated prefill tokens by ~90%), and this paper pushes the idea further toward a tradeable market structure.</p><p>Combined with the parallel arxiv paper on <a href="https://arxiv.org/abs/2606.14672v1">direct latent-space synthesis for parallel agent branches</a> — which argues that concatenating text outputs from parallel agent branches wastes the structure those branches represent — there's a coherent emerging thesis: the text-in/text-out interface between agents and models is an efficiency ceiling, not just a design choice.</p><blockquote><p>"The same answer, computed a million times. We make a proposal that is almost offensively simple: compute it once."</p><cite>— Luoyuan Zhang, "Can I Buy Your KV Cache?"</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.13361v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Can I Buy Your KV Cache?
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.14672v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Latent-Space Parallel Branches
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Latent Failures: The Agent Bug That Doesn't Crash</h2>
+          <p>Most agent debugging focuses on failures that announce themselves — a tool call that throws an exception, a plan step that returns an error, a loop that visibly breaks. <a href="https://arxiv.org/abs/2606.14574v1">SIMMER, a new benchmark</a> from a team studying LLM planning in household environments, calls attention to a different and nastier failure mode: "latent failures," where a plan executes cleanly to completion but the goal was silently compromised somewhere in the middle.</p><p>The benchmark tests LLM planners on tasks where incorrect intermediate steps don't halt execution — they just degrade or invert the final outcome without triggering feedback. A household agent might tidy a room, place every object, and return success — while having moved the wrong item to the wrong location ten steps earlier in a way that's only detectable by inspecting the final world state against the original goal.</p><p>This failure class is distinct from hallucination (wrong output) and tool errors (failed execution) — it's correct-looking execution against a subtly misspecified or misunderstood plan. The implications for anyone building agents that touch real systems are significant. Current eval frameworks heavily weight task completion rates; SIMMER suggests completion rate is a misleading metric when latent failures are possible.</p><p>The companion paper on <a href="https://arxiv.org/abs/2606.14476v1">LLM agents blindly deferring to GNN tools</a> compounds the concern: even when agents have callable tools with demonstrably wrong outputs, stronger backbone models defer to those tools <em>more</em>, not less. The smarter the model, the harder it trusts the tool it was handed.</p><blockquote><p>"Unlike immediate failures that trigger instant feedback at execution time and enable timely correction, latent failures do not immediately halt plan execution but silently compromise goal achievement. In severe cases, they cause irreversible damage."</p><cite>— Xiaoxin Lu et al., SIMMER benchmark paper</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.14574v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              SIMMER Benchmark
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.14476v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Agents Defer to GNN Tools
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI's $150M Partner Network Bet</h2>
+          <p><a href="https://openai.com/index/introducing-openai-partner-network">OpenAI launched the Partner Network on June 14</a>, committing $150M to help a global cohort of service partners accelerate enterprise AI adoption and deployment. The framing is explicitly go-to-market: these aren't research partners or model-integration shops, they're organizations whose job is to get companies to use OpenAI in production faster.</p><p>The timing is instructive. OpenAI filed a confidential S-1 last week, and $150M in partner subsidies looks less like altruism and more like an enterprise sales force multiplier that doesn't show up as headcount. Microsoft built the same playbook with the SI ecosystem in the Azure era — train, certify, and financially incentivize partners to make the switch-cost analysis work out in your favor at the customer meeting.</p><p>For AI product teams, the downstream effect is that enterprise procurement conversations are about to get more structured. Partners in this network will have OpenAI playbooks, standard architectures, and presumably preferential pricing to bring to RFPs. That's a distribution moat being assembled in real time. Anthropic and Google are not sitting still — Anthropic's consulting and solutions ecosystem has been growing quietly, and Google has its own cloud partner network — but OpenAI is moving with the urgency of a company that needs enterprise ARR before an IPO roadshow.</p><p>OpenAI also announced <a href="https://openai.com/index/academy-courses-applying-ai-at-work">three new Academy courses</a> targeting practical AI workflows and agent deployment. Free training + paid partner ecosystem is the classic top-of-funnel/bottom-of-funnel pairing.</p><blockquote><p>"OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation."</p><cite>— OpenAI Blog, June 14, 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/introducing-openai-partner-network" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              OpenAI Partner Network
+            </a>
+            
+            <a href="https://openai.com/index/academy-courses-applying-ai-at-work" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              OpenAI Academy Courses
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Open vs. Closed: Different Curves, Different Bets</h2>
+          <p>Nathan Lambert's June 1 post at Interconnects — <a href="https://www.interconnects.ai/p/open-and-closed-models-are-on-different">"Open and closed models are on different exponentials"</a> — has been quietly circulating among model-layer builders and deserves more attention than its publication date suggests. The core argument: closed frontier models and open-weight models are not racing on the same curve. They're optimizing for structurally different value propositions, and the gap between them isn't converging uniformly.</p><p>Where marginal intelligence gains translate directly into user value — complex reasoning, agentic planning, novel problem-solving — closed models still hold a measurable lead and are widening it faster. Where the task is well-defined, latency-sensitive, or requires local deployment, open-weight models are improving faster on a cost-per-unit-capability basis. The two curves will cross at different points for different workloads, and conflating them into a single "who's winning" narrative misses how the market is actually segmenting.</p><p>This frames the DeepSeek V4 conversation from last week differently. DeepSeek beating GPT-5.5 Pro on certain benchmarks matters enormously for the workloads where open-weight deployment is viable — but the benchmark comparison is only meaningful if the deployment context matches. Lambert's framing implies product teams should be asking not "which model is better" but "for which part of my stack does marginal intelligence still compound into user value?"</p><blockquote><p>"Where marginally higher intelligence drives value, and where it doesn't."</p><cite>— Nathan Lambert, Interconnects, June 1, 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/open-and-closed-models-are-on-different" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Open vs. Closed Exponentials
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Version-Controlling Agent Reasoning: GitOfThoughts</h2>
+          <p>The <a href="https://arxiv.org/abs/2606.14470v1">GitOfThoughts paper</a> proposes something that will resonate immediately with anyone who's tried to debug a multi-step agent that took a wrong turn three tool calls ago: store the agent's reasoning tree as a git repository. Every scored thought is a commit, every pruned branch is still recoverable, outcomes are tags, and retrieval is "git log" with semantic filtering.</p><p>The analogy to software engineering is deliberate and apt. We version-control code, data pipelines, infrastructure configs, and ML experiments. We do not version-control reasoning — and that gap means agent debugging today is archaeology, not diff review. You get a final output and a log, not a traversable history of what the agent considered and discarded.</p><p>GitOfThoughts makes reasoning auditable, replayable, and mergeable across runs. The merge operation is particularly interesting: two agents running parallel branches on the same task could, in principle, produce reasoning trees that get merged like feature branches. The paper doesn't fully solve the implementation complexity of that case, but the conceptual framing is right.</p><p>For teams building production agents today, even a lightweight version of this — structured logging of reasoning steps with parent pointers — would dramatically improve debuggability. The insight that existing git tooling is the right abstraction, rather than something custom-built for LLMs, is the kind of opinion that tends to age well.</p><blockquote><p>"Every other complex software process (code, infrastructure, data, experiments) is version-controlled; reasoning is not."</p><cite>— Pavan C Shekar et al., GitOfThoughts</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.14470v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              GitOfThoughts Paper
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>The KV cache paper isn't just a research proposal — it's a preview of where inference pricing is heading. If you're building RAG pipelines over large, frequently-accessed documents, model-level prompt caching (already available from Anthropic and OpenAI) is worth implementing now. The economics will only sharpen as cache-sharing becomes more normalized infrastructure.</li><li>SIMMER's latent failure category should change how you write evals. Task completion rate is insufficient if your agent can hit "success" while having made an irreversible wrong move ten steps earlier. Add goal-state verification as a distinct eval step, separate from plan execution metrics.</li><li>OpenAI's $150M Partner Network is a pre-IPO enterprise distribution move. If your company competes in enterprise AI deployment, expect more structured competition in procurement cycles within the next two quarters — partners with OpenAI playbooks and preferential pricing will be in the room.</li><li>Lambert's open/closed exponential framing gives you a cleaner decision framework than benchmark comparisons alone. Map your workloads on two axes — how much does marginal model intelligence translate to user value, and what are the deployment constraints — before committing to a model tier for any new feature.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.13361v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              KV Cache Paper
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.14574v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              SIMMER Benchmark
+            </a>
+            
+            <a href="https://openai.com/index/introducing-openai-partner-network" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              OpenAI Partner Network
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/open-and-closed-models-are-on-different" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Interconnects
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a>
+              <span class="side-meta">JavaScript · ⭐ 9,108</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/shadcn/improve">shadcn/improve</a>
+              <span class="side-meta">None⭐ 4,467</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/omnigent-ai/omnigent">omnigent-ai/omnigent</a>
+              <span class="side-meta">Python · ⭐ 1,318</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/lenucksi/aur-malware-check">lenucksi/aur-malware-check</a>
+              <span class="side-meta">Shell · ⭐ 922</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/apple/coreai-models">apple/coreai-models</a>
+              <span class="side-meta">Swift · ⭐ 913</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/plannotator/effective-html">plannotator/effective-html</a>
+              <span class="side-meta">HTML · ⭐ 852</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI launches the Partner Network with $150M investment to help global partners accelerate enterprise AI adoption and deployment.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI introduces three Academy courses to help people build practical AI skills, create repeatable workflows, and apply agents in everyday work.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Gemini 3.5 Live Translate launches with near real-time, natural speech translation across Google AI Studio, Google Translate, and Google Meet.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Gemma 4 12B, a unified encoder-free multimodal model, is introduced.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Gemini Omni is announced as a new model release.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Hugging Face</div>
+              <span class="launch-detail">Holo3.1, a fast and local computer use agent platform, is launched.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.12291">Measuring Epistemic Resilience of LLMs Under Misleading Medical Context</a>
+              <span class="side-meta">Large language models (LLMs) now reach expert-level scores on medical licensing exams, encouraging the assumption that high scores imply safe medical judgment while patients increasingly use them for </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.13141">Rethinking RAG in Long Videos: What to Retrieve and How to Use It?</a>
+              <span class="side-meta">Retrieval-augmented generation is moving beyond text into long, egocentric video, where systems must select query-relevant chunks across multiple modalities and temporal granularities. Yet progress in</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.02641">CARVE: Certified Affordable Repair of Vetoed Maneuvers via Envelopes for Interactive Driving</a>
+              <span class="side-meta">Interactive driving exposes a failure mode that is easy to miss in rule-aware autonomous-driving stacks: a hard-rule margin can be negative for an ego candidate even though a small lawful accommodatio</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2605.30789">Smaller Models are Natural Explorers for Policy-Level Diversity in GRPO</a>
+              <span class="side-meta">We identify a new dimension for enhancing rollout diversity in Group Relative Policy Optimization (GRPO) for LLMs. While GRPO relies on diverse rollouts, prevailing strategies primarily increase diver</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.12736">Benchmarking AI Agents for Addressing Scientific Challenges Across Scales</a>
+              <span class="side-meta">AI agents are increasingly being developed to accelerate scientific discovery, yet their practical capabilities in real research settings remain poorly understood. Existing benchmarks for AI agents ra</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
