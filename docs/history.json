@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-06-16",
+      "title": "GitHub Cracks, Git Rebuilds",
+      "headings": [
+        "Microsoft Runs Out of Runway for GitHub's AI Ambitions",
+        "GitLab Transcend: Rebuilding Git for the Agent Era",
+        "MiMo Code Beats Claude Code at Ultra-Long Tasks \u2014 and It's Open Source",
+        "Pricing Agent Risk: When Automation Causes Real Financial Damage",
+        "ContextRL and the Problem of Evidence Buried in Long Traces",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://about.gitlab.com/blog/gitlab-transcend-announcements/",
+        "https://arxiv.org/abs/2606.16465v1",
+        "https://arxiv.org/abs/2606.17053v1",
+        "https://github.com/wdh107/agent-audit-trail",
+        "https://news.ycombinator.com/item?id=48549918",
+        "https://news.ycombinator.com/item?id=48550486",
+        "https://news.ycombinator.com/item?id=48550547",
+        "https://runtimewire.com/article/microsoft-github-aws-ai-capacity-crunch",
+        "https://venturebeat.com/technology/xiaomis-new-open-source-agentic-ai-coding-harness-mimo-code-beats-claude-code-at-ultra-long-200-step-tasks"
+      ]
+    },
+    {
       "date": "2026-06-15",
       "title": "KV Caches, Partner Networks, Latent Failures",
       "headings": [
@@ -1018,52 +1041,6 @@
         "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
         "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
         "https://www.latent.space/p/ainews-cerebras-60b-ipo-slowly-then",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters"
-      ]
-    },
-    {
-      "date": "2026-05-16",
-      "title": "Codex Goes Everywhere, Context Stays Hard",
-      "headings": [
-        "Codex Is Becoming the Engineering OS",
-        "Context Drift Is the UX Bug Nobody's Fixed",
-        "The Pricing War Gets Structural: Usage-Based vs. Seats",
-        "Agent Hype Meets Agent Skepticism",
-        "AI Goes Vertical: Finance, Healthcare, and the Context-Rich App Era"
-      ],
-      "urls": [
-        "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://getlago.substack.com/p/1577a99d-e9d1-41d2-82e4-f11169e6654d",
-        "https://github.com/BerriAI/litellm-agent-platform",
-        "https://github.com/HermannBjorgvin/Clawdmeter",
-        "https://github.com/agrin96/VibegraphGenerator",
-        "https://github.com/alchaincyf/huashu-md-html",
-        "https://github.com/chopratejas/headroom",
-        "https://github.com/huangserva/3DCellForge",
-        "https://github.com/nexu-io/html-anything",
-        "https://github.com/simonlin1212/a-stock-data",
-        "https://github.com/yetone/native-feel-skill",
-        "https://huggingface.co/papers/2605.01018",
-        "https://huggingface.co/papers/2605.06554",
-        "https://huggingface.co/papers/2605.12243",
-        "https://huggingface.co/papers/2605.15012",
-        "https://huggingface.co/papers/2605.15193",
-        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
-        "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
-        "https://news.ycombinator.com/item?id=48156498",
-        "https://openai.com/academy/how-finance-teams-use-codex",
-        "https://openai.com/index/autoscout24",
-        "https://openai.com/index/building-codex-windows-sandbox",
-        "https://openai.com/index/databricks",
-        "https://openai.com/index/nvidia",
-        "https://openai.com/index/personal-finance-chatgpt",
-        "https://openai.com/index/sea-david-chen",
-        "https://openai.com/index/work-with-codex-from-anywhere",
-        "https://simonwillison.net/2026/May/13/boris-mann/",
-        "https://simonwillison.net/2026/May/15/datasette-llm-limits/",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.latent.space/p/abridge",
         "https://www.latent.space/p/ainews-codex-rises-claude-meters"
       ]
     }
