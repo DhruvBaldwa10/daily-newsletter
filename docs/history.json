@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "date": "2026-06-17",
+      "title": "Cursor Bets Big, Benchmarks Lie",
+      "headings": [
+        "Cursor's 1.5T-Parameter Gamble",
+        "The Benchmark Illusion Is Getting a Name",
+        "Mastra's NPM Packages Got Compromised",
+        "GitHub Copilot Moves to Usage-Based Billing",
+        "The Intent-Execution Gap: Your Agent Harness Is the Bug",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.17454v1",
+        "https://arxiv.org/abs/2606.17609",
+        "https://eugeneyan.com//writing/product-evals/",
+        "https://github.com/mastra-ai/mastra/issues/18045",
+        "https://github.com/orgs/community/discussions/197089",
+        "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
+        "https://news.ycombinator.com/item?id=48564484",
+        "https://news.ycombinator.com/item?id=48564925",
+        "https://news.ycombinator.com/item?id=48565126",
+        "https://runtimewire.com/article/cursor-1-5t-model-100000-gpus-compile",
+        "https://www.latent.space/p/bad-envs"
+      ]
+    },
+    {
       "date": "2026-06-16",
       "title": "GitHub Cracks, Git Rebuilds",
       "headings": [
@@ -993,55 +1018,6 @@
         "https://www.latent.space/p/ainews-codex-rises-claude-meters",
         "https://www.theverge.com/ai-artificial-intelligence/644853/pew-gallup-data-americans-dont-trust-ai",
         "https://zanestjohn.com/blog/reing-with-claude-code"
-      ]
-    },
-    {
-      "date": "2026-05-17",
-      "title": "Open Models Surge, Codex Goes Everywhere",
-      "headings": [
-        "The Open-Weight Tsunami: Gemma 4, DeepSeek V4, and Friends",
-        "Codex Is Eating the Workflow Layer",
-        "Anthropic's Pricing Squeeze and the Gray Market Signal",
-        "AI as Infra: Context Engineering and Working With AI",
-        "Cerebras' $60B IPO and the Inference Infrastructure Bet"
-      ],
-      "urls": [
-        "https://eugeneyan.com//writing/eval-process/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://fly.io/docs/gpus/",
-        "https://github.com/HermannBjorgvin/Clawdmeter",
-        "https://github.com/huangserva/3DCellForge",
-        "https://github.com/nexu-io/html-anything",
-        "https://github.com/simonlin1212/a-stock-data",
-        "https://github.com/vercel-labs/zero",
-        "https://github.com/yetone/native-feel-skill",
-        "https://huggingface.co/papers/2605.01018",
-        "https://huggingface.co/papers/2605.06554",
-        "https://huggingface.co/papers/2605.12243",
-        "https://huggingface.co/papers/2605.15012",
-        "https://huggingface.co/papers/2605.15193",
-        "https://huyenchip.com//2024/07/25/genai-platform.html",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
-        "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-        "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
-        "https://openai.com/index/building-codex-windows-sandbox",
-        "https://openai.com/index/databricks",
-        "https://openai.com/index/work-with-codex-from-anywhere",
-        "https://simonwillison.net/2026/May/13/welcome-to-the-datasette-blog/#atom-everything",
-        "https://simonwillison.net/2026/May/14/datasette-ip-rate-limit/#atom-everything",
-        "https://simonwillison.net/2026/May/14/mitchell-hashimoto/#atom-everything",
-        "https://simonwillison.net/2026/May/14/not-so-locked-in/#atom-everything",
-        "https://www.chinatalk.media/p/how-to-buy-cheap-claude-tokens-in",
-        "https://www.interconnects.ai/p/gemma-4-and-what-makes-an-open-model",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
-        "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
-        "https://www.latent.space/p/ainews-anthropic-spacexais-300mw5byr",
-        "https://www.latent.space/p/ainews-cerebras-60b-ipo-slowly-then",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters"
       ]
     }
   ]
