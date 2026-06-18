@@ -1,6 +1,32 @@
 {
   "entries": [
     {
+      "date": "2026-06-18",
+      "title": "Open Models Surge, AI Hits Science",
+      "headings": [
+        "GLM-5.2: China's Open-Weight Bet Just Got Serious",
+        "GPT-5.4 in the Lab: AI Does Real Drug Chemistry",
+        "Predicting Model Behavior Before You Ship It",
+        "The Web Wasn't Built for Agents \u2014 Here's the Paper Making That Case",
+        "Agents Need Risk Controls at Every Step, Not Just the Output",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.16707v1",
+        "https://arxiv.org/abs/2606.18467v1",
+        "https://arxiv.org/abs/2606.19116v1",
+        "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
+        "https://huggingface.co/blog/agentic-resource-discovery-launch",
+        "https://huggingface.co/blog/zai-org/glm-52-blog",
+        "https://huggingface.co/zai-org/GLM-5.2",
+        "https://openai.com/index/ai-chemist-improves-reaction",
+        "https://openai.com/index/deployment-simulation",
+        "https://openai.com/index/introducing-life-sci-bench",
+        "https://simonwillison.net/2026/Jun/17/glm-52/",
+        "https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding"
+      ]
+    },
+    {
       "date": "2026-06-17",
       "title": "Cursor Bets Big, Benchmarks Lie",
       "headings": [
@@ -970,54 +996,6 @@
         "https://www.latent.space/p/ainews-codex-rises-claude-meters",
         "https://www.latent.space/p/ainews-the-end-of-finetuning",
         "https://www.llmcap.io/"
-      ]
-    },
-    {
-      "date": "2026-05-18",
-      "title": "Open Models Surge, Codex Goes Enterprise",
-      "headings": [
-        "The Open Model Bonanza: What Gemma 4, DeepSeek V4, and Friends Mean for Your Stack",
-        "Codex Goes All-In on Enterprise \u2014 And It's Working",
-        "435K Leaked API Keys: Security Is Your Moat's Blind Spot",
-        "Context as Infrastructure: The New Mental Model for Working with AI",
-        "The Metrics Lie (Until They Don't): Evals Are Still Broken"
-      ],
-      "urls": [
-        "https://ai-keys-leaks.begimher.com/",
-        "https://anyfrm.com",
-        "https://en.andros.dev/blog/ed26ea98/building-a-multi-agent-system-from-scratch-50-lines-of-bash-git/",
-        "https://eugeneyan.com//writing/eval-process/",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://gertlabs.com/blog/llm-performance-by-language",
-        "https://github.com/DenisSergeevitch/agents-best-practices",
-        "https://github.com/HermannBjorgvin/Clawdmeter",
-        "https://github.com/nexu-io/html-anything",
-        "https://github.com/simonlin1212/a-stock-data",
-        "https://github.com/vercel-labs/zero",
-        "https://github.com/yetone/native-feel-skill",
-        "https://huggingface.co/papers/2605.12038",
-        "https://huggingface.co/papers/2605.14539",
-        "https://huggingface.co/papers/2605.15824",
-        "https://huggingface.co/papers/2605.15876",
-        "https://huggingface.co/papers/2605.16257",
-        "https://jxnl.co/writing/2026/05/10/codex-maxxing/",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
-        "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-        "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
-        "https://openai.com/index/building-codex-windows-sandbox",
-        "https://openai.com/index/databricks",
-        "https://openai.com/index/sea-david-chen",
-        "https://openai.com/index/work-with-codex-from-anywhere",
-        "https://simonwillison.net/2026/May/14/datasette-ip-rate-limit/",
-        "https://simonwillison.net/2026/May/14/mitchell-hashimoto/",
-        "https://tiago.rio.br/work/general/articles/llm-looked-smart-metrics-disagreed/",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters",
-        "https://www.theverge.com/ai-artificial-intelligence/644853/pew-gallup-data-americans-dont-trust-ai",
-        "https://zanestjohn.com/blog/reing-with-claude-code"
       ]
     }
   ]
