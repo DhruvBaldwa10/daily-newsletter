@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-06-19",
+      "title": "Fine-Tuning, Leaks, and Long-Lived Agents",
+      "headings": [
+        "Beyond LoRA: Fine-Tuning's Most Popular Technique Gets a Challenger",
+        "MosaicLeaks: Can Your Research Agent Keep a Secret?",
+        "Teaching Agents to Remember Across Their Entire Lifetime",
+        "Benchmarking LLMs Across Languages \u2014 Python Was Hiding the Gaps",
+        "Agentic Tooling Benchmarks Hit the Hugging Face Ecosystem",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.20002v1",
+        "https://arxiv.org/abs/2606.20517v1",
+        "https://eugeneyan.com//writing/eval-process/",
+        "https://eugeneyan.com//writing/qa-evals/",
+        "https://hamel.dev/blog/posts/eval-tools/",
+        "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+        "https://huggingface.co/blog/is-it-agentic-enough",
+        "https://huggingface.co/blog/peft-beyond-lora",
+        "https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
+        "https://www.latent.space/p/ainews-fable-and-mythos-officially"
+      ]
+    },
+    {
       "date": "2026-06-18",
       "title": "Open Models Surge, AI Hits Science",
       "headings": [
@@ -951,51 +975,6 @@
         "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
         "https://www.latent.space/p/ainews-codex-rises-claude-meters",
         "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash"
-      ]
-    },
-    {
-      "date": "2026-05-19",
-      "title": "Codex Goes Enterprise, Open Models Surge",
-      "headings": [
-        "OpenAI's Codex Blitz: From Mobile to On-Prem",
-        "Open Model Bonanza: The Ecosystem Is Compounding",
-        "Six Months of LLMs in Five Minutes: What Actually Changed",
-        "What's Baked Into Your Model's Weights? The Qwen Censorship Case",
-        "The AI Tool Budget Backlash Is Real \u2014 And Growing"
-      ],
-      "urls": [
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/DenisSergeevitch/agents-best-practices",
-        "https://github.com/boona13/mykonos-island-voxels",
-        "https://github.com/gi-dellav/zerostack",
-        "https://github.com/vercel-labs/zero",
-        "https://github.com/yaassin12/DeepSeek-V4-Pro-App",
-        "https://github.com/yetone/native-feel-skill",
-        "https://huggingface.co/papers/2605.16819",
-        "https://huggingface.co/papers/2605.16839",
-        "https://huggingface.co/papers/2605.17933",
-        "https://huggingface.co/papers/2605.18743",
-        "https://huggingface.co/papers/2605.18747",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://news.ycombinator.com/item?id=48187680",
-        "https://news.ycombinator.com/item?id=48189073",
-        "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
-        "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-        "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
-        "https://openai.com/index/databricks",
-        "https://openai.com/index/dell-codex-enterprise-partnership",
-        "https://openai.com/index/sea-david-chen",
-        "https://openai.com/index/work-with-codex-from-anywhere",
-        "https://simonwillison.net/2026/May/19/5-minute-llms/",
-        "https://vas-blog.pages.dev/qwen-censorship/",
-        "https://www.interconnects.ai/p/gemma-4-and-what-makes-an-open-model",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.latent.space/p/ainews-anthropic-growing-10xyear",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters",
-        "https://www.latent.space/p/ainews-the-end-of-finetuning",
-        "https://www.llmcap.io/"
       ]
     }
   ]
