@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-06-20",
+      "title": "China's Countdown, Tokens Reconsidered",
+      "headings": [
+        "The Fable 5 Gap Is Closing Faster Than Musk Admits",
+        "Parallel Tokens: Diffusion LLMs Enter the Chat",
+        "Token Compression Gets a Tool \u2014 60\u201395% Reduction Claims",
+        "Robots Get a Hub-to-Hardware Pipeline",
+        "Post-Training Is the New Moat \u2014 And It's Getting Legible",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://github.com/chopratejas/headroom",
+        "https://hamel.dev/blog/posts/evals-faq/",
+        "https://huggingface.co/blog/allenai/molmomotion",
+        "https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware",
+        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
+        "https://magazine.sebastianraschka.com/p/visual-attention-variants",
+        "https://www.inceptionlabs.ai/",
+        "https://www.interconnects.ai/p/frontier-post-training-recipe-review",
+        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-that-china-will-have-a-fable-5-class-ai-model-probably-q1-next-year-ceo-of-chinese-anthropic-rival-says-it-wont-take-that-long"
+      ]
+    },
+    {
       "date": "2026-06-19",
       "title": "Fine-Tuning, Leaks, and Long-Lived Agents",
       "headings": [
@@ -931,50 +955,6 @@
         "https://www.latent.space/p/ainews-codex-rises-claude-meters",
         "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash",
         "https://www.latent.space/p/railway"
-      ]
-    },
-    {
-      "date": "2026-05-20",
-      "title": "Google I/O Bets Big on Agents",
-      "headings": [
-        "Google I/O 2026: The Agentic Gemini Era Is Official",
-        "OpenAI and Codex: Enterprise Expansion at Full Speed",
-        "GitHub Breached: A Supply Chain Wake-Up Call for AI Builders",
-        "Your Evals Will Break \u2014 and Claude Is Getting Weird",
-        "The Open Model Bonanza and the Compounding Ecosystem"
-      ],
-      "urls": [
-        "https://antirez.com/news/166",
-        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
-        "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "https://blog.google/products-and-platforms/products/search/search-io-2026/",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://fortune.com/2026/05/14/why-is-claude-telling-users-to-go-to-sleep-anthropic-ai-sentient/",
-        "https://github.com/DenisSergeevitch/agents-best-practices",
-        "https://github.com/Doorman11991/smallcode",
-        "https://github.com/boona13/mykonos-island-voxels",
-        "https://github.com/cdanielc293/Jenny-Mod-All-Versions",
-        "https://github.com/vercel-labs/zerolang",
-        "https://github.com/yetone/native-feel-skill",
-        "https://huggingface.co/papers/2605.18703",
-        "https://huggingface.co/papers/2605.18714",
-        "https://huggingface.co/papers/2605.18746",
-        "https://huggingface.co/papers/2605.18827",
-        "https://huggingface.co/papers/2605.19932",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://news.ycombinator.com/item?id=48201316",
-        "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
-        "https://openai.com/index/databricks",
-        "https://openai.com/index/dell-codex-enterprise-partnership",
-        "https://simonwillison.net/2026/May/19/gemini-35-flash/",
-        "https://simonwillison.net/2026/May/19/llm-gemini-2/#atom-everything",
-        "https://twitter.com/github/status/2056884788179726685",
-        "https://wanglun1996.github.io/blog/your-evals-will-break.html",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters",
-        "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash"
       ]
     }
   ]
