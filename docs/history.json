@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-06-21",
+      "title": "Agents Get Guardrails, Production Gets Real",
+      "headings": [
+        "DeepMind's Control Roadmap: Securing Agents From the Inside Out",
+        "GPT-5.5 Instant Enters Healthcare \u2014 And the Evals Behind It",
+        "Community Tooling: Multi-LLM Orchestration and Agent Memory Go DIY",
+        "Subquadratic Claims a Bottleneck Break \u2014 What's Actually There",
+        "Reliability Engineering for Agents: Martin Fowler Enters the Chat",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+        "https://github.com/AI-gateway-systems/attestor",
+        "https://github.com/adlternative/agent-historian",
+        "https://github.com/ethanhq/cc-fleet",
+        "https://hamel.dev/",
+        "https://magazine.sebastianraschka.com/p/a-dream-of-spring-for-open-weight",
+        "https://martinfowler.com/articles/reliable-llm-bayer.html",
+        "https://openai.com/index/diagnose-rare-childhood-diseases",
+        "https://openai.com/index/improving-health-intelligence-in-chatgpt",
+        "https://www.technologyreview.com/2026/06/19/1139313/a-startup-claims-it-broke-through-a-bottleneck-thats-holding-back-llms/"
+      ]
+    },
+    {
       "date": "2026-06-20",
       "title": "China's Countdown, Tokens Reconsidered",
       "headings": [
@@ -909,51 +933,6 @@
         "https://www.latent.space/p/ainews-codex-rises-claude-meters",
         "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash",
         "https://www.latent.space/p/daytona",
-        "https://www.latent.space/p/railway"
-      ]
-    },
-    {
-      "date": "2026-05-21",
-      "title": "Google's Agentic Era, Codex Goes Enterprise",
-      "headings": [
-        "Google I/O: 100 Announcements, One Clear Bet",
-        "Codex Goes Deep Enterprise \u2014 and Gets Real Users",
-        "SpaceX x Anthropic and the Compute Deals Under the Hood",
-        "Open-Weight Explosion: From Gemma 4 to DeepSeek V4",
-        "KV Cache, Token Speed, and the Hidden Cost of Long Context"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
-        "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
-        "https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/",
-        "https://dlcmh.github.io/deepseek-harness",
-        "https://gist.github.com/Reebz/741c5647c860fe0b5214f39d9d887240",
-        "https://github.com/DenisSergeevitch/agents-best-practices",
-        "https://github.com/Doorman11991/smallcode",
-        "https://github.com/atomchung/ccstory",
-        "https://github.com/boona13/mykonos-island-voxels",
-        "https://github.com/vercel-labs/zerolang",
-        "https://github.com/xw7872081123/wallpaper-engine-steam",
-        "https://github.com/yetone/native-feel-skill",
-        "https://huggingface.co/papers/2602.07892",
-        "https://huggingface.co/papers/2605.16787",
-        "https://huggingface.co/papers/2605.20834",
-        "https://huggingface.co/papers/2605.21343",
-        "https://huggingface.co/papers/2605.21431",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://melchi.me/posts/kv-cache/",
-        "https://openai.com/index/databricks",
-        "https://openai.com/index/dell-codex-enterprise-partnership",
-        "https://openai.com/index/ramp",
-        "https://simonwillison.net/2026/May/19/gemini-35-flash/",
-        "https://simonwillison.net/2026/May/20/spacex-s1/",
-        "https://simonwillison.net/2026/May/20/tokens-per-second/",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters",
-        "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash",
         "https://www.latent.space/p/railway"
       ]
     }
