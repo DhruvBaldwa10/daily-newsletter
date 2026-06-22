@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-06-22",
+      "title": "Doom Pricing, Security Evals, Live Outages",
+      "headings": [
+        "George Hotz: The Doom Is the Business Model",
+        "Claude's Opus 4.x Line Went Down \u2014 And Nobody Noticed Before Shipping",
+        "How to Build Cybersecurity Evals That Actually Work",
+        "LLM Agents for Compiler Tuning \u2014 Research Hits an Unglamorous Problem",
+        "Knowledge Conflicts: The Quiet RAG Problem Nobody's Solved",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.18619v1",
+        "https://arxiv.org/abs/2606.19899v1",
+        "https://arxiv.org/abs/2606.20245v1",
+        "https://arxiv.org/abs/2606.20373v1",
+        "https://eugeneyan.com//writing/cybersecurity-evals/",
+        "https://geohot.github.io//blog/jekyll/update/2026/06/21/the-doom-justifies-the-valuation.html",
+        "https://news.ycombinator.com/item?id=48624153",
+        "https://news.ycombinator.com/item?id=48624195",
+        "https://status.claude.com/incidents/lv35v0q9nsj2"
+      ]
+    },
+    {
       "date": "2026-06-21",
       "title": "Agents Get Guardrails, Production Gets Real",
       "headings": [
@@ -888,50 +911,6 @@
         "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
         "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
         "https://www.latent.space/p/ainews-cerebras-60b-ipo-slowly-then",
-        "https://www.latent.space/p/daytona",
-        "https://www.latent.space/p/railway"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "title": "Agents Get Computers, Google Goes Agentic",
-      "headings": [
-        "Google's Agentic Pivot: Flash Is the New Default",
-        "OpenAI's Enterprise Endgame: Codex Everywhere",
-        "The Agent Infrastructure Layer Heats Up",
-        "Open Model Ecosystem: China's Compounding Advantage",
-        "AI UX & Workflow Debt: What's Actually Broken"
-      ],
-      "urls": [
-        "https://adsurg.substack.com/p/navigating-ai-with-paper-maps",
-        "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/DenisSergeevitch/agents-best-practices",
-        "https://github.com/Doorman11991/smallcode",
-        "https://github.com/bytedance/Lance",
-        "https://github.com/datawhalechina/Agent-Learning-Hub",
-        "https://github.com/sapientinc/HRM-Text",
-        "https://github.com/vercel-labs/zerolang",
-        "https://huggingface.co/papers/2605.21467",
-        "https://huggingface.co/papers/2605.21572",
-        "https://huggingface.co/papers/2605.22144",
-        "https://huggingface.co/papers/2605.22536",
-        "https://huggingface.co/papers/2605.22538",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://news.ycombinator.com/item?id=48230368",
-        "https://news.ycombinator.com/item?id=48230861",
-        "https://news.ycombinator.com/item?id=48231575",
-        "https://openai.com/index/databricks",
-        "https://openai.com/index/dell-codex-enterprise-partnership",
-        "https://openai.com/index/ramp",
-        "https://simonwillison.net/2026/May/19/gemini-35-flash/",
-        "https://simonwillison.net/2026/May/21/datasette-agent-sprites/",
-        "https://simonwillison.net/2026/May/21/datasette-agent/",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.latent.space/p/ainews-codex-rises-claude-meters",
-        "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash",
         "https://www.latent.space/p/daytona",
         "https://www.latent.space/p/railway"
       ]
