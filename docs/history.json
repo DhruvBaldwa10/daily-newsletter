@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-06-23",
+      "title": "Sandboxes, Cyber Models, Role Confusion",
+      "headings": [
+        "AWS Lambda MicroVMs: The Sandbox Infrastructure Agents Have Been Waiting For",
+        "OpenAI Daybreak: GPT-5.5-Cyber Is a Vertical Move, Not Just a Model Release",
+        "Prompt Injection Reframed: It's Identity Confusion, Not Content Filtering",
+        "GLM-5.2 Gets a Speed Run: 280 Tokens Per Second from Baseten",
+        "Cloudflare's Temporary Accounts: Friction-Free Deployment for Throwaway Agents",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/",
+        "https://blog.cloudflare.com/temporary-accounts/",
+        "https://eugeneyan.com//writing/secure-source-code/",
+        "https://news.ycombinator.com/item?id=48639498",
+        "https://openai.com/index/daybreak-securing-the-world",
+        "https://role-confusion.github.io",
+        "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything",
+        "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/#atom-everything",
+        "https://www.baseten.co/blog/how-we-built-the-worlds-fastest-api-for-glm-52/",
+        "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open"
+      ]
+    },
+    {
       "date": "2026-06-22",
       "title": "Doom Pricing, Security Evals, Live Outages",
       "headings": [
@@ -867,50 +891,6 @@
         "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
         "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
         "https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa",
-        "https://www.latent.space/p/daytona",
-        "https://www.latent.space/p/railway"
-      ]
-    },
-    {
-      "date": "2026-05-23",
-      "title": "All Model Labs Go Agentic",
-      "headings": [
-        "The Agent Lab Pivot Is Now Official",
-        "Codex Wins the Enterprise Coding Agent Round",
-        "Open-Weight Model Bonanza Compresses the Moat Window",
-        "AI Infrastructure Cost Spike: The Memory Shortage Is Real",
-        "AI Agents Need Real Infrastructure: Evals, Sandboxes, and Context"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "https://eugeneyan.com//writing/eval-process/",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/Doorman11991/smallcode",
-        "https://github.com/LiuMengxuan04/shushu-internship-tool",
-        "https://github.com/datawhalechina/Agent-Learning-Hub",
-        "https://github.com/lynote-ai/humanize-text",
-        "https://github.com/sapientinc/HRM-Text",
-        "https://github.com/xw7872081123/wallpaper-engine-steam",
-        "https://huggingface.co/papers/2605.13163",
-        "https://huggingface.co/papers/2605.15669",
-        "https://huggingface.co/papers/2605.17602",
-        "https://huggingface.co/papers/2605.22681",
-        "https://huggingface.co/papers/2605.22717",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://news.ycombinator.com/item?id=48243325",
-        "https://openai.com/index/dell-codex-enterprise-partnership",
-        "https://openai.com/index/gartner-2026-agentic-coding-leader",
-        "https://openai.com/index/ramp",
-        "https://openai.com/index/virgin-atlantic",
-        "https://simonwillison.net/2026/May/20/spacex-s1/#atom-everything",
-        "https://simonwillison.net/2026/May/21/datasette-agent-sprites/#atom-everything",
-        "https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything",
-        "https://simonwillison.net/2026/May/22/memory-shortage/#atom-everything",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
-        "https://www.latent.space/p/ainews-cerebras-60b-ipo-slowly-then",
         "https://www.latent.space/p/daytona",
         "https://www.latent.space/p/railway"
       ]
