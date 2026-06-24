@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-06-24",
+      "title": "Memory, Gradients, and Authorization Gaps",
+      "headings": [
+        "Sakana's Fugu: One Model, Many Agents",
+        "Agent Memory Gets Its Own Bill of Materials",
+        "Tool Authorization Was Always Broken \u2014 Here's the Paper That Proves It",
+        "Gradient-Based Hallucination Detection: A Practical Signal, Finally",
+        "IBM's CUGA: Agentic Apps That Actually Run",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.21877v1",
+        "https://arxiv.org/abs/2606.22916v1",
+        "https://arxiv.org/abs/2606.24775v1",
+        "https://arxiv.org/abs/2606.24790v1",
+        "https://github.com/SakanaAI/fugu",
+        "https://hamel.dev/blog/posts/evals-skills/",
+        "https://huggingface.co/blog/ibm-research/cuga-apps",
+        "https://huggingface.co/blog/local-models-pr-triage",
+        "https://news.ycombinator.com/item?id=48654765"
+      ]
+    },
+    {
       "date": "2026-06-23",
       "title": "Sandboxes, Cyber Models, Role Confusion",
       "headings": [
@@ -846,50 +869,6 @@
         "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
         "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
         "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash",
-        "https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa",
-        "https://www.latent.space/p/daytona",
-        "https://www.latent.space/p/railway"
-      ]
-    },
-    {
-      "date": "2026-05-24",
-      "title": "All Labs Are Agent Labs Now",
-      "headings": [
-        "The Agent Lab Pivot Is Official",
-        "Agent Infrastructure Is Minting Unicorns",
-        "Open Models Are Compounding \u2014 And China's Ecosystem Is the Template",
-        "Anthropic's Mythos: Security as a Product Wedge",
-        "Context as Infrastructure: Eugene Yan's Framework for Working With AI"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/Doorman11991/smallcode",
-        "https://github.com/LiuMengxuan04/shushu-internship-tool",
-        "https://github.com/datawhalechina/Agent-Learning-Hub",
-        "https://github.com/lynote-ai/humanize-text",
-        "https://github.com/perplexityai/bumblebee",
-        "https://github.com/sapientinc/HRM-Text",
-        "https://huggingface.co/papers/2605.13163",
-        "https://huggingface.co/papers/2605.15669",
-        "https://huggingface.co/papers/2605.17602",
-        "https://huggingface.co/papers/2605.22681",
-        "https://huggingface.co/papers/2605.22717",
-        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://openai.com/index/dell-codex-enterprise-partnership",
-        "https://openai.com/index/gartner-2026-agentic-coding-leader",
-        "https://openai.com/index/ramp",
-        "https://openai.com/index/virgin-atlantic",
-        "https://simonwillison.net/2026/May/20/spacex-s1/",
-        "https://www.engadget.com/2180028/anthropic-claude-mythos-preview-project-glasswing-update/",
-        "https://www.interconnects.ai/p/claude-mythos-and-misguided-open",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
-        "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
         "https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa",
         "https://www.latent.space/p/daytona",
         "https://www.latent.space/p/railway"
