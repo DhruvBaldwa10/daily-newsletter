@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chips, Collapses, and Computer Use — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Thursday, June 25, 2026</div>
+        <h1>Chips, Collapses, and Computer Use</h1>
+        
+        <p class="subtitle">OpenAI and Broadcom just named their custom inference chip — Jalapeño — while Google quietly dropped computer-use into Gemini 3.5 Flash. Meanwhile, new research shows exactly why RL-trained tool-use agents catastrophically collapse, and what actually fixes them.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>OpenAI's Jalapeño: A Custom Silicon Bet on Inference at Scale</h2>
+          <p>OpenAI and Broadcom <a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip">unveiled Jalapeño</a> this week — a custom ASIC co-designed specifically for LLM inference. The announcement is sparse on benchmarks but heavy on framing: this is OpenAI's clearest move yet toward owning its compute stack rather than renting it from NVIDIA. The chip is described as optimized for the memory bandwidth and matrix-multiply patterns that dominate autoregressive decoding, which is precisely where GPUs leave efficiency on the table.</p><p>The partnership structure here matters. Broadcom is the contract silicon partner behind Google's TPUs, Meta's MTIA, and now OpenAI's Jalapeño. That's not a coincidence — Broadcom has quietly become the preferred ASIC foundry for hyperscalers who want Google-style vertical integration without building a chip team from scratch. OpenAI is effectively joining a club that Google joined five years ago.</p><p>The business logic is straightforward: inference is where OpenAI's costs live at scale. GPT-5 Pro workloads, long-context research sessions, and the kind of multi-hour agentic runs the company is pushing in healthcare and science aren't just model problems — they're memory bandwidth and interconnect problems. A chip designed around those patterns could cut per-token costs meaningfully, which feeds back into pricing flexibility and margin.</p><p>What's unknown is deployment timeline and whether Jalapeño enters the data center alongside H100s or replaces them for specific workload tiers. OpenAI hasn't said. But the announcement lands a week after the company <a href="https://openai.com/index/chatgpt-enterprise-spend-controls">rolled out enterprise spend controls</a> — suggesting internal cost pressure is real and being addressed on multiple fronts simultaneously.</p><blockquote><p>"OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems."</p><cite>— OpenAI Blog</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              OpenAI × Broadcom Jalapeño
+            </a>
+            
+            <a href="https://openai.com/index/chatgpt-enterprise-spend-controls" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              OpenAI Enterprise Spend Controls
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Gemini 3.5 Flash Gets Computer Use — and That's a Bigger Deal Than It Sounds</h2>
+          <p>Google DeepMind <a href="https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/">shipped computer-use capabilities in Gemini 3.5 Flash</a> as of June 24th. Flash, not Pro. That placement is deliberate: computer use at Pro pricing is an enterprise curiosity; computer use at Flash pricing is a product infrastructure decision. Anthropic's computer use launched in Claude's premium tier and has remained a premium feature. Dropping this into Flash — Google's speed-and-cost-optimized model — signals that Google sees GUI automation as a high-volume, latency-sensitive workload rather than an expensive reasoning showcase.</p><p>The practical gap this closes is significant for anyone building agents that need to operate existing software interfaces. Browser automation via Playwright or Puppeteer works until it doesn't — login flows, CAPTCHA, dynamic JavaScript rendering, and non-standard UI patterns break scripted approaches constantly. A model that can observe a screenshot and decide what to click next is a different class of reliability, and Flash's latency profile makes it viable for interactive loops rather than just batch workflows.</p><p>This also lands alongside <a href="https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/">DiffusionGemma</a>, which Google announced June 10th claiming 4x faster text generation via diffusion-based decoding rather than autoregressive generation. Together, these moves suggest Google is simultaneously attacking inference cost (diffusion decoding), inference latency (Flash), and agentic capability surface (computer use) — a broader infrastructure push than any single model announcement conveys.</p><blockquote><p>"Introducing computer use in Gemini 3.5 Flash."</p><cite>— Google DeepMind Blog, June 24, 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔵</span>
+              Gemini 3.5 Flash Computer Use
+            </a>
+            
+            <a href="https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔵</span>
+              DiffusionGemma
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Why RL-Trained Tool-Use Agents Catastrophically Collapse — And the Fix</h2>
+          <p>A new paper from Yupu Hao and colleagues, <a href="https://arxiv.org/abs/2606.26027v1">"Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It,"</a> is one of the more practically useful pieces of agent research to surface this week. The finding: reinforcement learning alone, applied to multi-step tool-use tasks, frequently causes catastrophic collapse — not gradual degradation, but abrupt failure where the model stops forming valid tool-invocation structures entirely.</p><p>The mechanism they identify is specific: unexpected probability spikes in control tokens — the special tokens that delimit tool calls, JSON keys, and structured outputs. RL reward signals that optimize for task outcomes inadvertently destabilize the probability distributions over these structural tokens, and once those distributions go off-rails, the model's outputs stop being parseable by any downstream tool handler. You get a model that scores well on the reward signal during training and produces garbage at inference.</p><p>The fix involves adding supervisory signals that explicitly preserve structural token distributions during RL training — essentially a regularization term that keeps tool-call formatting stable while letting content reasoning improve. This isn't a theoretical concern: teams running RL fine-tuning on function-calling models, or building custom tool-use agents with RLHF loops, are hitting exactly this failure mode and often blaming it on reward function design when the real culprit is structural token instability.</p><p>Pairing this with the <a href="https://arxiv.org/abs/2606.26057v1">Unfireable Safety Kernel paper</a> — which argues that any control living inside an agent's own runtime can be subverted by inputs that influence that runtime — and you get a consistent picture: agent reliability requires constraints at the architectural level, not just the prompt or reward level.</p><blockquote><p>"Some models exhibit catastrophic collapse, where performance abruptly drops and tool-invocation structures fail. The analysis reveals that these failures stem from unexpected probability spikes in specific control tokens."</p><cite>— Hao et al., arXiv 2606.26027</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.26027v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              RL Tool-Use Collapse Paper
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.26057v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Unfireable Safety Kernel
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Databricks on Agent Clouds: Open Frontier or Closed Loop?</h2>
+          <p>Matei Zaharia and Reynold Xin sat down with <a href="https://www.latent.space/p/databricks">Latent Space</a> for a rare double interview, arguing that the frontier AI ecosystem must remain open for "Agent Clouds" to become a real infrastructure category. The thesis: enterprise AI isn't going to consolidate around one proprietary model stack the way mobile consolidated around iOS and Android. The data gravity is too distributed, the compliance requirements too varied, and the model capabilities too close to parity for any single closed provider to lock in the market permanently.</p><p>Zaharia's position — and Databricks' bet — is that the combination of strong open-weight models (they're bullish on the GLM line, on open Llama derivatives, and on whatever Z.ai ships by December) plus open orchestration infrastructure creates a durable enterprise play. The company's acquisition of MosaicML and continued investment in open fine-tuning infrastructure is the long bet on this view.</p><p>The contrarian read: Databricks is also a direct competitor to the closed model providers, so "open frontier" advocacy conveniently aligns with their business model. That doesn't make it wrong, but it's worth holding at arm's length. The more interesting claim in the interview is about Agent Clouds specifically — the idea that enterprises will run portfolios of specialized agents on their own infrastructure the way they run microservices, and that the orchestration and observability layer is where the durable value accrues. If that's true, the race isn't model quality; it's tooling depth.</p><blockquote><p>"In a rare double-interview, the Databricks technical leaders riff on what it will take for every company to build Agent Clouds."</p><cite>— Latent Space / swyx, June 24, 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/databricks" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space × Databricks
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Measuring Intelligence in Bits: A Compression Framework for Agentic Systems</h2>
+          <p>The <a href="https://arxiv.org/abs/2606.25960v1">"Agentic System as Compressor"</a> paper from Zihan Qin and Hongrui Zhang proposes something genuinely useful: a formal measure of agentic system intelligence grounded in information theory rather than benchmark scores. The core claim is that a stronger agentic system — one with better tool use, retrieval, verification, and multi-turn reasoning — allows a target task output to be reconstructed with fewer bits under a fixed compute budget. They operationalize this with arithmetic coding.</p><p>This matters because the benchmark landscape for agents is a mess. Most evals measure task success rate, which conflates capability with reliability, ignores partial success, and is trivially gamed by scaffolding that retries until success. A compression-based metric is harder to game: you can't inflate it by adding more tokens or more retries without also increasing the cost term in the denominator.</p><p>Practically, this framework offers a way to compare agent architectures — RAG versus no-RAG, tool-using versus chain-of-thought, single-agent versus multi-agent — on a common scale that's grounded in something other than leaderboard position. It's research-stage, not production-ready, but teams building internal evals for agent pipelines should watch this framing. The field has needed a principled alternative to "did the agent complete the task" for a while.</p><p>It also rhymes with Narayanan and Kapoor's <a href="https://www.normaltech.ai/p/open-world-evaluations-for-measuring">CRUX project</a> from April, which pushed for long-horizon, messy task evals over clean benchmark conditions. Different methodology, same underlying frustration with how capability gets measured.</p><blockquote><p>"Under a fixed task distribution, interface, and compute budget, a stronger agentic system lets a target object be reconstructed with fewer bits."</p><cite>— Qin & Zhang, arXiv 2606.25960</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.25960v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Agentic System as Compressor
+            </a>
+            
+            <a href="https://www.normaltech.ai/p/open-world-evaluations-for-measuring" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              CRUX Open-World Evals
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>OpenAI's Jalapeño chip and Gemini 3.5 Flash's computer use are both cost-structure decisions dressed as capability announcements — if you're pricing AI features for enterprise, the floor on inference cost is moving down faster than your spreadsheet assumes.</li><li>If you're running any RL fine-tuning on tool-using models, add explicit structural token regularization to your training loop now; the collapse failure mode documented in the Hao et al. paper is real, silent during training, and catastrophic at inference time.</li><li>Computer use landing in Gemini Flash — not Pro — means GUI automation is viable as a high-frequency pipeline component, not just a demo; agent workflows that previously hit cost walls on screen-observation loops are worth revisiting.</li><li>The compression-as-intelligence framing for agent evals is worth prototyping internally: any eval that only measures binary task success is hiding reliability and efficiency signal that matters for production decisions.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔴</span>
+              Jalapeño Chip
+            </a>
+            
+            <a href="https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔵</span>
+              Gemini Computer Use
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.26027v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              RL Collapse Paper
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.25960v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Compression Intel
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/lyra81604/zhengxi-views">lyra81604/zhengxi-views</a>
+              <span class="side-meta">Python · ⭐ 997</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Forsy-AI/agent-apprenticeship">Forsy-AI/agent-apprenticeship</a>
+              <span class="side-meta">None⭐ 915</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/aidenybai/cnfast">aidenybai/cnfast</a>
+              <span class="side-meta">TypeScript · ⭐ 890</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>
+              <span class="side-meta">JavaScript · ⭐ 759</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/sums001/Windows-Copilot-API">sums001/Windows-Copilot-API</a>
+              <span class="side-meta">Python · ⭐ 682</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/raiyanyahya/recall">raiyanyahya/recall</a>
+              <span class="side-meta">Python · ⭐ 491</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI and Broadcom unveiled Jalapeño, a custom AI chip optimized for LLM inference to improve performance and efficiency.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI introduced new spend controls and usage analytics for ChatGPT Enterprise to help organizations manage costs.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Google introduced computer use capability in Gemini 3.5 Flash, enabling the model to interact with computer interfaces.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Google launched Gemma 4 12B, a unified encoder-free multimodal model for text and image understanding.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Google released Gemini 3.5 Live Translate for near real-time, natural speech translation across Google products.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Google introduced DiffusionGemma, achieving 4x faster text generation compared to previous approaches.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.18239">EBench: Elemental Diagnosis of Generalist Mobile Manipulation Policies</a>
+              <span class="side-meta">We present EBench, a simulation benchmark that diagnoses generalist mobile manipulation policies beyond a single success-rate scalar. EBench comprises 26 diverse and challenging manipulation tasks ann</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.26092">TryOnCrafter: Unleashing Camera Trajectories for Realistic Video Virtual Try-on via a Renderable 4D Try-on Proxy</a>
+              <span class="side-meta">While Video Virtual Try-on (VVT) has achieved remarkable progress in synthesizing realistic garment overlays on dynamic subjects, existing paradigms remains fundamentally constrained by a passive depe</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.24775">Are We Ready For An Agent-Native Memory System?</a>
+              <span class="side-meta">Memory for large language model (LLM) agents has rapidly evolved from simple retrieval-augmented mechanisms into a data management system that supports persistent information storage, retrieval, updat</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.22565">Look Light, Think Heavy: What Multimodal Chain-of-Thought Reasoning Can and Cannot Do</a>
+              <span class="side-meta">Chain-of-Thought (CoT) has become a standard method for improving reasoning capabilities in large language models (LLMs) by eliciting step-by-step thinking, but its effectiveness in multimodal tasks r</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.25996">Autodata: An agentic data scientist to create high quality synthetic data</a>
+              <span class="side-meta">We introduce Autodata, a general method that enables AI agents to act as data scientists who build high quality training and evaluation data. We show how to train (meta-optimize) such a data scientist</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>

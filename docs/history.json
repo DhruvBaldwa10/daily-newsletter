@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-06-25",
+      "title": "Chips, Collapses, and Computer Use",
+      "headings": [
+        "OpenAI's Jalape\u00f1o: A Custom Silicon Bet on Inference at Scale",
+        "Gemini 3.5 Flash Gets Computer Use \u2014 and That's a Bigger Deal Than It Sounds",
+        "Why RL-Trained Tool-Use Agents Catastrophically Collapse \u2014 And the Fix",
+        "Databricks on Agent Clouds: Open Frontier or Closed Loop?",
+        "Measuring Intelligence in Bits: A Compression Framework for Agentic Systems",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.25960v1",
+        "https://arxiv.org/abs/2606.26027v1",
+        "https://arxiv.org/abs/2606.26057v1",
+        "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/",
+        "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
+        "https://openai.com/index/chatgpt-enterprise-spend-controls",
+        "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+        "https://www.latent.space/p/databricks",
+        "https://www.normaltech.ai/p/open-world-evaluations-for-measuring"
+      ]
+    },
+    {
       "date": "2026-06-24",
       "title": "Memory, Gradients, and Authorization Gaps",
       "headings": [
@@ -828,50 +851,6 @@
         "https://www.latent.space/p/railway",
         "https://www.nytimes.com/2026/05/25/us/politics/artificial-intelliegence-courts.html",
         "https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html"
-      ]
-    },
-    {
-      "date": "2026-05-25",
-      "title": "All Model Labs Go Agent",
-      "headings": [
-        "The Agentic Pivot Is Complete \u2014 Every Lab Is Now an Agent Lab",
-        "Codex Goes Enterprise \u2014 And OpenAI Is Playing a Long Game",
-        "The Open Model Explosion Is Compounding \u2014 and China Is Leading",
-        "Geohot Declares Eternal Sloptember \u2014 And He's Not Wrong",
-        "AI Infra Unicorns and the Memory Crunch Ahead"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "https://geohot.github.io//blog/jekyll/update/2026/05/24/the-eternal-sloptember.html",
-        "https://github.com/0xSero/codex-shim",
-        "https://github.com/Doorman11991/smallcode",
-        "https://github.com/lynote-ai/humanize-text",
-        "https://github.com/open-gsd/get-shit-done-redux",
-        "https://github.com/perplexityai/bumblebee",
-        "https://github.com/sapientinc/HRM-Text",
-        "https://huggingface.co/papers/2604.20665",
-        "https://huggingface.co/papers/2605.18018",
-        "https://huggingface.co/papers/2605.20708",
-        "https://huggingface.co/papers/2605.23771",
-        "https://huggingface.co/papers/2605.23903",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://news.ycombinator.com/item?id=48263238",
-        "https://openai.com/index/dell-codex-enterprise-partnership",
-        "https://openai.com/index/gartner-2026-agentic-coding-leader",
-        "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
-        "https://openai.com/index/ramp",
-        "https://openai.com/index/virgin-atlantic",
-        "https://simonwillison.net/2026/May/22/memory-shortage/",
-        "https://simonwillison.net/2026/May/24/armin-ronacher/",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
-        "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
-        "https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash",
-        "https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa",
-        "https://www.latent.space/p/daytona",
-        "https://www.latent.space/p/railway"
       ]
     }
   ]
