@@ -1,6 +1,32 @@
 {
   "entries": [
     {
+      "date": "2026-06-26",
+      "title": "White House, Liability, and Agent Proof",
+      "headings": [
+        "The White House Asks OpenAI to Pump the Brakes",
+        "Germany Holds Google Liable. The Legal Floor Just Moved.",
+        "OpenAI's Internal Data Reveals What Agentic Adoption Actually Looks Like",
+        "RAG Has a Time Problem \u2014 And It's Worse Than You Thought",
+        "vLLM on Hugging Face Jobs \u2014 Self-Hosted Inference Gets a Shorter Path",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.26511v1",
+        "https://arxiv.org/abs/2606.27136v1",
+        "https://huggingface.co/blog/allenai/hybrid-token-prediction",
+        "https://huggingface.co/blog/vllm-jobs",
+        "https://lilianweng.github.io/posts/2026-06-24-scaling-laws/",
+        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
+        "https://openai.com/index/helping-build-shared-standards-for-advanced-ai",
+        "https://openai.com/index/how-agents-are-transforming-work",
+        "https://simonwillison.net/2026/Jun/25/ai-and-liability/#atom-everything",
+        "https://www.cnn.com/2026/06/25/tech/openai-limit-release-white-house",
+        "https://www.interconnects.ai/p/welcome-to-the-agi-era-of-ai-governance",
+        "https://www.latent.space/p/ainews-openai-reports-median-internal"
+      ]
+    },
+    {
       "date": "2026-06-25",
       "title": "Chips, Collapses, and Computer Use",
       "headings": [
@@ -804,53 +830,6 @@
         "https://www.latent.space/p/daytona",
         "https://www.latent.space/p/railway",
         "https://www.theverge.com/ai-artificial-intelligence/937801/pope-leo-xiv-magnifica-humanitas-ai-pangram"
-      ]
-    },
-    {
-      "date": "2026-05-26",
-      "title": "All Labs Are Agent Labs Now",
-      "headings": [
-        "The Agent Platform Land Grab Is On",
-        "Open Models Compound \u2014 The China Lesson",
-        "LLMs as Unintended Legal Actors \u2014 A New Risk Surface",
-        "The Pope, Anthropic, and AI Ethics Getting Serious",
-        "Context as Infrastructure: The Practitioner View"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/0xSero/codex-shim",
-        "https://github.com/MoonshotAI/kimi-code",
-        "https://github.com/ShinyaTomitsuka/arbitrage-trading-bot",
-        "https://github.com/open-gsd/get-shit-done-redux",
-        "https://github.com/perplexityai/bumblebee",
-        "https://huggingface.co/papers/2605.23218",
-        "https://huggingface.co/papers/2605.25569",
-        "https://huggingface.co/papers/2605.26089",
-        "https://huggingface.co/papers/2605.26105",
-        "https://huggingface.co/papers/2605.26109",
-        "https://huyenchip.com//2025/01/07/agents.html",
-        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
-        "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://openai.com/index/gartner-2026-agentic-coding-leader",
-        "https://openai.com/index/ramp",
-        "https://openai.com/index/virgin-atlantic",
-        "https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything",
-        "https://simonwillison.net/2026/May/25/encyclical-on-ai/#atom-everything",
-        "https://simonwillison.net/2026/May/26/corey-quinn/#atom-everything",
-        "https://sosuke.com/models-have-blind-spots-debugging-unfamiliar-code-with-a-multi-llm-loop/",
-        "https://twitter.com/encrypted/status/2058658244328124562",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
-        "https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa",
-        "https://www.latent.space/p/daytona",
-        "https://www.latent.space/p/railway",
-        "https://www.nytimes.com/2026/05/25/us/politics/artificial-intelliegence-courts.html",
-        "https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html"
       ]
     }
   ]

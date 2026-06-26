@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White House, Liability, and Agent Proof — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Friday, June 26, 2026</div>
+        <h1>White House, Liability, and Agent Proof</h1>
+        
+        <p class="subtitle">The White House wants OpenAI to slow down its next model release — the same week a German court ruled Google liable for AI Overview errors. Meanwhile, OpenAI's own internal data reveals what agentic work actually looks like at scale: Codex output tokens in Research grew 56x since November. The policy and production worlds are colliding fast.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>The White House Asks OpenAI to Pump the Brakes</h2>
+          <p>The Biden-era AI diplomacy of voluntary commitments feels like a different century. <a href="https://www.cnn.com/2026/06/25/tech/openai-limit-release-white-house">CNN reports</a> the White House has asked OpenAI to limit the scope of its next model release — a direct ask from the executive branch to the country's most prominent AI lab. Details on which model, or what specific restrictions are requested, remain thin, but the signal is hard to misread: government is no longer content to watch from the sidelines.</p><p>This comes at a moment when the policy environment is genuinely unsettled. Nathan Lambert has been tracking what he calls the AGI era of AI governance — <a href="https://www.interconnects.ai/p/welcome-to-the-agi-era-of-ai-governance">arguing in a recent piece</a> that the governance structures society is now building are effectively permanent, because the capabilities they're responding to aren't going away. The White House request fits that framing: this is governments beginning to act like the door has already opened, not like they're trying to prevent it.</p><p>For OpenAI specifically, the timing matters. The company has been releasing at high velocity — GPT-5.5 variants, a dedicated cyber model, and expanding API access across verticals. A White House request to slow down, however informal, creates a precedent. If OpenAI complies, it signals that executive pressure is a lever that works. If it doesn't, the regulatory conversation sharpens considerably.</p><blockquote><p>"It's a one-way door and we weren't ready for it."</p><cite>— Nathan Lambert, <a href="https://www.interconnects.ai/p/welcome-to-the-agi-era-of-ai-governance">Interconnects</a></cite></blockquote><p>Labs building on top of these frontier models should watch this closely. If release timelines get politically managed, the planning horizon for capability bets changes — you might have more runway on current models than expected, or you might hit a ceiling on what's available via API.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.cnn.com/2026/06/25/tech/openai-limit-release-white-house" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              CNN — White House/OpenAI
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/welcome-to-the-agi-era-of-ai-governance" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Interconnects — AGI governance
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Germany Holds Google Liable. The Legal Floor Just Moved.</h2>
+          <p>A German court has ruled that Google is liable for false answers generated by its AI Overviews — treating those AI-generated summaries as Google's own statements, not as neutral retrieval. <a href="https://simonwillison.net/2026/Jun/25/ai-and-liability/#atom-everything">Simon Willison flagged the ruling</a>, and the framing from Bruce Schneier that he surfaced is worth sitting with: AI agents are agents of the person or organization that deploys them, full stop.</p><blockquote><p>"AI agents are agents of the person or organization that deploys them — and should be treated accordingly under the law."</p><cite>— Bruce Schneier, via <a href="https://simonwillison.net/2026/Jun/25/ai-and-liability/#atom-everything">Simon Willison</a></cite></blockquote><p>The German ruling is a landmark because it doesn't try to create a new AI-specific liability framework — it just applies existing agency law to the situation. Google said it, Google owns it. That's a much simpler and more portable legal theory than trying to regulate AI outputs as a distinct category, and it's the kind of argument that travels across jurisdictions.</p><p>For anyone building customer-facing AI products — chatbots, AI Overviews, agentic assistants that produce summaries or recommendations — this ruling is a forcing function. The question isn't whether your AI hallucinates (it does); it's whether you have documented the safeguards, disclosures, and human review layers that demonstrate reasonable care. A confidence score that never surfaces to the user, or a "this may be inaccurate" disclaimer buried in a footer, is not going to hold up if a court applies this standard.</p><p>OpenAI's concurrent <a href="https://openai.com/index/helping-build-shared-standards-for-advanced-ai">work on shared AI standards through the Appia Foundation</a> reads differently in this context — proactive standard-setting starts looking like legal risk management, not just goodwill.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jun/25/ai-and-liability/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Simon Willison — AI liability
+            </a>
+            
+            <a href="https://openai.com/index/helping-build-shared-standards-for-advanced-ai" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI — Appia Foundation
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI's Internal Data Reveals What Agentic Adoption Actually Looks Like</h2>
+          <p>The most concrete data point of the week comes from <a href="https://www.latent.space/p/ainews-openai-reports-median-internal">OpenAI's own internal figures, surfaced in Latent Space's AINews</a>: median internal Codex output tokens grew 56x in Research, 32x in Customer Support, 27x in Engineering, and 13x in Legal since November 2025. That's seven months. And it's not active users growing — it's output tokens per user, meaning the agents are doing dramatically more work per session.</p><p>The accompanying <a href="https://openai.com/index/how-agents-are-transforming-work">OpenAI research paper on how agents are transforming work</a> provides more texture: tasks are getting longer and more complex, and the productivity gains aren't uniform across roles. Research and Customer Support are running away from the pack.</p><blockquote><p>"It's happening."</p><cite>— <a href="https://www.latent.space/p/ainews-openai-reports-median-internal">Latent Space AINews</a>, on OpenAI's internal Codex token growth</cite></blockquote><p>The 56x Research figure is striking because it suggests research workflows are uniquely suited to long-horizon agentic tasks — hypothesis generation, literature synthesis, iterative data analysis — in ways that Legal (13x) is not, perhaps because legal work has higher verification overhead and lower tolerance for hallucination. That variance is a product design signal: the tasks where agents produce the most output aren't necessarily the tasks where agents are most trusted, and building for the right point on that curve matters more than maximizing raw capability.</p><p>Meanwhile, <a href="https://arxiv.org/abs/2606.27136v1">new arXiv work on joint learning of experiential rules and policies</a> tries to close the loop between in-context experience (natural language rules) and parameter-level policy updates — the kind of architecture that might explain why these token counts keep climbing as the agent gets better with use.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/ainews-openai-reports-median-internal" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Latent Space AINews — Codex tokens
+            </a>
+            
+            <a href="https://openai.com/index/how-agents-are-transforming-work" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI — Agents transforming work
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.27136v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv — Experiential rules + policies
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>RAG Has a Time Problem — And It's Worse Than You Thought</h2>
+          <p>Retrieval-augmented generation has a structural flaw that nobody's had a clean fix for: stale facts. <a href="https://arxiv.org/abs/2606.26511v1">A new paper on temporal validity in retrieval memory</a> puts numbers to the problem, and they're uncomfortable. When a fact changes — a function gets renamed, an API is restructured — cosine similarity retrieves both the stale and current value with nearly identical scores. The AUROC for distinguishing a contradicted fact from a duplicated one is 0.59. That's barely above chance.</p><blockquote><p>"RAG retrieves both the stale and current value with near-identical embedding similarity. The agent then either abstains or serves the superseded fact. We show this is a structural problem."</p><cite>— Neeraj Yadav, <a href="https://arxiv.org/abs/2606.26511v1">arXiv:2606.26511</a></cite></blockquote><p>This matters most for the exact use cases where RAG sees the most production deployment: code documentation, API references, internal knowledge bases, legal and compliance documents. These are all domains where facts change on a schedule and recency is non-negotiable. A RAG system that served the right answer six months ago may be actively harmful today, and the retrieval layer has no native signal for that.</p><p>The paper proposes temporal metadata tagging and decay-aware scoring — not a complete solution, but a direction. Hugging Face published a related piece this week on <a href="https://huggingface.co/blog/allenai/hybrid-token-prediction">which tokens hybrid models predict better</a>, which touches the same underlying question from the architecture side: different token types carry different uncertainty profiles, and retrieval systems that treat them uniformly are leaving signal on the table.</p><p>If you're running a RAG pipeline against any corpus that evolves — and almost every production corpus does — the question isn't whether your retrieval is degrading over time. It's how fast, and whether you're measuring it.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.26511v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv — Temporal validity in RAG
+            </a>
+            
+            <a href="https://huggingface.co/blog/allenai/hybrid-token-prediction" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              HuggingFace — Hybrid token prediction
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>vLLM on Hugging Face Jobs — Self-Hosted Inference Gets a Shorter Path</h2>
+          <p>Hugging Face dropped a <a href="https://huggingface.co/blog/vllm-jobs">one-command vLLM server deployment via HF Jobs</a> today. The headline is the simplicity: spin up a production-grade vLLM inference endpoint without managing container orchestration yourself, billed through HF's compute pricing. For teams running open-weight models — Gemma 4, DeepSeek V3 variants, Llama lineage — this reduces the operational gap between "runs on my A100" and "deployed for a team."</p><p>The release comes the same week Sebastian Raschka published a detailed breakdown of <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">how new open-weight LLMs are cutting long-context costs</a> through KV sharing, multi-head compression (mHC), and compressed attention — covering Gemma 4 and DeepSeek V4 specifically. The architectural story and the deployment story are converging: models are getting cheaper to run at long contexts, and the tooling to actually run them is getting simpler.</p><blockquote><p>"From Gemma 4 to DeepSeek V4, How New Open-Weight LLMs Are Reducing Long-Context Costs."</p><cite>— Sebastian Raschka, <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">Ahead of AI</a></cite></blockquote><p>The practical implication for teams choosing between managed inference APIs and self-hosted open weights: the cost and ops gap is narrowing from both ends simultaneously. Frontier closed models are under potential release restrictions (see: the White House story above); open-weight models are getting architecturally cheaper to serve; and the deployment tooling is compressing to a single command. The calculus on "just call the API" versus "run your own" looks different today than it did in January.</p><p>Lilian Weng's deep-dive on <a href="https://lilianweng.github.io/posts/2026-06-24-scaling-laws/">scaling laws</a>, published Wednesday, is also worth your weekend reading — it's the clearest treatment yet of how to think about compute allocation across model size, data, and training steps, which matters if you're making bets on which open-weight model generation to build against.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://huggingface.co/blog/vllm-jobs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              HuggingFace — vLLM Jobs
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Ahead of AI — LLM architecture costs
+            </a>
+            
+            <a href="https://lilianweng.github.io/posts/2026-06-24-scaling-laws/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Lil'Log — Scaling laws
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>The German liability ruling is a quiet forcing function: if your AI product surfaces generated content to end users, you need a documented evidence trail of safeguards — not just a disclaimer. Treat every output your product makes as a statement your company made, because courts are starting to.</li><li>OpenAI's 56x token growth in Research vs. 13x in Legal isn't just a fun stat — it's a map of where agentic depth is earning user trust right now. If you're deciding where to invest in long-horizon agent workflows, match your domain's verification tolerance to that curve before betting on autonomy.</li><li>RAG staleness is a real production failure mode, not a theoretical one: cosine similarity at 0.59 AUROC for contradicted facts means your retrieval layer cannot tell the difference between stale and current on its own. Add temporal metadata and decay-aware scoring to any knowledge base that evolves on a monthly or faster cadence.</li><li>The self-hosted inference on-ramp just got meaningfully shorter via HF Jobs and one-command vLLM. With potential release restrictions coming from the White House and open-weight architectures cutting long-context costs, this is a good week to revisit your model sourcing strategy and run the updated numbers.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.cnn.com/2026/06/25/tech/openai-limit-release-white-house" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              CNN — White House/OpenAI
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Jun/25/ai-and-liability/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">✍️</span>
+              Simon Willison — AI liability
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-openai-reports-median-internal" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Latent Space — Codex tokens
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.26511v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv — RAG temporal validity
+            </a>
+            
+            <a href="https://huggingface.co/blog/vllm-jobs" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              HuggingFace — vLLM Jobs
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/lyra81604/zhengxi-views">lyra81604/zhengxi-views</a>
+              <span class="side-meta">Python · ⭐ 1,043</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Forsy-AI/agent-apprenticeship">Forsy-AI/agent-apprenticeship</a>
+              <span class="side-meta">None⭐ 946</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/aidenybai/cnfast">aidenybai/cnfast</a>
+              <span class="side-meta">TypeScript · ⭐ 935</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/sums001/Windows-Copilot-API">sums001/Windows-Copilot-API</a>
+              <span class="side-meta">Python · ⭐ 754</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/raiyanyahya/recall">raiyanyahya/recall</a>
+              <span class="side-meta">Python · ⭐ 551</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/yo-WASSUP/Good-Badminton">yo-WASSUP/Good-Badminton</a>
+              <span class="side-meta">Python · ⭐ 523</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Introduced Gemma 4 12B, a unified encoder-free multimodal model.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Launched Gemini 3.5 Live Translate bringing near real-time natural speech translation to Google AI Studio, Google Translate, and Google Meet.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Released Claude Tag, a multiplayer, proactive, persistent agent for Slack.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched GPT-5 Pro with enhanced capabilities for complex reasoning and analysis.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Llamatik</div>
+              <span class="launch-detail">Released local-first AI coding assistant for IntelliJ-based IDEs as a paid plugin.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Announced $10M funding call for multi-agent AI safety research.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.27326">Hallucination in World Models is Predictable and Preventable</a>
+              <span class="side-meta">Modern generative world models render increasingly realistic action-controllable futures, yet they frequently hallucinate: rollouts remain visually fluent while drifting from the ground-truth dynamics</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.26300">The Verification Horizon: No Silver Bullet for Coding Agent Rewards</a>
+              <span class="side-meta">A classical intuition holds that verifying a solution is easier than producing one. For today's coding agents, this intuition is being inverted: as foundation models develop stronger reasoning capabil</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.24551">GUI vs. CLI: Execution Bottlenecks in Screen-Only and Skill-Mediated Computer-Use Agents</a>
+              <span class="side-meta">Computer-use agents can execute software tasks through either graphical interfaces or programmatic command interfaces, but existing evaluations confound interaction modality with differences in tasks,</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.26027">Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It</a>
+              <span class="side-meta">Tool use enables large language models (LLMs) to perform complex tasks, and recent agentic reinforcement learning (RL) methods show promise for enhancing model capabilities. However, RL alone often le</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.21959">OpenBioRQ: Unsolved Biomedical Research Questions for Agents</a>
+              <span class="side-meta">A working citation looks like proof -- but the fact that a link resolves does not mean the cited paper supports the claim. I find that current agentic models rarely fabricate citations (over 99% resol</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
