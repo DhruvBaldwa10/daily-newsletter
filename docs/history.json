@@ -1,6 +1,27 @@
 {
   "entries": [
     {
+      "date": "2026-06-27",
+      "title": "Sol Previewed, Injection Survived",
+      "headings": [
+        "GPT-5.6 Sol: OpenAI's Next Model Is Already Here (Sort Of)",
+        "6,000 Injection Attempts, Zero Leaks \u2014 What That Actually Proves",
+        "Open vs. Closed: The Diverging Exponentials",
+        "Autodata: Teaching Agents to Generate Their Own Training Sets",
+        "Sequence Probability Isn't Correctness \u2014 And Now There's Data",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.25996v2",
+        "https://arxiv.org/abs/2606.27359v1",
+        "https://openai.com/index/patch-the-planet",
+        "https://openai.com/index/previewing-gpt-5-6-sol",
+        "https://simonwillison.net/2026/Jun/26/hack-my-ai-assistant/#atom-everything",
+        "https://www.fernandoi.cl/posts/hackmyclaw/",
+        "https://www.interconnects.ai/p/open-and-closed-models-are-on-different"
+      ]
+    },
+    {
       "date": "2026-06-26",
       "title": "White House, Liability, and Agent Proof",
       "headings": [
@@ -785,51 +806,6 @@
         "https://www.latent.space/p/daytona",
         "https://www.latent.space/p/railway",
         "https://www.theinformation.com/newsletters/applied-ai/uber-cto-shows-claude-code-can-blow-ai-budgets"
-      ]
-    },
-    {
-      "date": "2026-05-27",
-      "title": "Benchmarks Crack, Agents Ship Cheap",
-      "headings": [
-        "The Coding Benchmark War Gets Messy",
-        "AI Infra Hits Escape Velocity: Decacorns and Agent Clouds",
-        "Agentic Security Is Already a Crisis",
-        "Google's Agentic Gemini Era and the Open Model Surge",
-        "The AI Voice Problem: Graham, OSS Maintainers, and the Pope"
-      ],
-      "urls": [
-        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
-        "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-        "https://github.com/0xSero/codex-shim",
-        "https://github.com/MoonshotAI/kimi-code",
-        "https://github.com/ShinyaTomitsuka/arbitrage-trading-bot",
-        "https://github.com/open-gsd/get-shit-done-redux",
-        "https://github.com/perplexityai/bumblebee",
-        "https://github.com/study8677/awesome-architecture",
-        "https://huggingface.co/papers/2605.24219",
-        "https://huggingface.co/papers/2605.24468",
-        "https://huggingface.co/papers/2605.25979",
-        "https://huggingface.co/papers/2605.26114",
-        "https://huggingface.co/papers/2605.27358",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://openai.com/index/gartner-2026-agentic-coding-leader",
-        "https://openai.com/index/ramp",
-        "https://openai.com/index/virgin-atlantic",
-        "https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything",
-        "https://simonwillison.net/2026/May/25/encyclical-on-ai/#atom-everything",
-        "https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything",
-        "https://simonwillison.net/2026/May/26/corey-quinn/#atom-everything",
-        "https://simonwillison.net/2026/May/26/paul-graham/#atom-everything",
-        "https://simonwillison.net/2026/May/26/the-pressure/#atom-everything",
-        "https://venturebeat.com/technology/deepswe-blows-up-the-ai-coding-leaderboard-crowns-gpt-5-5-and-finds-claude-opus-exploiting-a-benchmark-loophole",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may",
-        "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
-        "https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks",
-        "https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa",
-        "https://www.latent.space/p/daytona",
-        "https://www.latent.space/p/railway",
-        "https://www.theverge.com/ai-artificial-intelligence/937801/pope-leo-xiv-magnifica-humanitas-ai-pangram"
       ]
     }
   ]
