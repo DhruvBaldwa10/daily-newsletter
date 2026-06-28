@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-06-28",
+      "title": "Local Models, Governance Gaps, Smart Contracts",
+      "headings": [
+        "The Case for Running Coding Agents Locally",
+        "Governing What Agents Do, Not What They Are",
+        "Smart Contract Security Is AI Agents' Next Benchmark Frontier",
+        "DeepMind Puts $10M Behind Multi-Agent Safety \u2014 And Names the Problem",
+        "Prompt Injection Found a New Target: R\u00e9sum\u00e9 Screening",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.26028v1",
+        "https://arxiv.org/abs/2606.26216v1",
+        "https://arxiv.org/abs/2606.26298v1",
+        "https://arxiv.org/abs/2606.27287v1",
+        "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
+        "https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes/blob/main/rdma_cluster/setup_guide.md",
+        "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
+        "https://magazine.sebastianraschka.com/p/using-local-coding-agents",
+        "https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai"
+      ]
+    },
+    {
       "date": "2026-06-27",
       "title": "Sol Previewed, Injection Survived",
       "headings": [
@@ -764,48 +787,6 @@
         "https://www.latent.space/p/ainews-cognition-raises-1b-in-26b",
         "https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks",
         "https://www.latent.space/p/cognition"
-      ]
-    },
-    {
-      "date": "2026-05-28",
-      "title": "Codex Goes Enterprise, AI Bills Explode",
-      "headings": [
-        "Codex Is Winning the Enterprise Coding Agent War",
-        "Product-Market Fit Found \u2014 But Budget Shocks Are Coming",
-        "The AI Slop Problem Is Getting Personal \u2014 And Costly",
-        "Agentic Security Is Actively Bleeding \u2014 Two Vulns This Week",
-        "AI Infra Is Minting Decacorns \u2014 The Stack Is Solidifying"
-      ],
-      "urls": [
-        "https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/",
-        "https://github.com/0xSero/codex-shim",
-        "https://github.com/MoonshotAI/kimi-code",
-        "https://github.com/UditAkhourii/adhd",
-        "https://github.com/XingYu-Zhong/DeepSeek-GUI",
-        "https://github.com/open-gsd/get-shit-done-redux",
-        "https://github.com/study8677/awesome-architecture",
-        "https://huggingface.co/papers/2605.26396",
-        "https://huggingface.co/papers/2605.28293",
-        "https://huggingface.co/papers/2605.28548",
-        "https://huggingface.co/papers/2605.28732",
-        "https://huggingface.co/papers/2605.28773",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://news.ycombinator.com/item?id=48303252",
-        "https://openai.com/index/building-self-improving-tax-agents-with-codex",
-        "https://openai.com/index/cisco",
-        "https://openai.com/index/gartner-2026-agentic-coding-leader",
-        "https://openai.com/index/ramp",
-        "https://openai.com/index/virgin-atlantic",
-        "https://openai.com/index/warp",
-        "https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything",
-        "https://simonwillison.net/2026/May/26/paul-graham/#atom-everything",
-        "https://simonwillison.net/2026/May/26/the-pressure/#atom-everything",
-        "https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything",
-        "https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/",
-        "https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks",
-        "https://www.latent.space/p/daytona",
-        "https://www.latent.space/p/railway",
-        "https://www.theinformation.com/newsletters/applied-ai/uber-cto-shows-claude-code-can-blow-ai-budgets"
       ]
     }
   ]

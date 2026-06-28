@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Models, Governance Gaps, Smart Contracts — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Sunday, June 28, 2026</div>
+        <h1>Local Models, Governance Gaps, Smart Contracts</h1>
+        
+        <p class="subtitle">Sebastian Raschka's deep dive into running open-weight coding agents locally lands as a direct alternative to $20/month Claude Code subscriptions. Meanwhile, two new papers reframe agent governance — one from institutional theory, one from blockchain — and a $10M DeepMind safety call shows the stakes are rising fast.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>The Case for Running Coding Agents Locally</h2>
+          <p>Sebastian Raschka published a thorough breakdown this weekend on <a href="https://magazine.sebastianraschka.com/p/using-local-coding-agents">running open-weight models inside local coding harnesses</a> — framed explicitly as an alternative to Claude Code and Codex subscriptions. The timing is pointed: with Claude Code pricing running $20–$200/month depending on tier and Codex still in limited rollout, the total cost of AI-assisted development is becoming a line item that engineering leaders are scrutinizing.</p><p>Raschka walks through the actual architecture of these harnesses — how tools, memory, and repository context get composed — and compares which open-weight models are viable today versus aspirational. His <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent">earlier April piece on coding agent components</a> provides the scaffolding: local agents need file-system tools, context-window management, and at minimum a model that can follow multi-step instructions reliably. The gap between "this technically works" and "this is faster than doing it myself" is still significant for most sub-70B models, but it's closing.</p><p>The piece lands at an interesting moment because the argument isn't purely about cost — it's about data sovereignty and latency. Teams building on sensitive codebases (healthcare, finance, defense) have compliance reasons to avoid shipping diffs to hosted APIs. For them, even a 20% productivity gap might be acceptable.</p><blockquote><p>"The honest answer is that local coding agents are probably at the 60-70% capability threshold of hosted alternatives for most coding tasks — which is genuinely useful, even if it's not a full replacement."</p><cite>— Sebastian Raschka, Ahead of AI</cite></blockquote><p>The catch: running a 32B+ model locally means beefy hardware. Which is why the <a href="https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes/blob/main/rdma_cluster/setup_guide.md">AMD Strix Halo RDMA cluster setup guide</a> that hit 75 points on Hacker News today is complementary reading — it's a step-by-step for wiring together AMD consumer silicon into a multi-node vLLM inference cluster, directly relevant to teams trying to build local inference capacity without the A100 price tag.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://magazine.sebastianraschka.com/p/using-local-coding-agents" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Raschka: Using Local Coding Agents
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Raschka: Components of a Coding Agent
+            </a>
+            
+            <a href="https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes/blob/main/rdma_cluster/setup_guide.md" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              AMD Strix Halo RDMA Guide
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Governing What Agents Do, Not What They Are</h2>
+          <p>A paper out of arXiv this week makes a deceptively simple argument: we've been trying to govern AI agents by monitoring their reasoning, but human institutions have never governed powerful autonomous actors that way. Doctors, lawyers, financial advisors — they're constrained by attestation at the point of consequential action, not by surveillance of their cognition. <a href="https://arxiv.org/abs/2606.26298v1">"Governing Actions, Not Agents"</a> formalizes this as a computational model, proposing that agents retain full autonomy in reasoning but must produce independently attested evidence before taking irreversible actions like clinical prescriptions or production deployments.</p><p>This is a genuinely different framing from the "add a human in the loop" school of thought, which tends to create bottlenecks. Attestation is async and auditable — the agent can proceed, but leaves a verifiable trace that a separate institutional validator can check. The authors explicitly cite the gap between current agent capability and current governance infrastructure as the motivating problem.</p><p>The practical tension is real: most production agent deployments today have neither the attestation layer nor the institutional validators. Teams are shipping agents into consequential workflows — scheduling, code deployment, customer communications — with governance that amounts to "we log what it does and review it sometimes."</p><blockquote><p>"The proposed model does not require agents to pause for human approval at each consequential step; rather, it requires agents to generate attestable evidence that consequential actions occurred within sanctioned boundaries — evidence that can be verified asynchronously."</p><cite>— Jakob Salfeld-Nebgen, arXiv:2606.26298</cite></blockquote><p>Separately, a study of the <a href="https://arxiv.org/abs/2606.26028v1">ERC-8004 decentralized AI agent trust protocol</a> examines the first permissionless on-chain reputation layer for AI agent economies — three registries for identity, reputation, and validation. The empirical findings suggest the protocol is being adopted faster than it's being studied, which is a pattern the governance paper is essentially warning about.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.26298v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Governing Actions, Not Agents (arXiv)
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.26028v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              ERC-8004 Trustless Agent Study (arXiv)
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Smart Contract Security Is AI Agents' Next Benchmark Frontier</h2>
+          <p><a href="https://arxiv.org/abs/2606.26216v1">CyberChainBench</a> is a new benchmark built from 541 real-world DeFi exploit incidents spanning 9 EVM chains, and it tests LLM-based agents on three distinct tasks: finding the vulnerability, generating a working exploit, and synthesizing a patch. The evaluation is end-to-end — agents interact with actual historical blockchain state through isolated environments, not contrived synthetic examples.</p><p>The benchmark's construction matters as much as its results. Each incident comes from DeFiHackLabs, a curated database of real exploits, meaning the test cases have confirmed ground truth: the vulnerability existed, the exploit worked in production, and a patch was eventually deployed. That's a much higher evidentiary bar than most security benchmarks, which use synthetic CVEs or academic toy examples.</p><p>For teams building on smart contract infrastructure — or evaluating agents for any kind of security-adjacent task — CyberChainBench is worth watching. The gap between "detect" and "exploit" capability is particularly telling: a model that can identify a reentrancy pattern is genuinely useful; one that can generate a working exploit and then patch it is something closer to a security engineer. Current results suggest frontier models are much stronger at detection than exploitation, which is directionally reassuring but also means current evals are probably underselling attack surface.</p><blockquote><p>"The benchmark provides end-to-end on-chain evaluation where agents interact with historical blockchain state through isolated evaluation environments orchestrated by Harbor, using tools to read code, trace transactions, and deploy exploits."</p><cite>— Huang et al., arXiv:2606.26216</cite></blockquote><p>The broader pattern here: domain-specific agent benchmarks are proliferating rapidly, each one exposing a different layer of the capability-reliability gap that <a href="https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai">Kapoor's agent reliability paper</a> documented earlier this year. CyberChainBench joins a growing list of evals that test agents in environments where wrong answers have real-world consequences attached to historical fact.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.26216v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              CyberChainBench (arXiv)
+            </a>
+            
+            <a href="https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Kapoor: Agent Reliability Science
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>DeepMind Puts $10M Behind Multi-Agent Safety — And Names the Problem</h2>
+          <p>Google DeepMind <a href="https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/">announced a $10 million funding call</a> for multi-agent AI safety research, which is notable less for the dollar figure (modest by lab standards) and more for what it signals about where DeepMind thinks the hard safety problems actually live. The announcement specifically calls out multi-agent settings — not single-agent alignment — as the under-researched frontier.</p><p>This is a direct acknowledgment of something practitioners have been bumping into for the past year: single-agent safety properties don't compose. A system of four aligned agents can still behave in ways none of them would individually. Emergent collusion, task misalignment between orchestrator and subagents, cascading failures where one agent's output poisons another's context — these are multi-agent-specific failure modes with no obvious single-agent analogue.</p><p>The funding call structure matters: it's open to external researchers, not just internal DeepMind teams. That's a hedge — DeepMind is effectively crowdsourcing the research agenda on a problem they've publicly admitted they don't have fully solved. For academic labs and safety-focused startups, this is a meaningful signal about where grant funding and collaboration opportunities are concentrating in H2 2026.</p><blockquote><p>"As AI systems increasingly operate as networks of interacting agents rather than isolated models, the safety challenges multiply in ways that single-agent frameworks are poorly equipped to handle."</p><cite>— Google DeepMind Blog, June 2026</cite></blockquote><p>The timing connects directly to the governance paper above: attestation models and multi-agent safety research are converging on the same problem from different directions. One asks "how do we constrain what agents do?" The other asks "how do we understand what a system of agents will do?" Both are unanswered at production scale.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              DeepMind: Multi-Agent Safety Funding
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Prompt Injection Found a New Target: Résumé Screening</h2>
+          <p>Researchers published a controlled study this week on <a href="https://arxiv.org/abs/2606.27287v1">prompt injection in automated résumé screening</a> — and the findings are specific enough to be uncomfortable. The attack vector: candidates embed subtle self-promotional text designed to manipulate LLM rankings without adding any actual qualifications. In homogeneous candidate pools with few candidates, the injection reliably improves rankings. Effectiveness degrades as the pool grows and diversity increases, but the attack works consistently in the conditions that matter most: early-stage screening of similar candidates.</p><p>What makes this different from prior prompt injection research is the deployment context. Résumé screening is already happening at scale — companies like Workday, Greenhouse, and dozens of AI-native HR startups are using LLMs to rank and filter applicants. The paper doesn't name specific products, but the attack surface is clearly live, not theoretical.</p><p>There's a secondary implication that the paper doesn't fully address: if candidates are injecting text to game LLM screeners, the screeners' training data for future fine-tuning will increasingly reflect injected behavior. The poison accumulates quietly. This is the same loop Kapoor identified in benchmark contamination, applied to a hiring context where the stakes for individual humans are higher than academic leaderboards.</p><blockquote><p>"Prompt injection reliably improves applicant rankings when résumé quality is homogeneous and few candidates are present — precisely the conditions most common in specialized or senior-level hiring pipelines."</p><cite>— Baxi et al., arXiv:2606.27287</cite></blockquote><p>For teams building any kind of LLM-powered document evaluation — not just hiring — this research is a stress test. The fix isn't obvious: you can sanitize inputs, but candidates can always reformat injections to look like legitimate prose. Structural defenses (scoring dimensions independently, requiring human review above a threshold) are more robust than input filtering alone.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.27287v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Prompt Injection in Résumé Screening (arXiv)
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>The local coding agent story is no longer purely about hobbyists — Raschka's analysis shows the capability gap is narrow enough for compliance-sensitive teams to justify the infrastructure cost. If your product targets regulated industries, building local deployment into your roadmap now positions you ahead of the procurement conversation that's coming.</li><li>The attestation governance model is the most actionable framework to emerge from agent safety research this week. Before your next agent ships to production, map which actions are irreversible and build logging that produces verifiable, asynchronous audit trails — not just logs you might review later.</li><li>DeepMind's $10M open call is a signal that multi-agent safety is officially an underfunded research gap, not a solved problem. If you're running orchestrator-subagent architectures in production, you're ahead of the research — which means you need to be running your own failure-mode experiments, not waiting for papers to catch up.</li><li>Prompt injection is moving into document evaluation pipelines — hiring, legal review, compliance — wherever LLMs score or rank free-text submissions. Structural defenses (dimension-level scoring, human review thresholds) outperform input sanitization; update your threat model before this becomes a customer trust incident.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://magazine.sebastianraschka.com/p/using-local-coding-agents" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Raschka: Local Coding Agents
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.26298v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Governing Actions, Not Agents
+            </a>
+            
+            <a href="https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              DeepMind Safety Funding
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.27287v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Résumé Injection Study
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/deepseek-ai/DeepSpec">deepseek-ai/DeepSpec</a>
+              <span class="side-meta">Python · ⭐ 1,489</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/winsznx/theeleven">winsznx/theeleven</a>
+              <span class="side-meta">TypeScript · ⭐ 648</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/QwenLM/Qwen-AgentWorld">QwenLM/Qwen-AgentWorld</a>
+              <span class="side-meta">Python · ⭐ 599</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/benchflow-ai/awesome-evals">benchflow-ai/awesome-evals</a>
+              <span class="side-meta">None⭐ 537</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/HKUDS/AgentSpace">HKUDS/AgentSpace</a>
+              <span class="side-meta">TypeScript · ⭐ 486</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/fancydirty/mediary-scout">fancydirty/mediary-scout</a>
+              <span class="side-meta">TypeScript · ⭐ 379</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Introduced Gemma 4 12B, a unified encoder-free multimodal model.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Launched Gemini 3.5 Live Translate bringing near real-time, natural speech translation to Google AI Studio, Google Translate and Google Meet.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Released Claude Tag, a Slack integration enabling multiplayer, proactive, and persistent AI agents.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.23835">ABACUS: Adapting Unified Foundation Model for Bridging Image Count Understanding and Generation</a>
+              <span class="side-meta">ABACUS is a unified vision-language model that handles object counting, crowd counting, referring-expression counting, and count-faithful image generation without any benchmark-specific training requi</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.26080">Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents</a>
+              <span class="side-meta">Process reward models enable fine-grained, step-level evaluation of LLMs, yet building them for agentic settings remains prohibitively difficult: long-horizon interactions, irreversible actions, and s</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.26875">Information-Aware KV Cache Compression for Long Reasoning</a>
+              <span class="side-meta">Reasoning capability has advanced rapidly in large language models (LLMs), leading to an increasing size of key-value (KV) cache in both prefilling and decoding stages. Existing KV cache compression m</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.27277">EO-WM: A Physically Informed World Model for Probabilistic Earth Observation Forecasting</a>
+              <span class="side-meta">Earth Observation (EO) forecasting aims to predict future Earth surface dynamics from satellite observations under changing meteorological conditions. In this paper, we view this task as a partially o</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.27192">LISA: Likelihood Score Alignment for Visual-condition Controllable Generation</a>
+              <span class="side-meta">The prevalent dual-branch paradigm, i.e., training a side network to encode visual conditions and fusing its intermediate-layer features to a frozen pretrained main network, has shown remarkable succe</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
