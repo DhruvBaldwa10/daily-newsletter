@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "date": "2026-06-29",
+      "title": "Claude Returns, Open Models Expand",
+      "headings": [
+        "Claude Fable 5 Is Almost Back \u2014 And the Suspension Still Matters",
+        "The Open Ecosystem Grows Sideways: Zyphra, Cohere, Poolside",
+        "Agents That Remember What They Learned",
+        "LLMs Meet Unglamorous Hardware: PCB Design Benchmarks",
+        "The RAG Reliability Problem Nobody Fixes Until Production",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://aiworkflowreliability.com/blog/reliability-framework-for-ai-engineers/",
+        "https://arxiv.org/abs/2606.23704",
+        "https://eugeneyan.com//writing/working-with-ai/",
+        "https://github.com/Kulaxyz/self-learning-skills",
+        "https://github.com/digailab/PCB-Bench",
+        "https://github.com/itsthelore/rac-core",
+        "https://hamel.dev/blog/posts/field-guide/",
+        "https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon",
+        "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside",
+        "https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety",
+        "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos"
+      ]
+    },
+    {
       "date": "2026-06-28",
       "title": "Local Models, Governance Gaps, Smart Contracts",
       "headings": [
@@ -735,55 +760,6 @@
         "https://simonwillison.net/2026/May/29/anthropic/#atom-everything",
         "https://venturebeat.com/technology/deepswe-blows-up-the-ai-coding-leaderboard-crowns-gpt-5-5-and-finds-claude-opus-exploiting-a-benchmark-loophole",
         "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
-        "https://www.latent.space/p/ainews-cognition-raises-1b-in-26b",
-        "https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks",
-        "https://www.latent.space/p/cognition"
-      ]
-    },
-    {
-      "date": "2026-05-29",
-      "title": "Anthropic Hits $47B, Agents Take Over",
-      "headings": [
-        "Anthropic's $47B Run-Rate Is a Reality Check for Everyone",
-        "Claude Opus 4.8, Codex Blitz, and the Agentic Coding Land Grab",
-        "The Mystery Model on Top of OpenRouter: Hy3",
-        "Agentic Security Is Broken and Getting Worse",
-        "Open Models Are Compounding \u2014 And China Is Lapping the Field"
-      ],
-      "urls": [
-        "https://buildingbetter.tech/p/i-read-the-claude-code-source-code",
-        "https://github.com/0xSero/codex-shim",
-        "https://github.com/MoonshotAI/kimi-code",
-        "https://github.com/OpenBMB/PilotDeck",
-        "https://github.com/RasmusGodske/claude-hook-utils",
-        "https://github.com/op7418/guizang-social-card-skill",
-        "https://github.com/open-gsd/get-shit-done-redux",
-        "https://github.com/sqlite/sqlite/blob/master/AGENTS.md",
-        "https://github.com/study8677/awesome-architecture",
-        "https://huggingface.co/papers/2605.25378",
-        "https://huggingface.co/papers/2605.26029",
-        "https://huggingface.co/papers/2605.29486",
-        "https://huggingface.co/papers/2605.30189",
-        "https://huggingface.co/papers/2605.30346",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://minimaxir.com/2026/05/openrouter-hy3/",
-        "https://news.ycombinator.com/item?id=48317294",
-        "https://openai.com/index/cisco",
-        "https://openai.com/index/endava",
-        "https://openai.com/index/gartner-2026-agentic-coding-leader",
-        "https://openai.com/index/virgin-atlantic",
-        "https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/",
-        "https://simonwillison.net/2026/May/26/the-pressure/#atom-everything",
-        "https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything",
-        "https://simonwillison.net/2026/May/27/sqlite-agents/#atom-everything",
-        "https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything",
-        "https://simonwillison.net/2026/May/29/anthropic/#atom-everything",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-        "https://www.interconnects.ai/p/reading-todays-open-closed-performance",
-        "https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may",
-        "https://www.latent.space/p/ainews-anthropic-raises-965b-series",
         "https://www.latent.space/p/ainews-cognition-raises-1b-in-26b",
         "https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks",
         "https://www.latent.space/p/cognition"
