@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-06-30",
+      "title": "Evals, Memory Leaks, Self-Scaffolding Models",
+      "headings": [
+        "\"It's Hard to Eval\" Is Your Product Telling You Something",
+        "Ornith-1.0: A Coding Model That Scaffolds Itself",
+        "Deleting Agent Memory Doesn't Delete Anything",
+        "Open Memory Protocol: One Store to Rule All Your AI Tools",
+        "Engineering Teams Are Starting to Push Back on AI Spend",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.29788v1",
+        "https://blog.pragmaticengineer.com/the-pulse-a-trend-of-trying-to-cut-back-on-ai-spend-within-eng-departments/",
+        "https://blog.pragmaticengineer.com/the-pulse-token-spend-breaks-budgets-what-next/",
+        "https://deep-reinforce.com/ornith_1_0.html",
+        "https://eugeneyan.com//writing/product-evals/",
+        "https://github.com/SMJAI/open-memory-protocol",
+        "https://hamel.dev/blog/posts/eval-smell/",
+        "https://hamel.dev/blog/posts/eval-tools/",
+        "https://news.ycombinator.com/item?id=48726966",
+        "https://simonwillison.net/2026/Jun/29/ornith/#atom-everything"
+      ]
+    },
+    {
       "date": "2026-06-29",
       "title": "Claude Returns, Open Models Expand",
       "headings": [
@@ -720,49 +744,6 @@
         "https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything",
         "https://www.anthropic.com/engineering/how-we-contain-claude",
         "https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai"
-      ]
-    },
-    {
-      "date": "2026-05-30",
-      "title": "Anthropic's $47B Moment Arrives",
-      "headings": [
-        "Anthropic's Revenue Reality Check: PMF Is No Longer a Question",
-        "Claude Opus 4.8, DeepSWE, and the Benchmark Trust Collapse",
-        "The Async Agent Era: Devin at 80%, Excel Goes Agentic, Budgets Blow Up",
-        "Agentic Security Is Becoming a Product Crisis",
-        "Context Engineering Gets a Metadata Layer: AGENTS.md and llms.txt Go Mainstream"
-      ],
-      "urls": [
-        "https://commandline.microsoft.com/mukul-singh-excel-agent-mode-copilot-research-into-product/",
-        "https://docsalot.dev/blog/llms-txt-examples",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/UditAkhourii/adhd",
-        "https://github.com/baoweise-bot/aimili-vpngate",
-        "https://github.com/helloianneo/ian-xiaohei-illustrations",
-        "https://github.com/jqwik-team/jqwik/issues/708",
-        "https://github.com/op7418/guizang-social-card-skill",
-        "https://github.com/schildep/verified-polygon-intersection",
-        "https://github.com/study8677/awesome-architecture",
-        "https://github.com/withkynam/vibecode-pro-max-kit",
-        "https://huggingface.co/papers/2605.21781",
-        "https://huggingface.co/papers/2605.23235",
-        "https://huggingface.co/papers/2605.24785",
-        "https://huggingface.co/papers/2605.24786",
-        "https://huggingface.co/papers/2605.30161",
-        "https://openai.com/index/endava",
-        "https://red.anthropic.com/2026/exploit-evals/",
-        "https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/",
-        "https://simonwillison.net/2026/May/26/the-pressure/",
-        "https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything",
-        "https://simonwillison.net/2026/May/27/sqlite-agents/#atom-everything",
-        "https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything",
-        "https://simonwillison.net/2026/May/29/anthropic/#atom-everything",
-        "https://venturebeat.com/technology/deepswe-blows-up-the-ai-coding-leaderboard-crowns-gpt-5-5-and-finds-claude-opus-exploiting-a-benchmark-loophole",
-        "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
-        "https://www.latent.space/p/ainews-cognition-raises-1b-in-26b",
-        "https://www.latent.space/p/ainews-new-ai-infra-decacorns-fireworks",
-        "https://www.latent.space/p/cognition"
       ]
     }
   ]

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evals, Memory Leaks, Self-Scaffolding Models — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Tuesday, June 30, 2026</div>
+        <h1>Evals, Memory Leaks, Self-Scaffolding Models</h1>
+        
+        <p class="subtitle">A sharp new framework reframes bad evals as a product design flaw, not a tooling gap. Meanwhile, a fresh open-weights coding model bootstraps its own scaffolding, and a new paper proves that deleting agent memory doesn't actually delete anything.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>"It's Hard to Eval" Is Your Product Telling You Something</h2>
+          <p>Hamel Husain published one of the more provocative takes in the evals space in a while: <a href="https://hamel.dev/blog/posts/eval-smell/">"It's Hard to Eval" Is a Product Smell</a>. The argument is pointed — when a team says evaluation is too difficult, that's almost never a tooling problem. It's a sign that the product itself lacks clarity about what it's supposed to do.</p><p>Husain's framing cuts against the dominant discourse, which spends enormous energy on <em>which</em> eval framework to pick. His companion piece, <a href="https://hamel.dev/blog/posts/eval-tools/">Selecting The Right AI Evals Tool</a>, is practically a disclaimer: the tool choice is downstream of having a coherent definition of success. Without that, Braintrust and LangSmith and custom harnesses are all equally useless.</p><p>This lands alongside <a href="https://eugeneyan.com//writing/product-evals/">Eugene Yan's three-step product eval method</a> — label data, align LLM-evaluators, run the harness — which offers a concrete counterpoint: evals aren't mystical, they're just disciplined. Yan's framework treats eval as a recurring engineering task, not a research problem to be solved once and shelved.</p><p>The two posts together make a useful pair. Husain tells you when you're not ready to evaluate. Yan tells you how to do it when you are. What neither can solve is the organizational habit of treating evaluation as something you bolt on after shipping rather than design in from the start.</p><blockquote><p>"If you find yourself saying 'it's hard to eval this,' that's the product speaking. It's telling you the requirements aren't clear enough to be testable."</p><cite>— Hamel Husain, hamel.dev</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://hamel.dev/blog/posts/eval-smell/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Hamel Husain – Eval Smell
+            </a>
+            
+            <a href="https://hamel.dev/blog/posts/eval-tools/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Hamel Husain – Eval Tools
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/product-evals/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Eugene Yan – Product Evals
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Ornith-1.0: A Coding Model That Scaffolds Itself</h2>
+          <p>DeepReinforce dropped its first model release: <a href="https://simonwillison.net/2026/Jun/29/ornith/#atom-everything">Ornith-1.0</a>, a family of open-weights models (MIT licensed) built specifically for agentic coding. The lineup spans four variants — 9B Dense, 31B Dense, 35B MoE, and 397B MoE — and the base layers are built on top of pretrained Gemma 4 and Qwen 3.5. Simon Willison flagged it as genuinely noteworthy: it claims state-of-the-art among open-source models at comparable sizes on coding benchmarks.</p><p>What makes Ornith distinct isn't the scale or the benchmark numbers — it's the framing. The model is trained for "self-scaffolding," meaning it's designed to manage its own agentic loop rather than rely on an external orchestration layer. Most coding agents today are a capable model bolted onto a scaffolding harness (Claude Code, Codex, Cursor's agent mode). Ornith attempts to bake the scaffolding behavior into the weights themselves.</p><p>Whether that claim holds up in production is a separate question. Benchmark-leading open-source coding models have a habit of underdelivering when real codebases replace synthetic tasks. But the architecture choice is interesting: if scaffolding is learnable behavior, then models can potentially adapt how they use tools and manage context based on the task, rather than executing a fixed harness script. That's a meaningful bet on where agentic coding goes next — away from frameworks, toward models that understand their own execution environment.</p><p>At 397B MoE on the high end, the largest variant isn't exactly laptop-friendly, but the 9B and 31B dense variants bring this within reach for teams self-hosting on commodity GPU clusters.</p><blockquote><p>"Built on top of pretrained Gemma 4 and Qwen 3.5, it achieves state-of-the-art performance among open-source models of comparable size on coding benchmarks."</p><cite>— DeepReinforce, via Simon Willison</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jun/29/ornith/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Simon Willison – Ornith-1.0
+            </a>
+            
+            <a href="https://deep-reinforce.com/ornith_1_0.html" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              DeepReinforce – Ornith-1.0 Paper
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Deleting Agent Memory Doesn't Delete Anything</h2>
+          <p>A paper out of arXiv this week deserves immediate attention from anyone building multimodal agents with persistent memory: <a href="https://arxiv.org/abs/2606.29788v1">MemLeak: Diagnosing Information Leaks in Multimodal Agent Memory</a>. The core finding is uncomfortable. When you delete a fact from a multimodal agent's memory store — removing the text entry, marking it purged — the underlying VLM can still recover that fact at inference time from retained images tagged to completely different facts. The model uses implicit visual cues to reconstruct what you told it to forget.</p><p>The researchers introduce the Information Provenance Graph (IPG), a taxonomy that classifies memory representations by what the paper calls "deletion affordance" — basically, whether it's actually possible to fully remove a piece of information given how it's stored. The short answer, for most current architectures: no. Deletion fails through multiple channels simultaneously.</p><p>This has direct product consequences. Compliance use cases — GDPR right-to-erasure requests, healthcare data handling, enterprise data governance — are built on the assumption that deleting a record actually removes it. That assumption is wrong for multimodal agents with image memory. A user who shared a photo tied to sensitive information, then requested deletion, may have their information still accessible to the system.</p><p>The problem is likely worse than the paper can quantify, because it's an emergent property of how VLMs do cross-modal reasoning. You can't fix it with a better delete button. The IPG framework is a starting point for reasoning about where the leakage actually happens — and what architectural changes might close those channels.</p><blockquote><p>"The fact can remain recoverable from retained user images, including images tagged to entirely different facts, because VLMs use implicit visual cues at inference time."</p><cite>— Kuan Wang & Chao Zhang, MemLeak (arXiv:2606.29788)</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.29788v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              MemLeak – arXiv
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Open Memory Protocol: One Store to Rule All Your AI Tools</h2>
+          <p>A new open-source project hit Hacker News: <a href="https://github.com/SMJAI/open-memory-protocol">Open Memory Protocol (OMP)</a>, positioning itself as a unified memory layer for Claude, ChatGPT, Cursor, and other AI assistants. The pitch is simple — rather than each tool maintaining its own memory silo, OMP gives all of them a shared, portable memory store that persists across sessions and surfaces.</p><p>The project is early (21 upvotes, 7 comments on HN), but the problem it's solving is real and growing. Power users who run Claude Code in the terminal, Cursor in the IDE, and ChatGPT in the browser are working across three separate memory contexts. Each tool re-learns preferences, project context, and user habits independently. That's not just friction — it means more tokens spent re-establishing context on every session, and more surface area for inconsistencies between tools.</p><p>OMP is trying to do for AI memory what OAuth did for login — standardize the protocol so application-layer tools can plug in rather than build from scratch. The comparison flatters the project, but the direction is correct. As teams standardize on multiple AI tools for different workflows, the per-tool memory isolation problem compounds. A project that started with one Claude Code session and migrated to Cursor mid-sprint loses all context continuity.</p><p>What OMP doesn't yet answer is the security model. Shared memory across tools means a vulnerability in one tool's memory access is a vulnerability in all of them — exactly the cross-contamination risk MemLeak identifies from a different angle. The protocol needs a trust boundary story before it's production-ready.</p><blockquote><p>"One Memory Store for Claude, ChatGPT, Cursor" — the project's own framing signals how clearly the market gap is understood, even if the solution is nascent.</p><cite>— SMJAI, Open Memory Protocol GitHub</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/SMJAI/open-memory-protocol" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🗄️</span>
+              Open Memory Protocol – GitHub
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=48726966" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              HN Discussion
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Engineering Teams Are Starting to Push Back on AI Spend</h2>
+          <p>Gergely Orosz published a piece in mid-June that deserves a second look now: <a href="https://blog.pragmaticengineer.com/the-pulse-a-trend-of-trying-to-cut-back-on-ai-spend-within-eng-departments/">a trend of trying to cut back on AI spend within engineering departments</a>. The signal is subtle but consistent — after the initial wave of AI tooling adoption, some engineering orgs are looking hard at what they're actually getting for their token spend.</p><p>This follows his earlier reporting from April: <a href="https://blog.pragmaticengineer.com/the-pulse-token-spend-breaks-budgets-what-next/">token spend breaks budgets</a>, covering 15 companies whose AI agent spending exploded over a 2-3 month window. The pattern: teams ship agents, agents work, usage compounds, bills arrive, finance gets involved. The question of ROI — which was easy to defer during the "exploration" phase — becomes unavoidable.</p><p>The pushback isn't coming from skeptics. It's coming from teams that deployed successfully and are now trying to understand which workloads justify Sonnet-level spend versus something cheaper or self-hosted. That's a mature conversation, and it's forcing a level of eval rigor that enthusiasm alone couldn't generate. Companies can't just point at "AI did a thing" as justification anymore — finance wants the cost-per-task curve.</p><p>This creates a specific pressure on AI tooling vendors: customers who moved fast on adoption are now moving deliberately on consolidation. The teams that built clear success metrics from day one (see: Hamel Husain's eval framework above) are in a much better negotiating position than those who shipped wide and hoped the value would be obvious.</p><blockquote><p>"In the past 2-3 months, spending on AI agents has exploded at many tech companies" — and now the reckoning is arriving at the same speed.</p><cite>— Gergely Orosz, Pragmatic Engineer</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://blog.pragmaticengineer.com/the-pulse-a-trend-of-trying-to-cut-back-on-ai-spend-within-eng-departments/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Pragmatic Engineer – AI Spend Cutbacks
+            </a>
+            
+            <a href="https://blog.pragmaticengineer.com/the-pulse-token-spend-breaks-budgets-what-next/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📉</span>
+              Pragmatic Engineer – Token Budgets
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>If your team finds evals hard to write, treat it as a product spec problem before reaching for a new framework — Hamel Husain's framing is a useful diagnostic: unclear evals usually mean unclear success criteria, and fixing the spec will do more than switching tools.</li><li>Multimodal agent memory is not safe to treat as deletable — the MemLeak paper shows that VLMs reconstruct "deleted" facts from retained images, which means any product with right-to-erasure obligations or sensitive data handling needs to audit its memory architecture now, not after a compliance incident.</li><li>Open Memory Protocol points at a real infrastructure gap, but the security model isn't there yet — shared memory across tools is only useful if it has clear trust boundaries, so watch this space but don't integrate it into anything that touches sensitive user data until the access controls are specified.</li><li>The budget pushback on AI agent spend is a forcing function for the evals work teams have been deferring — engineering orgs that can show cost-per-task data will keep their AI budgets; those that can't are facing consolidation conversations they aren't prepared for.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://hamel.dev/blog/posts/eval-smell/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Hamel Husain – Eval Smell
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.29788v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              MemLeak – arXiv
+            </a>
+            
+            <a href="https://github.com/SMJAI/open-memory-protocol" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🗄️</span>
+              Open Memory Protocol
+            </a>
+            
+            <a href="https://blog.pragmaticengineer.com/the-pulse-a-trend-of-trying-to-cut-back-on-ai-spend-within-eng-departments/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💰</span>
+              Pragmatic Engineer – AI Spend
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/deepseek-ai/DeepSpec">deepseek-ai/DeepSpec</a>
+              <span class="side-meta">Python · ⭐ 4,119</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/winsznx/theeleven">winsznx/theeleven</a>
+              <span class="side-meta">TypeScript · ⭐ 715</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/benchflow-ai/awesome-evals">benchflow-ai/awesome-evals</a>
+              <span class="side-meta">None⭐ 592</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Pluviobyte/video-production-skills">Pluviobyte/video-production-skills</a>
+              <span class="side-meta">Python · ⭐ 456</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/tdeverx/contained-app">tdeverx/contained-app</a>
+              <span class="side-meta">Swift · ⭐ 407</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/goehou/tabbit-toy">goehou/tabbit-toy</a>
+              <span class="side-meta">JavaScript · ⭐ 398</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">DeepReinforce</div>
+              <span class="launch-detail">Released Ornith-1.0, an open-weight MIT-licensed model for agentic coding with variants ranging from 9B to 397B parameters, built on Gemma 4 and Qwen 3.5.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Launched Gemini 3.5 Live Translate, bringing near real-time natural speech translation to Google AI Studio, Google Translate, and Google Meet.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Released Gemma 4 12B, a unified encoder-free multimodal model.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Launched GPT-5 Pro with new ad monetization features targeting the 700m+ free user base.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Removed Claude Code access from some paid accounts due to capacity constraints following compute expansion.</span>
+              <span class="launch-tag tag-deprecation">Deprecation</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.24256">Trimming the Long-Tail of Visual World Modeling Evaluation</a>
+              <span class="side-meta">Physical interactions follow a long-tailed distribution: a set of common and regular interactions dominates human experience and visual data, while a broad spectrum of rare and irregular interactions </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.26740">LiveEdit: Towards Real-Time Diffusion-Based Streaming Video Editing</a>
+              <span class="side-meta">Streaming video editing has made rapid progress, yet practical deployment is still limited by two core issues: maintaining stable backgrounds and non-edited regions over time, and achieving the low la</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.30292">DreamForge-World 0.1 Preview: A Low-Compute Real-Time Controllable World Model</a>
+              <span class="side-meta">We present DreamForge-World 0.1 Preview, a preview foundational world model for real-time interactive world simulation. The system adapts the LongLive 1 autoregressive video stack, itself derived from</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.29655">Geometric Stability of Neural Population Codes: Regional Variation, Behavioral Relevance, and Circuit Dependence</a>
+              <span class="side-meta">Current models of representational reliability in neural populations focus on temporal stability: whether population centroids are preserved across sessions and days. This framing leaves a fundamental</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.28480">TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents</a>
+              <span class="side-meta">As large language models and harness frameworks continue to advance, agents operating in terminals are increasingly capable of performing a broader range of general computer-use tasks beyond coding. H</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
