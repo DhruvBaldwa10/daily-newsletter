@@ -1,6 +1,35 @@
 {
   "entries": [
     {
+      "date": "2026-07-01",
+      "title": "Claude's New Stack, Top to Bottom",
+      "headings": [
+        "Claude Sonnet 5 Arrives, and It's Built for Agents First",
+        "Google Drops Nano Banana 2 and Gemini Omni Flash \u2014 The Quiet Half of the Frontier",
+        "ScarfBench: Why Java Migration Is AI's Next Real-World Test",
+        "Tables Break LLMs in Ways Nobody Fully Measured Until Now",
+        "Agents That Record Their Own Work \u2014 and the Bigger Idea Behind It",
+        "Evals Get a Universal Display Layer on Hugging Face",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.31966v1",
+        "https://arxiv.org/abs/2606.32029v1",
+        "https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/",
+        "https://github.com/simonw/shot-scraper/releases/tag/1.10",
+        "https://huggingface.co/blog/eee-community-evals",
+        "https://huggingface.co/blog/ibm-research/scarfbench",
+        "https://old.reddit.com/r/ClaudeAI/comments/1ujwggp/introducing_claude_sonnet_5_our_most_agentic/",
+        "https://simonwillison.net/2026/Jun/30/claude-sonnet-5/",
+        "https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything",
+        "https://twitter.com/synthwavedd/status/2072103052635451559",
+        "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+        "https://www.latent.space/p/ainews-sonnet-5-today-and-fable-5",
+        "https://www.latent.space/p/forward-deployed-engineers-aiewf",
+        "https://www.normaltech.ai/p/did-googles-ai-agents-really-build"
+      ]
+    },
+    {
       "date": "2026-06-30",
       "title": "Evals, Memory Leaks, Self-Scaffolding Models",
       "headings": [
@@ -716,34 +745,6 @@
         "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
         "https://www.latent.space/p/ainews-nvidia-cosmos-3-nemotron-3",
         "https://www.theregister.com/ai-and-ml/2026/06/02/github-copilot-users-threaten-exit-as-metered-billing-kicks-in/5249826"
-      ]
-    },
-    {
-      "date": "2026-06-01",
-      "title": "Sandboxes, Slop, and Reliable Agents",
-      "headings": [
-        "Anthropic Opens the Sandbox Lid",
-        "Frontier Models Can't Do Enterprise IT \u2014 A New Benchmark Says So",
-        "NVIDIA's Cosmos 3 Is a Physical-AI Bet on Open Models",
-        "Agent Memory Gets a Provenance Architecture",
-        "Evals Are a Skill Gap, Not a Tooling Gap",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2605.30590v1",
-        "https://arxiv.org/abs/2605.30771v1",
-        "https://arxiv.org/abs/2605.31509v1",
-        "https://github.com/bernardohcrocha/claude-code-os/",
-        "https://github.com/pssah4/vault-operator",
-        "https://hamel.dev/blog/posts/eval-tools/",
-        "https://hamel.dev/blog/posts/evals-faq/",
-        "https://hamel.dev/blog/posts/evals-skills/",
-        "https://hamel.dev/blog/posts/field-guide/",
-        "https://huggingface.co/blog/ibm-research/itbench-aa",
-        "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai",
-        "https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything",
-        "https://www.anthropic.com/engineering/how-we-contain-claude",
-        "https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai"
       ]
     }
   ]

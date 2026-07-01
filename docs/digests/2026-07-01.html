@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude's New Stack, Top to Bottom — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Wednesday, July 01, 2026</div>
+        <h1>Claude's New Stack, Top to Bottom</h1>
+        
+        <p class="subtitle">Sonnet 5 ships today with a dedicated agentic focus, Fable 5 export controls drop tomorrow, and Google quietly releases two new Gemini variants. Plus: a benchmark nobody asked for but everyone needs — migrating enterprise Java with AI agents.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Claude Sonnet 5 Arrives, and It's Built for Agents First</h2>
+          <p>Anthropic didn't wait until Fable 5 was fully cleared. On July 1st, <a href="https://old.reddit.com/r/ClaudeAI/comments/1ujwggp/introducing_claude_sonnet_5_our_most_agentic/">Claude Sonnet 5 launched</a> as what Anthropic is calling its "most agentic" model yet — a deliberate framing that signals where the product is heading. <a href="https://simonwillison.net/2026/Jun/30/claude-sonnet-5/">Simon Willison's breakdown</a> highlights the specifics: stronger tool use, better instruction following in long multi-step tasks, and reduced refusal rates on edge cases that previously frustrated production deployments. The <a href="https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf">system card PDF</a> is already out, which means safety evals are public from day one — a discipline Anthropic has been consistent about.</p><p>Meanwhile, <a href="https://twitter.com/synthwavedd/status/2072103052635451559">export controls on Claude Fable 5 were lifted</a> the same day — a signal that the suspension Anthropic imposed in late June was short-lived and that international API access returns at full capacity soon. <a href="https://www.latent.space/p/ainews-sonnet-5-today-and-fable-5">Latent Space's swyx</a> called the double-move "Sonnet 5 today, Fable 5 tomorrow" — the cleanest product sequencing Anthropic has managed in months.</p><p>For teams building agentic pipelines, the practical question is whether Sonnet 5 closes the gap with Fable 5 enough to avoid the cost premium, or whether the flagship is still the right call for high-stakes task loops. The system card metrics will answer that faster than any vibe check.</p><blockquote><p>"Everything is open again!"</p><cite>— swyx, <a href="https://www.latent.space/p/ainews-sonnet-5-today-and-fable-5">Latent Space AINews</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://old.reddit.com/r/ClaudeAI/comments/1ujwggp/introducing_claude_sonnet_5_our_most_agentic/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Claude Sonnet 5 Reddit
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Jun/30/claude-sonnet-5/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison
+            </a>
+            
+            <a href="https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              System Card PDF
+            </a>
+            
+            <a href="https://twitter.com/synthwavedd/status/2072103052635451559" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🐦</span>
+              Export control lifted
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-sonnet-5-today-and-fable-5" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚀</span>
+              Latent Space
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Google Drops Nano Banana 2 and Gemini Omni Flash — The Quiet Half of the Frontier</h2>
+          <p>While Anthropic dominated the feed, <a href="https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/">Google DeepMind quietly published availability for Nano Banana 2 Lite and Gemini Omni Flash</a> yesterday — the kind of release that doesn't get a keynote but matters considerably for developers pricing out inference at scale. Nano Banana 2 Lite continues Google's push into on-device and edge deployment, while Gemini Omni Flash is positioned as a fast, cheap multimodal option for applications that need image, audio, and text in a single call without burning through budget.</p><p>The context here is that Google has been running a two-track strategy: keep flagship Gemini competitive at the top, while flooding the mid-tier and edge with lightweight variants that lock in developers on GCP and Android. Nano Banana 2 Lite is specifically aimed at the latter — apps that need AI capability without network latency or data-leaving-device concerns.</p><p>Neither model has a public benchmark card as of this writing, which is becoming a pattern for Google's lighter releases: ship fast, benchmark later. That's a reasonable trade for speed-to-market, but it puts the burden of evaluation on whoever integrates first. If you're considering Gemini Omni Flash for a latency-sensitive product, expect to run your own evals before committing to the stack.</p><blockquote><p>"Start building with Nano Banana 2 Lite and Gemini Omni Flash"</p><cite>— <a href="https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/">Google DeepMind Blog</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              DeepMind Blog
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>ScarfBench: Why Java Migration Is AI's Next Real-World Test</h2>
+          <p>IBM Research dropped <a href="https://huggingface.co/blog/ibm-research/scarfbench">ScarfBench on Hugging Face</a> — a benchmark specifically designed to evaluate AI agents on enterprise Java framework migration tasks. This is unglamorous work: moving codebases between Spring versions, updating deprecated APIs, resolving dependency conflicts across hundreds of files. It's also the kind of work that actually costs companies millions in engineering hours and where a capable agent would deliver immediate, measurable ROI.</p><p>The benchmark spans multiple migration scenarios, tests both correctness (does the code compile and pass tests after migration?) and completeness (did the agent touch all the files that needed touching?). Early results suggest current agents handle isolated class-level migrations reasonably well but struggle when dependency chains span modules — exactly the hard case that matters in real enterprise codebases.</p><p>This release lands a week after the AI Snake Oil crew published their skeptical take on <a href="https://www.normaltech.ai/p/did-googles-ai-agents-really-build">Google's $916 OS claim</a>, arguing that independent evaluation is consistently missing from high-profile agent demos. ScarfBench is the kind of antidote to that criticism: a concrete, reproducible task with an unambiguous success criterion. The fact that IBM built it for their own sales motion doesn't make the benchmark less useful — every framework vendor has an interest in knowing how well agents handle their migration paths.</p><blockquote><p>"Correctness and completeness" across multi-module Java migrations is where current agents hit their ceiling, per early ScarfBench runs.</p><cite>— <a href="https://huggingface.co/blog/ibm-research/scarfbench">IBM Research / Hugging Face Blog</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://huggingface.co/blog/ibm-research/scarfbench" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              ScarfBench HF Blog
+            </a>
+            
+            <a href="https://www.normaltech.ai/p/did-googles-ai-agents-really-build" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🐍</span>
+              AI Snake Oil
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Tables Break LLMs in Ways Nobody Fully Measured Until Now</h2>
+          <p>A paper out of arXiv yesterday — <a href="https://arxiv.org/abs/2606.32029v1">"When LLMs Read Tables Carelessly"</a> — presents the first systematic, large-scale study of data referencing errors (DREs): cases where a model understands a table's structure but still incorrectly cites or omits specific values when reasoning through it. Prior work measured final-answer accuracy. This paper goes one level deeper and finds that intermediate reasoning steps are riddled with referencing mistakes even when the final answer happens to be correct — a compounding reliability problem for any product that uses LLMs to summarize or analyze structured data.</p><p>The distinction matters because many teams assume that if output quality looks good, the reasoning is trustworthy. DREs expose that assumption: a model can reach the right answer via faulty citation, which means it will fail unpredictably on slightly different inputs. For products built on financial data, analytics dashboards, or any tabular source of truth, this is a precision problem hiding inside a recall metric.</p><p>The paper tests across different model sizes and table formats and finds that larger context windows — counterintuitively — don't reliably reduce DRE rates. The problem isn't attention span; it's a more fundamental issue in how models track cell-level references across multi-step chains. Mitigation strategies explored include structured output constraints and intermediate verification steps, both of which add latency but meaningfully reduce error rates.</p><blockquote><p>"DREs directly compromise the correctness and reliability of intermediate reasoning steps... prior studies have only offered limited, small-scale analyses."</p><cite>— Yuqing Yang et al., <a href="https://arxiv.org/abs/2606.32029v1">arXiv 2606.32029</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2606.32029v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              arXiv DRE paper
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agents That Record Their Own Work — and the Bigger Idea Behind It</h2>
+          <p>Simon Willison shipped <a href="https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything">shot-scraper 1.10</a> with a new <code>shot-scraper video storyboard.yml</code> command — a small release with a specific, sharp use case: you give an agent a storyboard YAML file describing what to do in a web app, and Playwright records the whole session as video. The output is a demo artifact the agent generated itself.</p><p>The surface area is narrow but the design instinct is worth borrowing from. Willison's framing is that agents need to produce evidence of their work, not just outputs. A finished PR doesn't show what the agent tried and abandoned. A summary doesn't capture ambiguity or tool failures. Video — especially AI-generated video of AI-driven browser sessions — creates an audit trail that's legible to humans who weren't watching in real time.</p><p>This connects to a pattern showing up across multiple agent platforms: the pressure to make agentic work inspectable. <a href="https://www.latent.space/p/forward-deployed-engineers-aiewf">Latent Space's piece on forward-deployed engineers</a> makes a related point: as product engineers start converging with FDEs, the ability to show a customer exactly what an agent did — step by step — becomes a trust and sales requirement, not just a debugging nicety. Shot-scraper video is a small tool solving a real version of that problem, and it composes cleanly with existing CI pipelines.</p><blockquote><p>"I've written before about the importance of providing evidence of what your agents have done — video is a compelling format for this."</p><cite>— Simon Willison, <a href="https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything">simonwillison.net</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎬</span>
+              Simon Willison shot-scraper video
+            </a>
+            
+            <a href="https://github.com/simonw/shot-scraper/releases/tag/1.10" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              shot-scraper 1.10 release
+            </a>
+            
+            <a href="https://www.latent.space/p/forward-deployed-engineers-aiewf" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚀</span>
+              Latent Space FDE piece
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Evals Get a Universal Display Layer on Hugging Face</h2>
+          <p><a href="https://huggingface.co/blog/eee-community-evals">Hugging Face launched "Every Eval Ever"</a> — a community-driven initiative to surface evaluation results directly on model pages, regardless of who ran the eval or where. The goal is a universal display layer: if someone benchmarked your model on ScarfBench, MMLU, or a domain-specific task and submitted the results, they show up on the model card in a standardized format alongside the model weights.</p><p>The timing is notable. As benchmarks proliferate — from ScarfBench for Java migration to MECoBench for <a href="https://arxiv.org/abs/2606.31966v1">multimodal embodied agent collaboration</a>, released yesterday — the discoverability problem grows. Knowing a benchmark exists is different from knowing how your model of interest performs on it. EEE tries to solve the latter by making the model page the canonical aggregation point rather than expecting users to hunt through leaderboards on a dozen different sites.</p><p>The community-submitted model creates obvious risks: eval conditions vary, datasets can leak, and results from one team's infra don't always transfer cleanly to another's. Hugging Face's answer is metadata-heavy submissions — you're required to document the exact eval config, not just the score. Whether that discipline holds as submission volume grows is the open question. But the direction is correct: the eval ecosystem has been too fragmented for too long, and a single display surface with enforced provenance is more useful than ten leaderboards with no cross-referencing.</p><blockquote><p>"Featuring Every Eval Ever Results on Hugging Face Model Pages"</p><cite>— <a href="https://huggingface.co/blog/eee-community-evals">Hugging Face Blog</a></cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://huggingface.co/blog/eee-community-evals" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              HF Every Eval Ever
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.31966v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              MECoBench arXiv
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>Claude Sonnet 5 is the version to actually test this week — not because Fable 5 is coming back, but because the system card is already public and the agentic improvements are specific enough to benchmark against your own task loops. Pull the PDF and compare it against your current Claude Fable 5 costs before assuming the flagship is still worth the premium.</li><li>Google's dual release of Nano Banana 2 Lite and Gemini Omni Flash without public benchmarks means you're flying blind if you adopt early. Run your own evals on latency and multimodal accuracy for your specific use case before locking in — Google's track record on light model releases is strong, but the absence of a system card is a gap you need to fill yourself.</li><li>ScarfBench and the DRE paper both point at the same underlying problem: agents and LLMs fail in structured, verifiable ways that final-answer metrics hide. If your product touches tabular data or multi-file codebases, add intermediate-step verification — structured output constraints and mid-chain checks — before shipping to production, not after.</li><li>Shot-scraper video and the Hugging Face EEE initiative are both about making AI work legible after the fact. Build artifact generation into your agent pipelines now: video replays, structured logs, eval provenance. Customers and regulators will demand it; building the habit early is cheaper than retrofitting it when they do.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Sonnet 5 System Card
+            </a>
+            
+            <a href="https://huggingface.co/blog/eee-community-evals" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              HF EEE
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.32029v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              DRE paper
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎬</span>
+              shot-scraper video
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/deepseek-ai/DeepSpec">deepseek-ai/DeepSpec</a>
+              <span class="side-meta">Python · ⭐ 5,419</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/winsznx/theeleven">winsznx/theeleven</a>
+              <span class="side-meta">TypeScript · ⭐ 692</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/TianhangZhuzth/Fundamental-Ava">TianhangZhuzth/Fundamental-Ava</a>
+              <span class="side-meta">Python · ⭐ 632</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/benchflow-ai/awesome-evals">benchflow-ai/awesome-evals</a>
+              <span class="side-meta">None⭐ 608</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Pluviobyte/video-production-skills">Pluviobyte/video-production-skills</a>
+              <span class="side-meta">Python · ⭐ 486</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/tdeverx/contained-app">tdeverx/contained-app</a>
+              <span class="side-meta">Swift · ⭐ 437</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude Sonnet 5 has been launched as the latest model in Anthropic's Claude lineup.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Anthropic launched Claude Science, an AI workbench designed specifically for scientific research applications.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude Fable 5 export control restrictions have been lifted.</span>
+              <span class="launch-tag tag-pricing">Pricing</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google introduced Gemini Omni Flash and Nano Banana 2 Lite for developers.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google released Gemma 4 12B, a unified encoder-free multimodal model.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.30968">PhotoQuilt: Training-Free Arbitrary-Resolution Photomosaics via Bootstrapped Tiled Denoising</a>
+              <span class="side-meta">Photomosaics are large images whose local regions are seen as independent tiles while their overall arrangement forms a coherent scene. Generating them at high resolution, with every tile convincing i</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.30319">BrainJanus: A Unified Model for Understanding and Generation across Brain, Vision, and Language</a>
+              <span class="side-meta">Modeling the bidirectional correspondence between external sensory stimuli and internal neural activity has emerged as a critical frontier in neuroscience. However, existing approaches predominantly t</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.31315">BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding</a>
+              <span class="side-meta">Speculative decoding accelerates inference by using a lightweight draft model to generate candidate tokens in parallel, and are then verified by the target model, enabling lossless acceleration. Recen</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.31410">Xiaomi-GUI-0 Technical Report</a>
+              <span class="side-meta">Graphical user interface (GUI) agents build on vision-language models to complete user tasks end-to-end in real applications through interface actions such as tapping, swiping, text entry, and navigat</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.30673">PolyFlow: Continuous Topology Embedding Flow Matching for Artist-style Mesh Generation</a>
+              <span class="side-meta">Autoregressive Transformers dominate high-quality mesh generation by producing artist-worthy topologies, yet their inherent sequential decoding induces substantial computational overhead, falling orde</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
