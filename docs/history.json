@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-07-02",
+      "title": "Software Factories, Single Layers, Chatbot Twilight",
+      "headings": [
+        "The Chatbot Is Dead. Long Live the Agent.",
+        "Software Factories Are the New Software Teams",
+        "RL Fine-Tuning Might Only Need One Layer",
+        "Multi-Agent Reasoning Gets a Communication Primitive",
+        "Healthcare Agents Get a Serious Benchmark",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.31179v1",
+        "https://arxiv.org/abs/2607.01077v1",
+        "https://arxiv.org/abs/2607.01232v1",
+        "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
+        "https://openai.com/index/how-chatgpt-adoption-has-expanded",
+        "https://www.latent.space/p/autoresearch-introspection",
+        "https://www.latent.space/p/software-factories",
+        "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots"
+      ]
+    },
+    {
       "date": "2026-07-01",
       "title": "Claude's New Stack, Top to Bottom",
       "headings": [
@@ -717,34 +739,6 @@
         "https://huyenchip.com//2023/06/07/generative-ai-strategy.html",
         "https://www.latent.space/p/github",
         "https://www.msn.com/en-us/money/companies/gitlab-announces-14-reduction-in-global-workforce-expects-to-exit-22-countries/ar-AA24FoMd"
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "title": "Pricing Shocks, Hijacked Accounts, Models Diverge",
-      "headings": [
-        "Copilot's Metered Billing Is a Revolt Waiting to Happen",
-        "Meta's AI Support Bot Gave Away Instagram Accounts on Request",
-        "Open and Closed Models Are Racing on Different Exponentials",
-        "Agent Logic Is the Enterprise Bottleneck \u2014 IBM and Google Are Naming It",
-        "AI Field Experiments: Agents Learning Between Runs",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arstechnica.com/ai/2026/06/ai-costs-how-much-github-copilot-users-react-to-new-usage-based-pricing-system/",
-        "https://arxiv.org/abs/2606.02458v1",
-        "https://arxiv.org/abs/2606.02530v1",
-        "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
-        "https://github.com/michaelcummings12/meta-ai-support-prompt/blob/main/system-prompt.md",
-        "https://github.com/vercel/ai/issues/11280",
-        "https://huggingface.co/blog/JetBrains/mellum2-launch",
-        "https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption",
-        "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
-        "https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/#atom-everything",
-        "https://www.govinfosecurity.com/anthropic-expands-public-access-to-claude-mythos-ai-model-a-31778",
-        "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
-        "https://www.latent.space/p/ainews-nvidia-cosmos-3-nemotron-3",
-        "https://www.theregister.com/ai-and-ml/2026/06/02/github-copilot-users-threaten-exit-as-metered-billing-kicks-in/5249826"
       ]
     }
   ]
