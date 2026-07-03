@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-07-03",
+      "title": "Routing, Quantization, and Fuzzing Agents",
+      "headings": [
+        "Smart Model Routing Arrives in Mainstream Engineering",
+        "TurboQuant Cuts pgvector Index Size by 10x at 100M Rows",
+        "GPT-5.5-Cyber Built a Fuzzing Lab in a Day",
+        "Vercel's Agent Framework Bets on \"Agent-Readable\" Websites",
+        "DSPy for Prompt Optimization and ReContext for Long Retrieval \u2014 Two Research Bets Worth Watching",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2606.31518v1",
+        "https://arxiv.org/abs/2607.02509v1",
+        "https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/",
+        "https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/",
+        "https://eugeneyan.com//writing/cybersecurity-evals/",
+        "https://github.com/pgvector/pgvector/pull/989",
+        "https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything",
+        "https://simonwillison.net/2026/Jul/2/llm-coding-agent/#atom-everything",
+        "https://www.latent.space/p/vercel-agents-new-software"
+      ]
+    },
+    {
       "date": "2026-07-02",
       "title": "Software Factories, Single Layers, Chatbot Twilight",
       "headings": [
@@ -713,32 +736,6 @@
         "https://simonwillison.net/2026/Jun/3/uber-caps-usage/#atom-everything",
         "https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs",
         "https://www.latent.space/p/ainews-microsoft-build-mai-thinking"
-      ]
-    },
-    {
-      "date": "2026-06-03",
-      "title": "Sleep, Skill Pyramids, GitHub's Bet",
-      "headings": [
-        "GitLab Restructures Itself Around AI \u2014 14% Gone, 22 Countries Out",
-        "GitHub Lays Out Its Full Agentic Platform Plan",
-        "LLMs That Sleep: Memory Consolidation Jumps from Neuroscience to Research Agenda",
-        "Holo3.1 Brings Computer Use Agents Local and Fast",
-        "Reasoning Structure Gets Its Own Benchmark \u2014 Token Count Isn't Enough",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.01886v1",
-        "https://arxiv.org/abs/2606.03463v1",
-        "https://arxiv.org/abs/2606.03692v1",
-        "https://arxiv.org/abs/2606.03883v1",
-        "https://arxiv.org/abs/2606.03965v1",
-        "https://arxiv.org/abs/2606.03979v1",
-        "https://claude.com/blog/running-an-ai-native-engineering-org",
-        "https://eugeneyan.com//writing/eval-process/",
-        "https://huggingface.co/blog/Hcompany/holo31",
-        "https://huyenchip.com//2023/06/07/generative-ai-strategy.html",
-        "https://www.latent.space/p/github",
-        "https://www.msn.com/en-us/money/companies/gitlab-announces-14-reduction-in-global-workforce-expects-to-exit-22-countries/ar-AA24FoMd"
       ]
     }
   ]

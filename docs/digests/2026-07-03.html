@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing, Quantization, and Fuzzing Agents — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Friday, July 03, 2026</div>
+        <h1>Routing, Quantization, and Fuzzing Agents</h1>
+        
+        <p class="subtitle">Smart model routing goes mainstream, TurboQuant shrinks pgvector indexes tenfold at 100M rows, and Trail of Bits reports GPT-5.5-Cyber built a fuzzing lab in a day. Three quiet stories that change the cost and capability math for what you ship next.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Smart Model Routing Arrives in Mainstream Engineering</h2>
+          <p>Gergely Orosz published <a href="https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/">a detailed look at model routing</a> on July 2nd, and the timing is telling. His core observation: teams that previously agonized over which single model to commit to are quietly swapping in routing layers that pick the right model per request — balancing cost, latency, and capability without asking a human each time. A few purpose-built routers already exist (OpenRouter, Martian, Not Diamond), but the interesting trend is teams building it themselves, inline, often on top of the same LLM APIs they already have.</p><p>The practical shape of this is a lightweight classifier — sometimes another LLM, sometimes a fine-tuned embedder — that categorizes incoming prompts by complexity or domain and dispatches accordingly. Simple factual retrieval hits a cheap fast model; multi-step reasoning or code generation routes to something heavier. Orosz found that the savings can be significant: 60–80% token cost reduction on mixed-workload apps with minimal latency penalty when the router itself is small and cached.</p><p>This isn't theoretical anymore. The pattern is mature enough that Pragmatic Engineer — not an AI research publication — is calling it a trend for practicing engineers, not researchers. A routing layer also decouples your product from any single vendor's pricing decisions, which has suddenly become more relevant after Anthropic's rate-limit turbulence in May.</p><blockquote><p>"Are there any 'intelligent' router solutions out there which select the right model for the right task? I looked into it, and there are a few options."</p><cite>— Gergely Orosz, The Pragmatic Engineer</cite></blockquote><p>The catch Orosz flags: routers introduce a new failure mode. If the routing classifier misfires — sending a complex reasoning task to the cheap model — your user sees a bad answer with no obvious signal that a smarter model was available. Evals for the router itself become as important as evals for the models it dispatches to. That's a new discipline most teams haven't built yet.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Pragmatic Engineer — Model Routing
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>TurboQuant Cuts pgvector Index Size by 10x at 100M Rows</h2>
+          <p>A pull request merged into the <a href="https://github.com/pgvector/pgvector/pull/989">pgvector repository</a> this week introduces TurboQuant, a quantization approach that reduces vector index size by roughly 10x at 100 million row scale — without requiring a separate vector database. The approach applies product quantization more aggressively than pgvector's existing IVFFlat and HNSW indexes, trading a small amount of recall precision for dramatic memory and storage savings.</p><p>At 100M vectors, a standard 1536-dimension OpenAI embedding index can consume upward of 600GB of RAM to hold in memory for fast approximate nearest-neighbor queries. A 10x reduction brings that under 60GB — suddenly within reach of a single high-memory instance rather than a distributed cluster. That's the number that changes architecture decisions: it's the difference between adding pgvector to an existing Postgres instance versus spinning up a dedicated vector infrastructure project.</p><p>The practical ceiling for who benefits here is teams running RAG at meaningful scale on Postgres who've been watching their instance costs creep up. Vector databases like Pinecone and Weaviate have a legitimate performance edge at extreme scale, but TurboQuant narrows the gap for teams that strongly prefer staying in the Postgres ecosystem — fewer moving parts, simpler ops, transactions that actually work.</p><blockquote><p>"TurboQuant can reduce vector index size by 10x at 100M Row Scale"</p><cite>— PR description, pgvector/pgvector #989</cite></blockquote><p>Recall degradation at high compression ratios is the real question the PR discussion hasn't fully settled. If you're building a product where false negatives in retrieval hurt user experience — legal search, medical Q&A, anything where missing a relevant document is costly — benchmark your specific corpus before adopting this in production. But for many RAG use cases where top-5 approximate retrieval is already good enough, this is a meaningful infrastructure win hiding in a GitHub PR.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/pgvector/pgvector/pull/989" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🗄️</span>
+              pgvector TurboQuant PR
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GPT-5.5-Cyber Built a Fuzzing Lab in a Day</h2>
+          <p>Trail of Bits published <a href="https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/">field reports from their Patch the Planet program</a>, and one data point stands out: GPT-5.5-Cyber — OpenAI's security-specialized model — built a working zlib fuzzing lab in approximately one day. This isn't a benchmark result or a controlled demo; it's a practitioner account from a firm that does security research professionally and has high skepticism for hype.</p><p>The task matters because fuzzing infrastructure is genuinely annoying to set up. It requires configuring build environments, instrumentation (typically AFL++ or libFuzzer), corpus management, crash triage pipelines, and reproducible sandbox environments. A senior security engineer might spend two to three days on a clean setup. That it compressed to one day under AI direction — with the model apparently handling the environment configuration decisions — says something real about where specialized models have landed.</p><p>The cybersecurity eval space has been maturing fast: Eugene Yan's <a href="https://eugeneyan.com//writing/cybersecurity-evals/">framework for cybersecurity evals</a> published in June outlines exactly what a rigorous evaluation requires — sandboxed targets, difficulty-stratified inputs, tool access, and an automated grader. The Trail of Bits report is the messier, more honest complement: what happens when you take one of these models into actual work.</p><blockquote><p>"GPT-5.5-Cyber built a zlib fuzzing lab in a day"</p><cite>— Trail of Bits, Patch the Planet field report</cite></blockquote><p>The trajectory here is steep. If GPT-5.5-Cyber can compress a day of security engineering work into hours, the same capability applied to offensive tasks is the uncomfortable mirror image. For teams building anything security-sensitive — and especially for those building AI agents with external tool access — the adversarial capability curve is accelerating faster than most defensive tooling roadmaps assume.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Trail of Bits — Patch the Planet
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/cybersecurity-evals/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Eugene Yan — Cybersecurity Evals
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Vercel's Agent Framework Bets on "Agent-Readable" Websites</h2>
+          <p>Latent Space published <a href="https://www.latent.space/p/vercel-agents-new-software">an interview with Andrew Qu</a>, Vercel's Chief of Software, about the company's internal agent framework called <em>eve</em>. The conversation covers how Vercel built eve and, more pointedly, what design decisions it forced them to confront. Three concepts Qu emphasizes: skills (discrete, composable capabilities agents can invoke), sandboxes (isolated execution environments per task), and — the most forward-looking one — agent-readable websites.</p><p>That last idea is worth sitting with. Qu's argument is that the web was designed for human eyeballs, and agents trying to navigate it via browser automation are fighting the medium. Agent-readable websites expose structured, semantic interfaces alongside the visual layer — essentially an API surface for agents that doesn't require scraping rendered HTML. Vercel, as the platform that serves a large slice of the modern web's frontend layer, is well-positioned to push this as a standard if it chooses to.</p><p>The skills-and-sandboxes architecture is more immediately actionable. Qu describes skills as the unit of composition in eve: an agent doesn't know how to deploy a site generically, it knows how to invoke the "deploy" skill, which has known inputs, outputs, and failure modes. This maps well onto what the agentic orchestration research community has been calling "task-specific agents with process boundaries" — the <a href="https://arxiv.org/abs/2606.31518v1">arxiv classification framework for agentic orchestration</a> published this week makes a similar distinction between autonomy and tractability.</p><blockquote><p>"The Vercel Chief of Software explains how its agent framework, eve, was created — and why skills, sandboxes and agent-readable websites now matter."</p><cite>— Latent Space summary of Andrew Qu interview</cite></blockquote><p>Vercel shipping its own agent framework while hosting thousands of AI startups creates an interesting dynamic. Eve's design decisions will quietly influence what patterns feel natural to build on Vercel's infrastructure — and what feels like friction.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.latent.space/p/vercel-agents-new-software" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Latent Space — Vercel's Andrew Qu
+            </a>
+            
+            <a href="https://arxiv.org/abs/2606.31518v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Arxiv — Agentic Orchestration Framework
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>DSPy for Prompt Optimization and ReContext for Long Retrieval — Two Research Bets Worth Watching</h2>
+          <p>Simon Willison published <a href="https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything">a research note</a> on using DSPy to evaluate and improve system prompts for Datasette Agent — specifically the SQL generation prompts that power natural-language queries over arbitrary databases. He ran this asynchronously after hearing a DSPy talk at AIE, and the approach is instructive: rather than manually tuning the system prompt and eyeballing outputs, DSPy treats prompt optimization as a learning problem with a defined metric (query correctness against a test set).</p><p>What's significant isn't that DSPy is new — it's that practitioners like Willison are now reaching for it as a practical tool rather than a research curiosity. The move from "I'll iterate on this prompt by hand" to "I'll define a metric and let DSPy optimize" is the same conceptual shift that happened when teams stopped manually tuning ML hyperparameters and started using Optuna. It changes who can do the work and how reproducibly.</p><p>On the retrieval side, a new paper from July 2nd proposes <a href="https://arxiv.org/abs/2607.02509v1">ReContext (Recursive Evidence Replay)</a>, a training-free inference method for long-context reasoning. The core problem it targets: LLMs often fail to use relevant evidence that's already in their context window — they have access to the answer but don't surface it. ReContext recursively replays key evidence snippets at strategic points in the reasoning chain, improving utilization without any fine-tuning.</p><blockquote><p>"Although recent LLMs support increasingly long context windows, they often fail to use relevant evidence that is already present in the input, revealing a gap between context access and effective context utilization."</p><cite>— ReContext paper abstract, Zhao et al., arXiv 2607.02509</cite></blockquote><p>Together these two threads — DSPy for prompt optimization and ReContext for evidence utilization — address different sides of the same problem: you can have perfect retrieval and still get bad answers if the model doesn't use what you gave it, and you can have a great model and still get bad answers if your prompt isn't well-specified. Both levers are now more tractable.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison — DSPy for Datasette
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.02509v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Arxiv — ReContext
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Jul/2/llm-coding-agent/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Simon Willison — llm-coding-agent
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>Model routing is now a standard engineering pattern, not a research experiment — if your app sends any meaningful volume of mixed-complexity queries to a single frontier model, building even a simple routing layer is likely to pay for itself in API costs within weeks, and it buys vendor independence as a side effect.</li><li>TurboQuant's 10x pgvector compression changes the break-even point for staying in Postgres versus moving to a dedicated vector store at 100M+ row scale; run the recall benchmarks on your corpus before the next infrastructure planning cycle, because the answer may have changed.</li><li>The cybersecurity capability curve is moving faster than most teams' threat models assume — GPT-5.5-Cyber compressing days of security engineering into hours applies equally to defensive and offensive work, so any agent with external tool access needs adversarial red-teaming baked into its eval suite now, not at launch.</li><li>Prompt optimization via DSPy and evidence utilization via ReContext are both ready to use without fine-tuning; if your RAG pipeline still relies on manual prompt iteration and you're seeing inconsistent retrieval quality, both are worth a weekend spike before you reach for a bigger model.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📡</span>
+              Pragmatic Engineer — Model Routing
+            </a>
+            
+            <a href="https://github.com/pgvector/pgvector/pull/989" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🗄️</span>
+              pgvector TurboQuant PR
+            </a>
+            
+            <a href="https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔐</span>
+              Trail of Bits
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.02509v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              ReContext
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/deepseek-ai/DeepSpec">deepseek-ai/DeepSpec</a>
+              <span class="side-meta">Python · ⭐ 5,894</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/mekos2772/ios-location-spoofer">mekos2772/ios-location-spoofer</a>
+              <span class="side-meta">JavaScript · ⭐ 1,147</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Kulaxyz/self-learning-skills">Kulaxyz/self-learning-skills</a>
+              <span class="side-meta">None⭐ 902</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/TianhangZhuzth/Fundamental-Ava">TianhangZhuzth/Fundamental-Ava</a>
+              <span class="side-meta">Python · ⭐ 756</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/tryOpenRAM/OpenRAM">tryOpenRAM/OpenRAM</a>
+              <span class="side-meta">Vue · ⭐ 566</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Pluviobyte/video-production-skills">Pluviobyte/video-production-skills</a>
+              <span class="side-meta">Python · ⭐ 497</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Released new admin controls for Claude spend visibility and management across organizations.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Launched Gemini 3.5 Live Translate for real-time, natural speech translation in Google AI Studio, Translate, and Meet.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Introduced Gemma 4 12B, a unified encoder-free multimodal model.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Announced GeneBench-Pro, a new benchmark for testing AI performance in genomics and scientific research.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Vercel</div>
+              <span class="launch-detail">Unveiled eve, a new agent framework for building agentic software applications.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.02255">AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents</a>
+              <span class="side-meta">Memory for a long-horizon LLM agent is a contract about what each future decision is allowed to see. The simplest contract appends past observations, tool calls, and reflections to every prompt, which</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.02508">From SRA to Self-Flow: Data Augmentation or Self-Supervision?</a>
+              <span class="side-meta">Representation alignment has become an effective way to accelerate diffusion transformer training and improve generation quality. Recent self-alignment methods, such as SRA and Self-Flow, further remo</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.01436">Discrete Diffusion Language Models for Interactive Radiology Report Drafting</a>
+              <span class="side-meta">Diffusion language models, which generate text by denoising a token canvas bidirectionally instead of emitting tokens left to right, have become competitive with autoregressive (AR) generation. Medica</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.27669">When Search Agents Should Ask: DiscoBench for Clarification-Aware Deep Search</a>
+              <span class="side-meta">Search agents powered by large language models (LLMs) are increasingly used to solve complex information-seeking tasks, requiring multi-step retrieval and reasoning to fulfill user goals. However, exi</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.01874">SkillCoach: Self-Evolving Rubrics for Evaluating and Enhancing Agentic Skill-Use</a>
+              <span class="side-meta">Skills are becoming a reusable operational layer for LLM agents, encoding SOPs, domain rules, tool workflows, scripts, and validation routines. In realistic skill repositories, overlapping skills make</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
