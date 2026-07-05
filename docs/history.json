@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-07-05",
+      "title": "Models Smarter, Tools Dumber",
+      "headings": [
+        "The Schema Invention Problem: Better Models Breaking Their Own Tools",
+        "What $149 and Claude Fable Actually Shipped",
+        "Scaling Won't Fix Social Simulation \u2014 And That's a Research Bet Worth Making",
+        "Agentic Search Comes to NASA's Earth Science Archive",
+        "Cerebras + Hugging Face Put Gemma 4 Into Real-Time Voice",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.02210v1",
+        "https://arxiv.org/abs/2607.02387v1",
+        "https://arxiv.org/abs/2607.02390v1",
+        "https://arxiv.org/abs/2607.02464v1",
+        "https://huggingface.co/blog/cerebras-gemma4-voice-ai",
+        "https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/",
+        "https://simonwillison.net/2026/Jul/4/better-models-worse-tools/#atom-everything",
+        "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything"
+      ]
+    },
+    {
       "date": "2026-07-04",
       "title": "Science, Security, and the Infrastructure Gap",
       "headings": [
@@ -717,28 +739,6 @@
         "https://www.latent.space/p/bad-envs",
         "https://www.normaltech.ai/p/did-googles-ai-agents-really-build",
         "https://www.normaltech.ai/p/open-world-evaluations-for-measuring"
-      ]
-    },
-    {
-      "date": "2026-06-05",
-      "title": "Memory, Evals, and Real-World AI",
-      "headings": [
-        "ChatGPT Dreams Its Way to Better Memory",
-        "Anthropic's Claude Code Playbook Goes Public",
-        "GitHub Copilot Gets a Bigger Brain and a Reasoning Dial",
-        "VendingBench and the Push for Evals That Survive in the Real World",
-        "Endava's Blueprint for Rebuilding a Software Company Around Agents",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://blog.pragmaticengineer.com/the-pulse-forward-deployed-engineering-heats-up-again/",
-        "https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills",
-        "https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/",
-        "https://github.com/alibaba/open-code-review",
-        "https://github.com/texttron/BrowseComp-Plus",
-        "https://openai.com/index/chatgpt-memory-dreaming",
-        "https://openai.com/index/endava-frontiers",
-        "https://www.latent.space/p/andon"
       ]
     }
   ]

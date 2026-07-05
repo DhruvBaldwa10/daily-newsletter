@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Models Smarter, Tools Dumber — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Sunday, July 05, 2026</div>
+        <h1>Models Smarter, Tools Dumber</h1>
+        
+        <p class="subtitle">Claude Opus 4.8 is hallucinating tool schemas, a $149 open-source release shows what agentic dev actually looks like in practice, and new research suggests scaling alone won't fix social simulation fidelity. The gap between model capability and reliable tool use is today's defining tension.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>The Schema Invention Problem: Better Models Breaking Their Own Tools</h2>
+          <p>A strange regression is appearing at the frontier. <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">Armin Ronacher</a> (creator of Flask, Jinja2, and the Pi editor) ran into a specific failure mode with Claude Opus 4.8: the model would call Pi's edit tool with <em>invented fields</em> in the <code>edits[]</code> array — fields that don't exist in the schema. The edit itself was usually correct. The structure was wrong. Not Haiku. Not Sonnet. Opus.</p><p><a href="https://simonwillison.net/2026/Jul/4/better-models-worse-tools/#atom-everything">Simon Willison surfaced the post</a> with a pointed summary: newer, more capable models are sometimes <em>worse</em> at strict tool compliance than their predecessors. The theory is that more capable models are more likely to reason about what the tool <em>should</em> accept and generate accordingly, rather than what it actually accepts. Over-generalization at the schema boundary.</p><p>This is a real production problem. Any system that validates tool call arguments before execution will start rejecting calls from your most expensive model. Defensive parsing — accepting and stripping unknown fields — helps, but it introduces its own surface area: if the model invents a field called <code>force_overwrite</code> that your parser silently drops, you've lost the signal that the model misunderstood the interface.</p><p>The pattern also suggests something about how these models are trained. If RLHF rewards task completion over schema fidelity, and if task completion is easier to verify than argument correctness, models will drift toward inventing plausible-looking arguments. Stricter schema validation in evals — not just output correctness — is the lever here.</p><blockquote><p>"The short version is that newer Claude models sometimes call Pi's edit tool with extra, invented fields in the nested <code>edits[]</code> array. And not Haiku or some small model: Opus 4.8. The edit itself is usually correct but the arguments do not match the schema as the model invents them."</p><cite>— Armin Ronacher, via Simon Willison's blog</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Armin Ronacher — Better Models, Worse Tools
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Jul/4/better-models-worse-tools/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Simon Willison — link post
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What $149 and Claude Fable Actually Shipped</h2>
+          <p>Simon Willison just published a detailed account of getting <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything">sqlite-utils 4.0rc2 out the door with Claude Fable as primary collaborator</a>, total API spend: $149.25. The framing matters — Willison isn't reporting a curiosity, he's documenting a working method for maintaining a serious open-source library (sqlite-utils has ~5k GitHub stars and underpins his datasette ecosystem).</p><p>The context: Anthropic is rotating Claude Fable off Max subscriptions within days, which created a forcing function. Willison wanted to reach 4.0 stable before the window closed. He started with a structured prompt laying out the full release checklist, then worked through breaking changes, deprecation notices, documentation, and test coverage in session. The result was rc2, not stable — but he describes the output as something he "felt truly comfortable about," which is a high bar for a SemVer major release.</p><p>A few things stand out from the write-up. First, the cost is real and bounded — $149 for a non-trivial engineering session is cheap compared to contractor time, but it's also not zero, and it's per-session, not per-month. Second, the constraint of Fable's imminent unavailability is itself interesting: model transitions are forcing project decisions. Third, this is collaborative maintenance, not code generation — Willison is reviewing, directing, and making judgment calls throughout. The model handles the mechanical surface area; the human holds the design intent.</p><p>The broader signal: AI-assisted open-source maintenance is past proof-of-concept. The question now is what the workflow looks like at scale — across more contributors, less-structured codebases, and models that change underneath you.</p><blockquote><p>"Since we only have Claude Fable on our Max subscriptions for a few more days, I decided to see if it could help me get to a 4.0 stable release that I felt truly comfortable about, since I try to keep to SemVer and like my incompatible major versions to be as rare as possible."</p><cite>— Simon Willison, simonwillison.net</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📦</span>
+              Simon Willison — sqlite-utils 4.0rc2
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Scaling Won't Fix Social Simulation — And That's a Research Bet Worth Making</h2>
+          <p>A new paper from Stanford and UMass Amherst asks a pointed question: <a href="https://arxiv.org/abs/2607.02464v1">will scaling LLMs close the fidelity gap in social simulation?</a> The authors — Caleb Ziems and colleagues — use scaling laws to study the relationship between compute scale, general capability benchmarks, and simulation fidelity. Their finding: simulation fidelity is largely orthogonal to general capability. Bigger models score better on MMLU and friends, but they don't necessarily produce more faithful simulations of human social behavior.</p><p>This matters for anyone building agents that model people — recommendation systems, synthetic user testing, social science tools, customer behavior modeling. The implicit assumption in much of this work is that more capable models are better proxies for human respondents. The paper pushes back hard on that assumption and argues simulation fidelity deserves its own research track, not just better base models.</p><p>Separately, the <a href="https://arxiv.org/abs/2607.02390v1">DecompRL paper</a> from Juliette Decugis et al. addresses a different scaling failure: what happens when the base policy has near-zero probability of generating a correct solution? Neither repeated sampling nor RL with verifiable rewards can overcome a search space that's simply too large. Their answer is modular code generation through learned decomposition — break the problem into subproblems the model can solve, then compose. It's a principled argument for why task decomposition isn't just a prompt engineering trick; it's a structural fix for the limits of test-time compute.</p><blockquote><p>"Simulation fidelity is orthogonal to general capabilities and therefore deserving of more research attention."</p><cite>— Ziems et al., "Will Scaling Improve Social Simulation with LLMs?" (arXiv 2607.02464)</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.02464v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              arXiv — Scaling and Social Simulation
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.02390v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              arXiv — DecompRL
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agentic Search Comes to NASA's Earth Science Archive</h2>
+          <p>A team including researchers from NASA has deployed a <a href="https://arxiv.org/abs/2607.02387v1">public agentic search system for Earth observation datasets</a> — natural language queries over NASA's archive of geoscience tools including Worldview, Giovanni, Harmony, and the Science Discovery Engine. The paper's central claim: knowledge graphs' latent value becomes substantial in the LLM era, when an agent can traverse the KG dynamically rather than requiring users to understand its structure.</p><p>This is a narrow domain, but the architecture generalizes. The hard problem in scientific data discovery isn't retrieval — it's that the user often doesn't know the right vocabulary to search with. Domain-specific tools have idiosyncratic names, coverage conventions, and access patterns that experts learn over years. An agentic layer that can map natural language intent to the right combination of NASA tools is genuinely useful, and the public deployment (not just a demo) means there's real usage data coming.</p><p>A parallel paper on <a href="https://arxiv.org/abs/2607.02210v1">guard rail validation for AI agents in autonomous telecom networks</a> tackles a related problem: how do you intercept and validate individual agent inference outputs before they trigger live network state changes? Their Guard Rail Validation framework proposes a runtime architecture that classifies decisions by criticality and applies different validation thresholds accordingly. "Autonomy Level 4-5" telecom networks are the stated target, but the framework pattern — criticality-weighted validation gates — maps cleanly to any agentic system touching production state.</p><blockquote><p>"In the era of large language models, the latent value of knowledge graphs can be substantially unlocked — not by replacing KGs with LLMs, but by using LLMs to traverse and query them dynamically."</p><cite>— Yu et al., "Bringing Agentic Search to Earth Observation Data Discovery" (arXiv 2607.02387)</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.02387v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🌍</span>
+              arXiv — Agentic Search for Earth Observation
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.02210v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛡️</span>
+              arXiv — Guard Rail Validation for Telecom Agents
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Cerebras + Hugging Face Put Gemma 4 Into Real-Time Voice</h2>
+          <p><a href="https://huggingface.co/blog/cerebras-gemma4-voice-ai">Hugging Face and Cerebras announced</a> they're bringing Gemma 4 to real-time voice AI together — Cerebras' wafer-scale inference hardware paired with Google's Gemma 4 model, accessed through Hugging Face's infrastructure. The collaboration is notable for what it signals about where inference speed matters most right now: voice. Latency tolerances for voice interfaces are an order of magnitude tighter than text generation; users notice 200ms of lag in conversation in a way they don't notice the same delay before a code completion appears.</p><p>Cerebras has been the go-to name for raw tokens-per-second benchmarks — their CS-3 systems have posted numbers that make H100 clusters look slow on certain inference workloads. Pairing that with Gemma 4 (which Google released with strong multimodal and instruction-following characteristics) and distributing through Hugging Face's developer ecosystem is a deliberate play to become the default stack for latency-sensitive voice applications.</p><p>The timing is interesting. Most voice AI products today use purpose-built speech models (Whisper for ASR, ElevenLabs for TTS, a separate LLM in the middle). The integration bet here is that a single capable model running fast enough can replace that pipeline, reducing latency introduced by multiple model handoffs and simplifying the product architecture. Whether Gemma 4 is actually good enough at the voice-specific dimensions — prosody awareness, interruption handling, spoken language quirks — is the open question the deployment data will answer.</p><blockquote><p>"Real-time voice AI demands sub-100ms response latency — a constraint that fundamentally changes which hardware and model combinations are viable."</p><cite>— Hugging Face Blog, Cerebras x Gemma 4 announcement</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://huggingface.co/blog/cerebras-gemma4-voice-ai" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Hugging Face — Cerebras + Gemma 4 Voice AI
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>If you're building tool-using agents on frontier models, add schema validation to your eval harness now — not just output correctness. Opus 4.8 inventing fields that don't exist is a production bug, and the fix requires catching it before deployment, not debugging it in logs.</li><li>The Willison sqlite-utils session ($149, one rc release) is a useful calibration point for AI-assisted maintenance work: meaningful progress is achievable in a single bounded session, but model availability windows are forcing project timelines in ways that weren't true six months ago. Plan for model transitions in your dev process, not just your product.</li><li>If your product uses LLMs to simulate user behavior — for testing, personalization, or social modeling — the Stanford scaling paper is a direct challenge to your assumptions. Fidelity doesn't improve automatically with a better base model; you may need simulation-specific fine-tuning or evaluation to know whether your synthetic users are actually representative.</li><li>The Cerebras + Gemma 4 voice integration is worth watching as a template: fast inference hardware plus a capable general model, distributed through a developer platform, aimed at eliminating the multi-model pipeline. If latency is your bottleneck in voice or any real-time feature, this stack is now worth a prototype.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔧</span>
+              Better Models, Worse Tools
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📦</span>
+              sqlite-utils 4.0rc2
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.02464v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              Social Simulation Scaling
+            </a>
+            
+            <a href="https://huggingface.co/blog/cerebras-gemma4-voice-ai" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Cerebras + Gemma 4
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/mekos2772/ios-location-spoofer">mekos2772/ios-location-spoofer</a>
+              <span class="side-meta">JavaScript · ⭐ 1,291</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Kulaxyz/self-learning-skills">Kulaxyz/self-learning-skills</a>
+              <span class="side-meta">None⭐ 827</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/jamesob/local-llm">jamesob/local-llm</a>
+              <span class="side-meta">Shell · ⭐ 784</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/HUANGCHIHHUNGLeo/claude-real-video">HUANGCHIHHUNGLeo/claude-real-video</a>
+              <span class="side-meta">Python · ⭐ 764</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/jmerelnyc/Talos">jmerelnyc/Talos</a>
+              <span class="side-meta">Python · ⭐ 599</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/uzairansaruzi/hermex">uzairansaruzi/hermex</a>
+              <span class="side-meta">Swift · ⭐ 561</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Hugging Face and Cerebras</div>
+              <span class="launch-detail">Hugging Face and Cerebras launched Gemma 4 for real-time voice AI applications.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Simon Willison</div>
+              <span class="launch-detail">sqlite-utils 4.0rc2 was released, with significant portions written by Claude Fable.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.01283">Scaling Laws for Grid-Based Approximate Nearest Neighbor Search in High Dimensions</a>
+              <span class="side-meta">Grid-based approaches to approximate nearest neighbor (ANN) search have been absent from modern scaling analyses. We present a systematic characterization of a multiprobe grid algorithm with respect t</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.27821">Parameter-Efficient Quantum-Inspired Fast Weight Programmers for Traffic-Matrix Forecasting</a>
+              <span class="side-meta">Traffic matrices (TMs) capture network-wide origin-destination demand and are central to traffic engineering, yet accurate whole-matrix forecasting remains challenging when prediction must be performe</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.01686">WARP: Weight-Space Analysis for Recovering Training Data Portfolios</a>
+              <span class="side-meta">Foundation models are routinely released to the public, yet the data recipes used to train them -- such as domain mixture weights that determine how different sources are sampled -- are rarely disclos</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.01224">AutoMem: Automated Learning of Memory as a Cognitive Skill</a>
+              <span class="side-meta">Memory expertise is a learned skill: knowing what to encode, when to retrieve, and how to organize knowledge--a capacity known in cognitive science as metamemory. We bring this perspective to LLMs by </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2606.29961">DuoMem: Towards Capable On-Device Memory Agents via Dual-Space Distillation</a>
+              <span class="side-meta">Large Language Model (LLM)-based agents can solve complex procedural tasks by interacting with environments over multiple turns, but this ability typically depends on large models, long contexts, and </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
