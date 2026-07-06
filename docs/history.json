@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-07-06",
+      "title": "GPT-5.6 Sol, Hugging Face Kernels, Fuzzy Functions",
+      "headings": [
+        "Sol Ultra Is Coming to Codex \u2014 and It's a Signal About OpenAI's Platform Bet",
+        "Hugging Face Revamps Its Kernel Infrastructure \u2014 Quietly, but Consequentially",
+        "Program-as-Weights: Compile Your LLM Calls Into Local Neural Artifacts",
+        "Let Fable Use Its Own Judgment \u2014 The Prompt Philosophy Shift No One Fully Articulated Until Now",
+        "The Agentic Website Is Not a Metaphor Anymore",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.02512v1",
+        "https://huggingface.co/blog/revamped-kernels",
+        "https://news.ycombinator.com/item?id=48799614",
+        "https://semianalysis.com/2025/09/10/another-giant-leap-the-rubin-cpx-specialized-accelerator-rack/",
+        "https://simonwillison.net/2026/Jul/3/judgement/#atom-everything",
+        "https://twitter.com/thsottiaux/status/2073933490513752151",
+        "https://www.latent.space/p/cursor-forward-deployed-engineers",
+        "https://www.latent.space/p/the-website-of-the-future"
+      ]
+    },
+    {
       "date": "2026-07-05",
       "title": "Models Smarter, Tools Dumber",
       "headings": [
@@ -712,33 +734,6 @@
         "https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety",
         "https://openai.com/index/biodefense-in-the-intelligence-age",
         "https://openai.com/index/frontier-safety-blueprint"
-      ]
-    },
-    {
-      "date": "2026-06-06",
-      "title": "RL Environments, Tiny Models, Big Clusters",
-      "headings": [
-        "Your RL Environment Is Probably Lying to Your Model",
-        "Multi-Agent Economy on a 3B Model",
-        "xAI's Colossus 2: A Gigawatt Datacenter and What It Signals",
-        "Sparse Attention Hits Serving Infrastructure",
-        "Evals Get an Enterprise Stress Test: EVA-Bench 2.0",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2602.07900",
-        "https://arxiv.org/abs/2606.06302",
-        "https://arxiv.org/abs/2606.06453v1",
-        "https://huggingface.co/blog/ServiceNow-AI/eva-bench-data",
-        "https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim",
-        "https://huggingface.co/blog/hf-cli-for-agents",
-        "https://semianalysis.com/2025/09/03/amazons-ai-resurgence-aws-anthropics-multi-gigawatt-trainium-expansion/",
-        "https://semianalysis.com/2025/09/10/another-giant-leap-the-rubin-cpx-specialized-accelerator-rack/",
-        "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
-        "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
-        "https://www.latent.space/p/bad-envs",
-        "https://www.normaltech.ai/p/did-googles-ai-agents-really-build",
-        "https://www.normaltech.ai/p/open-world-evaluations-for-measuring"
       ]
     }
   ]
