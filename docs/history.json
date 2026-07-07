@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-07-07",
+      "title": "Memory Wars, Realtime, Self-Improvement",
+      "headings": [
+        "GPT-Realtime-2.1 Lands on the API \u2014 and It's Not a Soft Update",
+        "The Agent Memory Problem Gets Serious Architecture Proposals",
+        "Natural Language Tools Beat Structured Calling \u2014 Across 14 Models",
+        "Lilian Weng on Recursive Self-Improvement \u2014 The Research Landscape, Mapped",
+        "AgentGym2 Measures Agents Where They Actually Fail",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.03953v1",
+        "https://arxiv.org/abs/2607.04391v1",
+        "https://arxiv.org/abs/2607.04617v1",
+        "https://arxiv.org/abs/2607.05174v1",
+        "https://arxiv.org/abs/2607.05316v1",
+        "https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896",
+        "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
+        "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/",
+        "https://lilianweng.github.io/posts/2026-07-04-harness/",
+        "https://www.normaltech.ai/p/open-world-evaluations-for-measuring"
+      ]
+    },
+    {
       "date": "2026-07-06",
       "title": "GPT-5.6 Sol, Hugging Face Kernels, Fuzzy Functions",
       "headings": [
@@ -709,31 +733,6 @@
         "https://magazine.sebastianraschka.com/p/technical-deepseek",
         "https://news.ycombinator.com/item?id=48440448",
         "https://runtimewire.com/article/deepseek-v4-pro-beats-gpt-5-5-pro-on-precision"
-      ]
-    },
-    {
-      "date": "2026-06-07",
-      "title": "Trust Gaps, Memory Risks, Data Safety",
-      "headings": [
-        "Semantic Similarity Isn't a Trust System",
-        "Can You Tell When Your Coding Agent Goes Rogue?",
-        "Multi-Agent Coordination Fails Not from Ignorance, But Miscommunication",
-        "Self-Supervised Agent Improvement Without Ground Truth Labels",
-        "OpenAI's Governance Blueprint and the Biodefense Pivot",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2602.11964",
-        "https://arxiv.org/abs/2606.05647v1",
-        "https://arxiv.org/abs/2606.05679v1",
-        "https://arxiv.org/abs/2606.05761v1",
-        "https://arxiv.org/abs/2606.05922v1",
-        "https://arxiv.org/abs/2606.06054v1",
-        "https://arxiv.org/abs/2606.06399v1",
-        "https://github.com/HtooTayZa/sawtooth-memory",
-        "https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety",
-        "https://openai.com/index/biodefense-in-the-intelligence-age",
-        "https://openai.com/index/frontier-safety-blueprint"
       ]
     }
   ]
