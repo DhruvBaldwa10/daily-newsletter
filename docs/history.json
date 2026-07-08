@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "date": "2026-07-08",
+      "title": "Agents Under Attack, Inside Out",
+      "headings": [
+        "The Agent Authorization Crisis Has Actual Attack Data Now",
+        "You Can Tell a Run Will Fail Before It Gets Going",
+        "Google Ships Managed Agents to Production \u2014 With Background Tasks and Remote MCP",
+        "GLM-5.2 and the Open Agent Capability Threshold",
+        "Formal Verification Meets Code Agents \u2014 and the New Benchmark for SQL-Native AI",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.03726v1",
+        "https://arxiv.org/abs/2607.03821v1",
+        "https://arxiv.org/abs/2607.05120v1",
+        "https://arxiv.org/abs/2607.05518v1",
+        "https://arxiv.org/abs/2607.06229v1",
+        "https://arxiv.org/abs/2607.06341v1",
+        "https://arxiv.org/abs/2607.06503v1",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+        "https://github.com/tiliondev/fortress",
+        "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+        "https://www.interconnects.ai/p/open-and-closed-models-are-on-different"
+      ]
+    },
+    {
       "date": "2026-07-07",
       "title": "Memory Wars, Realtime, Self-Improvement",
       "headings": [
@@ -707,32 +732,6 @@
         "https://openai.com/index/openai-submits-confidential-s-1",
         "https://simonwillison.net/2026/Jun/8/wwdc/#atom-everything",
         "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/"
-      ]
-    },
-    {
-      "date": "2026-06-08",
-      "title": "DeepSeek Leads, Agents Reshape Work",
-      "headings": [
-        "DeepSeek V4 Pro Beats GPT-5.5 Pro \u2014 and the Benchmark Gap Is Real",
-        "Perplexity's Production Data Quantifies What Agents Actually Do to Knowledge Work",
-        "Do Reasoning Models Actually Reason? 10,247 Annotated Steps Say 'Sort Of'",
-        "Memory Discrimination Is the Next Hard Problem for Persistent Agents",
-        "Sebastian Raschka's 2026 Research Roundup Is the Reading List You Need",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.05761v2",
-        "https://arxiv.org/abs/2606.06923v1",
-        "https://arxiv.org/abs/2606.07410v1",
-        "https://arxiv.org/abs/2606.07489v1",
-        "https://hamel.dev/",
-        "https://huggingface.co/blog/Dharma-AI/direct-preference-optimization-beyond-chatbots",
-        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
-        "https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling",
-        "https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
-        "https://magazine.sebastianraschka.com/p/technical-deepseek",
-        "https://news.ycombinator.com/item?id=48440448",
-        "https://runtimewire.com/article/deepseek-v4-pro-beats-gpt-5-5-pro-on-precision"
       ]
     }
   ]
