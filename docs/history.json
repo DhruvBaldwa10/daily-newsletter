@@ -1,6 +1,35 @@
 {
   "entries": [
     {
+      "date": "2026-07-09",
+      "title": "Burnout, Benchmarks, and Better Inference",
+      "headings": [
+        "OpenAI Takes a Scalpel to SWE-Bench Pro",
+        "GPT-Live and the Voice Layer Solidifies",
+        "Hugging Face Unlocks Native vLLM Speed in Transformers",
+        "Progressive Crystallization: Agents That Graduate Out of Inference",
+        "The LLM Fatigue Signal Is Real and Specific",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.07052v1",
+        "https://arxiv.org/abs/2607.07626v1",
+        "https://arxiv.org/abs/2607.07676v1",
+        "https://arxiv.org/abs/2607.07702v1",
+        "https://grandpacad.com/en/blog/public-benchmarks-misled-me-opus-4-7",
+        "https://hamel.dev/blog/posts/evals-faq/",
+        "https://hamel.dev/blog/posts/evals-skills/",
+        "https://huggingface.co/blog/native-speed-vllm-transformers-backend",
+        "https://huggingface.co/blog/nvidia/open-data-for-agents",
+        "https://news.ycombinator.com/item?id=48839984",
+        "https://openai.com/index/introducing-gpt-live",
+        "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+        "https://www.alecscollon.com/blog/llm-burnout/",
+        "https://www.latent.space/p/modal2026",
+        "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers"
+      ]
+    },
+    {
       "date": "2026-07-08",
       "title": "Agents Under Attack, Inside Out",
       "headings": [
@@ -706,32 +735,6 @@
         "https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety",
         "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
         "https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious"
-      ]
-    },
-    {
-      "date": "2026-06-09",
-      "title": "Apple's Siri Bet, OpenAI Goes Public",
-      "headings": [
-        "Apple's WWDC Siri AI: Credibility Is the Product Now",
-        "OpenAI Files a Confidential S-1 \u2014 The IPO Clock Starts",
-        "The Long-Horizon Agent Problem Gets a Real Benchmark",
-        "Agent Trust Layers Are Becoming Infrastructure",
-        "Customer Support Agents at 100M-User Scale: What the Framework Actually Looks Like",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.07682v1",
-        "https://arxiv.org/abs/2606.08049v1",
-        "https://arxiv.org/abs/2606.08539v1",
-        "https://arxiv.org/abs/2606.08867v1",
-        "https://arxiv.org/abs/2606.08998v1",
-        "https://arxiv.org/abs/2606.09122v1",
-        "https://arxiv.org/abs/2606.09730v1",
-        "https://github.com/wiztek-llc/context-ledger/tree/main",
-        "https://openai.com/index/built-to-benefit-everyone-our-plan",
-        "https://openai.com/index/openai-submits-confidential-s-1",
-        "https://simonwillison.net/2026/Jun/8/wwdc/#atom-everything",
-        "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/"
       ]
     }
   ]
