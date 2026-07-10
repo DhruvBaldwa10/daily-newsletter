@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-07-10",
+      "title": "GPT-5.6, Cursor Stats, Lock-in Risks",
+      "headings": [
+        "GPT-5.6 Goes Enterprise-Wide Inside Microsoft 365",
+        "Cursor's Internal Numbers Reframe the AI Coding Debate",
+        "Narayanan's Lock-in Warning: The Trap Is One Layer Up",
+        "Agent Security Gets Finer-Grained: From Binary to Seven Levels",
+        "WebSwarm and the Multi-Agent Search Architecture Problem",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.07474v1",
+        "https://arxiv.org/abs/2607.08395v1",
+        "https://arxiv.org/abs/2607.08662v1",
+        "https://blog.pragmaticengineer.com/the-pulse-interesting-ai-coding-stats-from-cursor/",
+        "https://openai.com/index/gpt-5-6",
+        "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
+        "https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from",
+        "https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from-the-commodity-trap"
+      ]
+    },
+    {
       "date": "2026-07-09",
       "title": "Burnout, Benchmarks, and Better Inference",
       "headings": [
@@ -706,35 +728,6 @@
         "https://www.latent.space/p/ainews-open-models-model-labs-vs",
         "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
         "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research/"
-      ]
-    },
-    {
-      "date": "2026-06-10",
-      "title": "Claude Fable 5 Changes Everything",
-      "headings": [
-        "Claude Fable 5: The Beast Behind the Benchmark",
-        "The Clause No One Noticed: Fable 5 Can Silently Withdraw Help from Competitors",
-        "Apple Opens the Foundation Models Stack to Third-Party LLMs",
-        "Suleyman Fires Back: Is Anthropic Anthropomorphizing Claude?",
-        "macOS Gets Native Container Machines \u2014 Quietly Useful for Local AI Dev",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://developer.apple.com/videos/play/wwdc2026/241/",
-        "https://github.com/Aidan945/SafeAgentDB",
-        "https://github.com/apple/container/blob/main/docs/container-machine.md",
-        "https://jonready.com/blog/posts/claude-fable5-is-allowed-to-sabotage-your-app-if-youre-a-competitor.html",
-        "https://news.ycombinator.com/item?id=48469658",
-        "https://news.ycombinator.com/item?id=48470772",
-        "https://old.reddit.com/r/ClaudeAI/comments/1u1fsdi/claude_fable_5_feels_less_like_a_model_launch_and/",
-        "https://simonwillison.net/2026/Jun/10/if-claude-fable-stops-helping-you/#atom-everything",
-        "https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox/#atom-everything",
-        "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
-        "https://simonwillison.net/2026/Jun/9/llm/#atom-everything",
-        "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-        "https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety",
-        "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
-        "https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious"
       ]
     }
   ]
