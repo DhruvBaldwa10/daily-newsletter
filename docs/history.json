@@ -1,6 +1,32 @@
 {
   "entries": [
     {
+      "date": "2026-07-11",
+      "title": "Evals, Reliability, and the Cost Reckoning",
+      "headings": [
+        "\"It's Hard to Eval\" Is Now a Red Flag, Not an Excuse",
+        "Meta Opens Muse Spark 1.1 to the API \u2014 With Agentic Ambitions",
+        "Engineering Leaders Are Auditing AI Spend \u2014 Right Now",
+        "Chain-of-Thought Monitoring Has a Persuasion Vulnerability",
+        "Agent Infrastructure Gets Closer to Production-Grade Tooling",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://ai.meta.com/static-resource/muse-spark-1-1-evaluation-report",
+        "https://arxiv.org/abs/2607.08066v1",
+        "https://arxiv.org/abs/2607.08740v1",
+        "https://blog.pragmaticengineer.com/the-pulse-a-trend-of-trying-to-cut-back-on-ai-spend-within-eng-departments/",
+        "https://blog.pragmaticengineer.com/the-pulse-did-capacity-shortages-turn-anthropic-hostile-to-devs/",
+        "https://entire.io",
+        "https://eugeneyan.com//writing/product-evals/",
+        "https://github.com/thrinz/agentpeek",
+        "https://hamel.dev/blog/posts/eval-smell/",
+        "https://hamel.dev/blog/posts/field-guide/",
+        "https://simonwillison.net/2026/Jul/9/muse-spark-1-1/#atom-everything",
+        "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside"
+      ]
+    },
+    {
       "date": "2026-07-10",
       "title": "GPT-5.6, Cursor Stats, Lock-in Risks",
       "headings": [
@@ -706,28 +732,6 @@
         "https://hamel.dev/blog/posts/evals-skills/",
         "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
         "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs"
-      ]
-    },
-    {
-      "date": "2026-06-11",
-      "title": "Anthropic Blinks, AI Replaces Nothing",
-      "headings": [
-        "Anthropic Backs Down on the Sabotage Clause",
-        "The Serious Case That Coding Agents Won't Replace Engineers",
-        "DiffusionGemma and the 4x Speed Claim Worth Scrutinizing",
-        "Model Labs vs. Agent Labs: Sarah Guo's Distinction That's Shaping Investment",
-        "Agentic RL Gets More Precise: APPO and the Credit Assignment Problem",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.12320v1",
-        "https://arxiv.org/abs/2606.12384v1",
-        "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/",
-        "https://simonwillison.net/2026/Jun/10/diffusiongemma/#atom-everything",
-        "https://simonwillison.net/2026/Jun/11/anthropic-walks-back-policy/#atom-everything",
-        "https://www.latent.space/p/ainews-open-models-model-labs-vs",
-        "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
-        "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research/"
       ]
     }
   ]
