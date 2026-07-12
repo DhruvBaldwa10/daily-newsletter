@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-07-12",
+      "title": "Privacy Holes, Quantization Lies, AutoEvals",
+      "headings": [
+        "Grok's CLI Is a Data Pipeline \u2014 Read the Fine Print",
+        "Automated Evals vs. Humans: Hamel Has the Numbers",
+        "Quantization Is Lying to Your Benchmarks",
+        "Eugene Yan's LLM Security Blueprint Gets Specific",
+        "Proactive Agents Get Their First Real-World Benchmark",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.08403v1",
+        "https://arxiv.org/abs/2607.08665v1",
+        "https://arxiv.org/abs/2607.08734v1",
+        "https://arxiv.org/abs/2607.08768v1",
+        "https://eugeneyan.com//writing/secure-source-code/",
+        "https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547",
+        "https://hamel.dev/",
+        "https://news.ycombinator.com/item?id=48877371"
+      ]
+    },
+    {
       "date": "2026-07-11",
       "title": "Evals, Reliability, and the Cost Reckoning",
       "headings": [
@@ -707,31 +729,6 @@
         "https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspend-access/#atom-everything",
         "https://status.claude.com/incidents/s9w82lp9dcn9",
         "https://www.anthropic.com/news/fable-mythos-access"
-      ]
-    },
-    {
-      "date": "2026-06-12",
-      "title": "AI Budgets Break, PRs Fail",
-      "headings": [
-        "The AI Spend Reckoning Engineering Teams Didn't Expect",
-        "46% of AI Pull Requests Get Rejected \u2014 Here's Why",
-        "Google DeepMind Puts $10M on Multi-Agent Safety",
-        "EvoArena Asks: What Happens When the Environment Changes Under an Agent?",
-        "How China's Open AI Ecosystem Compounds \u2014 and Why It Matters",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.13468v1",
-        "https://arxiv.org/abs/2606.13598v1",
-        "https://arxiv.org/abs/2606.13681v1",
-        "https://blog.pragmaticengineer.com/the-pulse-a-trend-of-trying-to-cut-back-on-ai-spend-within-eng-departments/",
-        "https://blog.pragmaticengineer.com/the-pulse-token-spend-breaks-budgets-what-next/",
-        "https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend/",
-        "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://hamel.dev/blog/posts/evals-skills/",
-        "https://www.interconnects.ai/p/how-open-model-ecosystems-compound",
-        "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs"
       ]
     }
   ]
