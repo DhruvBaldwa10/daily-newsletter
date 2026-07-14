@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Juries, GraphRAG, Agent Memory — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Tuesday, July 14, 2026</div>
+        <h1>LLM Juries, GraphRAG, Agent Memory</h1>
+        
+        <p class="subtitle">DoorDash is running multi-model juries to build food metadata at scale. GraphRAG's single-pass extraction problem now has an open-source fix. And a new paper reveals that agent memory isn't a storage problem — it's a consumption problem.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>DoorDash's LLM Jury System Is a Production Architecture Lesson</h2>
+          <p>Most teams default to a single LLM call for data enrichment. DoorDash's engineering blog published a detailed breakdown of a different approach: <a href="https://careersatdoordash.com/blog/building-food-metadata-with-llm-juries-context-optimization-multimodal-ai/">LLM juries for food metadata generation</a>, where multiple models vote on outputs, disagreements get flagged, and multimodal signals (photos, menus, text descriptions) are fused before any model sees them. The system isn't just about accuracy — it's architected to surface uncertainty, which turns out to be the missing signal in most production pipelines.</p><p>The detail that stands out: context optimization is treated as a first-class engineering concern, not an afterthought. DoorDash is explicitly tuning what goes into each jury member's context window depending on the task — not just dumping everything and hoping the model figures it out. With millions of restaurant items to classify and enrich, the cost of a naive "one model, max context" approach would be prohibitive. The jury structure lets them scale inference cost with task difficulty.</p><p>This is a pattern worth stealing. Routing easy, high-confidence items to cheaper models while escalating ambiguous cases to a multi-model vote is essentially dynamic model routing applied to data pipelines. It also creates a natural eval dataset: every jury disagreement is a labeled hard case.</p><blockquote><p>"LLM juries with context optimization and multimodal AI" — the DoorDash framing is deliberately bland, but the architecture is one of the more practical ensemble designs published by a production team this year.</p><cite>— DoorDash Engineering Blog</cite></blockquote><p>For teams building data enrichment or classification pipelines, the jury architecture is probably worth prototyping before committing to a single-model approach. Disagreement rates alone can tell you how hard your problem actually is.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://careersatdoordash.com/blog/building-food-metadata-with-llm-juries-context-optimization-multimodal-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🍔</span>
+              DoorDash Engineering
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GraphRAG Gets a Real Construction Pipeline with RAGU</h2>
+          <p>The core complaint about GraphRAG has always been that knowledge graph construction is a one-shot extraction pass — noisy entities, brittle retrieval, and no deduplication. A new paper introduces <a href="https://arxiv.org/abs/2607.11683v1">RAGU</a>, an open-source modular GraphRAG engine that separates extraction from consolidation in a way that actually addresses these failure modes head-on.</p><p>The architecture is specific enough to be implementable: entities and relations flow through two-stage typed extraction, then DBSCAN-backed deduplication, then LLM summarization, then Leiden community detection for clustering. That last step — Leiden community detection — is what lets RAGU answer questions that require synthesizing across loosely connected subgraphs, not just direct entity lookups. Most RAG evals don't even test for this capability, which is part of why single-pass GraphRAG looks fine in benchmarks but falls apart on real enterprise knowledge bases.</p><p>The "compact domain-adapted LLM" angle is worth flagging too. RAGU is designed to work with smaller, fine-tuned models for the extraction stages rather than burning frontier tokens on every graph construction operation. That's a meaningful cost architecture decision for anyone building knowledge graph pipelines at scale.</p><blockquote><p>"Existing systems construct knowledge graphs in a single extraction pass, producing noisy entities and brittle retrieval."</p><cite>— RAGU paper, arXiv 2607.11683</cite></blockquote><p>The open-source release means teams can swap components — bring your own deduplication or community detection if DBSCAN and Leiden don't fit your data. That modularity is exactly what's been missing from most GraphRAG implementations, which tend to be monolithic and hard to debug when retrieval degrades.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.11683v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              RAGU Paper (arXiv)
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agent Memory Has a Consumption Problem, Not Just a Storage Problem</h2>
+          <p>The framing in most agent memory research has been: what experience to write, how to index it, and which entry to retrieve. A new paper — <a href="https://arxiv.org/abs/2607.10608v1">"The Compliance Trap"</a> — flips that and asks how models actually consume retrieved memory across a multi-step action trajectory. The answer is uncomfortable: agents over-comply with retrieved memory even when it directly conflicts with current task context, leading to systematic errors that are invisible until you trace the action trajectory step by step.</p><p>The researchers call this the "compliance trap" — models that retrieve a past successful strategy and follow it even when environmental signals are screaming that it won't work here. This is distinct from retrieval failure (getting the wrong memory) or storage failure (not having the right experience). It's a reasoning failure that happens during consumption, after retrieval has succeeded.</p><p>The practical consequence: adding more memory to your agent doesn't automatically make it smarter. If the model lacks a mechanism to evaluate the fit between retrieved experience and current context before acting, more memory can actually increase failure rates on novel or partially-matching situations. This connects to the hourglass reasoning work also out this week — <a href="https://arxiv.org/abs/2607.11696v1">structured stage isolation</a> in reasoning may be part of the fix, forcing the model to commit to a situational assessment before consulting memory rather than interleaving both.</p><blockquote><p>"We still lack a clear account of how models consume retrieved memory across a multi-step action trajectory. This consumption process matters because it determines whether memory helps or hurts."</p><cite>— Chen et al., "The Compliance Trap," arXiv 2607.10608</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.10608v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Compliance Trap Paper (arXiv)
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.11696v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Hourglass Reasoning (arXiv)
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Self-Evolving Agents Arrive in Security Research</h2>
+          <p>Mako, introduced in a new paper as a <a href="https://arxiv.org/abs/2607.11288v1">Self-Evolving Agentic Operating System (SE-AOS)</a>, does something that most agent architectures explicitly avoid: it treats its own capabilities as a mutable, versioned kernel that it extends at runtime. When Mako encounters an exploit it can't execute, it synthesizes a new capability, proves it against a live target, and hot-loads it back into itself. The domain is autonomous web exploitation for security research, but the architecture pattern is the one that's going to show up everywhere.</p><p>The critical design distinction from standard tool-calling agents: Mako doesn't just select from a fixed tool library. It writes new tools, validates them, and persists them. The versioning and proof-step are what make this different from naive self-modification — there's a gate between synthesis and deployment that's supposed to prevent capability drift. "Supposed to" is doing real work in that sentence.</p><p>This maps directly onto the LOGOS paper also published this week, which introduces <a href="https://arxiv.org/abs/2607.10878v1">a governance layer for self-evolving multi-agent teams</a>. The LOGOS framing is explicit: "The defining question for deployment is no longer merely what agents can do, but who controls what they are allowed to become." That's the product question that nobody has a clean answer to yet — and Mako's security research context makes it viscerally concrete.</p><blockquote><p>"The defining question for deployment is no longer merely what agents can do, but who controls what they are allowed to become."</p><cite>— Ichikawa et al., LOGOS, arXiv 2607.10878</cite></blockquote><p>For teams building any agent that modifies its own behavior through fine-tuning, tool synthesis, or prompt self-editing, both papers are required reading before you ship. The governance question isn't academic.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.11288v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Mako SE-AOS Paper (arXiv)
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.10878v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              LOGOS Paper (arXiv)
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Smart Model Routing Moves From Experiment to Trend</h2>
+          <p>Gergely Orosz at The Pragmatic Engineer called out <a href="https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/">smart model routing as a new trend</a> worth tracking — systems that dynamically select the right model for the right task rather than using a single model for everything. He surveyed available options and found a small but growing set of production-ready router solutions, though most are still early-stage. Two independent Show HN projects landed the same day: <a href="https://www.flexinference.com">FlexInference</a>, a free LLM router, posted to Hacker News with minimal traction but real functionality.</p><p>The timing here is not coincidental. Model pricing has stratified significantly over the past six months — the gap between frontier and mid-tier model costs is wide enough that smart routing has a clear ROI story. A system that correctly routes 70% of requests to a cheaper model while preserving quality on the 30% that actually need frontier capability can cut inference spend dramatically without degrading user experience.</p><p>Sebastian Raschka's recent deep dive on <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">KV sharing and compressed attention in open-weight models</a> is the infrastructure layer underneath this trend — as open models close the quality gap on specific task types, the routing decision becomes less about "frontier vs. everything else" and more about matching task complexity to the right capability level at the right cost point.</p><blockquote><p>"Are there any 'intelligent' router solutions out there which select the right model for the right task? I looked into it, and there are a few options."</p><cite>— Gergely Orosz, The Pragmatic Engineer</cite></blockquote><p>The DoorDash jury architecture from earlier in today's digest is essentially a routing system applied to data pipelines. The same pattern keeps appearing in different contexts because the underlying economics are the same everywhere.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚙️</span>
+              Pragmatic Engineer
+            </a>
+            
+            <a href="https://www.flexinference.com" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔀</span>
+              FlexInference (Show HN)
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📚</span>
+              Sebastian Raschka
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>The LLM jury pattern from DoorDash is a production-ready alternative to single-model enrichment pipelines — disagreement rates between jury members are free signal about task difficulty, and they generate hard-case eval datasets automatically. If you're building classification or enrichment at scale, prototype this before you commit to a monolithic pipeline.</li><li>Agent memory is a consumption problem as much as a storage one. The "compliance trap" research means that wiring up more memory to your agent may increase failure rates on novel tasks unless you add explicit fit-evaluation between retrieved experience and current context before execution.</li><li>Smart model routing has crossed from experiment to recognized trend. With frontier-vs-mid-tier price gaps wide enough to matter, building a routing layer now is cheaper than absorbing unnecessary inference costs at scale — and open-weight quality improvements (KV sharing, compressed attention) are making the routing decision more granular every quarter.</li><li>Self-modifying agents are arriving in production-adjacent security research. If your agent architecture includes any form of runtime capability extension — tool synthesis, self-prompting, or behavior modification — the LOGOS governance framing is the right mental model: the question isn't what your agent can do today, it's who controls what it's allowed to become.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://careersatdoordash.com/blog/building-food-metadata-with-llm-juries-context-optimization-multimodal-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🍔</span>
+              DoorDash Engineering
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.10608v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Compliance Trap Paper
+            </a>
+            
+            <a href="https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚙️</span>
+              Pragmatic Engineer
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.10878v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              LOGOS Paper
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/vinhhien112/Three.js-Object-Sculptor-Codex-Plugin">vinhhien112/Three.js-Object-Sculptor-Codex-Plugin</a>
+              <span class="side-meta">Python · ⭐ 880</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Robbyant/lingbot-video">Robbyant/lingbot-video</a>
+              <span class="side-meta">Python · ⭐ 765</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/MDX-Tom/gpt-5.6-instruct">MDX-Tom/gpt-5.6-instruct</a>
+              <span class="side-meta">Python · ⭐ 738</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/mereyabdenbekuly-ctrl/clodex-ide">mereyabdenbekuly-ctrl/clodex-ide</a>
+              <span class="side-meta">TypeScript · ⭐ 698</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/op7418/guizang-material-illustration">op7418/guizang-material-illustration</a>
+              <span class="side-meta">None⭐ 637</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/William-Lu-stack/LuxyAI">William-Lu-stack/LuxyAI</a>
+              <span class="side-meta">Python · ⭐ 563</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude Science, an AI workbench for scientists, has been launched.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">DiffusionGemma, a text generation model offering 4x faster inference, is now available.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Gemini Omni Flash and Nano Banana 2 Lite are now available for developers to build with.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Canopy Wave</div>
+              <span class="launch-detail">GLM-5.2 model is now available via Canopy Wave platform.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.10623">LATO.2: Factorized 3D Mesh Generation with Vertex and Topology Flow</a>
+              <span class="side-meta">Flow matching over carefully designed latent representations has recently emerged as a powerful paradigm for topology-aware mesh generation. Existing approaches, however, model vertices and connectivi</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.05394">Weak-to-Strong Generalization via Direct On-Policy Distillation</a>
+              <span class="side-meta">Reinforcement learning with verifiable rewards (RLVR) is a powerful recipe for improving language-model reasoning, but it is expensive to repeat on every new strong model because the target model must</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.10350">ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</a>
+              <span class="side-meta">Recent VLM and VLA systems have improved robotic perception and action prediction, yet long-horizon embodied agents still require a general runtime layer for reasoning, memory, tool use, verification,</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.11849">AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification</a>
+              <span class="side-meta">Large language models (LLMs) have achieved remarkable performance on high-school and olympiad-style mathematics, yet their capabilities on advanced mathematics remain poorly understood. Existing bench</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.11487">LightMem-Ego: Your AI Memory for Everyday Life</a>
+              <span class="side-meta">Personal AI assistants on mobile and wearable devices continuously perceive users' daily lives through visual and audio streams. However, answering queries about past experiences requires lightweight </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>

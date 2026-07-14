@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-07-14",
+      "title": "LLM Juries, GraphRAG, Agent Memory",
+      "headings": [
+        "DoorDash's LLM Jury System Is a Production Architecture Lesson",
+        "GraphRAG Gets a Real Construction Pipeline with RAGU",
+        "Agent Memory Has a Consumption Problem, Not Just a Storage Problem",
+        "Self-Evolving Agents Arrive in Security Research",
+        "Smart Model Routing Moves From Experiment to Trend",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.10608v1",
+        "https://arxiv.org/abs/2607.10878v1",
+        "https://arxiv.org/abs/2607.11288v1",
+        "https://arxiv.org/abs/2607.11683v1",
+        "https://arxiv.org/abs/2607.11696v1",
+        "https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/",
+        "https://careersatdoordash.com/blog/building-food-metadata-with-llm-juries-context-optimization-multimodal-ai/",
+        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
+        "https://www.flexinference.com"
+      ]
+    },
+    {
       "date": "2026-07-13",
       "title": "Open Models' Six-Month Clock",
       "headings": [
@@ -696,36 +719,6 @@
         "https://openai.com/index/academy-courses-applying-ai-at-work",
         "https://openai.com/index/introducing-openai-partner-network",
         "https://www.interconnects.ai/p/open-and-closed-models-are-on-different"
-      ]
-    },
-    {
-      "date": "2026-06-14",
-      "title": "Chemistry, Reliability, and the Agent Stack",
-      "headings": [
-        "Anthropic's Chemist Experiment: What Domain Specialization Actually Requires",
-        "EpiBench Puts a Number on the Capability-Reliability Gap",
-        "Instruction Files Are Infrastructure, Not Docs",
-        "The Agent Infrastructure Layer Is Consolidating Into Products",
-        "LLM Reasoning and Pattern Matching: Closer Than We Thought",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.12821v1",
-        "https://arxiv.org/abs/2606.12835v1",
-        "https://arxiv.org/abs/2606.13449v1",
-        "https://arxiv.org/abs/2606.13566v1",
-        "https://arxiv.org/abs/2606.13602v1",
-        "https://arxiv.org/abs/2606.13607v1",
-        "https://bastion.computer/",
-        "https://github.com/sjh9714/Agent-Gate",
-        "https://hamel.dev/blog/posts/field-guide/",
-        "https://huyenchip.com//2025/01/07/agents.html",
-        "https://lime.pics",
-        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "https://news.ycombinator.com/item?id=48523752",
-        "https://www.anthropic.com/research/making-claude-a-chemist",
-        "https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai",
-        "https://www.qodflow.com"
       ]
     }
   ]
