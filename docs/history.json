@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-07-15",
+      "title": "MCP Blind Spots, Diffusion Speed, Agents Overthink",
+      "headings": [
+        "The MCP Trust Problem Nobody's Solved",
+        "Diffusion LLMs Are Getting Serious About Inference Speed",
+        "Agents Don't Know What They Don't Know \u2014 About Their Own Tasks",
+        "Local Models Get Closer to Replacing Cloud Subscriptions",
+        "AI Exceptionalism: When Products Get a Pass They Shouldn't",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.12056v1",
+        "https://arxiv.org/abs/2607.12829v1",
+        "https://arxiv.org/abs/2607.13034v1",
+        "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/",
+        "https://github.com/davidnichols-ops/trustcard",
+        "https://github.com/deepanwadhwa/samosa-chat",
+        "https://magazine.sebastianraschka.com/p/using-local-coding-agents",
+        "https://vllm.ai/blog/2026-07-14-vllm-tilert-pd",
+        "https://www.magiclasso.co/insights/ai-exceptionalism/",
+        "https://www.normaltech.ai/p/did-googles-ai-agents-really-build"
+      ]
+    },
+    {
       "date": "2026-07-14",
       "title": "LLM Juries, GraphRAG, Agent Memory",
       "headings": [
@@ -697,28 +721,6 @@
         "https://news.ycombinator.com/item?id=48550547",
         "https://runtimewire.com/article/microsoft-github-aws-ai-capacity-crunch",
         "https://venturebeat.com/technology/xiaomis-new-open-source-agentic-ai-coding-harness-mimo-code-beats-claude-code-at-ultra-long-200-step-tasks"
-      ]
-    },
-    {
-      "date": "2026-06-15",
-      "title": "KV Caches, Partner Networks, Latent Failures",
-      "headings": [
-        "The KV Cache Economy: Pay Once, Reuse Forever",
-        "Latent Failures: The Agent Bug That Doesn't Crash",
-        "OpenAI's $150M Partner Network Bet",
-        "Open vs. Closed: Different Curves, Different Bets",
-        "Version-Controlling Agent Reasoning: GitOfThoughts",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.13361v1",
-        "https://arxiv.org/abs/2606.14470v1",
-        "https://arxiv.org/abs/2606.14476v1",
-        "https://arxiv.org/abs/2606.14574v1",
-        "https://arxiv.org/abs/2606.14672v1",
-        "https://openai.com/index/academy-courses-applying-ai-at-work",
-        "https://openai.com/index/introducing-openai-partner-network",
-        "https://www.interconnects.ai/p/open-and-closed-models-are-on-different"
       ]
     }
   ]
