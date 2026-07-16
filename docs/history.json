@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "date": "2026-07-16",
+      "title": "Safety Theater Ends, Trust Begins",
+      "headings": [
+        "GPT-Red: OpenAI Turns Its Own Models Against Themselves",
+        "Agent Permissions Are a UX Problem, Not Just a Security One",
+        "40 Multi-Agent Papers, One Reconstruction, Blunt Lessons",
+        "Model Confidence Is Being Rewritten by Post-Training \u2014 And We're Only Starting to Measure It",
+        "Voice AI Finally Gets a Benchmark That Cares About Sounding Human",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.13285v1",
+        "https://arxiv.org/abs/2607.13705v1",
+        "https://arxiv.org/abs/2607.13718v1",
+        "https://arxiv.org/abs/2607.13753v1",
+        "https://deepmind.google/blog/fluid-natural-voice-translation-with-gemini-35-live-translate/",
+        "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+        "https://huggingface.co/blog/allenai/shippy-tech-blog",
+        "https://huggingface.co/blog/ibm-research/model-routing-is-simple-until-it-isnt",
+        "https://huggingface.co/blog/real-world-voiceeq",
+        "https://old.reddit.com/r/vibecoding/comments/1uxpox5/i_reimplemented_the_core_workflows_of_40/",
+        "https://openai.com/index/unlocking-self-improvement-gpt-red"
+      ]
+    },
+    {
       "date": "2026-07-15",
       "title": "MCP Blind Spots, Diffusion Speed, Agents Overthink",
       "headings": [
@@ -698,29 +723,6 @@
         "https://news.ycombinator.com/item?id=48565126",
         "https://runtimewire.com/article/cursor-1-5t-model-100000-gpus-compile",
         "https://www.latent.space/p/bad-envs"
-      ]
-    },
-    {
-      "date": "2026-06-16",
-      "title": "GitHub Cracks, Git Rebuilds",
-      "headings": [
-        "Microsoft Runs Out of Runway for GitHub's AI Ambitions",
-        "GitLab Transcend: Rebuilding Git for the Agent Era",
-        "MiMo Code Beats Claude Code at Ultra-Long Tasks \u2014 and It's Open Source",
-        "Pricing Agent Risk: When Automation Causes Real Financial Damage",
-        "ContextRL and the Problem of Evidence Buried in Long Traces",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://about.gitlab.com/blog/gitlab-transcend-announcements/",
-        "https://arxiv.org/abs/2606.16465v1",
-        "https://arxiv.org/abs/2606.17053v1",
-        "https://github.com/wdh107/agent-audit-trail",
-        "https://news.ycombinator.com/item?id=48549918",
-        "https://news.ycombinator.com/item?id=48550486",
-        "https://news.ycombinator.com/item?id=48550547",
-        "https://runtimewire.com/article/microsoft-github-aws-ai-capacity-crunch",
-        "https://venturebeat.com/technology/xiaomis-new-open-source-agentic-ai-coding-harness-mimo-code-beats-claude-code-at-ultra-long-200-step-tasks"
       ]
     }
   ]
