@@ -1,6 +1,38 @@
 {
   "entries": [
     {
+      "date": "2026-07-17",
+      "title": "Open Models' Week Gets Crowded",
+      "headings": [
+        "Two Giant Open Models in Two Days",
+        "Bun's $165K Rust Rewrite Took 11 Days",
+        "Context Engineering Is the New Reliability Bottleneck",
+        "NVIDIA's Embedding Model Tops the Retrieval Leaderboard",
+        "Claude Code and the Ceiling on Vibe-Coded Software",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.14275v1",
+        "https://arxiv.org/abs/2607.14340v1",
+        "https://arxiv.org/abs/2607.14952v1",
+        "https://arxiv.org/abs/2607.15257v1",
+        "https://blog.pragmaticengineer.com/the-pulse-what-can-we-learn-from-buns-rapid-rust-rewrite-with-ai/",
+        "https://claude.ai/code/artifact/bfdfaef9-bc62-4dfe-ba9e-c58a26c9accf",
+        "https://danangell.com/blog/posts/claude-code/",
+        "https://github.com/astrio-labs/forall",
+        "https://huggingface.co/blog/nvidia/nemotron-3-embed-wins-rteb",
+        "https://huggingface.co/blog/thinkingmachines-inkling",
+        "https://medium.com/@vektormemory/the-problem-claude-cowork-chatgpt-work-mode-doesnt-solve-remote-infrastructure-hitl-tasks-ae5721def632",
+        "https://simonwillison.net/2026/Jul/16/inkling/#atom-everything",
+        "https://slopfence.com",
+        "https://thinkingmachines.ai/news/introducing-inkling/",
+        "https://vettedconsumer.com/kimi-k3-the-largest-open-model-ever-2-8t-params-and-why-almost-no-one-can-run-it-locally/",
+        "https://www.kimi.com/blog/kimi-k3",
+        "https://www.latent.space/p/ainews-kimi-k3-28t-a50b-the-largest",
+        "https://www.qolca.org/blog/stop-sending-giant-system-prompts"
+      ]
+    },
+    {
       "date": "2026-07-16",
       "title": "Safety Theater Ends, Trust Begins",
       "headings": [
@@ -698,31 +730,6 @@
         "https://openai.com/index/introducing-life-sci-bench",
         "https://simonwillison.net/2026/Jun/17/glm-52/",
         "https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding"
-      ]
-    },
-    {
-      "date": "2026-06-17",
-      "title": "Cursor Bets Big, Benchmarks Lie",
-      "headings": [
-        "Cursor's 1.5T-Parameter Gamble",
-        "The Benchmark Illusion Is Getting a Name",
-        "Mastra's NPM Packages Got Compromised",
-        "GitHub Copilot Moves to Usage-Based Billing",
-        "The Intent-Execution Gap: Your Agent Harness Is the Bug",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.17454v1",
-        "https://arxiv.org/abs/2606.17609",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://github.com/mastra-ai/mastra/issues/18045",
-        "https://github.com/orgs/community/discussions/197089",
-        "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
-        "https://news.ycombinator.com/item?id=48564484",
-        "https://news.ycombinator.com/item?id=48564925",
-        "https://news.ycombinator.com/item?id=48565126",
-        "https://runtimewire.com/article/cursor-1-5t-model-100000-gpus-compile",
-        "https://www.latent.space/p/bad-envs"
       ]
     }
   ]
