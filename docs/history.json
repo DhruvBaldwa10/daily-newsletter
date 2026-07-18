@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-07-18",
+      "title": "Claude 5 Repriced, AI Scorecards Arrive",
+      "headings": [
+        "Claude Fable 5 Goes Into Every Max Plan \u2014 July 20th",
+        "OpenAI's CFO Publishes an AI ROI Scorecard",
+        "Physical-World Safety and Text Safety Are Separable Signals",
+        "Gemini 3.5 Flash Gets Computer Use",
+        "Video + Image Fine-Tuning at Scale Gets a Production Path",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.15218v1",
+        "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
+        "https://huggingface.co/blog/nvidia/scale-diffusers-finetuning-nemo-automodel",
+        "https://magazine.sebastianraschka.com/p/a-dream-of-spring-for-open-weight",
+        "https://openai.com/index/a-scorecard-for-the-ai-age",
+        "https://twitter.com/claudeai/status/2078302415804379218",
+        "https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety",
+        "https://www.latent.space/p/ainews-codex-usage-up-10x-in-6-months",
+        "https://www.latent.space/p/ainews-thinkys-inkling-975b-a41b"
+      ]
+    },
+    {
       "date": "2026-07-17",
       "title": "Open Models' Week Gets Crowded",
       "headings": [
@@ -704,32 +727,6 @@
         "https://huggingface.co/blog/peft-beyond-lora",
         "https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
         "https://www.latent.space/p/ainews-fable-and-mythos-officially"
-      ]
-    },
-    {
-      "date": "2026-06-18",
-      "title": "Open Models Surge, AI Hits Science",
-      "headings": [
-        "GLM-5.2: China's Open-Weight Bet Just Got Serious",
-        "GPT-5.4 in the Lab: AI Does Real Drug Chemistry",
-        "Predicting Model Behavior Before You Ship It",
-        "The Web Wasn't Built for Agents \u2014 Here's the Paper Making That Case",
-        "Agents Need Risk Controls at Every Step, Not Just the Output",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.16707v1",
-        "https://arxiv.org/abs/2606.18467v1",
-        "https://arxiv.org/abs/2606.19116v1",
-        "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
-        "https://huggingface.co/blog/agentic-resource-discovery-launch",
-        "https://huggingface.co/blog/zai-org/glm-52-blog",
-        "https://huggingface.co/zai-org/GLM-5.2",
-        "https://openai.com/index/ai-chemist-improves-reaction",
-        "https://openai.com/index/deployment-simulation",
-        "https://openai.com/index/introducing-life-sci-bench",
-        "https://simonwillison.net/2026/Jun/17/glm-52/",
-        "https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding"
       ]
     }
   ]

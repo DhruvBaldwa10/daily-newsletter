@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude 5 Repriced, AI Scorecards Arrive — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Saturday, July 18, 2026</div>
+        <h1>Claude 5 Repriced, AI Scorecards Arrive</h1>
+        
+        <p class="subtitle">Anthropic drops Claude Fable 5 into every Max plan on July 20th, OpenAI's CFO publishes a framework for measuring AI ROI in production, and new research draws a hard line between physical-world danger and text-level content safety. Three developments that change how you price, evaluate, and deploy AI products this week.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Claude Fable 5 Goes Into Every Max Plan — July 20th</h2>
+          <p>Anthropic <a href="https://twitter.com/claudeai/status/2078302415804379218">announced via X</a> that starting July 20th, Claude Fable 5 will be included in all Max plans — no tier upgrade required. That's a significant pricing move. Max plans currently start at $100/month, and Fable 5 is Anthropic's most capable release, <a href="https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety">covered at length by Nathan Lambert</a> when it launched in June as a model that pushes further into the political economy of frontier AI systems.</p><p>The practical consequence: teams that consolidated on Max plans for Claude Code access now get the frontier model in that same subscription. If you've been routing power users to a separate API tier for Fable 5 access, that calculus changes Monday. The move also applies pressure on OpenAI's tiered access model — Codex just crossed <a href="https://www.latent.space/p/ainews-codex-usage-up-10x-in-6-months">7 million users with 10x growth in six months</a>, but Anthropic is answering the usage race with a subscription consolidation play instead of a user count announcement.</p><p>The competitive signal here is directional: Anthropic is betting that collapsing the capability gap between tiers retains professional subscribers and makes Max stickier, rather than upselling them into enterprise contracts. For product teams building on the API, this doesn't change your costs directly — but it does reset user expectations about what "default Claude" means, which will start showing up in support tickets and product comparisons almost immediately.</p><blockquote><p>"One step further into the power politics of frontier AI systems."</p><cite>— Nathan Lambert, Interconnects, on Claude Fable 5's launch</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://twitter.com/claudeai/status/2078302415804379218" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Anthropic on X
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Interconnects: Claude Fable 5
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-codex-usage-up-10x-in-6-months" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🚀</span>
+              Latent Space: Codex 7M users
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>OpenAI's CFO Publishes an AI ROI Scorecard</h2>
+          <p>OpenAI CFO Sarah Friar <a href="https://openai.com/index/a-scorecard-for-the-ai-age">published a framework Friday</a> for measuring AI return on investment in production environments. The four dimensions she proposes: useful work completed, cost per successful task, dependability, and return on compute. It's the kind of document that reads as both a sales artifact and a genuine attempt to standardize how enterprises justify AI spend — and those two purposes aren't mutually exclusive.</p><p>The framing around "cost per successful task" is the most operationally interesting piece. It implicitly acknowledges that token cost and task success are different things — that a cheaper model completing 60% of tasks successfully can be worse ROI than an expensive one completing 90%. That's a point the AI engineering community has been making for a year through eval frameworks, but having it come from OpenAI's finance leadership gives it a different kind of institutional weight when a VP of Engineering is presenting to their CFO.</p><p>"Dependability" as a discrete metric is also notable given where reliability failures concentrate in production agentic systems — not in raw capability but in consistency across edge cases, context lengths, and tool-call sequences. Friar doesn't define it rigorously, but naming it separately from task success rate signals that OpenAI knows the gap exists and wants to own the vocabulary before someone else does.</p><p>Whether this scorecard becomes a standard or stays a marketing document depends on whether the underlying benchmarks (which Friar gestures at without specifying) are made auditable. Until then, it's a useful conversation starter with procurement teams, not a measurement instrument.</p><blockquote><p>"A practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute."</p><cite>— OpenAI Blog summary of Sarah Friar's scorecard framework</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/a-scorecard-for-the-ai-age" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              OpenAI: AI Scorecard
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Physical-World Safety and Text Safety Are Separable Signals</h2>
+          <p>A new arxiv paper, <a href="https://arxiv.org/abs/2607.15218v1">"When Words Are Safe But Actions Kill"</a>, makes a finding that has direct relevance to anyone building embodied or tool-using agents: physical danger and content danger are measurably distinct representations inside LLMs, not two manifestations of the same safety signal. The researchers analyzed hidden-state directions across Qwen2.5 models at 3B, 7B, and 14B parameter scales, running random-split null tests to confirm the separation isn't an artifact.</p><p>The core problem they're identifying: a linguistically benign instruction — "pick up the object near the heater" — can become unsafe once grounded in a physical environment, but standard content safety classifiers won't flag it because they're tuned on text-level danger signals. The model's internal representation of "this is dangerous" for physical grounding is geometrically separable from its representation of "this is harmful content."</p><p>For product teams building agents that interact with real-world systems — robotics, home automation, infrastructure management, even complex multi-step API orchestration — this is a structural gap in every content-safety layer you're currently relying on. The implication isn't that content filters are useless; it's that they're evaluating the wrong signal space for embodied contexts. You'd need a separate classifier trained on physical-danger representations, or a grounding-aware safety layer that evaluates actions in context rather than instructions in isolation.</p><p>This research is early-stage, but the architectural argument is clean enough that forward-thinking teams building agentic products should be designing the physical/content safety split into their safety evaluation pipelines now rather than retrofitting it when something goes wrong.</p><blockquote><p>"Linguistically benign instructions can become unsafe once grounded in the physical world... content danger (CD) and physical danger (PD) form separable signals in LLM representations."</p><cite>— Wang et al., "When Words Are Safe But Actions Kill" (arXiv, July 2026)</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.15218v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: Physical vs Text Safety
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Gemini 3.5 Flash Gets Computer Use</h2>
+          <p>Google DeepMind <a href="https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/">announced computer use capability in Gemini 3.5 Flash</a> in late June, but the significance is crystallizing now as teams evaluate it against Anthropic's computer use offering in Claude. The notable architectural choice is putting this in Flash — the speed- and cost-optimized model — rather than leading with it in the Pro tier.</p><p>That's a deliberate product bet. Computer use tasks tend to be high-latency by nature (you're waiting on screen renders, UI state changes, app responses), so the bottleneck isn't usually model inference speed. But pricing is a real constraint: if each computer-use session burns significant tokens on screenshots and UI state descriptions, doing it in Flash at lower per-token cost changes the economics of building agents that spend long sessions in a browser or desktop environment.</p><p>The competitive landscape now has three serious computer use offerings: Claude (which pioneered the general-purpose version), Gemini 3.5 Flash (cost-optimized, Google ecosystem integration), and the operator-facing tools being built on top of both. The differentiation question for product teams is less "which model can click buttons" and more "which has better reliability on multi-step UI sequences without drifting, and at what cost per completed workflow." Google hasn't published numbers on that yet, and neither has Anthropic in a way that enables direct comparison. That data void is where evals teams should be spending cycles this month.</p><blockquote><p>"Thinky's first full LLM release is a banger and bonus: it's open weights!"</p><cite>— Latent Space (swyx), on the broader open-weights computer-use competitive context</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🖥️</span>
+              DeepMind: Gemini 3.5 Flash Computer Use
+            </a>
+            
+            <a href="https://www.latent.space/p/ainews-thinkys-inkling-975b-a41b" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Latent Space: Open weights landscape
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Video + Image Fine-Tuning at Scale Gets a Production Path</h2>
+          <p>Hugging Face and NVIDIA <a href="https://huggingface.co/blog/nvidia/scale-diffusers-finetuning-nemo-automodel">published a joint guide Friday</a> on fine-tuning video and image diffusion models at scale using NVIDIA NeMo Automodel with Diffusers. The integration matters because it bridges two previously disconnected workflows: Diffusers' accessible Python interface and NeMo's production-grade distributed training infrastructure.</p><p>The practical gap this fills: teams that prototype image fine-tuning with Diffusers hit a ceiling when they try to scale to video, multi-GPU clusters, or production training jobs. NeMo Automodel provides the distributed training plumbing (checkpointing, mixed precision, gradient accumulation across nodes) while Diffusers handles the model abstraction. The combination is essentially "Diffusers ergonomics, NeMo reliability" — which is a genuinely useful combination rather than a marketing mashup.</p><p>This lands at a moment when video generation fine-tuning is moving from research curiosity to product feature. Teams building content creation tools, synthetic training data pipelines, or product visualization workflows are actively evaluating whether to run fine-tuned video models or rely on API providers. The cost math has been the blocker — video fine-tuning is GPU-hungry and operationally complex. A cleaner stack reduces the engineering surface area enough to make in-house fine-tuning viable for more teams.</p><p>Sebastian Raschka's <a href="https://magazine.sebastianraschka.com/p/a-dream-of-spring-for-open-weight">roundup of 10 open-weight architectures from early 2026</a> is useful context here — the proliferation of open-weight models makes fine-tuning tooling more valuable, not less, because there are more base models worth adapting.</p><blockquote><p>"A curated roundup of notable LLM research papers that came out this year"</p><cite>— Sebastian Raschka, PhD, Ahead of AI newsletter, on the pace of open-weight model releases in 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://huggingface.co/blog/nvidia/scale-diffusers-finetuning-nemo-automodel" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              HuggingFace: NeMo + Diffusers
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/a-dream-of-spring-for-open-weight" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Raschka: 10 open-weight models
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>Anthropic collapsing Fable 5 into all Max plans on July 20th resets user expectations about what a $100/month subscription delivers — audit any user-facing copy or tier comparison pages you own before Monday, because "our Pro tier uses Claude Fable 5" may no longer be a differentiator.</li><li>OpenAI's CFO scorecard framing — useful work, cost per successful task, dependability, return on compute — is now vocabulary you'll hear in enterprise procurement conversations; build your internal eval reporting around these four dimensions so you're speaking the buyer's language rather than token-efficiency metrics they won't recognize.</li><li>The physical-danger vs. content-danger separation in LLM representations is a structural gap in every content-safety layer built for text, and any team shipping agents that touch real-world systems or multi-step tool sequences should treat their current safety pipeline as insufficient for embodied contexts until proven otherwise.</li><li>Gemini 3.5 Flash's computer-use launch makes Flash the cost-optimized default for browser and desktop agent sessions — run your own multi-step UI reliability benchmarks across Claude and Gemini before committing to either provider, because neither has published auditable completion rates on realistic workflows.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://twitter.com/claudeai/status/2078302415804379218" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              Anthropic: Fable 5 Max announcement
+            </a>
+            
+            <a href="https://openai.com/index/a-scorecard-for-the-ai-age" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              OpenAI: AI Scorecard
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.15218v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: Physical vs Text Safety
+            </a>
+            
+            <a href="https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🖥️</span>
+              DeepMind: Gemini computer use
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/xai-org/grok-build">xai-org/grok-build</a>
+              <span class="side-meta">Rust · ⭐ 16,784</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/MDX-Tom/gpt-5.6-instruct">MDX-Tom/gpt-5.6-instruct</a>
+              <span class="side-meta">Python · ⭐ 1,900</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/tandpfun/wardrobe">tandpfun/wardrobe</a>
+              <span class="side-meta">JavaScript · ⭐ 909</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/mereyabdenbekuly-ctrl/clodex-ide">mereyabdenbekuly-ctrl/clodex-ide</a>
+              <span class="side-meta">TypeScript · ⭐ 833</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/oil-oil/beautify-github-readme">oil-oil/beautify-github-readme</a>
+              <span class="side-meta">Python · ⭐ 761</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/Blueturboguy07/cue">Blueturboguy07/cue</a>
+              <span class="side-meta">JavaScript · ⭐ 485</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Claude Fable 5 will be included in all Max plans beginning July 20.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Introduced computer use capability in Gemini 3.5 Flash.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.09061">On Locality and Length Generalization in Visual Reasoning</a>
+              <span class="side-meta">A striking feature of the human visual system is that it ingests visual information through a series of local foveated glimpses, rather than a single global computation. This makes human vision distin</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.12227">Rethinking the Evaluation of Harness Evolution for Agents</a>
+              <span class="side-meta">We revisit the evaluation of automatic harness evolution for LLM agents. Existing harness evolution methods use unit test cases to search for harness configurations and then report final performance o</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.14387">Chat2Scenic: An Iterative RAG-Based Framework for Scenario Generation in Autonomous Driving</a>
+              <span class="side-meta">Validating autonomous driving systems requires diverse, regulation-compliant test scenarios. In simulation-based testing, scenarios are defined as executable scripts. Yet automatically generating such</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.15278">Hierarchical Denoising For Multi-Step Visual Reasoning</a>
+              <span class="side-meta">Video models are evolving into vision foundation models, yet they still lack human-like multi-step reasoning. Streaming autoregressive diffusion models are efficient but limited in reasoning, while bi</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.14187">RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination</a>
+              <span class="side-meta">Embodied cognition requires agents to connect high-level task reasoning with the physical states to be achieved. We introduce Hy-Embodied-RxBrain, an embodied cognition foundation model with joint lan</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
