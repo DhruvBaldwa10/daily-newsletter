@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-07-19",
+      "title": "Inkling Breaks GPU Supply Chain",
+      "headings": [
+        "Something Called Inkling Just Drained Every B200 on the Market",
+        "GLM-5.2 and the Open Agent Threshold",
+        "OmniaBench Tries to Map What General Agents Can Actually Do",
+        "Reasoning Effort as a Product Dial, Not a Research Curiosity",
+        "Hugging Face Discloses a July Security Incident",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.10252",
+        "https://arxiv.org/abs/2607.14386v1",
+        "https://arxiv.org/abs/2607.14989v1",
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://magazine.sebastianraschka.com/p/categories-of-inference-time-scaling",
+        "https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms",
+        "https://news.ycombinator.com/item?id=48964020",
+        "https://twitter.com/Akashi203/status/2078615659366252877",
+        "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+        "https://www.latent.space/p/aiewf26trends"
+      ]
+    },
+    {
       "date": "2026-07-18",
       "title": "Claude 5 Repriced, AI Scorecards Arrive",
       "headings": [
@@ -703,30 +727,6 @@
         "https://www.interconnects.ai/p/frontier-post-training-recipe-review",
         "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
         "https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-that-china-will-have-a-fable-5-class-ai-model-probably-q1-next-year-ceo-of-chinese-anthropic-rival-says-it-wont-take-that-long"
-      ]
-    },
-    {
-      "date": "2026-06-19",
-      "title": "Fine-Tuning, Leaks, and Long-Lived Agents",
-      "headings": [
-        "Beyond LoRA: Fine-Tuning's Most Popular Technique Gets a Challenger",
-        "MosaicLeaks: Can Your Research Agent Keep a Secret?",
-        "Teaching Agents to Remember Across Their Entire Lifetime",
-        "Benchmarking LLMs Across Languages \u2014 Python Was Hiding the Gaps",
-        "Agentic Tooling Benchmarks Hit the Hugging Face Ecosystem",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.20002v1",
-        "https://arxiv.org/abs/2606.20517v1",
-        "https://eugeneyan.com//writing/eval-process/",
-        "https://eugeneyan.com//writing/qa-evals/",
-        "https://hamel.dev/blog/posts/eval-tools/",
-        "https://huggingface.co/blog/ServiceNow/mosaicleaks",
-        "https://huggingface.co/blog/is-it-agentic-enough",
-        "https://huggingface.co/blog/peft-beyond-lora",
-        "https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1",
-        "https://www.latent.space/p/ainews-fable-and-mythos-officially"
       ]
     }
   ]
