@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-07-20",
+      "title": "Math Proofs, Rust Runtime, Business Benchmarks",
+      "headings": [
+        "Claude Fable 5 May Have Cracked a 40-Year-Old Math Problem",
+        "Claude Code's Runtime Went Rust Two Months Ago \u2014 Nobody Noticed",
+        "A Benchmark That Tests What Analysts Actually Do",
+        "When Model Explanations Lie to Your Face",
+        "Cybersecurity Evals Get a Principled Construction Blueprint",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.15957v1",
+        "https://arxiv.org/abs/2607.16057v1",
+        "https://arxiv.org/abs/2607.16097v1",
+        "https://bun.com/blog/bun-in-rust",
+        "https://eugeneyan.com//writing/cybersecurity-evals/",
+        "https://news.ycombinator.com/item?id=48973869",
+        "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/#atom-everything",
+        "https://xcancel.com/__alpoge__/status/2079028340955197566"
+      ]
+    },
+    {
       "date": "2026-07-19",
       "title": "Inkling Breaks GPU Supply Chain",
       "headings": [
@@ -703,30 +725,6 @@
         "https://openai.com/index/diagnose-rare-childhood-diseases",
         "https://openai.com/index/improving-health-intelligence-in-chatgpt",
         "https://www.technologyreview.com/2026/06/19/1139313/a-startup-claims-it-broke-through-a-bottleneck-thats-holding-back-llms/"
-      ]
-    },
-    {
-      "date": "2026-06-20",
-      "title": "China's Countdown, Tokens Reconsidered",
-      "headings": [
-        "The Fable 5 Gap Is Closing Faster Than Musk Admits",
-        "Parallel Tokens: Diffusion LLMs Enter the Chat",
-        "Token Compression Gets a Tool \u2014 60\u201395% Reduction Claims",
-        "Robots Get a Hub-to-Hardware Pipeline",
-        "Post-Training Is the New Moat \u2014 And It's Getting Legible",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://github.com/chopratejas/headroom",
-        "https://hamel.dev/blog/posts/evals-faq/",
-        "https://huggingface.co/blog/allenai/molmomotion",
-        "https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware",
-        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
-        "https://magazine.sebastianraschka.com/p/visual-attention-variants",
-        "https://www.inceptionlabs.ai/",
-        "https://www.interconnects.ai/p/frontier-post-training-recipe-review",
-        "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-that-china-will-have-a-fable-5-class-ai-model-probably-q1-next-year-ceo-of-chinese-anthropic-rival-says-it-wont-take-that-long"
       ]
     }
   ]
