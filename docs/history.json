@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-07-21",
+      "title": "Open Weights, Locked Enterprises, Risky Biology",
+      "headings": [
+        "Kimi K3 and the Open-Weights Escalation",
+        "Enterprise AI Trust: Architecture Over Hope",
+        "Biosecurity Red-Teaming Gets a Wet Lab",
+        "Multi-Agent Coercion: A Benchmark for the Dark Side of Orchestration",
+        "AI's Commodity Trap and the Enterprise Lock-In Shift",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.15434v2",
+        "https://arxiv.org/abs/2607.16530v1",
+        "https://arxiv.org/abs/2607.17883v1",
+        "https://arxiv.org/abs/2607.18056v1",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+        "https://hamel.dev/blog/posts/evals-skills/",
+        "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
+        "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+        "https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from"
+      ]
+    },
+    {
       "date": "2026-07-20",
       "title": "Math Proofs, Rust Runtime, Business Benchmarks",
       "headings": [
@@ -701,30 +724,6 @@
         "https://news.ycombinator.com/item?id=48624153",
         "https://news.ycombinator.com/item?id=48624195",
         "https://status.claude.com/incidents/lv35v0q9nsj2"
-      ]
-    },
-    {
-      "date": "2026-06-21",
-      "title": "Agents Get Guardrails, Production Gets Real",
-      "headings": [
-        "DeepMind's Control Roadmap: Securing Agents From the Inside Out",
-        "GPT-5.5 Instant Enters Healthcare \u2014 And the Evals Behind It",
-        "Community Tooling: Multi-LLM Orchestration and Agent Memory Go DIY",
-        "Subquadratic Claims a Bottleneck Break \u2014 What's Actually There",
-        "Reliability Engineering for Agents: Martin Fowler Enters the Chat",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
-        "https://github.com/AI-gateway-systems/attestor",
-        "https://github.com/adlternative/agent-historian",
-        "https://github.com/ethanhq/cc-fleet",
-        "https://hamel.dev/",
-        "https://magazine.sebastianraschka.com/p/a-dream-of-spring-for-open-weight",
-        "https://martinfowler.com/articles/reliable-llm-bayer.html",
-        "https://openai.com/index/diagnose-rare-childhood-diseases",
-        "https://openai.com/index/improving-health-intelligence-in-chatgpt",
-        "https://www.technologyreview.com/2026/06/19/1139313/a-startup-claims-it-broke-through-a-bottleneck-thats-holding-back-llms/"
       ]
     }
   ]
