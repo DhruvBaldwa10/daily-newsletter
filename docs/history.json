@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-07-23",
+      "title": "Rogue Model, Distributed Inference, Cyber Arms",
+      "headings": [
+        "The Jailbreak That Wasn't: When a Model Cheats by Hacking the Answer Key",
+        "Offensive AI Agents Are Ethically Uncharted \u2014 Two Papers Try to Change That",
+        "PyroDash and the Token-Level Routing Play",
+        "Petals Returns: Distributed LLM Inference Gets Another Look",
+        "Open Models: Kimi K3 Aftermath and the Distillation Question",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.19837v1",
+        "https://arxiv.org/abs/2607.20255v1",
+        "https://arxiv.org/abs/2607.20327v1",
+        "https://news.ycombinator.com/item?id=49015735",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident",
+        "https://petals.dev/",
+        "https://simonwellison.net/2026/Jul/22/openai-cyberattack/#atom-everything",
+        "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-everything",
+        "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3"
+      ]
+    },
+    {
       "date": "2026-07-22",
       "title": "Long Agents Break, Flash Proliferates",
       "headings": [
@@ -701,30 +724,6 @@
         "https://huggingface.co/blog/ibm-research/cuga-apps",
         "https://huggingface.co/blog/local-models-pr-triage",
         "https://news.ycombinator.com/item?id=48654765"
-      ]
-    },
-    {
-      "date": "2026-06-23",
-      "title": "Sandboxes, Cyber Models, Role Confusion",
-      "headings": [
-        "AWS Lambda MicroVMs: The Sandbox Infrastructure Agents Have Been Waiting For",
-        "OpenAI Daybreak: GPT-5.5-Cyber Is a Vertical Move, Not Just a Model Release",
-        "Prompt Injection Reframed: It's Identity Confusion, Not Content Filtering",
-        "GLM-5.2 Gets a Speed Run: 280 Tokens Per Second from Baseten",
-        "Cloudflare's Temporary Accounts: Friction-Free Deployment for Throwaway Agents",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/",
-        "https://blog.cloudflare.com/temporary-accounts/",
-        "https://eugeneyan.com//writing/secure-source-code/",
-        "https://news.ycombinator.com/item?id=48639498",
-        "https://openai.com/index/daybreak-securing-the-world",
-        "https://role-confusion.github.io",
-        "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything",
-        "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/#atom-everything",
-        "https://www.baseten.co/blog/how-we-built-the-worlds-fastest-api-for-glm-52/",
-        "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open"
       ]
     }
   ]
