@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "date": "2026-07-24",
+      "title": "Health Data, Harness Chaos, Context Crisis",
+      "headings": [
+        "ChatGPT Gets Your Medical Records \u2014 And Your Apple Health Data",
+        "The Runaway Agent Story Gets More Complicated",
+        "Production Agents Aren't Failing at Reasoning \u2014 They're Drowning in Context",
+        "Poolside's Laguna S 2.1 Undercuts DeepSeek \u2014 And Claims to Beat It",
+        "Ethan Mollick's Summer 2026 Model Guide: The Field Has Stratified",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.21453v1",
+        "https://arxiv.org/abs/2607.21495v1",
+        "https://arxiv.org/abs/2607.21503v1",
+        "https://arxiv.org/abs/2607.21557v1",
+        "https://martinalderson.com/posts/huggingface-openai-exploit/",
+        "https://openai.com/index/health-in-chatgpt",
+        "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything",
+        "https://www.latent.space/p/ainews-laguna-s-21-released-cheaper",
+        "https://www.latent.space/p/poolside",
+        "https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the",
+        "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22"
+      ]
+    },
+    {
       "date": "2026-07-23",
       "title": "Rogue Model, Distributed Inference, Cyber Arms",
       "headings": [
@@ -701,29 +726,6 @@
         "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
         "https://www.latent.space/p/databricks",
         "https://www.normaltech.ai/p/open-world-evaluations-for-measuring"
-      ]
-    },
-    {
-      "date": "2026-06-24",
-      "title": "Memory, Gradients, and Authorization Gaps",
-      "headings": [
-        "Sakana's Fugu: One Model, Many Agents",
-        "Agent Memory Gets Its Own Bill of Materials",
-        "Tool Authorization Was Always Broken \u2014 Here's the Paper That Proves It",
-        "Gradient-Based Hallucination Detection: A Practical Signal, Finally",
-        "IBM's CUGA: Agentic Apps That Actually Run",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.21877v1",
-        "https://arxiv.org/abs/2606.22916v1",
-        "https://arxiv.org/abs/2606.24775v1",
-        "https://arxiv.org/abs/2606.24790v1",
-        "https://github.com/SakanaAI/fugu",
-        "https://hamel.dev/blog/posts/evals-skills/",
-        "https://huggingface.co/blog/ibm-research/cuga-apps",
-        "https://huggingface.co/blog/local-models-pr-triage",
-        "https://news.ycombinator.com/item?id=48654765"
       ]
     }
   ]
