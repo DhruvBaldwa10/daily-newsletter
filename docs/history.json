@@ -1,6 +1,36 @@
 {
   "entries": [
     {
+      "date": "2026-07-26",
+      "title": "Opus 5, FLUX 3, Evals Break Down",
+      "headings": [
+        "Claude Opus 5: Fable-Level Brains, Half the Bill",
+        "FLUX 3 Changes the Multimodal Video Conversation",
+        "Do Automated Evals Actually Work? A 100-Trace Study Says: It's Complicated",
+        "Emergent Misalignment Has a Mechanism \u2014 And It's Pre-Existing",
+        "Keeping AI Coding Agents From Eating Working Code",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.21356v1",
+        "https://blog.pragmaticengineer.com/the-pulse-interesting-ai-coding-stats-from-cursor/",
+        "https://danluu.com/ai-coding/",
+        "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/",
+        "https://eugeneyan.com//writing/product-evals/",
+        "https://github.com/avenna01-ceo/claude-code-survival-kr",
+        "https://hamel.dev/",
+        "https://hamel.dev/blog/posts/eval-smell/",
+        "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/",
+        "https://lilianweng.github.io/posts/2026-07-04-harness/",
+        "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
+        "https://simonwillison.net/2026/Jul/24/introducing-claude-opus-5/#atom-everything",
+        "https://www.anthropic.com/news/claude-opus-5",
+        "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+        "https://www.latent.space/p/ainews-black-forest-labs-flux-3-multimodal",
+        "https://www.latent.space/p/ainews-claude-opus-5-fable-level"
+      ]
+    },
+    {
       "date": "2026-07-24",
       "title": "Health Data, Harness Chaos, Context Crisis",
       "headings": [
@@ -703,29 +733,6 @@
         "https://www.cnn.com/2026/06/25/tech/openai-limit-release-white-house",
         "https://www.interconnects.ai/p/welcome-to-the-agi-era-of-ai-governance",
         "https://www.latent.space/p/ainews-openai-reports-median-internal"
-      ]
-    },
-    {
-      "date": "2026-06-25",
-      "title": "Chips, Collapses, and Computer Use",
-      "headings": [
-        "OpenAI's Jalape\u00f1o: A Custom Silicon Bet on Inference at Scale",
-        "Gemini 3.5 Flash Gets Computer Use \u2014 and That's a Bigger Deal Than It Sounds",
-        "Why RL-Trained Tool-Use Agents Catastrophically Collapse \u2014 And the Fix",
-        "Databricks on Agent Clouds: Open Frontier or Closed Loop?",
-        "Measuring Intelligence in Bits: A Compression Framework for Agentic Systems",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.25960v1",
-        "https://arxiv.org/abs/2606.26027v1",
-        "https://arxiv.org/abs/2606.26057v1",
-        "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/",
-        "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
-        "https://openai.com/index/chatgpt-enterprise-spend-controls",
-        "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
-        "https://www.latent.space/p/databricks",
-        "https://www.normaltech.ai/p/open-world-evaluations-for-measuring"
       ]
     }
   ]
