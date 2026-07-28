@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "date": "2026-07-28",
+      "title": "Confidence Scores, Hidden Thinking, Nvidia's Fracture",
+      "headings": [
+        "Claude's Thinking Goes Dark",
+        "Why LLM Confidence Scores Are a Trap",
+        "Nvidia's Security Alliance, Minus the People It Needs",
+        "OpenAI Research: AI Expands Work, Doesn't Just Replace It",
+        "Governing What Agents Are Allowed vs. What They Can Do",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.23438v1",
+        "https://arxiv.org/abs/2607.24586v1",
+        "https://justinflick.com/2026/07/27/llm-confidence-scores.html",
+        "https://news.ycombinator.com/item?id=49077443",
+        "https://news.ycombinator.com/item?id=49077688",
+        "https://old.reddit.com/r/ClaudeAI/comments/1v3u707/no_longer_shows_full_thinking/",
+        "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
+        "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-google-and-anthropic-absent-from-nvidia-led-open-secure-ai-alliance-30-companies-join-security-alliance-after-openai-agent-breach"
+      ]
+    },
+    {
       "date": "2026-07-27",
       "title": "Code Review Breaks, Chatbots Fade",
       "headings": [
@@ -708,27 +731,6 @@
         "https://magazine.sebastianraschka.com/p/components-of-a-coding-agent",
         "https://magazine.sebastianraschka.com/p/using-local-coding-agents",
         "https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai"
-      ]
-    },
-    {
-      "date": "2026-06-27",
-      "title": "Sol Previewed, Injection Survived",
-      "headings": [
-        "GPT-5.6 Sol: OpenAI's Next Model Is Already Here (Sort Of)",
-        "6,000 Injection Attempts, Zero Leaks \u2014 What That Actually Proves",
-        "Open vs. Closed: The Diverging Exponentials",
-        "Autodata: Teaching Agents to Generate Their Own Training Sets",
-        "Sequence Probability Isn't Correctness \u2014 And Now There's Data",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.25996v2",
-        "https://arxiv.org/abs/2606.27359v1",
-        "https://openai.com/index/patch-the-planet",
-        "https://openai.com/index/previewing-gpt-5-6-sol",
-        "https://simonwillison.net/2026/Jun/26/hack-my-ai-assistant/#atom-everything",
-        "https://www.fernandoi.cl/posts/hackmyclaw/",
-        "https://www.interconnects.ai/p/open-and-closed-models-are-on-different"
       ]
     }
   ]
