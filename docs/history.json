@@ -1,6 +1,32 @@
 {
   "entries": [
     {
+      "date": "2026-07-30",
+      "title": "GPT-5.6, Memory Stacks, ARC-AGI Tricks",
+      "headings": [
+        "GPT-5.6 and the ARC-AGI-3 Score That Shouldn't Have Tripled",
+        "Agent Memory Is Getting a First-Principles Redesign",
+        "MCP Connectors Won't Replace a Real Context Engine",
+        "Can Agents Do Real AI Research? A New Study Tries to Find Out",
+        "Parallel Claude Code Agents Need Traffic Management",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.26520v1",
+        "https://arxiv.org/abs/2607.26760v1",
+        "https://arxiv.org/abs/2607.27090v1",
+        "https://arxiv.org/abs/2607.27155v1",
+        "https://arxiv.org/abs/2607.27191v1",
+        "https://getunblocked.com/blog/mcp-connectors-are-not-a-context-engine/",
+        "https://github.com/KonghaYao/peri",
+        "https://github.com/funador/claude-code-merge-queue",
+        "https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms",
+        "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
+        "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+        "https://simonwillison.net/2026/Jul/29/mcp-in-claude-and-chatgpt/#atom-everything"
+      ]
+    },
+    {
       "date": "2026-07-29",
       "title": "Claude Cracks Crypto, Agents Get Caged",
       "headings": [
@@ -711,31 +737,6 @@
         "https://hamel.dev/blog/posts/eval-tools/",
         "https://news.ycombinator.com/item?id=48726966",
         "https://simonwillison.net/2026/Jun/29/ornith/#atom-everything"
-      ]
-    },
-    {
-      "date": "2026-06-29",
-      "title": "Claude Returns, Open Models Expand",
-      "headings": [
-        "Claude Fable 5 Is Almost Back \u2014 And the Suspension Still Matters",
-        "The Open Ecosystem Grows Sideways: Zyphra, Cohere, Poolside",
-        "Agents That Remember What They Learned",
-        "LLMs Meet Unglamorous Hardware: PCB Design Benchmarks",
-        "The RAG Reliability Problem Nobody Fixes Until Production",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://aiworkflowreliability.com/blog/reliability-framework-for-ai-engineers/",
-        "https://arxiv.org/abs/2606.23704",
-        "https://eugeneyan.com//writing/working-with-ai/",
-        "https://github.com/Kulaxyz/self-learning-skills",
-        "https://github.com/digailab/PCB-Bench",
-        "https://github.com/itsthelore/rac-core",
-        "https://hamel.dev/blog/posts/field-guide/",
-        "https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon",
-        "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside",
-        "https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety",
-        "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos"
       ]
     }
   ]

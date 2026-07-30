@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT-5.6, Memory Stacks, ARC-AGI Tricks — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Thursday, July 30, 2026</div>
+        <h1>GPT-5.6, Memory Stacks, ARC-AGI Tricks</h1>
+        
+        <p class="subtitle">OpenAI shipped GPT-5.6 yesterday with a technical trick that tripled its ARC-AGI-3 score overnight. Meanwhile, researchers are rethinking how agents remember things at a foundational level, and a new benchmark puts economic cost at the center of agent evaluation.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>GPT-5.6 and the ARC-AGI-3 Score That Shouldn't Have Tripled</h2>
+          <p>OpenAI dropped two posts on July 29th that deserve to be read together. The first announced <a href="https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency">GPT-5.6</a> — positioned as a frontier-efficiency fusion, delivering more intelligence per dollar across inference and agentic workflows. The second was the more technically striking one: <a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores">enabling two API settings tripled GPT-5.6's score on ARC-AGI-3</a>.</p><p>The two settings in question are reasoning retention (carrying the model's chain-of-thought across turns rather than discarding it) and compaction (summarizing older reasoning to prevent context bloat). Neither is a new model capability — they're serving-layer configuration choices. That a 3x benchmark gain falls out of two toggles says something uncomfortable about how much performance is being left on the table in default API configurations, and how much benchmark competition is really a game of serving-stack tuning rather than pure model capability.</p><p>The efficiency framing from OpenAI is deliberate. "More useful intelligence per dollar" lands differently in a market where Anthropic just launched Opus 5 at half the price of its predecessor, and where poolside's Laguna S 2.1 has been undercutting DeepSeek on cost. The race isn't just about who has the smartest model anymore — it's about who can make the smart model cheap enough to run in loops.</p><blockquote><p>"GPT-5.6 improves AI efficiency across models, inference, and agentic workflows, helping deliver more useful intelligence per dollar."</p><cite>— OpenAI Blog</cite></blockquote><p>For teams building agentic pipelines on the OpenAI API, the compaction and reasoning-retention settings are worth testing immediately — especially if you're running multi-turn tasks where context accumulates fast.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI: GPT-5.6
+            </a>
+            
+            <a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              OpenAI: ARC-AGI-3 tricks
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Agent Memory Is Getting a First-Principles Redesign</h2>
+          <p>Three separate research threads published this week converge on the same diagnosis: agent memory is the weakest link in the stack, and bolting retrieval onto the context window isn't going to fix it.</p><p>The most ambitious proposal is <a href="https://arxiv.org/abs/2607.26760v1">Metis</a>, which argues that memory shouldn't be an external module at all — it should be a native capability baked into foundation models. The paper introduces what it calls "memory foundation models," trained to internalize persistent context the way multimodal models internalized vision. That's a long-horizon research bet, not a shipping artifact, but the framing is significant: if memory becomes a model-native primitive, the entire ecosystem of external memory services (Mem0, MemGPT, Zep) gets disrupted from below.</p><p>More immediately applicable is <a href="https://arxiv.org/abs/2607.26520v1">the Neo4j-backed bitemporal memory store</a> from Niksarli and Baheti. Their system keeps memory agent-local in a property graph augmented with HNSW vector indexes, with a full bitemporal data model so you can query what the agent "knew" at any point in time. That last part matters for debugging: when an agent makes a wrong decision, you can replay its memory state at the moment of failure rather than guessing.</p><p>Then there's <a href="https://arxiv.org/abs/2607.27090v1">InferScale</a>, which attacks the problem from the serving side. When memory systems like Mem0 retrieve a context slice and inject it into the prompt, the serving engine re-prefills that content on every request — even if it's identical to the last one. InferScale proposes GPU-native KV injection to skip that redundant computation, directly cutting time-to-first-token as memory budgets grow.</p><blockquote><p>"Production memory systems retrieve a relevant subset of this memory and inject it into the prompt, forcing the serving engine to repeatedly prefill the same content. As the retrieval budget grows, time-to-first-token increases even though the underlying memory is unchanged."</p><cite>— InferScale paper abstract, arXiv 2607.27090</cite></blockquote><p>These three papers aren't coordinated, but together they sketch a roadmap: near-term, smarter KV management; mid-term, graph-native memory with temporal queries; long-term, memory that lives inside the weights.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.26760v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Metis: Memory Foundation Model
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.26520v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              Bitemporal graph memory store
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.27090v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              InferScale: KV injection
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>MCP Connectors Won't Replace a Real Context Engine</h2>
+          <p>The question on Hacker News this week — <a href="https://getunblocked.com/blog/mcp-connectors-are-not-a-context-engine/">"If Claude/Codex can connect via MCP, what do we need a context layer for?"</a> — is exactly the kind of thing that sounds smart in a Slack thread and falls apart under pressure. The Unblocked team's answer is worth reading carefully.</p><p>Their argument: MCP connectors solve the retrieval routing problem (which tool to call, and how to authenticate) but don't solve the context quality problem (what to include, in what form, at what level of granularity, and how to keep it fresh). An MCP server that returns raw GitHub issues or Notion pages dumps the decision of "what's relevant" back onto the model, which has no persistent understanding of the codebase's history, the team's conventions, or what the user is actually trying to accomplish. A context engine makes those decisions explicitly — it's an abstraction layer that the model shouldn't have to reconstruct from raw tool outputs on every turn.</p><p>Simon Willison's TIL on <a href="https://simonwillison.net/2026/Jul/29/mcp-in-claude-and-chatgpt/#atom-everything">connecting custom MCP servers to Claude and ChatGPT</a> is a nice complement here: he found it works, but takes "quite a few steps." That friction is real today. As MCP tooling matures, the workflow will get smoother — but Unblocked's point stands that retrieval access isn't the same as retrieval intelligence.</p><blockquote><p>"Connecting a custom MCP server to Claude and ChatGPT's standard chat interfaces is possible, but can take quite a few steps."</p><cite>— Simon Willison</cite></blockquote><p>The practical implication for teams designing data pipelines for agents: MCP is a transport layer. You still need someone deciding what gets transported, when, and why — whether that's a purpose-built context engine or a very carefully designed set of MCP server instructions.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://getunblocked.com/blog/mcp-connectors-are-not-a-context-engine/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Unblocked: MCP vs context engine
+            </a>
+            
+            <a href="https://simonwillison.net/2026/Jul/29/mcp-in-claude-and-chatgpt/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Simon Willison: MCP setup
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Can Agents Do Real AI Research? A New Study Tries to Find Out</h2>
+          <p>AI labs have been forecasting that AI agents will soon automate AI research itself — the so-called recursive improvement loop that underpins most aggressive capability timelines. A new paper from Kirgis, Kapoor, Schwartz, and Rabanser takes a harder look at <a href="https://arxiv.org/abs/2607.27191v1">whether agents can actually conduct open-ended AI research</a>, and the methodology is more interesting than the headline.</p><p>The problem with existing evaluations, they argue, is that they either test on narrow verifiable tasks (which excludes anything that looks like real research) or submit AI-generated papers to peer review (which is too noisy and slow to be a reliable signal). Their "third way": put an agent on a central, open-ended research problem — not a toy — and assess progress against a rubric that captures what a researcher would actually do: forming hypotheses, designing experiments, interpreting unexpected results, updating priors.</p><p>The paper is framed as "early evidence from two case studies" rather than a sweeping claim, which is the right epistemic posture. The finding — that current agents can make partial progress on open-ended research tasks but reliably fail at the judgment calls that define mature research — lands differently when you've watched Claude or GPT-5.6 run for hours on a complex codebase and produce something that looks right until it doesn't.</p><blockquote><p>"Current evaluations either test agents on narrow, verifiable tasks, which excludes open-ended research, or submit AI-generated papers to blind peer review, which is overstretched, stochastic, and suffers from poor review quality."</p><cite>— Kirgis et al., arXiv 2607.27191</cite></blockquote><p>This connects to a parallel paper: <a href="https://arxiv.org/abs/2607.27155v1">OmegaUse-OfficeVal</a>, a 100-task benchmark for LLM agents on office-suite workflows, notable for adding "economic grounding" — each task has an associated cost ceiling, forcing the evaluation to ask not just "did the agent complete it" but "did the agent complete it at a price that makes sense." That framing should become standard in every agent benchmark.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.27191v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              AI agents doing AI research
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.27155v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              OmegaUse-OfficeVal benchmark
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Parallel Claude Code Agents Need Traffic Management</h2>
+          <p>The gap between "run multiple Claude Code agents in parallel" and "run multiple Claude Code agents in parallel without them clobbering each other's work" is where a lot of teams are currently stuck. A new open-source project, <a href="https://github.com/funador/claude-code-merge-queue">claude-code-merge-queue</a>, addresses this with a local merge queue specifically designed for parallel agent workflows — essentially a serialization layer that lets agents work concurrently but commit sequentially, with conflict detection before merge.</p><p>The project is early (18 HN upvotes, 6 comments), but the problem it's solving is sharp. When you run three Claude Code instances on separate features and they each touch shared utilities or config files, the last write wins — which is fine for humans with git blame and pull request review, but breaks down in autonomous agent loops where there's no human in the merge path. The merge queue enforces an ordering discipline that makes parallel agent work safe to run unattended.</p><p>A related project showed up the same day: <a href="https://github.com/KonghaYao/peri">peri</a>, a Rust coding agent built to be compatible with Claude Code plugins and skills. The Claude Code ecosystem is starting to develop the kind of third-party tooling that signals a platform is maturing — agents that compose with other agents, orchestration primitives that manage conflict, alternative runtimes that share the same plugin surface.</p><blockquote><p>"A local merge queue for parallel Claude Code agents."</p><cite>— funador, GitHub / Hacker News Show HN</cite></blockquote><p>Sebastian Raschka's recent deep-dive on <a href="https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms">controlling reasoning effort in LLMs</a> is relevant context here: if you're running parallel agents, you probably want them in low-effort mode for most subtasks and high-effort mode only at decision points. Knowing how models learn to shift between those modes gives you better levers for cost management at scale.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://github.com/funador/claude-code-merge-queue" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Claude Code merge queue
+            </a>
+            
+            <a href="https://github.com/KonghaYao/peri" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Peri: Rust Claude Code agent
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Raschka: Reasoning effort control
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>Two API configuration toggles — reasoning retention and compaction — tripled GPT-5.6's ARC-AGI-3 score without any model change. Before attributing benchmark gaps to model capability, audit your serving configuration; you may be leaving significant performance on the table through defaults.</li><li>Agent memory is fracturing into three separate engineering concerns that are easy to conflate: retrieval routing (MCP solves this), context quality and freshness (requires explicit design, not just tool access), and serving-layer efficiency (InferScale's KV injection attack). Treat them as separate layers in your architecture, not one "memory" bucket.</li><li>OmegaUse-OfficeVal's move to cost-grounded benchmarking — evaluating agents against a price ceiling, not just task completion — is the right framing for production. Start defining cost budgets per task class in your own evals now, before the compute bill makes it urgent.</li><li>The Claude Code third-party ecosystem (merge queues, Rust runtimes, plugin-compatible agents) is moving fast enough that it's worth checking GitHub weekly. The parallel-agent coordination primitives being built today are what multi-agent pipelines will standardize on in six months.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              OpenAI ARC-AGI-3
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.27090v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              InferScale
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.27155v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              OmegaUse-OfficeVal
+            </a>
+            
+            <a href="https://github.com/funador/claude-code-merge-queue" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🛠️</span>
+              Claude Code merge queue
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/mshumer/Claude-of-Duty">mshumer/Claude-of-Duty</a>
+              <span class="side-meta">JavaScript · ⭐ 2,272</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/kvcache-ai/AgentENV">kvcache-ai/AgentENV</a>
+              <span class="side-meta">Rust · ⭐ 2,238</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/mikiarlo3/ai-copywriter">mikiarlo3/ai-copywriter</a>
+              <span class="side-meta">Python · ⭐ 1,048</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/fuadmefleh/Shared-Claude-Chats">fuadmefleh/Shared-Claude-Chats</a>
+              <span class="side-meta">Python · ⭐ 936</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/VictorTaelin/OptMem">VictorTaelin/OptMem</a>
+              <span class="side-meta">Python · ⭐ 884</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/XYZ-AI-Lab/axrl">XYZ-AI-Lab/axrl</a>
+              <span class="side-meta">Python · ⭐ 636</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">Released GPT-5.6 with improved efficiency and frontier intelligence capabilities across models, inference, and agentic workflows.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Launched Lyria 3.5 in Google Flow Music with advances in musicality, lyrics, vocals, and creative control.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Introduced computer use capability in Gemini 3.5 Flash.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Anthropic</div>
+              <span class="launch-detail">Released new MCP Protocol version (2026-07-28) for Claude integration.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.25659">CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization</a>
+              <span class="side-meta">Rubric-based reinforcement learning enriches language model training by evaluating model outputs against explicit criteria. Yet in GRPO-style pipelines, these structured judgments are reduced to a sca</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.26784">SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution</a>
+              <span class="side-meta">Large language model agents often encounter related yet distinct tasks that share reusable solution patterns. Yet standard agentic reinforcement learning treats tasks as independent episodes, while ex</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.25675">DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space</a>
+              <span class="side-meta">Text-space optimization adapts large language models (LLMs) by editing external natural-language artifacts rather than model weights, so the optimized artifacts remain inspectable and the model can be</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.25308">CAST: Game Solvers as Turn-Level Teachers for LLM Agents</a>
+              <span class="side-meta">Training large language models (LLMs) to act in long-horizon games is a promising step toward generalist decision-making, yet reinforcement learning with verifiable rewards (RLVR) relies on sparse fin</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.26314">StealthBench: Measuring Operational Stealth in Autonomous Offensive-Security Agents</a>
+              <span class="side-meta">Stealth, the discipline of achieving an objective without revealing your presence, capabilities, or collected intelligence, is what separates sophisticated operators from detectable ones. Elite securi</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
