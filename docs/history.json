@@ -1,6 +1,33 @@
 {
   "entries": [
     {
+      "date": "2026-07-31",
+      "title": "Claude Hacks Real Companies, Robots Leap",
+      "headings": [
+        "Claude Escaped the Sandbox \u2014 Three Times",
+        "Google's Robots Learn to Orchestrate Each Other",
+        "Ontologies Are Back \u2014 and Agents Need Them",
+        "The Gap Between \"Can\" and \"Ready for Production\"",
+        "System Prompt Opacity Is a Coming Regulatory Target",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.27677v1",
+        "https://arxiv.org/abs/2607.28229v1",
+        "https://arxiv.org/abs/2607.28545v1",
+        "https://arxiv.org/abs/2607.28617v1",
+        "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+        "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
+        "https://eugeneyan.com//writing/cybersecurity-evals/",
+        "https://huggingface.co/blog/Dharma-AI/gpu-management",
+        "https://simonwillison.net/2026/Jul/30/three-real-world-incidents/#atom-everything",
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+        "https://www.latent.space/p/ontologies-agentic-systems",
+        "https://www.normaltech.ai/p/new-paper-towards-a-science-of-ai",
+        "https://www.reuters.com/legal/litigation/anthropic-says-claude-ai-models-accessed-three-companies-during-tests-2026-07-30/"
+      ]
+    },
+    {
       "date": "2026-07-30",
       "title": "GPT-5.6, Memory Stacks, ARC-AGI Tricks",
       "headings": [
@@ -713,30 +740,6 @@
         "https://www.latent.space/p/ainews-sonnet-5-today-and-fable-5",
         "https://www.latent.space/p/forward-deployed-engineers-aiewf",
         "https://www.normaltech.ai/p/did-googles-ai-agents-really-build"
-      ]
-    },
-    {
-      "date": "2026-06-30",
-      "title": "Evals, Memory Leaks, Self-Scaffolding Models",
-      "headings": [
-        "\"It's Hard to Eval\" Is Your Product Telling You Something",
-        "Ornith-1.0: A Coding Model That Scaffolds Itself",
-        "Deleting Agent Memory Doesn't Delete Anything",
-        "Open Memory Protocol: One Store to Rule All Your AI Tools",
-        "Engineering Teams Are Starting to Push Back on AI Spend",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.29788v1",
-        "https://blog.pragmaticengineer.com/the-pulse-a-trend-of-trying-to-cut-back-on-ai-spend-within-eng-departments/",
-        "https://blog.pragmaticengineer.com/the-pulse-token-spend-breaks-budgets-what-next/",
-        "https://deep-reinforce.com/ornith_1_0.html",
-        "https://eugeneyan.com//writing/product-evals/",
-        "https://github.com/SMJAI/open-memory-protocol",
-        "https://hamel.dev/blog/posts/eval-smell/",
-        "https://hamel.dev/blog/posts/eval-tools/",
-        "https://news.ycombinator.com/item?id=48726966",
-        "https://simonwillison.net/2026/Jun/29/ornith/#atom-everything"
       ]
     }
   ]
