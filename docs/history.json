@@ -1,6 +1,35 @@
 {
   "entries": [
     {
+      "date": "2026-08-01",
+      "title": "DeepSeek Flash, MCP 2.0, Price Collapse",
+      "headings": [
+        "DeepSeek V4-Flash: 304B Parameters, Punching Up",
+        "MCP 2.0 Goes Stateless \u2014 and Suddenly Gets Interesting",
+        "GPT-5.6's Price Collapse Is a Structural Signal, Not a Promotion",
+        "The Open-Weight Revolution Finds Its Narrative Moment",
+        "Microsoft's Flint: AI-Native Data Visualization Gets a Spec",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://artificialanalysis.ai/models/deepseek-v4-flash",
+        "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+        "https://github.com/simonw/llm-mcp-client/releases/tag/0.1a0",
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "https://microsoft.github.io/flint-chart/",
+        "https://news.ycombinator.com/item?id=49130604",
+        "https://oxide-and-friends.transistor.fm/episodes/the-open-weight-revolution-with-simon-willison",
+        "https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731/#atom-everything",
+        "https://simonwillison.net/2026/Jul/31/llm-mcp-client/#atom-everything",
+        "https://simonwillison.net/2026/Jul/31/oxide-and-friends/",
+        "https://simonwillison.net/2026/Jul/31/oxide-and-friends/#atom-everything",
+        "https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-everything",
+        "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+        "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+        "https://www.latent.space/p/ainews-gpt-56-price-cut-by-20-80"
+      ]
+    },
+    {
       "date": "2026-07-31",
       "title": "Claude Hacks Real Companies, Robots Leap",
       "headings": [
@@ -711,35 +740,6 @@
         "https://www.latent.space/p/autoresearch-introspection",
         "https://www.latent.space/p/software-factories",
         "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots"
-      ]
-    },
-    {
-      "date": "2026-07-01",
-      "title": "Claude's New Stack, Top to Bottom",
-      "headings": [
-        "Claude Sonnet 5 Arrives, and It's Built for Agents First",
-        "Google Drops Nano Banana 2 and Gemini Omni Flash \u2014 The Quiet Half of the Frontier",
-        "ScarfBench: Why Java Migration Is AI's Next Real-World Test",
-        "Tables Break LLMs in Ways Nobody Fully Measured Until Now",
-        "Agents That Record Their Own Work \u2014 and the Bigger Idea Behind It",
-        "Evals Get a Universal Display Layer on Hugging Face",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.31966v1",
-        "https://arxiv.org/abs/2606.32029v1",
-        "https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/",
-        "https://github.com/simonw/shot-scraper/releases/tag/1.10",
-        "https://huggingface.co/blog/eee-community-evals",
-        "https://huggingface.co/blog/ibm-research/scarfbench",
-        "https://old.reddit.com/r/ClaudeAI/comments/1ujwggp/introducing_claude_sonnet_5_our_most_agentic/",
-        "https://simonwillison.net/2026/Jun/30/claude-sonnet-5/",
-        "https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything",
-        "https://twitter.com/synthwavedd/status/2072103052635451559",
-        "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
-        "https://www.latent.space/p/ainews-sonnet-5-today-and-fable-5",
-        "https://www.latent.space/p/forward-deployed-engineers-aiewf",
-        "https://www.normaltech.ai/p/did-googles-ai-agents-really-build"
       ]
     }
   ]
