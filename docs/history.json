@@ -1,6 +1,36 @@
 {
   "entries": [
     {
+      "date": "2026-08-02",
+      "title": "LLMs Predict Science, Retail Agents Ship",
+      "headings": [
+        "LLMs as Social Scientists: A Nature Paper Worth Arguing About",
+        "GPT-Realtime's First Real Deployment Numbers",
+        "The Inference Stack Is Being Rebuilt Underneath You",
+        "Evals Are Getting More Honest About What They Test",
+        "Enterprise Lock-In Risk Is Moving Up the Stack",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://eugeneyan.com//writing/qa-evals/",
+        "https://eugeneyan.com//writing/working-with-ai/",
+        "https://github.com/Quitetall/tritium",
+        "https://github.com/ats4321/walsh",
+        "https://hamel.dev/blog/posts/evals-skills/",
+        "https://hamel.dev/blog/posts/field-guide/",
+        "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
+        "https://huyenchip.com//2025/01/07/agents.html",
+        "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
+        "https://openai.com/index/avatarin",
+        "https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/",
+        "https://simonwillison.net/2026/Jul/31/smevals/#atom-everything",
+        "https://www.nature.com/articles/s41586-026-10742-x",
+        "https://www.normaltech.ai/p/open-world-evaluations-for-measuring",
+        "https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from",
+        "https://zenodo.org/records/21753002"
+      ]
+    },
+    {
       "date": "2026-08-01",
       "title": "DeepSeek Flash, MCP 2.0, Price Collapse",
       "headings": [
@@ -718,28 +748,6 @@
         "https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything",
         "https://simonwillison.net/2026/Jul/2/llm-coding-agent/#atom-everything",
         "https://www.latent.space/p/vercel-agents-new-software"
-      ]
-    },
-    {
-      "date": "2026-07-02",
-      "title": "Software Factories, Single Layers, Chatbot Twilight",
-      "headings": [
-        "The Chatbot Is Dead. Long Live the Agent.",
-        "Software Factories Are the New Software Teams",
-        "RL Fine-Tuning Might Only Need One Layer",
-        "Multi-Agent Reasoning Gets a Communication Primitive",
-        "Healthcare Agents Get a Serious Benchmark",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.31179v1",
-        "https://arxiv.org/abs/2607.01077v1",
-        "https://arxiv.org/abs/2607.01232v1",
-        "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
-        "https://openai.com/index/how-chatgpt-adoption-has-expanded",
-        "https://www.latent.space/p/autoresearch-introspection",
-        "https://www.latent.space/p/software-factories",
-        "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots"
       ]
     }
   ]

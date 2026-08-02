@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLMs Predict Science, Retail Agents Ship — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Sunday, August 02, 2026</div>
+        <h1>LLMs Predict Science, Retail Agents Ship</h1>
+        
+        <p class="subtitle">A Nature paper says LLMs can predict social science experiment outcomes better than humans. OpenAI's GPT-Realtime hit 30,000 retail shoppers in two weeks. And the infrastructure layer is quietly getting rebuilt from scratch — INT4 memory cells, ternary weights, CPU-native long-context encoders.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>LLMs as Social Scientists: A Nature Paper Worth Arguing About</h2>
+          <p>A paper published this week in <em>Nature</em> makes a claim that will either reshape how you think about LLM capabilities or send you hunting for methodological holes: <a href="https://www.nature.com/articles/s41586-026-10742-x">large language models can predict the results of social science experiments</a> — including which hypotheses will replicate — with accuracy that exceeds human experts. The study covers a range of classic behavioral economics and psychology experimental paradigms and finds that the models outperform researchers who read the same abstracts and study designs.</p><p>The obvious rejoinder is that frontier LLMs trained on the scientific literature could be pattern-matching against known results, not reasoning about experimental design. That critique has real weight. But the paper controls for it in several ways, and even a skeptical reading leaves something uncomfortable standing: the models are at least as good as domain experts at predicting which findings hold up, and they're doing it in seconds.</p><p>What's more interesting for product builders is the implied capability: if a model can evaluate whether an experimental design will produce a reliable result, it can also help you pressure-test your own A/B test designs, user research plans, and eval datasets before you run them. That's a specific, useful application that doesn't require believing the strongest claims in the abstract.</p><blockquote><p>"The unprecedented capabilities of foundation models have opened the door to agentic applications that were previously unimaginable."</p><cite>— Chip Huyen, <a href="https://huyenchip.com//2025/01/07/agents.html">Agents</a></cite></blockquote><p>The broader question this raises for evals designers: if LLMs can predict human experimental outcomes, what does that mean for human-preference benchmarks that assume human judgment is the ground truth? That loop might be tighter than anyone wants to admit.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.nature.com/articles/s41586-026-10742-x" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔬</span>
+              Nature paper
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GPT-Realtime's First Real Deployment Numbers</h2>
+          <p>OpenAI dropped a case study this week that's worth reading past the marketing framing: <a href="https://openai.com/index/avatarin">avatarin deployed GPT-Realtime in a Yamada Denki retail environment</a> and hit 30,000 users in two weeks, with 92% positive survey responses. Yamada Denki is Japan's largest electronics retailer — think Best Buy, scaled — so the floor traffic is real, not a curated pilot cohort.</p><p>The 24/7 multilingual support angle matters more than the headline numbers. Japanese retail has historically required human staff fluent in multiple Asian languages to serve inbound tourist shoppers; GPT-Realtime removes that constraint entirely. Avatarin's underlying product is a telepresence robot platform, so this is a voice-native, real-time, embodied deployment — not a chat widget people opt into on a website.</p><p>Two weeks, 30,000 users, 92% positive. That's a pass rate that most enterprise software teams would celebrate after a year of tuning. It also reflects how much better real-time voice models have gotten at handling ambient noise, speaker switching, and topic drift in retail environments — problems that killed earlier voice assistant deployments.</p><blockquote><p>"In two weeks, 30,000 people used the agent and 92% of survey responses were positive."</p><cite>— <a href="https://openai.com/index/avatarin">OpenAI Blog, avatarin case study</a></cite></blockquote><p>The deployment model here — physical robot as the interface, cloud LLM as the brain — suggests the avatar-as-agent pattern is maturing faster than most people assumed. If you're building in retail, hospitality, or any physical-world service context and haven't seriously priced GPT-Realtime API costs into your 2027 roadmap, the timeline may be shorter than your planning assumptions.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/avatarin" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI avatarin case study
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>The Inference Stack Is Being Rebuilt Underneath You</h2>
+          <p>Three distinct infrastructure projects surfaced today that, taken together, represent a systematic attack on the cost and latency assumptions baked into current LLM deployments. None of them are production-ready, but all three are pointing at the same problem from different angles.</p><p>First: a preprint on <a href="https://zenodo.org/records/21753002">persistent state machines using INT4 in-memory cells for LLM attention</a> proposes replacing the stateless KV cache model with an in-memory state machine that persists across requests. The claim is significantly reduced memory bandwidth consumption for multi-turn workloads — which is exactly where inference costs compound. Second: <a href="https://github.com/Quitetall/tritium">Tritium</a>, an open-source ternary-model inference and training framework targeting CUDA, CPU, and BitNet/TQ formats, aims to make 1.58-bit weight models practical without dedicated hardware. Third: Liquid AI published details on <a href="https://huggingface.co/blog/LiquidAI/lfm2-5-encoders">LFM2.5 encoders optimized for fast long-context inference on CPU</a> — no GPU required.</p><p>The Liquid AI piece is the most immediately actionable. If you're building any product that needs long-context inference at the edge — on-device, air-gapped, or in cost-sensitive enterprise environments — CPU-native long-context is a different deployment conversation than it was six months ago.</p><blockquote><p>"From Gemma 4 to DeepSeek V4, How New Open-Weight LLMs Are Reducing Long-Context Costs."</p><cite>— Sebastian Raschka, <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures">Recent Developments in LLM Architectures</a></cite></blockquote><p>The SemiAnalysis analysis of <a href="https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/">H100 vs. GB200 NVL72 TCO</a> remains the best frame for understanding why this bottom-up rebuilding is happening: Blackwell rack economics are forcing operators to rethink workload routing, and that pressure is flowing down into inference software.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://zenodo.org/records/21753002" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              INT4 in-memory attention preprint
+            </a>
+            
+            <a href="https://github.com/Quitetall/tritium" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">⚙️</span>
+              Tritium ternary inference
+            </a>
+            
+            <a href="https://huggingface.co/blog/LiquidAI/lfm2-5-encoders" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤗</span>
+              Liquid AI LFM2.5 encoders
+            </a>
+            
+            <a href="https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📊</span>
+              SemiAnalysis H100 vs GB200
+            </a>
+            
+            <a href="https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📰</span>
+              Sebastian Raschka architecture roundup
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Evals Are Getting More Honest About What They Test</h2>
+          <p>Simon Willison shipped <a href="https://simonwillison.net/2026/Jul/31/smevals/#atom-everything">smevals</a>, a small, deliberately narrow eval suite built with Prime Radiant's applied AI research lab. The design philosophy is worth noticing: rather than trying to build comprehensive capability benchmarks, smevals targets specific, answerable questions about model and prompt behavior in real harnesses. Small surface area, honest scope.</p><p>This lands the same week that the AI Snake Oil team's <a href="https://www.normaltech.ai/p/open-world-evaluations-for-measuring">CRUX project</a> — which goes in the opposite direction, targeting long, messy, open-world tasks — is gaining visibility. The contrast is instructive. CRUX is trying to measure what models actually do when the task is underspecified and multi-step. Smevals is trying to catch regressions and prompt-sensitivity bugs in specific production harnesses. Both exist because the middle ground — MMLU-style academic benchmarks — has become nearly useless for product decisions.</p><p>Hamel Husain's <a href="https://hamel.dev/blog/posts/evals-skills/">evals-skills framework</a>, published in March after working with 50+ companies and 4,000+ students, captures the same frustration from the practitioner side. The common failure mode he documents: teams evaluating the wrong thing because they haven't looked at enough real traces to know what the model is actually getting wrong.</p><blockquote><p>"Most AI teams focus on the wrong things."</p><cite>— Hamel Husain, <a href="https://hamel.dev/blog/posts/field-guide/">A Field Guide to Rapidly Improving AI Products</a></cite></blockquote><p>Eugene Yan's parallel work on <a href="https://eugeneyan.com//writing/qa-evals/">evaluating long-context Q&amp;A systems</a> adds the benchmark-specific layer: for retrieval-heavy products, precision and recall on answer attribution matter more than any aggregate score, and building the right eval dataset for your specific retrieval setup is non-negotiable. The field is slowly converging on a stack where you need three things: a small, fast regression suite (smevals-style), a human-trace-grounded failure taxonomy (Hamel's approach), and at least one hard open-world benchmark to avoid overfitting your prompt engineering to your own evals.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://simonwillison.net/2026/Jul/31/smevals/#atom-everything" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Simon Willison on smevals
+            </a>
+            
+            <a href="https://www.normaltech.ai/p/open-world-evaluations-for-measuring" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📐</span>
+              CRUX open-world evals
+            </a>
+            
+            <a href="https://hamel.dev/blog/posts/evals-skills/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Hamel evals-skills
+            </a>
+            
+            <a href="https://hamel.dev/blog/posts/field-guide/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📝</span>
+              Hamel field guide
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/qa-evals/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Eugene Yan QA evals
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Enterprise Lock-In Risk Is Moving Up the Stack</h2>
+          <p>Arvind Narayanan published a piece at NormalTech arguing that <a href="https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from">AI's escape from the commodity trap is creating a new enterprise lock-in risk</a> — not at the model layer, but at the workflow and integration layer above it. The argument: as base model prices collapse (see the GPT-5.6 pricing story from earlier this week), the business value — and the stickiness — is migrating to whoever controls the orchestration layer, the fine-tuned vertical models, and the proprietary data pipelines. Critics who say AI is a commodity and boosters who say it's defensible are both pointing at the wrong layer.</p><p>This maps directly to the Eugene Yan framework published in May: <a href="https://eugeneyan.com//writing/working-with-ai/">context as infrastructure, taste as config, verification for autonomy, scale via delegation</a>. The companies building durable advantages right now aren't the ones with the best model access — it's the ones assembling proprietary context pipelines that make their AI meaningfully better on their specific tasks than any out-of-the-box deployment could be.</p><blockquote><p>"Critics and boosters are both looking in the wrong place."</p><cite>— Arvind Narayanan, <a href="https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from">Up the Stack: How AI's Escape From the Commodity Trap Risks Enterprise Lock-in</a></cite></blockquote><p>The Walsh project on HN — a <a href="https://github.com/ats4321/walsh">multi-agent research pipeline with a risk manager that can veto trades</a> — is a small but concrete example of this dynamic. The model choice is almost irrelevant; what matters is the veto logic, the risk parameterization, and the domain-specific data the agents are reasoning over. That's where the IP lives. If you're building enterprise AI products and haven't mapped which parts of your system would survive a model swap, that's the design exercise worth doing this quarter.</p>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Narayanan on lock-in
+            </a>
+            
+            <a href="https://eugeneyan.com//writing/working-with-ai/" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Eugene Yan working with AI
+            </a>
+            
+            <a href="https://github.com/ats4321/walsh" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💻</span>
+              Walsh multi-agent pipeline
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>The avatarin/GPT-Realtime deployment — 30,000 users, 92% satisfaction, two weeks — is the first large-scale public data point for real-time voice agents in physical retail. If your roadmap includes any voice-native or embodied agent use case, this is the benchmark to beat and the integration pattern to study.</li><li>Three independent infrastructure projects (INT4 state machines, ternary inference, CPU-native long-context encoders) are converging on the same goal: making serious inference possible without current-generation GPU infrastructure. None is production-ready today, but the trajectory is clear enough to factor into your 18-month platform bets, especially for edge or cost-sensitive enterprise deployments.</li><li>The evals field is splitting cleanly into two tools you need simultaneously: a small, fast regression suite for catching prompt-sensitivity regressions in your specific harness, and an open-world benchmark (CRUX or equivalent) to avoid overfitting your prompt engineering to your own tests. Treating them as alternatives rather than complements is the mistake most teams are making.</li><li>As base model prices keep falling, the durable value in AI products is accumulating at the orchestration, context pipeline, and domain fine-tuning layers — not the model itself. Map which parts of your system survive a model swap; the parts that don't are where your defensibility actually lives.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://openai.com/index/avatarin" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🤖</span>
+              OpenAI avatarin
+            </a>
+            
+            <a href="https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔒</span>
+              Narayanan lock-in
+            </a>
+            
+            <a href="https://www.normaltech.ai/p/open-world-evaluations-for-measuring" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📐</span>
+              CRUX evals
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/yc-software/qm">yc-software/qm</a>
+              <span class="side-meta">TypeScript · ⭐ 5,201</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/QwenAudio/qwen-audio-agent">QwenAudio/qwen-audio-agent</a>
+              <span class="side-meta">JavaScript · ⭐ 1,385</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/sqliteai/waste">sqliteai/waste</a>
+              <span class="side-meta">C · ⭐ 704</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/gavamedia/deltafin">gavamedia/deltafin</a>
+              <span class="side-meta">Python · ⭐ 595</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/0xwilliamortiz/ponytail-improved">0xwilliamortiz/ponytail-improved</a>
+              <span class="side-meta">JavaScript · ⭐ 577</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/0xwilliamortiz/openclaude-improved">0xwilliamortiz/openclaude-improved</a>
+              <span class="side-meta">TypeScript · ⭐ 566</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Google expanded Managed Agents in Gemini API with new features including background tasks and remote MCP support.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Allen AI</div>
+              <span class="launch-detail">Allen AI launched the OlmoEarth Platform for geospatial inference at planetary scale.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Liquid AI</div>
+              <span class="launch-detail">Liquid AI released LFM2.5-Encoders for fast long-context inference on CPU.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">NVIDIA</div>
+              <span class="launch-detail">NVIDIA released Cosmos-H-Dreams for real-time generative simulation in surgical robotics.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Nunchaku</div>
+              <span class="launch-detail">Nunchaku brought 4-bit Diffusion inference integration to Hugging Face Diffusers.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">OpenAI</div>
+              <span class="launch-detail">OpenAI's GPT-Realtime was deployed by avatarin for 24/7 multilingual retail agent support at Yamada Denki.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.23193">OmniScope: Modality-Decoupled Token Compression for Omnimodal Large Language Models</a>
+              <span class="side-meta">Existing token compression methods for omnimodal large language models typically rely on one modality to determine what to retain in the other. We show that this assumption often breaks down: for the </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.28582">β-OPSD: Deriving with Policy Optimization, Training with Self-Distillation</a>
+              <span class="side-meta">On-policy self-distillation (OPSD) is a promising approach to improve reasoning language models, but it remains brittle in practice: making it work reliably often requires substantial engineering effo</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.28308">Beyond Geometric Complementarity: Coherent Overlap in Sparse Mixture-of-Experts Routing</a>
+              <span class="side-meta">Sparse mixture-of-experts (MoE) language models route each token to multiple experts, suggesting a geometric account of their benefit: co-selected experts should contribute distinct representation dir</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.28319">Fairness Pruning: Locating Demographic Bias in GLU-MLP Layers via Differential Activations</a>
+              <span class="side-meta">This work presents Fairness Pruning, a lightweight structural intervention method designed for the management and future mitigation of demographic bias in large language models (LLMs). As a foundation</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.27958">Σ-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems</a>
+              <span class="side-meta">Memory is central to long-horizon LLM agents, yet existing memory systems primarily preserve interaction content rather than modeling which agents can be trusted and under what conditions. This limita</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
