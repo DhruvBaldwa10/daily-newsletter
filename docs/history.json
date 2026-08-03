@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "date": "2026-08-03",
+      "title": "Open Models Surge, Tool Safety Cracks",
+      "headings": [
+        "Open-Weight Models Are Filling the Gaps Faster Than Anyone Expected",
+        "Tool Specs Are Making Your Agents Less Safe \u2014 and Now We Know Why",
+        "Claude Code Meets a Real Swift Codebase \u2014 and Blinks",
+        "Memory Utilization: LLMs Know Things They Don't Act On",
+        "GUI Agents Go Cross-Platform \u2014 via Structured Action Distillation",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.28691v1",
+        "https://arxiv.org/abs/2607.29254v1",
+        "https://arxiv.org/abs/2607.29320v1",
+        "https://arxiv.org/abs/2607.29433v1",
+        "https://arxiv.org/abs/2607.29549v1",
+        "https://daringfireball.net/linked/2026/08/02/cherny-claude-swift",
+        "https://news.ycombinator.com/item?id=49149800",
+        "https://www.interconnects.ai/p/frontier-post-training-recipe-review",
+        "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21",
+        "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3"
+      ]
+    },
+    {
       "date": "2026-08-02",
       "title": "LLMs Predict Science, Retail Agents Ship",
       "headings": [
@@ -725,29 +749,6 @@
         "https://www.latent.space/p/aiewf-daily-dispatch-locomotives",
         "https://www.latent.space/p/skill-engineering-design",
         "https://www.latent.space/p/the-coolest-diffusion-research-isnt"
-      ]
-    },
-    {
-      "date": "2026-07-03",
-      "title": "Routing, Quantization, and Fuzzing Agents",
-      "headings": [
-        "Smart Model Routing Arrives in Mainstream Engineering",
-        "TurboQuant Cuts pgvector Index Size by 10x at 100M Rows",
-        "GPT-5.5-Cyber Built a Fuzzing Lab in a Day",
-        "Vercel's Agent Framework Bets on \"Agent-Readable\" Websites",
-        "DSPy for Prompt Optimization and ReContext for Long Retrieval \u2014 Two Research Bets Worth Watching",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2606.31518v1",
-        "https://arxiv.org/abs/2607.02509v1",
-        "https://blog.pragmaticengineer.com/the-pulse-a-new-trend-smart-model-routing/",
-        "https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/",
-        "https://eugeneyan.com//writing/cybersecurity-evals/",
-        "https://github.com/pgvector/pgvector/pull/989",
-        "https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything",
-        "https://simonwillison.net/2026/Jul/2/llm-coding-agent/#atom-everything",
-        "https://www.latent.space/p/vercel-agents-new-software"
       ]
     }
   ]

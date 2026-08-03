@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Models Surge, Tool Safety Cracks — Daily AI Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <div class="top-controls">
+    <button id="hb-btn" aria-label="Open archive menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="icon-sun">&#9788;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
+  <div id="hb-overlay"></div>
+  <div id="hb-drawer">
+    <div id="hb-header">
+      <h2>Archive</h2>
+      <p>All past digests</p>
+    </div>
+    <div id="hb-list">Loading&hellip;</div>
+  </div>
+
+  <!-- Full-width header card -->
+  <div class="container container--wide">
+    <div class="content-card header-card">
+      <div class="digest-header">
+        <div class="date">Monday, August 03, 2026</div>
+        <h1>Open Models Surge, Tool Safety Cracks</h1>
+        
+        <p class="subtitle">A fresh batch of open-weight releases is reshaping the Pareto frontier just as new research pinpoints exactly why deploying LLMs as agents makes them less safe. Plus: Boris Cherny's honest account of Claude Code hitting its limits on a real Swift codebase.</p>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column layout -->
+  <div class="container container--wide">
+    <div class="two-col">
+
+      <!-- Main content -->
+      <div class="col-main">
+        <div class="content-card">
+          
+          <h2>Open-Weight Models Are Filling the Gaps Faster Than Anyone Expected</h2>
+          <p>Three releases landed this week that deserve more attention than they got: <a href="https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21">Laguna S2.1, Inkling, and Kimi K3</a>. Nathan Lambert's Interconnects crew frames them not as frontier challengers but as something more strategically interesting — models clustering on the Pareto frontier, trading off capability against inference cost in ways the closed-model vendors simply can't match on price. The subtext of the piece is that the capacity to train strong models is no longer concentrated at a handful of labs.</p><p>Kimi K3 from Moonshot AI is the headline of the trio — a reasoning-heavy model that Nathan Lambert and Florian Brand had been tracking since their <a href="https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3">earlier podcast episode</a> covering distillation dynamics and the open-closed gap. The question they keep returning to: as frontier post-training recipes get refined and shared, does the gap close at a fixed rate, or are there step changes ahead?</p><p>What's changed in the last six months is the proliferation of post-training know-how. Lambert's earlier conversation with Finbarr Timbers on <a href="https://www.interconnects.ai/p/frontier-post-training-recipe-review">frontier post-training recipes</a> makes clear that RLHF and its variants are no longer black boxes held exclusively by OpenAI and Anthropic. Qwen 3.8, also covered in the recap, is another data point: a sub-10B model competitive with much larger closed alternatives on coding and reasoning tasks.</p><p>For teams choosing base models right now, the calculus has shifted. Self-hosting a Laguna S2.1 or Kimi K3 variant isn't a research project anymore — it's a legitimate production option, especially if you're running high-volume inference and GPT-5.6 pricing is eating your margin.</p><blockquote><p>"Capacity to train strong models is proliferating."</p><cite>— Florian Brand, Interconnects</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Interconnects: Open Artifacts #23
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Interconnects: Kimi K3 Recap
+            </a>
+            
+            <a href="https://www.interconnects.ai/p/frontier-post-training-recipe-review" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🎙️</span>
+              Interconnects: Post-Training Recipes
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Tool Specs Are Making Your Agents Less Safe — and Now We Know Why</h2>
+          <p>A paper out of arxiv this week should be required reading for anyone building agents with external tools. <a href="https://arxiv.org/abs/2607.29254v1">"Tool Specifications Matter"</a> from Pan et al. identifies schema-formatted tool specs — the JSON schemas you pass to define what tools an agent can call — as a primary driver of safety degradation. Not a side effect. Not a marginal risk. The primary source.</p><p>The mechanism is subtle and damning: white-box representation analysis shows that when a model processes schema-formatted tool definitions, it weakens its own internal safety representations. The model that was reasonably careful about harmful outputs becomes structurally less careful once it's operating in agent mode with a tool manifest loaded. The authors argue this isn't a jailbreak vulnerability in the traditional sense — it's architectural. The format itself is doing the damage.</p><p>This lands differently than the usual "agents can cause harm" discourse. Most safety conversations focus on what agents do — file writes, API calls, code execution. This paper focuses on what the tool spec does to the model's judgment before any action is taken. That's a harder problem to patch, because the fix isn't better sandboxing or permission scopes. It potentially requires changes to how tool definitions are formatted, or how models are fine-tuned to process them.</p><p>A related paper, <a href="https://arxiv.org/abs/2607.29254v1">AMTFV</a>, tackles a different failure mode: LLMs that can solve math but can't reliably verify their own answers — a separation between mathematical modeling and implementation that breaks self-correction loops. Both papers converge on the same uncomfortable truth: the gaps in agent reliability are less about missing capabilities and more about hidden structural weaknesses in how models process their own scaffolding.</p><blockquote><p>"LLMs often become substantially less safe when deployed as agents, and the source of this degradation remains poorly understood."</p><cite>— Pan et al., "Tool Specifications Matter," arXiv 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.29254v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: Tool Specifications Matter
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.29549v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: AMTFV Self-Correction
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Claude Code Meets a Real Swift Codebase — and Blinks</h2>
+          <p>Boris Cherny, who works on Claude at Anthropic, wrote honestly about trying to use <a href="https://daringfireball.net/linked/2026/08/02/cherny-claude-swift">Claude Code to rewrite portions of the Claude iOS app</a> in Swift — and hitting walls. John Gruber linked it at Daring Fireball, which is what surfaced it on Hacker News with modest but pointed discussion.</p><p>What makes this worth paying attention to isn't the failure itself — it's who's reporting it and what it implies about the current limits of agentic coding tools. Cherny isn't a skeptic writing from the outside. He's describing the experience of someone who builds the product, using the product, on a production Swift codebase. The limits he encountered aren't edge cases for exotic language features; they're the ordinary friction of a large, real-world mobile app with architecture decisions, framework constraints, and idiomatic patterns that a model working from first principles doesn't naturally respect.</p><p>This is a different kind of signal than benchmark results. Coding benchmarks measure whether a model can produce correct code for well-specified, isolated problems. They don't measure whether an agent can navigate an existing codebase's conventions, preserve intent across files, or know when to stop and ask rather than forge ahead. Cherny's account suggests that for Swift in particular — a language with strong compiler enforcement and platform-specific patterns — Claude Code is useful but not yet autonomous.</p><p>The HN thread stayed small (9 comments), but the piece itself is a useful counterweight to the more triumphalist narratives around AI coding. When the person building the agent is the one logging its limitations, that's primary source material.</p><blockquote><p>"Boris Cherny on Trying to Get Claude Code to Rewrite the Claude App"</p><cite>— Daring Fireball, linked August 2, 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://daringfireball.net/linked/2026/08/02/cherny-claude-swift" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Daring Fireball: Cherny on Claude Code
+            </a>
+            
+            <a href="https://news.ycombinator.com/item?id=49149800" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">💬</span>
+              HN Discussion
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>Memory Utilization: LLMs Know Things They Don't Act On</h2>
+          <p>A paper from this week's arxiv batch tackles a problem that anyone who has built a personalization feature has probably observed but struggled to name: <a href="https://arxiv.org/abs/2607.29433v1">"Know It, Act on It"</a> from Feng et al. isolates the gap between a model having user preference information in context and actually using it to shape its response.</p><p>The authors call this the "knowledge utilization problem" and design experiments to separate two failure modes: (1) the model fails to retrieve or recognize relevant preferences, and (2) the model recognizes the preference but fails to apply it. These fail silently in the same way — the user gets a generic response — but require completely different fixes. Retrieval failures point to RAG architecture or context structuring problems. Utilization failures point to fine-tuning or prompting strategies that more explicitly activate stored preferences at generation time.</p><p>This distinction matters for anyone building memory-augmented chat applications, agent companions, or any product where personalization is a core value prop. If your eval for personalization is just "did the model use the user's name" or "did it remember the last conversation," you're probably not catching utilization failures at all. The model can pass a shallow recall test and still give advice that ignores a stated user preference three sentences above it in context.</p><p>A separate paper, <a href="https://arxiv.org/abs/2607.28691v1">OurArk</a>, proposes a more radical solution: agent-owned software bodies where behavior-defining code, prompts, tools, and evolution mechanisms live in a versioned, human-inspectable artifact under the user's custody. It's an architecture concept rather than a deployable system, but the framing — treating an agent's configuration as an owned, persistent artifact rather than a server-side black box — is a useful design primitive.</p><blockquote><p>"When an agent fails to tailor its response in a context where previously shared user preferences should matter, it is unclear whether the model failed to remember that information or remembered it but failed to use it."</p><cite>— Feng et al., "Know It, Act on It," arXiv 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.29433v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: Know It, Act on It
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.28691v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: OurArk Agent Architecture
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>GUI Agents Go Cross-Platform — via Structured Action Distillation</h2>
+          <p>The MAGA paper — <a href="https://arxiv.org/abs/2607.29320v1">"Multi-Platform Self-Fusion of GUI Agents via Structured Action Distillation"</a> — is a mouthful, but the problem it solves is clean: existing GUI agents are domain-specific (mobile, web, or desktop), and merging them naively corrupts their behavior when expert models disagree on how to represent the same action.</p><p>The approach they propose, structured action distillation, sidesteps weight-merging conflicts by building a unified action space that preserves executable intent across environments. Rather than averaging weights from a mobile expert and a desktop expert and hoping the result works on both, they distill through the action representation itself. The result is a single cross-environment policy that doesn't fall apart when it encounters a UI pattern from outside its training distribution.</p><p>Why care about this now? Because the gap between "agent that works in one environment" and "agent that works wherever the user is" is exactly what's blocking real deployment of autonomous assistants. A coding agent that lives only in the IDE, a support agent that lives only in the web UI, a data agent that lives only in the notebook — these are useful but bounded. The path to genuinely agentic products runs through cross-environment fluency.</p><p>This is also the kind of paper where the benchmark numbers matter: the authors test on standard GUI benchmarks across mobile, web, and desktop splits, and the unified model holds its own against specialized baselines. That's not guaranteed — multi-task models often underperform specialists — so seeing the Pareto curve not collapse on GUI tasks is meaningful signal.</p><blockquote><p>"Weight merging directly merges domain-specific experts but can corrupt executable actions under expert disagreement."</p><cite>— Yan et al., "MAGA," arXiv 2026</cite></blockquote>
+
+          
+          <div class="source-list">
+            
+            <a href="https://arxiv.org/abs/2607.29320v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: MAGA GUI Agents
+            </a>
+            
+          </div>
+          
+
+          
+          <hr class="section-divider">
+          
+          
+          <h2>What This All Means</h2>
+          <div class="takeaways"><ol><li>If you're choosing an LLM for high-volume inference and cost is a constraint, this week's open-weight releases — Kimi K3, Laguna S2.1, Qwen 3.8 — are worth a serious eval run. The post-training quality gap with closed frontier models is narrowing faster than most roadmaps assumed.</li><li>Before you ship any agent with external tools, read the "Tool Specifications Matter" paper. If schema-formatted tool specs are structurally weakening your model's safety representations, neither sandboxing nor permission scopes fixes that — your tool definition format may need to change.</li><li>Personalization features built on memory retrieval need two separate evals: one for whether the model recalls the preference, one for whether it actually applies it. Most teams are only running the first, which means utilization failures are invisible in your metrics.</li><li>Boris Cherny's Swift experiment is a useful calibration anchor: Claude Code is powerful enough that Anthropic's own engineers use it on production code, and honest enough to report where it still falls short. For complex, idiom-heavy codebases — Swift, Rust, anything with strong compiler opinions — plan for human review of agent-generated rewrites, not autonomous execution.</li></ol></div>
+
+          
+          <div class="source-list">
+            
+            <a href="https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Interconnects: Open Artifacts #23
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.29254v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: Tool Specifications Matter
+            </a>
+            
+            <a href="https://arxiv.org/abs/2607.29433v1" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">📄</span>
+              arXiv: Know It, Act on It
+            </a>
+            
+            <a href="https://daringfireball.net/linked/2026/08/02/cherny-claude-swift" class="source-tag" target="_blank" rel="noopener">
+              <span class="source-icon">🔗</span>
+              Daring Fireball: Claude Code on Swift
+            </a>
+            
+          </div>
+          
+
+          
+          
+
+          <div class="sources-accordion">
+            <h2>Sources</h2>
+            <div class="source-groups" id="sourceGroups"></div>
+          </div>
+
+          <footer>
+            <p>Generated with Claude &middot; <a href="../index.html">Archive</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Sidebar panels -->
+      <aside class="col-side">
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🔥</span>
+            <h3>Trending on GitHub</h3>
+          </div>
+          <ul class="side-panel-list">
+            
+            <li>
+              <a href="https://github.com/yc-software/qm">yc-software/qm</a>
+              <span class="side-meta">TypeScript · ⭐ 7,567</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/trycompai/crm">trycompai/crm</a>
+              <span class="side-meta">TypeScript · ⭐ 1,916</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/QwenAudio/qwen-audio-agent">QwenAudio/qwen-audio-agent</a>
+              <span class="side-meta">JavaScript · ⭐ 1,751</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/WilonityDev/WilonityLoader">WilonityDev/WilonityLoader</a>
+              <span class="side-meta">None⭐ 1,216</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/sqliteai/waste">sqliteai/waste</a>
+              <span class="side-meta">C · ⭐ 1,156</span>
+            </li>
+            
+            <li>
+              <a href="https://github.com/microsoft/skill-recorder">microsoft/skill-recorder</a>
+              <span class="side-meta">TypeScript · ⭐ 900</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">🚀</span>
+            <h3>AI Launches &amp; Pricing</h3>
+          </div>
+          <ul class="side-panel-list launches-list">
+            
+            <li>
+              <div class="launch-title">Google</div>
+              <span class="launch-detail">Expanding Managed Agents in Gemini API with background tasks and remote MCP support.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Google DeepMind</div>
+              <span class="launch-detail">Launching Lyria 3.5 in Google Flow Music with advances in musicality, lyrics, vocals, and creative control.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">Allen Institute for AI</div>
+              <span class="launch-detail">Launching OlmoEarth Platform for geospatial inference at planetary scale.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+            <li>
+              <div class="launch-title">NVIDIA</div>
+              <span class="launch-detail">Introducing Cosmos-H-Dreams for real-time generative simulation in surgical robotics.</span>
+              <span class="launch-tag tag-launch">Launch</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        <div class="side-panel">
+          <div class="side-panel-header">
+            <span class="side-panel-icon">📄</span>
+            <h3>Papers to Know</h3>
+          </div>
+          <ul class="side-panel-list papers-list">
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.18082">Enhancing Rubric-based RL via Self-Distillation</a>
+              <span class="side-meta">Rubric-based RL has recently shown promise in improving LLMs on open-ended tasks. A widely recognized limitation of rubric-based RL is limited exploration: criteria that no rollout manages to satisfy </span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.29025">Evaluation-Verification Reward for Consistent Multi-Reference Image Editing</a>
+              <span class="side-meta">While recent image editing models have made rapid progress, multi-reference editing remains challenging, particularly in maintaining visual consistency across references and ensuring overall visual ha</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.29677">ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction</a>
+              <span class="side-meta">Enterprise workflows increasingly rely on agents for schema-guided extraction: given a document and a user-defined schema, the agent faithfully follows the schema to produce the correct output with so</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.28675">Meshy T2: Fast Native Mesh Generation with Flow Matching</a>
+              <span class="side-meta">Polygonal meshes are the standard surface representation of modern 3D pipelines, and generating high-quality meshes with artist-style topology is essential for film, gaming, and interactive 3D applica</span>
+            </li>
+            
+            <li>
+              <a href="https://huggingface.co/papers/2607.29679">Scaling Properties of Text Conditioning in Visual Generation</a>
+              <span class="side-meta">We study empirical scaling properties for text conditioning in visual generation. Such properties have rarely been measured because diffusion loss does not scale with the number of tokens in natural-l</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+
+      </aside>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
