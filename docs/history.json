@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-08-04",
+      "title": "Shortcuts, Flaw Hunts, and Inference Bets",
+      "headings": [
+        "Benchmarks Are Hiding the Cheat Code Problem",
+        "OpenAI Ships Turnless Voice in Six Months \u2014 The Architecture Matters",
+        "Baseten's $13B Raise and the Inference Engineering Profession",
+        "The Ghost Weights Problem: When Model Verification Fails",
+        "Eval Infrastructure Gets a Community-Centered Redesign",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2607.28884",
+        "https://arxiv.org/abs/2608.02409v1",
+        "https://arxiv.org/abs/2608.02412v1",
+        "https://arxiv.org/abs/2608.02442v1",
+        "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
+        "https://www.interconnects.ai/p/introducing-our-artifacts-hub-and",
+        "https://www.latent.space/p/inference-eng",
+        "https://www.technologyreview.com/2026/07/30/1140927/a-fundamental-flaw-leaves-llms-vulnerable-to-attack/"
+      ]
+    },
+    {
       "date": "2026-08-03",
       "title": "Open Models Surge, Tool Safety Cracks",
       "headings": [
@@ -719,36 +741,6 @@
         "https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/",
         "https://simonwillison.net/2026/Jul/4/better-models-worse-tools/#atom-everything",
         "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything"
-      ]
-    },
-    {
-      "date": "2026-07-04",
-      "title": "Science, Security, and the Infrastructure Gap",
-      "headings": [
-        "OpenAI Moves Into Genomics \u2014 With a Benchmark to Prove It",
-        "DeepMind and A24: What a Film Studio Partnership Tells You About Where AI Research Is Heading",
-        "Context Governance: The RAG Problem Nobody Has Formalized Until Now",
-        "WattGPU: Predicting Power Costs Before You Provision",
-        "The Great Loops Debate and the State of AI Engineering",
-        "The Open Source AI Accountability Map \u2014 And What's Missing From It",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2607.02116v1",
-        "https://arxiv.org/abs/2607.02391v1",
-        "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
-        "https://deepmind.google/blog/fluid-natural-voice-translation-with-gemini-35-live-translate/",
-        "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
-        "https://deepmind.google/blog/introducing-gemma-4-12b-a-unified-encoder-free-multimodal-model/",
-        "https://github.com/manojmallick/gavio",
-        "https://map.currentai.org",
-        "https://openai.com/index/genebench-pro/case-studies",
-        "https://openai.com/index/introducing-genebench-pro",
-        "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
-        "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map/#atom-everything",
-        "https://www.latent.space/p/aiewf-daily-dispatch-locomotives",
-        "https://www.latent.space/p/skill-engineering-design",
-        "https://www.latent.space/p/the-coolest-diffusion-research-isnt"
       ]
     }
   ]
