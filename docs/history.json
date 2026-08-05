@@ -1,6 +1,32 @@
 {
   "entries": [
     {
+      "date": "2026-08-05",
+      "title": "Flowise Falls, Claude 5 Lands",
+      "headings": [
+        "Flowise Sunsets \u2014 What It Signals About the No-Code Agent Builder Wave",
+        "LLM 0.32 Ships Claude 5 Models and Reasoning Traces",
+        "The World Cup as a Real-Time LLM Benchmark",
+        "Context Compaction Gets Its First Formal Theory",
+        "ChatGPT Work Gets an Architecture Teardown",
+        "What This All Means"
+      ],
+      "urls": [
+        "https://arxiv.org/abs/2608.01326v1",
+        "https://arxiv.org/abs/2608.04003v1",
+        "https://arxiv.org/abs/2608.04008v1",
+        "https://arxiv.org/abs/2608.04009v1",
+        "https://flowiseai.com/sunset",
+        "https://hamel.dev/blog/posts/eval-tools/",
+        "https://news.ycombinator.com/item?id=49176920",
+        "https://simonwillison.net/2026/Aug/4/llm-anthropic/#atom-everything",
+        "https://simonwillison.net/2026/Aug/4/llm/#atom-everything",
+        "https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-everything",
+        "https://www.latent.space/p/ainews-megakernels-are-so-dead-and",
+        "https://www.latent.space/p/unpacking-chatgpt-work"
+      ]
+    },
+    {
       "date": "2026-08-04",
       "title": "Shortcuts, Flaw Hunts, and Inference Bets",
       "headings": [
@@ -719,28 +745,6 @@
         "https://twitter.com/thsottiaux/status/2073933490513752151",
         "https://www.latent.space/p/cursor-forward-deployed-engineers",
         "https://www.latent.space/p/the-website-of-the-future"
-      ]
-    },
-    {
-      "date": "2026-07-05",
-      "title": "Models Smarter, Tools Dumber",
-      "headings": [
-        "The Schema Invention Problem: Better Models Breaking Their Own Tools",
-        "What $149 and Claude Fable Actually Shipped",
-        "Scaling Won't Fix Social Simulation \u2014 And That's a Research Bet Worth Making",
-        "Agentic Search Comes to NASA's Earth Science Archive",
-        "Cerebras + Hugging Face Put Gemma 4 Into Real-Time Voice",
-        "What This All Means"
-      ],
-      "urls": [
-        "https://arxiv.org/abs/2607.02210v1",
-        "https://arxiv.org/abs/2607.02387v1",
-        "https://arxiv.org/abs/2607.02390v1",
-        "https://arxiv.org/abs/2607.02464v1",
-        "https://huggingface.co/blog/cerebras-gemma4-voice-ai",
-        "https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/",
-        "https://simonwillison.net/2026/Jul/4/better-models-worse-tools/#atom-everything",
-        "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything"
       ]
     }
   ]
